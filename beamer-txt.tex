@@ -184,7 +184,25 @@
 \begin{frame}
 	\frametitle{Literature review}
 	
-	Citar um ou dois artigos mais importantes.
+	\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below, you may need to use multiple columns and/or reduce the font size further if you have many references
+	\footnotesize % Reduce the font size in the bibliography
+		\scriptsize
+	
+		\bibitem[Reimers, 2019]{p1}
+		Reimers, Nils and Gurevych, Iryna (2019)
+		\newblock \href{http://arxiv.org/abs/1908.10084}{Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks}
+		\newblock \emph{Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing} 
+		\newblock \emph{Association for Computational Linguistics} 
+		
+		\bibitem[Junior, 2021]{p2}
+		J. Andrade Junior, J. Cardoso-Silva, and L. Bezerra (2021)
+		\newblock \href{https://core.ac.uk/download/491169432.pdf}{Comparing Contextual Embeddings for	Semantic Textual Similarity in Portuguese}
+		\newblock \scriptsize \emph{Anais da X Brazilian Conference on Intelligent Systems} 
+		
+		\normalsize		 
+
+	\end{thebibliography}
+
 	
 	
 \end{frame}
@@ -213,15 +231,7 @@
 		
 			\item \textbf{Modeling}: We use a multilingual sentence embedding model based on the MiniLM architecture, a lightweight and efficient BERT variant with 12 transformer layers, to produce high-quality embeddings for NLP tasks like semantic similarity, paraphrase identification and clustering.
 			
-			\item \textbf{Evaluation}: Our evaluation metrics include:
-			\begin{enumerate}
-				\item \textbf{Semantic Textual Similarity}: Pearson/Spearman correlation.
-				
-				\item \textbf{Paraphrase Identification}: Accuracy, F1 score, Precision, Recall.
-				
-				\item \textbf{Clustering}: Silhouette score, ARI, NMI.
-			\end{enumerate}
-	
+			\item \textbf{Evaluation}: Our evaluation metrics include Accuracy, F1 score, Precision, Recall.	
 			
 			\item \textbf{Deployment}: The results will be used to create an interface in the PLE system to suggest themes that best fit new proposals.			
 		\end{enumerate}
