@@ -1,20 +1,9 @@
 \beamer@sectionintoc {1}{Introduction}{3}{0}{1}
 \beamer@sectionintoc {2}{The Problem}{6}{0}{2}
 \beamer@sectionintoc {3}{Objective}{9}{0}{3}
-\beamer@sectionintoc {4}{Literature review}{10}{0}{4}
-\beamer@sectionintoc {5}{Methodology}{11}{0}{5}
-\beamer@sectionintoc {6}{Experimentos Realizados}{13}{0}{6}
-\beamer@sectionintoc {7}{Resultados}{14}{0}{7}
-\beamer@sectionintoc {8}{Trabalhos Futuros}{15}{0}{8}
-\beamer@sectionintoc {9}{Conclusões}{16}{0}{9}
-\beamer@sectionintoc {10}{Módulos das Unidades da Assessoria Legislativa}{17}{0}{10}
-\beamer@sectionintoc {11}{Módulo Gerenciar Solicitações das Unidades}{18}{0}{11}
-\beamer@sectionintoc {12}{Módulo Área de Trabalho do Consultor Legislativo}{21}{0}{12}
-\beamer@sectionintoc {13}{Módulo Minhas Notificações}{23}{0}{13}
-\beamer@sectionintoc {14}{Módulos das Unidades da Assessoria Legislativa}{25}{0}{14}
-\beamer@sectionintoc {15}{Módulo Gerenciar Solicitações da Unidades - Funcionalidades}{26}{0}{15}
-\beamer@subsectionintoc {15}{1}{Visualizar, Detalhes e Classificação}{26}{0}{15}
-\beamer@subsectionintoc {15}{2}{Distribuição Interna de Solicitações}{32}{0}{15}
-\beamer@subsectionintoc {15}{3}{Encaminhar}{34}{0}{15}
-\beamer@sectionintoc {16}{Próximos Passos}{35}{0}{16}
-\beamer@sectionintoc {17}{Feedback}{36}{0}{17}
+\beamer@sectionintoc {4}{Literature review}{11}{0}{4}
+\beamer@sectionintoc {5}{Methodology}{12}{0}{5}
+\beamer@sectionintoc {6}{Experimentos Realizados}{21}{0}{6}
+\beamer@sectionintoc {7}{Resultados}{22}{0}{7}
+\beamer@sectionintoc {8}{Trabalhos Futuros}{23}{0}{8}
+\beamer@sectionintoc {9}{Conclusões}{24}{0}{9}
