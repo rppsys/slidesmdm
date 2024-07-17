@@ -180,22 +180,52 @@
 	
 \end{frame}
 % =========================================================
-\section{Revisão da Literatura}
+\section{Literature review}
 \begin{frame}
-	\frametitle{Revisão da Literatura}
+	\frametitle{Literature review}
 	
 	Citar um ou dois artigos mais importantes.
 	
 	
 \end{frame}
 % =========================================================
-\section{Metodologia}
+\section{Methodology}
 \begin{frame}
-	\frametitle{Metodologia}
+	\frametitle{Methodology}
+	\begin{block}{CRISP-DM's Methodology} % Block without title
+		\begin{enumerate}
+			\item \textbf{Business Understanding}: We have analyzed legislative documents to align our data mining objectives with legislative classification needs.
+			
+			\item \textbf{Data Understanding}: The dataset comprises 22,267 summaries extracted from the Electronic Legislative Process (PLE) system, each accompanied by its respective thematic classification.
+			
+			\item \textbf{Data Preparation}: First, we discarded data classified under the 'Other' theme. Then, we performed tokenization, normalization, stopword removal, and lemmatization processes.
+			
+			\item (next slide)
+		\end{enumerate}
+	\end{block}
+\end{frame}
+% --------------------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Methodology}
+	\begin{block}{CRISP-DM's Methodology (cont...)} % Block without title
+		\begin{enumerate}
+			\setcounter{enumi}{3}
+		
+			\item \textbf{Modeling}: We use a multilingual sentence embedding model based on the MiniLM architecture, a lightweight and efficient BERT variant with 12 transformer layers, to produce high-quality embeddings for NLP tasks like semantic similarity, paraphrase identification and clustering.
+			
+			\item \textbf{Evaluation}: Our evaluation metrics include:
+			\begin{enumerate}
+				\item \textbf{Semantic Textual Similarity}: Pearson/Spearman correlation.
+				
+				\item \textbf{Paraphrase Identification}: Accuracy, F1 score, Precision, Recall.
+				
+				\item \textbf{Clustering}: Silhouette score, ARI, NMI.
+			\end{enumerate}
 	
-	Aqui podemos colocar umas figuras para ilustrar	
-	
-	
+			
+			\item \textbf{Deployment}: The results will be used to create an interface in the PLE system to suggest themes that best fit new proposals.			
+		\end{enumerate}
+	\end{block}
 \end{frame}
 % =========================================================
 \section{Experimentos Realizados}
