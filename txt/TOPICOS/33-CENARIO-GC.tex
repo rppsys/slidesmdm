@@ -1,0 +1,130 @@
+% Cenário Gartner C
+\newcommand{\cenGC}{Cenário \emph{Gartner} C: Distribuição \emph{MoSCoW} 70 25 5} 
+\section{\cenGC}
+\label{sec-cengc}
+
+    O terceiro e último cenário criado, com base nas avaliações da \emph{Gartner}, para representar as necessidades de modernização da fiscalização da \CLDF leva em consideração a classificação \emph{MoSCoW} distribuindo o peso total de 100\% entre as classes \MUST, \SHOULD, \COULD e \WOULD. 
+    
+
+\subsection*{Distribuição dos Pesos}    
+\label{sub-cengc-pesos}
+
+    Neste cenário, essa divisão de pesos entre essas categorias de classes não poderia ser igual, ou seja, não podemos atribuir, por exemplo, 34\%  para MUST, 33\% para SHOULD e 33\% para COULD porque se fizéssemos isto, estaríamos dando o mesmo nível de importância a cada uma dessas categorias de classes \emph{MoSCoW}.
+    
+    Dessa forma, foi escolhido a seguinte divisão de pesos para cada uma dessas categorias de classe:
+    
+    \begin{itemize}
+        \item 70\% do total do peso distribuído entre áreas críticas de capacidade classificadas como \MUST;
+        \item 25\% do total do peso distribuído entre áreas críticas de capacidade classificadas como \SHOULD;
+        \item 5\% do total do peso distribuído entre áreas críticas de capacidade classificadas como \COULD;
+        \item Áreas críticas de capacidade classificadas como \WOULD recebem peso nulo (0\%);
+    \end{itemize}
+    
+    Pretende-se, desta forma, dividir os pesos entre as quatro categorias de classes mantendo a coerência com o nível de importância que cada uma representa. Assim, a tabela \ref{tab:cenGC:pesos} apresenta os pesos percentuais atribuídos para cada área crítica de capacidade, de acordo com sua respectiva classe \emph{MoSCoW}.
+
+    % cenGC - Tabela de Pesos
+    \begin{table}[!h]
+        \begin{center}
+        \begin{tabular}{|p{0.4\textwidth}|c|c|}
+            \hline
+                % NOME DA TABELA        
+                \rowcolor{cldfB1} \multicolumn{3}{|c|}{\Large \cenGC} \\  
+                \rowcolor{cldfB1}
+                \multicolumn{3}{|c|}{\large \textbf{Tabela de Pesos}} \\ \hline \hline
+                % CABEÇALHO        
+                \rowcolor{lightgray}\textbf{Áreas de Capacidade} & \textbf{Classe MoSCoW} & \textbf{Pesos} \\ \hline
+                % CONTEÚDO
+                % Código gerado pela tabela do Google SpreadSheet Cenário GB
+                % MUST
+                \rowcolor{corMUST!80}Segurança & MUST & 14\% \\ \hline
+                \rowcolor{corMUST!80}Capacidade de Gerenciamento & MUST & 14\% \\ \hline
+                \rowcolor{corMUST!80}Conectividade de Fontes de Dados & MUST & 14\% \\ \hline
+                \rowcolor{corMUST!80}Preparação de Dados & MUST & 14\% \\ \hline
+                \rowcolor{corMUST!80}Visualização de Dados & MUST & 14\% \\ \hline
+                \rowcolor{corMUST!50!lightgray} \multicolumn{2}{|r|}{\large Total MUST: \normalsize} & 70\% \\ \hline 
+                % SHOULD
+                \rowcolor{corSHOULD!80}Nuvem & SHOULD & 7\% \\ \hline
+                \rowcolor{corSHOULD!80}Complexidade de Modelos & SHOULD & 6\% \\ \hline
+                \rowcolor{corSHOULD!80}Catálogos & SHOULD & 6\% \\ \hline
+                \rowcolor{corSHOULD!80}Incorporação de Análises & SHOULD & 6\% \\ \hline
+                \rowcolor{corSHOULD!30!lightgray} \multicolumn{2}{|r|}{\large Total SHOULD: \normalsize} & 25\% \\ \hline 
+                % COULD
+                \rowcolor{corCOULD!50}Geração de Relatórios & COULD & 2\% \\ \hline
+                \rowcolor{corCOULD!50}Analytics Avançados & COULD & 1\% \\ \hline
+                \rowcolor{corCOULD!50}Data Storytelling & COULD & 2\% \\ \hline
+                \rowcolor{corCOULD!30!lightgray} \multicolumn{2}{|r|}{\large Total COULD: \normalsize} & 5\% \\ \hline 
+                % WOULD
+                \rowcolor{corWOULD!50}Insight Automatizados & WOULD & 0\% \\ \hline
+                \rowcolor{corWOULD!50}Consulta em Linguagem Natural & WOULD & 0\% \\ \hline
+                \rowcolor{corWOULD!50}Geração de Linguagem Natural & WOULD & 0\% \\ \hline
+                \rowcolor{corWOULD!30!lightgray} \multicolumn{2}{|r|}{\large Total WOULD: \normalsize} & 0\% \\ \hline 
+                % TOTAL
+                \rowcolor{lightgray!30} \multicolumn{2}{|r|}{\large \textbf{Total Geral}: \normalsize} & 100\% \\ \hline 
+        \end{tabular}    
+        \caption{\label{tab:cenGC:pesos} Pesos para \cenGC}
+        \end{center}
+    \end{table}   
+  
+    Note que o total de 70\% de peso percentual definido para a categoria de classe \MUST foi dividida entre as 5 áreas desta classe de forma igualitária: $\frac{70\%}{5} = 14\%$. 
+    
+    Já a divisão inteira do total de 25\% entre as 4 áreas \SHOULD não é possível então elegeu-se a Capacidade de Suporte à Nuvem para receber o 1\% adicional: $\frac{25\%}{4} = 6\%$ e resta 1\%. 
+    
+    Em seguida, os 5\% restantes foram divididos entre as 3 áreas \COULD atribuindo-se 2\% para a área crítica de Geração de Relatórios e 2\% para a área de \emph{Data Storytelling} com o 1\% restante atribuído à área de \emph{Analytics} Avançadas. Verificou-se também que alternativas diferentes de distribuição final desses 5\% não altera os resultados.
+    
+
+\subsection*{Resultados}   
+
+    Finalmente, ao multiplicar os pesos da tabela \ref{tab:cenGC:pesos} aos \emph{scores} da tabela apresentada no Anexo \ref{anexo-tabelacc} encontramos os resultados exibidos na tabela \ref{tab:cenGC:resultados}.
+    
+    % cenGC - Tabela de Resultados
+    \begin{table}[!h]
+        \begin{center}
+        \begin{tabular}{|c|cc|}
+            \hline
+                % NOME DA TABELA        
+                \rowcolor{cldfB1} \multicolumn{3}{|c|}{\Large \cenGC} \\  
+                \rowcolor{cldfB1}
+                \multicolumn{3}{|c|}{\large \textbf{Resultados}} \\ \hline \hline
+                % CABEÇALHO        
+                \rowcolor{lightgray}\textbf{Fornecedor} & \multicolumn{2}{c|}{\textbf{\emph{Score} [1-5]}} \\ \hline
+                % CONTEÚDO
+                % Código gerado pela tabela do Google SpreadSheets Cenário GC
+                \rowcolor{corP1!80}MicroStrategy & \progressbar{0.92} & 4,6 \\ \hline
+                \rowcolor{corP2!50}Domo & \progressbar{0.86} & 4,3 \\ \hline
+                \rowcolor{corP2!50}Microsoft & \progressbar{0.86} & 4,3 \\ \hline
+                \rowcolor{corP2!50}Qlik & \progressbar{0.86} & 4,3 \\ \hline
+                \rowcolor{corP2!50}Tableau & \progressbar{0.86} & 4,3 \\ \hline
+                \rowcolor{corP2!50}TIBCO Software & \progressbar{0.86} & 4,3 \\ \hline
+                \rowcolor{corP2!50}Yellowfin & \progressbar{0.86} & 4,3 \\ \hline
+                \rowcolor{corP3!30}Salesforce & \progressbar{0.84} & 4,2 \\ \hline
+                \rowcolor{corP3!30}Sisence & \progressbar{0.84} & 4,2 \\ \hline
+                \rowcolor{corPF!20}Birst & \progressbar{0.82} & 4,1 \\ \hline
+                \rowcolor{corPF!20}Infor Builders & \progressbar{0.82} & 4,1 \\ \hline
+                \rowcolor{corPF!20}SAS & \progressbar{0.82} & 4,1 \\ \hline
+                \rowcolor{corPF!20}Oracle & \progressbar{0.8} & 4,0 \\ \hline
+                \rowcolor{corPF!20}Logi & \progressbar{0.78} & 3,9 \\ \hline
+                \rowcolor{corPF!20}Board & \progressbar{0.76} & 3,8 \\ \hline
+                \rowcolor{corPF!20}ThoughtSpot & \progressbar{0.76} & 3,8 \\ \hline
+                \rowcolor{corPF!20}Looker & \progressbar{0.74} & 3,7 \\ \hline
+                \rowcolor{corPF!20}IBM & \progressbar{0.72} & 3,6 \\ \hline
+                \rowcolor{corPF!20}SAP & \progressbar{0.68} & 3,4 \\ \hline
+                \rowcolor{corPF!20}Alibaba & \progressbar{0.66} & 3,3 \\ \hline
+            \end{tabular}    
+        \caption{\label{tab:cenGC:resultados} Resultados para \cenGC}
+        \end{center}
+    \end{table}     
+
+
+\subsection*{Análise dos Resultados} 
+
+    Os resultados obtidos pelo \cenGC \xspace foram:
+    
+    \begin{itemize}
+        \item A \emph{MicroStrategy} aparece em primeiro lugar com $4,6$ pontos;
+        \item Em segundo lugar empataram a \emph{Domo}, \emph{Microsoft}, \emph{Qlik}, \emph{Tableau}, \emph{TIBCO Software} e \emph{Yellowfin} com $4,3$ pontos cada; 
+        \item A \emph{Salesforce} e a \emph{Sisense} empataram em terceiro lugar com $4,2$ pontos cada;
+        \item Todas os demais fornecedores são eliminados;
+    \end{itemize}
+    
+    O \cenGC \xspace apresenta potenciais fornecedores de Plataformas de BI para satisfazer as necessidades identificadas de modernização da fiscalização da \CLDF.
+    

@@ -1,0 +1,162 @@
+\begin{landscape}
+\section{Caso 2 - Na Unidade DEF os consultores se inscrevem para elaborar mas o supervisor precisa consentir}
+
+\subsection*{Configurações da Unidade DEF}
+
+Suponha a existência de uma unidade denominada \textbf{Unidade DEF} configurada da seguinte forma: 
+
+\CONFIGURAUNID{DEF}{\mssim}{\msnao}{\msnao}{\msnao}
+
+\begin{itemize}
+	\item Permite auto-atribuição de elaboradores mas não dispensa o consentimento do supervisor.
+	\item Não permite auto-atribuição de revisores.
+\end{itemize}
+
+A Unidade DEF não é tão liberal quando a Unidade ABC mas não é tão conservadora como a Unidade GHI do terceiro caso. Ela permite a auto-atribuição de elaboradores mas não dispensa a aprovação de um supervisor quando isso acontece.
+
+\subsection*{Descrição do Caso}
+
+\begin{itemize}
+	\item \SC, chefe da Unidade DEF, vai liberar a auto-atribuição de elaboradores para a solicitação \SOLT. 
+	
+	\item Haverão três voluntários para serem elaboradores: \EU, \ED e \EQ. Contudo \SC vai rejeitar a inscrição de \EQ pois julga que ele já está sobrecarregado.
+
+	\item Durante a elaboração, \SC atribuirá \RU para ser revisor já que a auto-atribuição de revisores está desabilitada na Unidade DEF. Ele precisa aceitar. Ele aceita.
+
+	\item No meio do trabalho, \ED desiste pois vai tirar férias e a solicitação segue sendo elaborada somente por \EU.
+	
+	\item O trabalho termina com \EU fazendo upload dos artefatos e \SC encaminhando a solicitação para a ASSEL.
+
+\end{itemize}
+
+\subsection*{Simulação}
+
+\begin{enumerate}
+	\item Solicitação \SOLT chega na unidade com estado \euni{Não Lido};
+
+	\GERSOLUNID{\SOLT}{Gabinete Delmasso}{CONS}{}{}{}{}{Não}{Distribuição}{\euni{Não Lido}}{-}{-}{Indefinido}
+
+	\item \SC, que é supervisor, acessa visualizar fazendo com que o estado mude para \euni{Em Análise};
+
+	\GERSOLUNID{\SOLT}{Gabinete Delmasso}{CONS}{}{}{}{}{Não}{Distribuição}{\euni{Em Análise}}{-}{-}{Indefinido}
+
+	\item Supervisor \SC analisa a solicitação e verifica que sua unidade é a unidade destinada a realizar o trabalho. Assim ele seleciona ``Colocar na Fila''. Assim, o estado da solicitação passa a ser \euni{Na Fila} indicando que a solicitação está liberada para que CLs se inscrevam.
+
+	\GERSOLUNID{\SOLT}{Gabinete Delmasso}{CONS}{}{}{}{}{Não}{Distribuição}{\euni{Na Fila}}{-}{-}{Indefinido}
+
+	\item \EU acessa o módulo e verifica que a solicitação \SOLT está no estado \euni{Na Fila}. Então decide se inscrever neste trabalho para atuar como elaborador. Ele marca a solicitação e clica em \bInscrever. Abre-se um modal para que escolha-se a qualidade da inscrição: Elaborador ou Revisor? Ele escolhe ``Elaborador'' e clica em \textbf{Ok}. 
+
+	\item Neste momento o sistema verifica as configurações da Unidade DEF e verifica que a opção ``Dispensar consentimento para auto-atribuição de elaboradores'' \textbf{não está habilitada}. Então o sistema \textbf{vai pedir que algum supervisor aceite a inscrição} de \EU. O sistema notifica todos os supervisores da Unidade DEF com uma mensagem ``Consultor \EU se inscreveu para atuar na solicitação \SOLT. Esse pedido deve ser consentido por algum supervisor''.
+	
+	\item Na área de trabalho \EU aparece o seguinte registro:
+	
+	\AREATRABCL{\SOLT}{Gabinete Delmasso}{PDL}{}{}{}{}{Não}{Distribuição}{\ecl{Aguardando consentimento para elaboração}}{-}{-}{\EU}
+	
+	\item Supervisor \SC acessa o sistema e verifica no módulo ``Minhas Notificações'' a notificação que todos os supervisores receberam pedindo que algum supervisor consinta e aprove a inscrição de \EU para atuar na solicitação \SOLT como elaborador.
+	
+	\item Dessa forma o supervisor \SC acessa o botão \bGerInscricoes, procura a solicitação \SOLT e  verifica que \EU pediu para se inscrever como elaborador. Assim, \SC clica no botão ``Aprovar'' e aprova a auto-atribuição de \EU.
+	
+	\item Assim, como \EU é o primeiro elaborador, o estado da solicitação passa a ser \euni{Em Elaboração}:
+	
+	\GERSOLUNID{\SOLT}{Gabinete Delmasso}{CONS}{}{}{}{}{Não}{Distribuição}{\euni{Em Elaboração}}{\EU}{-}{Indefinido}
+	
+	\item Na área de trabalho \EU o registro da solicitação também é atualizado:
+
+	\AREATRABCL{\SOLT}{Gabinete Delmasso}{PDL}{}{}{}{}{Não}{Distribuição}{\ecl{Em Elaboração}}{\EU}{-}{\EU}
+	
+	\item Assim, \EU começa a trabalhar na solicitação e pede ajuda para seus colegas \ED e \EQ.
+	
+	\item Então, da mesma forma, cada um no seu computador, \ED e \EQ acessam o módulo de gerenciamento de solicitações da Unidade DEF, marcam a solicitação e clicam em \bInscrever. Ambos escolhem se inscrever na qualidade de ``elaborador'' e clicam em \textbf{Ok}. 
+	
+	\item E do mesmo modo, o sistema envia as notificações para todos os supervisores da Unidade DEF: ``Consultor \ED se inscreveu para atuar na solicitação \SOLT. Esse pedido deve ser consentido por algum supervisor'' e ``Consultor \EQ se inscreveu para atuar na solicitação \SOLT. Esse pedido deve ser consentido por algum supervisor''.
+	
+	\item Na área de trabalho \ED temos o seguinte:
+	
+	\AREATRABCL{\SOLT}{Gabinete Delmasso}{PDL}{}{}{}{}{Não}{Distribuição}{\ecl{Aguardando consentimento para elaboração}}{\EU}{-}{\ED}
+	
+	\item E na área de trabalho \EQ:
+
+	\AREATRABCL{\SOLT}{Gabinete Delmasso}{PDL}{}{}{}{}{Não}{Distribuição}{\ecl{Aguardando consentimento para elaboração}}{\EU}{-}{\EQ}	
+
+	\item Deste modo, Supervisor \SC acessa o sistema e verifica no módulo ``Minhas Notificações'' as duas notificações que todos os supervisores da Unidade DEF receberam pedindo que algum supervisor aprove as inscrições de \ED e \EQ.
+	
+	\item Em seguida, supervisor \SC acessa o botão \bGerInscricoes, procura a solicitação \SOLT e  verifica que há duas pendências de pedidos de inscrições não aprovadas: \ED e \EQ pedindo para se inscrever na solicitação como elaboradores. 
+	
+	\item Inicialmente \SC aprova o pedido de inscrição de \ED. Tão logo essa aprovação é feita o registro da solicitação no módulo de gerenciamento de solicitações da unidade atualiza-se para incluir \ED como elaborador:
+	
+	\GERSOLUNID{\SOLT}{Gabinete Delmasso}{CONS}{}{}{}{}{Não}{Distribuição}{\euni{Em Elaboração}}{\EU, \ED}{-}{Indefinido}
+	
+	\item \ED também tem o registro da solicitação em sua área de trabalho atualizada:
+	
+	\AREATRABCL{\SOLT}{Gabinete Delmasso}{PDL}{}{}{}{}{Não}{Distribuição}{\ecl{Em Elaboração}}{\EU, \ED}{-}{\ED}
+	
+	\item Contudo, \SC avalia que \EQ já está atuando em outras solicitações mais urgentes e prefere rejeitar o pedido de inscrição de \EQ para atuar como elaborador na solicitação \SOLT. Então, dentro do modal de gerenciamento de inscrições, \SC seleciona o pedido de inscrição de \EQ e rejeita a inscrição. Abre-se uma tela com um campo para \SC motivar a ação e ele escreve ``Pedido rejeitado pois o consultor precisa finalizar solicitações mais urgentes''.
+	
+	\item Neste momento, o sistema envia uma notificação direta para \EQ dizendo ``\SC rejeitou seu pedido de inscrição na solicitação \SOLT como elaborador. Motivo: Pedido rejeitado pois o consultor precisa finalizar solicitações mais urgentes''. 
+	
+	\item E assim, o registro da solicitação que antes aparecia na área de trabalho de \EQ com o estado ``Aguardando consentimento para elaboração'' desaparece. O estado do registro da solicitação no módulo de gerenciamento de solicitações da Unidade DEF também não se altera e mantém-se como estava:
+	
+	\GERSOLUNID{\SOLT}{Gabinete Delmasso}{CONS}{}{}{}{}{Não}{Distribuição}{\euni{Em Elaboração}}{\EU, \ED}{-}{Indefinido}	
+	
+	\item Continuando, \ED percebe que a solicitação precisa de um revisor. Ele conversa com \RU que aceita ser revisor do trabalho em desenvolvimento.
+	
+	\item Dessa forma \RU tenta se inscrever na solicitação como revisor. Mas ao clicar no botão \bInscrever o sistema consulta as configurações da Unidade DEF e verifica que a Unidade DEF não permite auto-atribuição de revisores. Então essa opção nem sequer aparece para \RU.  
+	
+	\item Dessa forma, \RU conversa com \ED que por sua vez conversa com \SC e pede para adicionar \RU como revisor da solicitação que está sendo elaborada. \SC atende o pedido, acessa o módulo de gerenciamento de solicitações da Unidade DEF e clica no botão \bGerAtrib.
+	
+	\item Na interface do modal de gerenciamento de atribuições, \SC verifica que realmente apenas \EU e \ED atuam na solicitação na qualidade de elaboradores, mas não há ainda nenhum revisor atribuído. Então ele clica no botão ``Adicionar Revisor'' e escolhe o nome de \RU.
+	
+	\item O modal de gerenciamento de atribuições adiciona o nome de \RU na lista de revisores pendentes uma vez que \RU ainda precisa aceitar essa atribuição em sua área de trabalho. As informações apresentadas para a solicitação \SOLT ainda permanecem inalteradas já que \RU ainda não aceitou a atribuição de revisor:
+	
+	\GERSOLUNID{\SOLT}{Gabinete Delmasso}{CONS}{}{}{}{}{Não}{Distribuição}{\euni{Em Elaboração}}{\EU, \ED}{-}{Indefinido}	
+	
+	\item Além disso, uma notificação é enviada diretamente para \RU com a mensagem ``\SC atribuiu você para atuar na solicitação \SOLT na qualidade de revisor. Acesse sua área de trabalho para aceitar ou rejeitar a atribuição''.
+	
+	\item \RU acessa o sistema e percebe no canto superior direito que há notificações não lidas. Então ele acessa o módulo ``Minhas Notificações'' e lê a notificação. Em seguida, ele acessa sua área de trabalho e se depara com um novo registro:
+	
+	\AREATRABCL{\SOLT}{Gabinete Delmasso}{PDL}{}{}{}{}{Não}{Distribuição}{\ecl{Aceitar Revisão}}{\EU, \ED}{-}{\RU}	
+	
+	\item Dessa forma \RU lembra do compromisso que fez com \ED de ser revisor da solicitação \SOLT. Prontamente, ele clica na solicitação em sua área de trabalho e acessa o botão \bAvaliar. Um modal é aberto e ele decide aceitar a atribuição de revisor.
+	
+	\item Assim, após \RU aceitar a atribuição, as informações apresentadas para a solicitação \SOLT são atualizadas tanto no módulo de gerenciamento de solicitações da Unidade DEF quanto nas áreas de trabalho de todos os envolvidos:
+	
+	\GERSOLUNID{\SOLT}{Gabinete Delmasso}{CONS}{}{}{}{}{Não}{Distribuição}{\euni{Em Elaboração}}{\EU, \ED}{\RU}{Indefinido}		
+	
+	\AREATRABCL{\SOLT}{Gabinete Delmasso}{PDL}{}{}{}{}{Não}{Distribuição}{\ecl{Em Elaboração}}{\EU, \ED}{\RU}{\EU}	
+	
+	\AREATRABCL{\SOLT}{Gabinete Delmasso}{PDL}{}{}{}{}{Não}{Distribuição}{\ecl{Em Elaboração}}{\EU, \ED}{\RU}{\ED}	
+
+	\AREATRABCL{\SOLT}{Gabinete Delmasso}{PDL}{}{}{}{}{Não}{Distribuição}{\ecl{Em Elaboração}}{\EU, \ED}{\RU}{\RU}	
+	
+	\item Os três trabalham na elaboração dos documentos pedidos na solicitação até \ED, que vai entrar de férias, resolve desistir de atuar como elaborador nessa solicitação.
+	
+	\item Assim, \ED entra em sua área de trabalho, seleciona a solicitação e clica em \bDesistir. O sistema abre uma janela de confirmação perguntando se o usuário tem certeza que deseja desistir de ser elaborador da solicitação e \ED confirma.
+	
+	\item Neste momento uma notificação é enviada para os supervisores da Unidade DEF informando que \ED desistiu de ser elaborador da solicitação. Assim, as informações da solicitação no módulo de gerenciamento de solicitações da unidade e nas áreas de trabalho dos consultores é atualizado removendo o nome de \ED da lista de elaboradores:
+	
+	\GERSOLUNID{\SOLT}{Gabinete Delmasso}{CONS}{}{}{}{}{Não}{Distribuição}{\euni{Em Elaboração}}{\EU}{\RU}{Indefinido}
+
+	\AREATRABCL{\SOLT}{Gabinete Delmasso}{PDL}{}{}{}{}{Não}{Distribuição}{\ecl{Em Elaboração}}{\EU}{\RU}{\EU}	
+
+	\AREATRABCL{\SOLT}{Gabinete Delmasso}{PDL}{}{}{}{}{Não}{Distribuição}{\ecl{Em Elaboração}}{\EU}{\RU}{\RU}	
+	
+	\item Além disso, essa solicitação desaparece da área de trabalho de \ED já que ele deixou de ser elaborador.
+	
+	\item Finalmente \EU e \RU finalizam o trabalho. \EU acessa sua área de trabalho no sistema, procura a solicitação \SOLT em que ele está atuando como elaborador e clica em \bConcluir. O sistema verifica que há pelo menos um \CL atuando na qualidade de revisor e permite que o upload dos artefatos finais seja feito.
+
+	\item Após o upload, o sistema altera o estado para \euni{Conclusão da Solicitação} tanto no módulo de gerenciamento quanto nas áreas de trabalho dos consultores:
+	
+	\GERSOLUNID{\SOLT}{Gabinete Delmasso}{CONS}{}{}{}{}{Não}{Distribuição}{\euni{Conclusão da Solicitação}}{\EU}{\RU}{Indefinido}
+
+	\AREATRABCL{\SOLT}{Gabinete Delmasso}{PDL}{}{}{}{}{Não}{Distribuição}{\ecl{Conclusão da Solicitação}}{\EU}{\RU}{\EU}	
+
+	\AREATRABCL{\SOLT}{Gabinete Delmasso}{PDL}{}{}{}{}{Não}{Distribuição}{\ecl{Conclusão da Solicitação}}{\EU}{\RU}{\RU}	
+		
+	\item \ST marca a solicitação no módulo de gerenciamento e manda encaminhar para a ASSEL. Assim, a solicitação desaparece da caixa de entrada da unidade e também das áreas de trabalho de cada um dos consultores que participaram da elaboração e revisão do trabalho.
+\end{enumerate}
+
+\end{landscape}
+
+\pagebreak
+
+

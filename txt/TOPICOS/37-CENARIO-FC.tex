@@ -1,0 +1,96 @@
+% Cenário Forrester C
+\newcommand{\cenFC}{Cenário \emph{Forrester} C: Distribuição \emph{MoSCoW} 70 25 5} 
+\section{\cenFC}
+\label{sec-cenfc}
+
+    Finalmente, o último cenário \emph{Forrester} criado para representar as necessidades de modernização da fiscalização da \CLDF leva em consideração a classificação \emph{MoSCoW} distribuindo o peso total de 100\% entre as classes \MUST, \SHOULD, \COULD e \WOULD. 
+
+\subsection*{Distribuição dos Pesos}    
+
+    Assim, a distribuição dos pesos é a mesma daquela utilizada no \cenGC \xspace (seção \ref{sub-cengc-pesos}), ou seja, 70\% do total distribuído entre áreas \MUST, 25\% para áreas \SHOULD e 5\% para áreas \COULD. Áreas \WOULD ficam com peso nulo (0\%). A tabela \ref{tab:cenFC:pesos} apresenta os pesos percentuais atribuídos para cada área de acordo com sua respectiva classe \emph{MoSCoW}.
+
+% cenFC - Tabela de Pesos
+\begin{table}[!h]
+    \begin{center}
+    \begin{tabular}{|p{0.4\textwidth}|c|c|}
+        \hline
+            % NOME DA TABELA        
+            \rowcolor{cldfB1} \multicolumn{3}{|c|}{\Large \cenFC} \\  
+            \rowcolor{cldfB1}
+            \multicolumn{3}{|c|}{\large \textbf{Tabela de Pesos}} \\ \hline \hline
+            % CABEÇALHO        
+            \rowcolor{lightgray}\textbf{Áreas de Capacidade} & \textbf{Classe MoSCoW} & \textbf{Pesos} \\ \hline
+            % CONTEÚDO
+            % Código gerado pela tabela do Google SpreadSheets Cenário cenFC
+            % MUST
+            \rowcolor{corMUST!80}Segurança & MUST & 24\% \\ \hline
+            \rowcolor{corMUST!80}Big Data & MUST & 23\% \\ \hline
+            \rowcolor{corMUST!80}Preparação de Dados & MUST & 23\% \\ \hline
+            \rowcolor{corMUST!50!lightgray} \multicolumn{2}{|r|}{\large Total MUST: \normalsize} & 70\% \\ \hline 
+            % SHOULD
+            \rowcolor{corSHOULD!80}Arquitetura & SHOULD & 7\% \\ \hline
+            \rowcolor{corSHOULD!80}Interfaces Gráficas & SHOULD & 6\% \\ \hline
+            \rowcolor{corSHOULD!80}Mobile & SHOULD & 6\% \\ \hline
+            \rowcolor{corSHOULD!80}Opções de Implantação & SHOULD & 6\% \\ \hline
+            \rowcolor{corSHOULD!30!lightgray} \multicolumn{2}{|r|}{\large Total SHOULD: \normalsize} & 25\% \\ \hline 
+            % COULD
+            \rowcolor{corCOULD!50}Criação de Apps Personalizados & COULD & 3\% \\ \hline
+            \rowcolor{corCOULD!50}BI Avançado & COULD & 2\% \\ \hline
+            \rowcolor{corCOULD!30!lightgray} \multicolumn{2}{|r|}{\large Total COULD: \normalsize} & 5\% \\ \hline 
+            % WOULD
+            \rowcolor{corWOULD!50}Sistemas de Insight & WOULD & 0\% \\ \hline
+            \rowcolor{corWOULD!30!lightgray} \multicolumn{2}{|r|}{\large Total WOULD: \normalsize} & 0\% \\ \hline 
+            % TOTAL
+            \rowcolor{lightgray!30} \multicolumn{2}{|r|}{\large Total: \normalsize} & 100\% \\ \hline 
+    \end{tabular}    
+    \caption{\label{tab:cenFC:pesos} Pesos para \cenFC}
+    \end{center}
+\end{table}
+
+\subsection*{Resultados}  
+
+    Finalmente, ao multiplicar os pesos da tabela \ref{tab:cenFC:pesos} aos \emph{scores} da tabela apresentada no Anexo \ref{anexo-tabelafw} encontramos os resultados exibidos na tabela \ref{tab:cenFC:resultados}.
+
+    % cenFC - Tabela de Resultados
+    \begin{table}[!h]
+        \begin{center}
+        \begin{tabular}{|c|cc|}
+            \hline
+                % NOME DA TABELA        
+                \rowcolor{cldfB1} \multicolumn{3}{|c|}{\Large \cenFC} \\  
+                \rowcolor{cldfB1}
+                \multicolumn{3}{|c|}{\large \textbf{Resultados}} \\ \hline \hline
+                % CABEÇALHO        
+                \rowcolor{lightgray}\textbf{Fornecedor} & \multicolumn{2}{c|}{\textbf{\emph{Score} [1-5]}} \\ \hline
+                % CONTEÚDO
+                % Código gerado pela tabela do Google SpreadSheets Cenário GB
+                \rowcolor{corP1!80}TIBCO Software & \progressbar{0.86} & 4,3 \\ \hline
+                \rowcolor{corP2!50}Tableau Software & \progressbar{0.84} & 4,2 \\ \hline
+                \rowcolor{corP3!30}MicroStrategy & \progressbar{0.8} & 4,0 \\ \hline
+                \rowcolor{corP3!30}Yellowfin & \progressbar{0.8} & 4,0 \\ \hline
+                \rowcolor{corPF!20}Birst & \progressbar{0.78} & 3,9 \\ \hline
+                \rowcolor{corPF!20}Microsoft & \progressbar{0.74} & 3,7 \\ \hline
+                \rowcolor{corPF!20}Sisense & \progressbar{0.74} & 3,7 \\ \hline
+                \rowcolor{corPF!20}SAS & \progressbar{0.72} & 3,6 \\ \hline
+                \rowcolor{corPF!20}Information Builders & \progressbar{0.7} & 3,5 \\ \hline
+                \rowcolor{corPF!20}Qlik & \progressbar{0.64} & 3,2 \\ \hline
+                \rowcolor{corPF!20}OpenText & \progressbar{0.54} & 2,7 \\ \hline
+                \rowcolor{corPF!20}IBM & \progressbar{0.52} & 2,6 \\ \hline
+                \rowcolor{corPF!20}ThoughtSpot & \progressbar{0.44} & 2,2 \\ \hline
+        \end{tabular}    
+        \caption{\label{tab:cenFC:resultados} Resultados para \cenFC}
+        \end{center}
+    \end{table}
+
+\subsection*{Análise dos Resultados} 
+
+    E assim chegamos à última análise de resultados. Os resultados obtidos pelo \cenFC \xspace foram:
+    
+    \begin{itemize}
+        \item A \emph{TIBCO Software} lidera em primeiro lugar com $4,3$ pontos;
+        \item A \emph{Tableau} aparece em segundo lugar com $4,2$ pontos;
+        \item E a \emph{Microstrategy} e \emph{Yellowfin} empatam em terceiro lugar com $4,0$ pontos cada;
+        \item Os demais fornecedores não obtém a pontuação mínima e assim são eliminados;
+    \end{itemize}
+    
+    Tal qual ocorreu no \cenGC, o \cenFC \xspace apresenta potenciais fornecedores de Plataformas de BI para satisfazer as necessidades de modernização da fiscalização da CLDF.

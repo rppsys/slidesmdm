@@ -1,0 +1,123 @@
+\chapter{Rascunho}
+
+	Quais são as edições que precisam ser feitas?
+	
+	\subsubsection{Ações}
+	\textbf{Apoio ou Supervisor - Análises}:
+	\begin{itemize}
+		\item Analisar se tem Solicitação Duplicada;
+		\item Atribuir Urgência para a Solicitação;
+		\item Indicar para qual Unidade a Solicitação deve ser Distribuída;		
+	\end{itemize}
+	
+	
+	
+	\textbf{Só o Supervisor}:
+	\begin{itemize}
+		\item Aprovar e executar algo que foi Analisado. 
+		\item Atribuir Solicitação para um Servidor da ASSEL analisar ela;
+	\end{itemize}
+
+
+	\subsubsection{Desfechos Possíveis:}
+	\begin{itemize}
+		\item Se vem do Solicitante:
+		\begin{itemize}
+			\item Cancelamento - Devolve para Solicitante
+			\item Pendencia - Devolve para Solicitante
+			\item Distribuição - Entrega para alguma Unidade
+		\end{itemize}
+
+		\item Se vem do Retorno da Unidade
+		\begin{itemize}
+			\item Cancelamento - Devolve para Solicitante
+			\item Pendencia - Devolve para Solicitante
+			\item (Re)Distribuição - Entrega para alguma Unidade
+		\end{itemize}
+
+		\item Se vem do Concluso de Unidade:
+		\begin{itemize}
+			\item CONCLUSAO - Notifica Solicitante 
+		\end{itemize}
+
+	\end{itemize}
+
+
+	\subsubsection{Itens da Coluna Ações}
+	
+	
+	\toGil{Tem que ver o que o Supervisor faz para separar do que o Apoio faz}.
+	
+
+	
+	\begin{itemize}
+		\item \textbf{ANALISAR} - Solicitação que chegou aqui sempre chega com essa ação. Ou seja, deve ser analisado pela ASSEL.
+		
+		\item \textbf{CANCELAR} - Resultado de uma análise em que a ASSEL entende que a Solicitação deve ser Cancelada por qualquer motivo (Duplicidade, Pedido do Solicitante, Etc...)
+		
+		\item \textbf{PENDENCIA} - Resultado da análise na qual entende-se que o Solicitante precisa fornecer uma informação adicional para que a Solicitação possa seguir em frente.
+		
+		\item \textbf{ENVIAR PARA UCJ} - Resultado da análise na qual entende-se que a Solicitação deve ser enviado à UCJ.
+		
+		\item \textbf{ENVIAR PARA URP} - Resultado da análise na qual entende-se que a Solicitação deve ser enviado à URP.
+		
+		\item \textbf{ENVIAR PARA UEF} - Resultado da análise na qual entende-se que a Solicitação deve ser enviado à UEF.
+		
+		\item \textbf{ENVIAR PARA USE} - Resultado da análise na qual entende-se que a Solicitação deve ser enviado à USE.
+		
+		\item \textbf{ENVIAR PARA UDA} - Resultado da análise na qual entende-se que a Solicitação deve ser enviado à UDA.
+		
+		\item \textbf{CONCLUIR} - Resultado da análise na qual entende-se que a Unidade Interna concluiu o trabalho e portanto os artefatos podem ser entregues ao Solicitante.
+	\end{itemize}
+
+
+	\subsubsection{Resumo: Funcionalidades}
+	
+	
+	As sub-funcionalidades que devem ter são:
+	\begin{itemize}
+		\item Atribuir Servidor - Forma de Atribuir a Solicitação a um determinado Usuário da Unidade ASSEL.
+		
+		\item Atribuir Ação - Forma de Escolher dentre os itens da coluna ação listadas anteriormente qual Ação deve ser realizada.
+		
+		Se um usuário resolve atribuir uma ação ele mesmo (sem que ele seja o servidor atribuído para fazer a análise)  o sistema atribui o Servidor Atribuido a esse usuário.
+		
+		
+		\item Executar Ação - Executar a Ação atribuída à Solicitação.		
+	\end{itemize}
+		
+	
+
+
+	Se vem do Solicitante:
+		Apoio: Verifica Requisitos
+			- Duplicidade => Cancela;
+			- Pendencia => Pendencia;
+			- Está Válido;
+		Chefe: Sugere Unidade para Distribuir
+		Chefe: Executa
+		
+	Se vem da Unidade como Retorno
+		Apoio: Verifica Requisitos
+			- Cancelamento
+			- Pendencia => Pendencia;
+			- Redistribuição
+			Chefe: Sugere Unidade para (Re)Distribuir
+			Chefe: Executa
+			
+	Se vem da Unidade como Serviço Elaborado
+		Apoio:  
+		Chefe: "De Acordo"
+		Chefe: Notifica Solicitante
+		
+		
+		
+	Apoio:
+		Cancelamento;
+		Pendencia;
+		Validação;
+		Redistribuição;
+	
+	Chefe: 
+		Sugere Unidade para Distribuir
+		Dá o De Acordo

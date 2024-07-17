@@ -1,0 +1,123 @@
+\subsection{Nuvem (\emph{Cloud})}
+\label{sub-cloud}
+\index{Nuvem}
+
+    Computação em nuvem é um modelo que possibilita acesso, de modo conveniente e sob demanda, a um conjunto de recursos computacionais configuráveis (por exemplo, redes, servidores, armazenamento, aplicações e serviços) que podem ser rapidamente adquiridos e liberados com mínimo esforço gerencial ou interação com o provedor de serviços. Vale destacar que o papel do provedor de serviços pode ser exercido dentro do próprio ambiente computacional (nuvem privada), ou por um fornecedor especializado (nuvem pública), ou ser estabelecido de forma híbrida (nuvem híbrida).
+    
+    O modelo nuvem é a forma de criar desacoplamento entre os elementos de infraestrutura, de modo análogo ao desacoplamento que é pregado na Engenharia de Software. Esse desacoplamento traz benefícios importantes, nos quais destacam-se:
+    \begin{itemize}
+        \item \textbf{Diminuição de complexidade}: os ambientes computacionais tem se tornado cada vez mais complexos, à medida em que têm cada vez mais evoluído para atender às necessidades do público atendido. Nesse sentido, o desacoplamento agrega em transformar uma topologia de alta complexidade numa montagem feita, usando-se módulos prontos, vistos como caixas-pretas, que são padronizados e evoluídos independentemente. Assim, ganha-se em manutenabilidade e simplicidade.
+        \item \textbf{Padronização e reuso}: o desacoplamento traz o benefício da padronização dos módulos, que são mantidos de forma única, com sua evolução repercutindo em todas as suas instanciações no ambiente. O reuso diminui o custo de desenvolvimento e manutenção desses módulos, evitando esforço duplicado.
+        \item \textbf{Controle de versões e compatibilidade}: o desacoplamento permite que um módulo seja mantido no repositório em diversas versões fechadas, tal como um módulo de software, e que haja a devida gestão de compatibilidade. Dessa forma, garante-se que o módulo seja instanciado em uma determinada versão que guarde compatibilidade com todo o ambiente que for interagir com ele, incluindo a compatibilidade com a infraestrutura sobre a qual esse módulo está sendo executado, a compatibilidade com outros módulos com os quais esse se comunica e com o software que esse módulo instancia sobre ele.
+        \item \textbf{Infraestrutura como código}: a infraestrutura passa a ser tratada como código, sendo mantida numa estrutura de Engenharia de Software, e podendo ser automatizada conforme necessidade. Assim, ganha-se também com os benefícios de um desenvolvimento ágil, que siga uma esteira automatizada de integração e entrega contínuas, inclusive para a evolução de infraestrutura. Nesse sentido, também aproveita-se de aproximar os perfis profissionais dos analistas de desenvolvimento e de suporte, que passam a interagir mais, mitigando o distanciamento cultural e epistemológico dos dois mundos.
+        \item \textbf{Diminuição de capacidade ociosa}: o desacoplamento permite a instanciação para funcionamento de módulos de infraestrutura pequenos, e que sejam somente suficientes para a demanda daquele cenário, naquele momento. Dessa forma, resguarda-se do consumo excessivo provocado pelos componentes tradicionais monolíticos, que mantinham sistemas grandes em funcionamento, quando somente extraiam valor de pequena parte e funcionalidade deles.
+        \item \textbf{Dimensionamento flexível}: o desacoplamento permite o dimensionamento flexível dos diferentes componentes de infraestrutura, dando-lhes somente os recursos computacionais necessários e priorizando os serviços que engargalam o processamento como um todo. Em sendo automatizado esse dimensionamento, trata-se da característica elástica da nuvem, que ganha outro valor quando feita sobre pequenos componentes, criando aumento somente no centro de geração de valor.
+    \end{itemize}
+    
+    Diante desse desacoplamento, surgiram padronizações dos componentes para serviços em nuvem, a partir das camadas de infraestrutura tradicionais. Nisso, destacam-se as camadas:
+    
+    \begin{enumerate}
+        \item \label{layer:fisica} \textbf{física} -- hosts de processamento, storages;
+        \item \label{layer:virt} \textbf{de virtualização} -- \emph{hypervisor}, como VMWare ESXi, Microsoft Hyper-V, KVM;
+        \item \label{layer:so} \textbf{de sistema operacional} -- linux, windows;
+        \item \label{layer:sa} \textbf{de servidor de aplicação/plataforma} -- JBoss, Apache, instância de SGBD;
+        \item \label{layer:app} \textbf{de aplicação} -- aplicação JAVA, aplicação Node, Schema de Banco de Dados.
+    \end{enumerate}
+    
+    Nesse cenário, os modelos de provimento de serviços foram criados da seguinte forma:
+    
+\begin{itemize}
+    \item \label{saas} \textbf{\emph{Software as a Service (SaaS)}}: Software como serviço. Nesse caso, todas as camadas (da \ref{layer:fisica} à \ref{layer:app}) são abstraídos pelo serviço SaaS. Exemplos: Google Apps, Dropbox, Spotify;
+    
+    \item \label{paas} \textbf{\emph{Platform as a Service (PaaS)}}: Plataforma como serviço. Nesse caso, as camadas \ref{layer:fisica} a \ref{layer:sa} são abstraídos pelo serviço PaaS, restando para o consumidor do serviço integrar a sua camada \ref{layer:app}. Exemplos: Heroku, Cloud Foundry, Google App Engine, OpenShift PaaS;
+
+    \item \label{caas} \textbf{\emph{Container as a Service (CaaS)}}: Container como serviço. Nesse caso, as camadas \ref{layer:fisica} a \ref{layer:virt} são abstraídas pelo serviço CaaS, mais as libs comuns da camada \ref{layer:so}, que passa a ser quebrada. Exemplos: Kubernetes, OpenShift CaaS;
+
+    \item \label{iaas} \textbf{\emph{Infrastructure as a Service (IaaS)}}: Infraestrutura como serviço. Nesse caso, as camadas \ref{layer:fisica} e \ref{layer:virt} são abstraídas pelo serviço IaaS, restando para o consumidor do serviço integrar a suas camadas \ref{layer:so} a \ref{layer:app}. Exemplos: OpenStack, CloudStack, Amazon AWS, Microsoft Azure;
+
+    \item \textbf{\emph{Network as a Service}}: Redes como um serviço. Exemplos:  FENICS, Aryaka;
+\end{itemize}
+
+\index{Software as a Service (SaaS)}
+\index{Platform as a Service (PaaS)}
+\index{Container as a Service (CaaS)}
+\index{Infrastructure as a Service (IaaS)}
+\index{Network as a Service}
+
+No caso específico de \emph{Analytics} e \emph{Business Intelligence}, esses serviços podem ser criados com arquitetura compatível com o modelo nuvem, em que desacopla de forma clara os componentes e camadas apresentados.
+
+A capacidade de oferecer serviços na Nuvem nesse caso podem ser realizada por meio de qualquer um dos modelos de provimento de serviços descritos. Entretanto, é mais comum que essa Área Crítica seja vista nas comparações do mercado com o oferecimento de modelo SaaS, que seria o de menor complexidade de implantação para o cliente. Desse modo podemos definir essa capacidade da seguinte forma:
+
+    \begin{definition}[Capacidade de oferecer suporte à Nuvem]
+        A capacidade de oferecer suporte à criação, implantação e gerenciamento de aplicativos analíticos na nuvem, com base em dados locais, na nuvem e em implantações \emph{multicloud}.
+    \end{definition} 
+
+Para efeitos de uma comparação mais superficial, o quesito \emph{Capacidade de oferecer suporte à Nuvem} pode ser avaliado de forma qualitativa como item de "sim/não". Entretanto, destaca-se que deve-se aprofundar mais sobre a forma como essa capacidade é entregue, e com que flexibilidade, para efeitos de determinação da arquitetura e dos requisitos da contratação da plataforma.
+
+    \subsubsection*{Benefícios esperados}
+
+
+    Cumprido o quesito de capacidade de oferecer suporte à Nuvem, esperam-se os benefícios elencados abaixo: 
+    
+    \begin{itemize}
+        \item \textbf{Flexibilidade de alocação de recursos}: Em sendo a plataforma escolhida compatível com modelo nuvem nas modalidades \hyperref[caas]{CaaS}, \hyperref[paas]{PaaS} ou \hyperref[iaas]{IaaS}, a capacidade de oferecer suporte à Nuvem possibilita flexibilidade para alocar a plataforma dentro do \emph{datacenter} próprio da CLDF (modelo nuvem privada) ou em uma nuvem pública, com flexibilidade de mutação entre as duas instalações, conforme for a estratégia de alocação de infraestrutura da CLDF.
+        
+        \item \textbf{Desacoplamento}: Em sendo a plataforma escolhida compatível com modelo nuvem, com desacoplamento de seus diferentes componentes, fica possibilitada uma alocação em uma infraestrutura não uniforme. Nesse sentido, torna-se possível categorizar componentes da plataforma de BI e a cada um deles dedicar um nível de serviço diferenciado, um grau de priorização de recursos computacionais diferenciado, além de possibilitar o uso de nuvem híbrida, alocando-se parte dos componentes na infraestrutura própria da CLDF e outra parte em uma nuvem pública. Esse benefício pode ser visto como de grande importância em caso o uso de nuvem pública sofra restrições relacionadas a custo ou regulação legal dos dados processados, tendo-se em vista a possibilidade de cindir o sistema, e manter em cada formato as partes mais adequadas a cada um.
+        
+        \item \textbf{Elasticidade sem intervenção humana}: Em muitos casos de sistemas na nuvem, esses são desenvolvidos de modo a serem escaláveis, de modo que os seus componentes que porventura gerem gargalos a aumento de demanda de capacidade computacional possam funcionar de forma paralela com múltiplas instâncias (elasticidade horizontal). Assim, os mecanismos da nuvem, especialmente os do modelo \hyperref[caas]{CaaS} podem ser acionados para mudar a quantidade de instâncias desses componentes disponível conforme sentirem pressão de carga computacional do serviço. Esse aspecto fomenta um uso mais racional da capacidade computacional, seja em nuvem privada ou pública, otimizando a eficiência operacional do serviço. No caso da nuvem pública, permite que seja mitigada a capacidade ociosa paga e não utilizada; à medida em que no caso da nuvem privada, abre espaço para preenchimento de capacidade computacional por outros serviços que possuam momentos de pico não coincidentes com esse.
+    
+        \item \textbf{Diminuição dos recursos humanos para suporte de infraestrutura}: Os ambientes nuvem foram concebidos na cultura de se automatizar todos os procedimentos repetitivos e que exigem pouco ou nenhum grau de análise. Nesse sentido, esses ambientes hoje contam com vasto conjunto de ferramentas para fornecer requisições simples ou tratamento de incidentes de forma automatizada. Nesse sentido, aqueles incidentes que puderem ser tratados com mero reinício de serviço ou com procedimento de baixa complexidade costumam ser resolvidos automaticamente. Ainda, requisições simples de infraestrutura, como alocação de nova instância e mudança de parâmetros de processamento são servidas em portal \emph{self service} à disposição do usuário, conforme parâmetros ajustados pela equipe de infraestrutura. Esses cenários de fato desafogam a equipe de infraestrutura, que podem voltar seu foco à evolução dos serviços prestados.
+        
+        \item \textbf{Integração com outros serviços}: o modelo nuvem preconiza que os serviços possuam um catálogo de acesso e que disponibilizem \emph{endpoints} para acionar os seus serviços de forma padronizada. Esse aspecto facilita a integração entre sistemas, que passam a dialogar entre si de forma direta, sem a necessidade de \emph{brokers} intermediários.
+
+        \item \textbf{Serviços mensuráveis}: Permite o controle e monitoramento automático dos recursos para cada serviço. Dessa forma, pode-se gerir adequadamente o custo de disponibilizar cada serviço. Esse custo pode ser aferido tanto no modelo de nuvem pública, com a própria cobrança e sabendo-se a distribuição das unidades de cobrança pelos serviços, como também no modelo de nuvem privada, em que pode-se contabilizar um custeio dos gastos fixos que seja absorvido por cada serviço, com absorção contábil proporcional ao consumo dos recursos computacionais.
+        
+        \item \textbf{Controle de versões e \emph{futureproofing}}: Especificamente no caso do modelo \hyperref[caas]{CaaS}, os módulos de infraestrutura (\emph{containers}) são formados já com atendimento aos requisitos de compatibilidade daquela versão da aplicação que está sendo utilizada. Dessa maneira, pode-se migrar esses módulos através de infraestruturas diferenciadas e em versões que venham a surgir, sem a preocupação de se manter uma infraestrutura legada para eventualmente guardar compatibilidade com uma plataforma contratada. Cumpre destacar que é um problema considerável na administração de datacenters a eventual existência de \emph{softwares} que demandem a manutenção de um equipamento específico, que deveria já ter sido depreciado em outro cenário, pois gera consumo de espaço físico, eletricidade e de recursos humanos para administrá-lo e mantê-lo em funcionamento.
+    \end{itemize}
+    
+    \index{Self-service}
+    \index{Elasticidade}
+    
+    \subsubsection*{A questão do custo}
+    
+    Deve-se considerar que para se avaliar a questão do custo, é fundamental diferenciar as realidades da nuvem privada e da nuvem pública. Conforme exposto, a capacidade de oferecer serviços em nuvem, se for em modo \hyperref[saas]{SaaS}, tende a só possibilitar a contratação de uma nuvem pública; por outro lado, os outros modelos de provimento de serviços permitem a escolha entre nuvem pública ou privada.
+    
+    No caso da nuvem privada, a possibilidade de utilizar uma arquitetura em nuvem se mostra interessante numa perspectiva de custos. Isso se dá pela economia nos recursos humanos necessários ao suporte de infraestrutura, além de reduzir custos relacionados a capacidade ociosa de infraestrutura, conforme exposto nos benefícios esperados. Assim, vê-se claramente essa possibilidade como um cenário claramente positivo. Ademais, tecnicamente, qualquer plataforma que tenha possibilidade de instalação em uma nuvem privada, também a terá em uma nuvem pública que seja contratada pela Câmara Legislativa, fornecendo um nítido ganho de flexibilidade independente de mudança da solução escolhida.
+    
+    Por outro lado, deve-se ter cuidado com soluções que prendam a contratação ao modelo de nuvem pública. Primeiramente, deve-se saber que o padrão atualmente adotado pela CLDF é que seu armazenamento e processamento ocorram no datacenter próprio. Assim, uma contratação neste momento que fosse para nuvem pública seria contrária a essa padronização, sendo, portanto, não recomendada sem que houvesse estudo específico prévio.
+    
+    Ainda, deve-se considerar que as contratações de computação em nuvem ainda são uma inovação na Administração Pública. Tendo-se em vista que o serviço de BI a ser implantado na CLDF estará no âmbito da fiscalização, que é tarefa nobre da CLDF, e que eventualmente pode lidar com dados sensíveis, então recomenda-se que seja feito um estudo específico sobre a viabilidade técnica e jurídica de se colocar esses serviços na nuvem pública, com pleno cumprimento das normas aplicáveis.
+    
+    A contratação de uma nuvem pública deve ter seu custo devidamente avaliado também. Conforme relata \cite{mattturck:trends}, paradoxalmente, embora o uso de serviços em nuvem tem se intensificado, os executivos passaram a notar um item que costumava ser pequeno e agora cresceu muito rapidamente: sua conta na nuvem. A nuvem oferece agilidade, mas muitas vezes pode ter um preço alto, especialmente se os clientes não conseguirem prever com precisão suas necessidades de computação. Há muitas histórias de clientes da \emph{AWS} que viram sua fatura crescer mais de $60\%$  em apenas um ano entre 2017 e 2018. Entretanto, o uso de nuvem pública traz economias difíceis de se quantificar, tendo-se em vista que se economiza em energia elétrica, licença de softwares, compra e manutenção de equipamentos e demanda de recursos humanos.
+    
+    Nesse sentido, tem-se feito cada vez mais necessária uma avaliação da viabilidade de soluções em nuvem pública, e também sobre a estratégia de implantação levando-se em consideração todos os serviços de infraestrutura da CLDF, e não um serviço isoladamente.
+    
+    \subsubsection*{Aprisionamento Tecnológico (\emph{Lock-in})}
+    
+    \index{Aprisionamento Tecnológico}
+    \index{Lock-in}
+    
+    Outro cuidado que deve ser tomado em relação à adoção de serviços em nuvem é em relação às questões de \emph{lock-in}, ou seja, o aprisionamento tecnológico. \emph{Vendor lock-in}, \emph{proprietary lock-in}, \emph{customer lock-in} ou simplesmente \emph{lock-in} são todos termos usados para identificar particularidades em produtos e serviços que tornam seus usuários dependentes dos fornecedores, impedindo-os de trocar de fornecedor sem custos adicionais substanciais. 
+    
+    A questão de \emph{lock-in} é crítica no universo de \emph{analytics} e \emph{BI} pois muitos fornecedores oferecem apenas soluções proprietárias para fazer o armazenamento dos dados na nuvem ou para a inteligência desenvolvida dentro da ferramenta. Então, o cliente já teve altos custos para acessar os dados, enriquecer, tratar, limpar e ao escolher armazenar estes preciosos ativos de informação em um sistema proprietário, ele pode vir a se tornar refém dos produtos e serviços de um único fornecedor. 
+    
+    Nesse sentido, é fundamental que se faça um desenho de arquitetura que evite ao máximo o \emph{lock-in}. No que tange o modelo nuvem, cumpre saber que o modelo \hyperref[saas]{SaaS} é o que tem a maior tendência de criar \emph{lock-in} de infraestrutura, e os modelos \hyperref[caas]{CaaS} e \hyperref[iaas]{IaaS} tem menor tendência, pois permitem a migração do serviço para ser suportado por diversos provedores de nuvem, inclusive a nuvem privada.
+    
+    Sobre a questão dos dados, para se evitar o \emph{lock-in}, é necessário se estabelecer a camada de persistência analítica separadamente da solução de visualização. Assim, deve-se visualizar os componentes \emph{datawarehouse} e \emph{datalake} como componentes separados dos outros dentro da arquitetura nuvem, e que atuem com modelos de dados não-proprietários, independentemente de usarem plataformas livres ou licenciadas. Ainda, nesse sentido, deve-se evitar que os dados estejam alocados em provedor nuvem do mesmo fornecedor da solução de BI, tendo-se em vista o risco desse possuir plenos poderes sobre os dados e eventualmente a CLDF ter dificuldade de acessá-los em caso de extinção contratual. Assim, mesmo em caso se opte por processamento na própria nuvem do fornecedor, é importante que a camada de persistência fique fora do domínio desse, estando em componentes de infraestrutura geridos pela CLDF.
+    
+    \subsubsection*{Questão de Amadurecimento}
+    
+    Embora a tendência do mercado caminhe em direção à adoção de serviços na nuvem, este estudo verificou que o sucesso
+    da adoção de serviços em nuvem deve-se ao amadurecimento no uso dessa tecnologia de forma que a instituição consiga escolher as melhores opções equilibrar a fim de otimizar o desempenho e a economia.
+    
+    Atualmente, a CLDF possui suas soluções de TI processando e armazenando no próprio \emph{Datacenter}, no formato \emph{on-premises}, isto é, local. Apesar disso, o Governo Federal já tem lançado projetos de contratação de nuvem e tem iniciado uma evangelização desse método. Nesse sentido, é relevante se considerar que, apesar de não ser uma realidade presente, a contratação em nuvem é uma possibilidade concreta para o futuro, a depender do direcionamento estratégico da Seção de Infraestrutura de TI.
+
+    \subsubsection*{O Caminho do Meio}
+
+    Dessa forma, é desejável que a solução escolhida entregue flexibilidade para funcionar no datacenter da CLDF ou em um provedor nuvem pública. Assim sendo, consideramos que o ideal é que a solução seja instalada em arquitetura nuvem privada, com possibilidade de migração futura para nuvem pública ou híbrida.
+    
+    Entretanto, a atual padronização da CLDF, que impõe a existência de um datacenter próprio e instalação \emph{on-premises}, cria o requisito de que a instalação seja feita localmente, até que haja direcionamento contrário devidamente fundamentado.
+
+    Em suma, deve-se ter como requisito da contratação a instalação em ambiente local da CLDF, sendo recomendável que essa seja feita em formato nuvem privada e, se possível, com flexibilidade de migração entre nuvem privada, híbrida e pública.
+    
+    Em função disso, a capacidade de oferecer suporte à nuvem torna-se menos crítica que a capacidade de oferecer um ambiente seguro, por exemplo. Em contrapartida, face às tendências de mercado e face às futuras necessidades de TI da casa, essa capacidade ainda apresenta alto nível de relevância. Portanto, em função dessas considerações, entende-se que a Área de Capacidade de Suporte à Nuvem deve ser avaliada como \SHOULD.

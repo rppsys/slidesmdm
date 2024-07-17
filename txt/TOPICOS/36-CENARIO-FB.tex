@@ -1,0 +1,87 @@
+% Cenário Forrester B
+\newcommand{\cenFB}{Cenário \emph{Forrester} B: Distribuição \emph{MoSCoW} \emph{MUST-Only}} 
+\section{\cenFB}
+\label{sec-cenfb}
+
+    O segundo cenário \emph{Forrester} volta a levar as classes \emph{MoSCoW} em conta.
+    
+\subsection*{Distribuição dos Pesos}    
+
+    Dessa forma, o total de 100\% dos pesos é distribuído entre as áreas de capacidade classificadas como \MUST e as demais áreas recebem peso nulo. Assim, a Área de Capacidade de Segurança foi eleita para receber peso de 34\% e as outras duas receberam 33\% cada. Isso pode ser verificado na tabela \ref{tab:cenFB:pesos}.
+    
+% cenFB - Tabela de Pesos
+\begin{table}[!h]
+    \begin{center}
+    \begin{tabular}{|p{0.4\textwidth}|c|c|}
+        \hline
+            % NOME DA TABELA        
+            \rowcolor{cldfB1} \multicolumn{3}{|c|}{\Large \cenFB} \\  
+            \rowcolor{cldfB1}
+            \multicolumn{3}{|c|}{\large \textbf{Tabela de Pesos}} \\ \hline \hline
+            % CABEÇALHO        
+            \rowcolor{lightgray}\textbf{Áreas de Capacidade} & \textbf{Classe MoSCoW} & \textbf{Pesos} \\ \hline
+            % CONTEÚDO
+            % Código gerado pela tabela do Google SpreadSheets Cenário cenFB
+            \rowcolor{corMUST!80}Segurança & MUST & 34\% \\ \hline
+            \rowcolor{corMUST!80}Big Data & MUST & 33\% \\ \hline
+            \rowcolor{corMUST!80}Preparação de Dados & MUST & 33\% \\ \hline
+            \rowcolor{corSHOULD!80}Arquitetura & SHOULD & 0\% \\ \hline
+            \rowcolor{corSHOULD!80}Interfaces Gráficas & SHOULD & 0\% \\ \hline
+            \rowcolor{corSHOULD!80}Mobile & SHOULD & 0\% \\ \hline
+            \rowcolor{corSHOULD!80}Opções de Implantação & SHOULD & 0\% \\ \hline
+            \rowcolor{corCOULD!50}Criação de Apps Personalizados & COULD & 0\% \\ \hline
+            \rowcolor{corCOULD!50}BI Avançado & COULD & 0\% \\ \hline
+            \rowcolor{corWOULD!50}Sistemas de Insight & WOULD & 0\% \\ \hline
+            % TOTAL
+            \rowcolor{lightgray!30} \multicolumn{2}{|r|}{\large Total: \normalsize} & 100\% \\ \hline 
+    \end{tabular}    
+    \caption{\label{tab:cenFB:pesos} Pesos para \cenFB}
+    \end{center}
+\end{table}
+
+\subsection*{Resultados}  
+
+    De maneira semelhante, ao multiplicar os pesos da tabela \ref{tab:cenFB:pesos} aos \emph{scores} da tabela apresentada no Anexo \ref{anexo-tabelafw} encontramos os resultados exibidos na tabela \ref{tab:cenFB:resultados}.
+
+
+    % cenFB - Tabela de Resultados
+    \begin{table}[!h]
+        \begin{center}
+        \begin{tabular}{|c|cc|}
+            \hline
+                % NOME DA TABELA        
+                \rowcolor{cldfB1} \multicolumn{3}{|c|}{\Large \cenFB} \\  
+                \rowcolor{cldfB1}
+                \multicolumn{3}{|c|}{\large \textbf{Resultados}} \\ \hline \hline
+                % CABEÇALHO        
+                \rowcolor{lightgray}\textbf{Fornecedor} & \multicolumn{2}{c|}{\textbf{\emph{Score} [1-5]}} \\ \hline
+                % CONTEÚDO
+                % Código gerado pela tabela do Google SpreadSheets Cenário GB
+                \rowcolor{corP1!80}Birst & \progressbar{0.86} & 4,3 \\ \hline
+                \rowcolor{corP1!80}Microsoft & \progressbar{0.86} & 4,3 \\ \hline
+                \rowcolor{corP1!80}Tableau Software & \progressbar{0.86} & 4,3 \\ \hline
+                \rowcolor{corP1!80}TIBCO Software & \progressbar{0.86} & 4,3 \\ \hline
+                \rowcolor{corP1!80}Yellowfin & \progressbar{0.86} & 4,3 \\ \hline
+                \rowcolor{corPF!20}Information Builders & \progressbar{0.74} & 3,7 \\ \hline
+                \rowcolor{corPF!20}SAS & \progressbar{0.74} & 3,7 \\ \hline
+                \rowcolor{corPF!20}Sisense & \progressbar{0.74} & 3,7 \\ \hline
+                \rowcolor{corPF!20}MicroStrategy & \progressbar{0.72} & 3,6 \\ \hline
+                \rowcolor{corPF!20}OpenText & \progressbar{0.6} & 3,0 \\ \hline
+                \rowcolor{corPF!20}Qlik & \progressbar{0.6} & 3,0 \\ \hline
+                \rowcolor{corPF!20}IBM & \progressbar{0.48} & 2,4 \\ \hline
+                \rowcolor{corPF!20}ThoughtSpot & \progressbar{0.34} & 1,7 \\ \hline
+        \end{tabular}    
+        \caption{\label{tab:cenFB:resultados} Resultados para \cenFB}
+        \end{center}
+    \end{table}
+
+
+\subsection*{Análise dos Resultados} 
+
+    Outra vez, ao atribuir 100\% do total dos pesos de forma igual entre as áreas de capacidade classificadas como \MUST, o critério de escolha definido na seção \ref{sec-criteriof} exibe os seguintes resultados apresentados na tabela \ref{tab:cenFB:resultados}: 
+    \begin{itemize}
+        \item Em primeiro lugar empatam com $4,4$ pontos os seguintes fornecedores: \emph{BIRST}, \emph{Microsoft}, \emph{Tableau Software}, \emph{TIBCO Software} e \emph{Yellowfin}. 
+        \item Todos os demais fornecedores pontuam abaixo de $4,0$ pontos e são eliminados;
+    \end{itemize}
+    
+    Como ocorreu no \cenGB, o \cenFB \xspace não satisfaz pois é preciso considerar as demais áreas.

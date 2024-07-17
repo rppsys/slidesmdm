@@ -1,0 +1,148 @@
+\chapter{Testes}
+
+\begin{pergunta}{Teste 1}
+	Pergunta 1
+\end{pergunta}
+
+\begin{pergunta}{Teste 2}
+	Pergunta 2
+\end{pergunta}
+
+\begin{pergunta}{Teste 3}
+	Pergunta 3
+\end{pergunta}
+
+\begin{pergunta}{Teste 4}
+	Pergunta 4
+\end{pergunta}
+
+
+\begin{resposta}{Teste 1}
+	Resposta 5
+\end{resposta}
+
+
+\printlista{\perglista}
+
+Separa
+
+\printlista{\resplista}
+
+
+
+
+
+% define few variables that hold some value
+\def\One{this is one}
+\def\Two{this is two}
+\def\Three{this is three}
+
+% add the above commands to a list named `CmdList'
+\listcsgadd{CmdList}{One}
+\listcsgadd{CmdList}{Two}
+\listcsgadd{CmdList}{Three}
+
+% Now loop-over them to print their values
+\begin{description}
+	\renewcommand*{\do}[1]{\item[#1:] \csuse{#1}}
+	\dolistcsloop{CmdList}
+\end{description}    
+
+% creating a table needs little bit more trickery; You cannot insert table entries directly.
+% You first have to accumulate all table data into some temporary variable and then use that.
+\begingroup
+\newcommand\tablecontent{}
+\def\do#1{\appto\tablecontent{\hline \textbf{#1} & \csuse{#1}\\}}%
+\dolistcsloop{CmdList} % collect the data in a table format
+\begin{tabulary}{\textwidth}{|L|L|} % now print the collected data 
+	\tablecontent \hline
+\end{tabulary}              
+\endgroup
+
+\section{Funcionalidades}
+
+
+\setcounter{CounterFuncionalidade}{0}
+\begin{itemize}
+	\renewcommand*{\do}[1]{\item #1}
+	\dolistcsloop{ListaFuncionalidade}
+\end{itemize}   
+
+
+%\hyperlink{TargetFuncionalidade\arabic{CounterFuncionalidade}}{#1}
+
+separa
+
+\setcounter{CounterFuncionalidade}{0}
+\begin{itemize}
+	\forlistloop{\stepcounter{CounterFuncionalidade} \item \hyperlink{TargetFuncionalidade\arabic{CounterFuncionalidade}}}{\ListaFuncionalidade}
+\end{itemize}
+
+%Posso fazer um novo counter aqui e vai funcionar
+
+
+\hypertarget{TA}{Aqui}
+
+\begin{envteste}[1]{Titulo}
+Deu verdade = Foi feito + Nao entra na lista
+\end{envteste}
+ 
+
+
+\begin{envteste}{Titulo}
+Deu falso = Nao foi feito = Entra na lista
+\end{envteste}
+
+
+
+\section{Comando Novo}
+
+\begin{importante}{Importante 1}
+	Teste
+\end{importante}
+
+
+\begin{importante}{Importante 2}
+	Teste
+\end{importante}
+
+
+\begin{importante}{Importante 3}
+	Teste
+\end{importante}
+
+
+\begin{importante}{Importante 4}
+	Teste
+\end{importante}
+
+
+\begin{importante}{Importante 5}
+	Teste
+\end{importante}
+
+
+%\setcounter{CounterImportante}{0}
+%\begin{itemize}
+%	\forlistloop{\stepcounter{CounterImportante} \item %\hyperlink{TargetImportante\arabic{CounterImportante}}}{\ListaImportante}
+%\end{itemize}
+
+
+
+\setcounter{CounterAmbientes}{0}
+\begin{itemize}
+	\forlistloop{\stepcounter{CounterAmbientes} \item \hyperlink{TargetFuncionalidade\arabic{CounterAmbientes}}}{\ListaFuncionalidade}
+\end{itemize}
+
+
+\setcounter{CounterFuncionalidade}{0}
+\begin{itemize}
+	\forlistloop{\stepcounter{CounterFuncionalidade} \item \hyperlink{TargetFuncionalidade\arabic{CounterFuncionalidade}}}{\ListaFuncionalidade}
+\end{itemize}
+
+Separa
+
+%\setcounter{CounterAmbientes}{0}
+%\begin{itemize}
+%	\forlistloop{\stepcounter{CounterAmbientes} \item %\hyperlink{TargetImportante\arabic{CounterAmbientes}}}{\ListaImportante}
+%\end{itemize}

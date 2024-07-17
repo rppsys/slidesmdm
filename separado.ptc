@@ -1,0 +1,132 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {portuguese}{}
+\defcounter {refsection}{0}\relax 
+\hypertarget {TargetTableOfContents}{}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {1}Módulos das Unidades}{5}{chapter.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}Introdução}{5}{section.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.2}Módulos}{6}{section.1.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {2}Gerenciar Solicitações da Unidade}{7}{chapter.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}Introdução}{7}{section.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.2}Conjuntos de componentes}{8}{section.2.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.1}Dropdown}{8}{subsection.2.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.2}Tabela de Solicitações da Unidade}{9}{subsection.2.2.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.3}Botões}{10}{subsection.2.2.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.4}Modais}{10}{subsection.2.2.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Modal de Gerenciamento de Atribuições}{11}{section*.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Modal de Gerenciamento de Inscrições}{12}{section*.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.3}Usuários que poderão acessar o módulo}{12}{section.2.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.4}Fluxo de Estados}{13}{section.2.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.4.1}Estado ``Não Lida''}{13}{subsection.2.4.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Descrição}{13}{section*.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Como entra?}{13}{section*.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Como sai?}{13}{section*.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.4.2}Estado ``Em Análise''}{13}{subsection.2.4.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.4.3}Estado: ``Na Fila''}{14}{subsection.2.4.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.4.4}Estado: ``Em Elaboração''}{14}{subsection.2.4.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.4.5}Estado: ``Conclusão da Solicitação''}{15}{subsection.2.4.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.5}Configurações}{15}{section.2.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.5.1}Permitir inscrição de CLs na qualidade de Elaboradores nas solicitações}{15}{subsection.2.5.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Dispensar consentimento do supervisor quando ocorrer a inscrição na qualidade de elaborador}{16}{section*.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.5.2}Permitir inscrição de CLs na qualidade de Revisores nas solicitações}{16}{subsection.2.5.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Dispensar consentimento do supervisor quando ocorrer a inscrição na qualidade de revisor}{16}{section*.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.5.3}Resumo das variáveis de configuração de uma unidade}{16}{subsection.2.5.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.6}Modalidades de Atribuição}{16}{section.2.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.6.1}Empurrar}{16}{subsection.2.6.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.6.2}Puxar}{16}{subsection.2.6.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {3}Área de Trabalho do CL}{18}{chapter.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.1}Estados da Solicitação}{18}{section.3.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.2}Conjuntos de componentes}{19}{section.3.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2.1}Tabela de Solicitações a cargo do CL}{19}{subsection.3.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2.2}Botões e Modais}{20}{subsection.3.2.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.3}Usuários que poderão acessar o módulo}{20}{section.3.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {4}Sistema de Notificações}{21}{chapter.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}Pool de Notificações}{21}{section.4.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.1}Destinatários de Notificações}{21}{subsection.4.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}Módulo ``Minhas Notificações''}{22}{section.4.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Casos de Uso}{23}{chapter.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.1}Caso 1 - Supervisor da Unidade XYZ atribui os elaboradores e revisores de uma dada solicitação}{28}{section.5.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.2}Caso 2 - CLs se inscrevem para elaborar e revisar a Solicitação da Unidade ABC}{33}{section.5.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.3}Caso 3 - Unidade DEF}{40}{section.5.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.4}Conclusão}{48}{section.5.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{\@mypartnumtocformat {I}{RESUMO}}{49}{part.1}%
+\ttl@starttoc {default@1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {6}Ambientes}{50}{chapter.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.1}Afazeres}{51}{section.6.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.1.1}Gerais}{51}{subsection.6.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.1.2}Para Gilberto}{51}{subsection.6.1.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.1.3}Para Pedro}{51}{subsection.6.1.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.2}Perguntas}{52}{section.6.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.3}Respostas}{52}{section.6.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.4}Importante}{52}{section.6.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.5}Requisitos}{52}{section.6.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.6}Funcionalidades}{52}{section.6.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.7}Exemplos}{52}{section.6.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.8}Nota}{52}{section.6.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.9}Imagine}{53}{section.6.9}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.10}Ajustes}{53}{section.6.10}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.11}Falhas}{53}{section.6.11}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.12}Evolutivos}{53}{section.6.12}%
+\contentsfinish 

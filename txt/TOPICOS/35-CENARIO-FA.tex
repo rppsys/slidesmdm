@@ -1,0 +1,89 @@
+% Cenário Forrester A
+\newcommand{\cenFA}{Cenário \emph{Forrester} A: Distribuição Equivalente} 
+\section{\cenFA}
+\label{sec-cenfa}
+
+    O \cenFA \xspace despreza inicialmente as classes \emph{MoSCoW} e distribui pesos iguais para as 10 áreas avaliadas. A conta é fácil: $\frac{100\%}{15} = 10\%$.
+    
+\subsection*{Distribuição dos Pesos}    
+
+    A tabela \ref{tab:cenFA:pesos} apresenta essa distribuição igual de pesos.
+
+% cenFA - Tabela de Pesos
+\begin{table}[!h]
+    \begin{center}
+    \begin{tabular}{|p{0.4\textwidth}|c|c|}
+        \hline
+            % NOME DA TABELA        
+            \rowcolor{cldfB1} \multicolumn{3}{|c|}{\Large \cenFA} \\  
+            \rowcolor{cldfB1}
+            \multicolumn{3}{|c|}{\large \textbf{Tabela de Pesos}} \\ \hline \hline
+            % CABEÇALHO        
+            \rowcolor{lightgray}\textbf{Áreas de Capacidade} & \textbf{Classe MoSCoW} & \textbf{Pesos} \\ \hline
+            % CONTEÚDO
+            % Código gerado pela tabela do Google SpreadSheets Cenário cenFA
+            \rowcolor{corMUST!80}Segurança & MUST & 10\% \\ \hline
+            \rowcolor{corMUST!80}Big Data & MUST & 10\% \\ \hline
+            \rowcolor{corMUST!80}Preparação de Dados & MUST & 10\% \\ \hline
+            \rowcolor{corSHOULD!80}Arquitetura & SHOULD & 10\% \\ \hline
+            \rowcolor{corSHOULD!80}Interfaces Gráficas & SHOULD & 10\% \\ \hline
+            \rowcolor{corSHOULD!80}Mobile & SHOULD & 10\% \\ \hline
+            \rowcolor{corSHOULD!80}Opções de Implantação & SHOULD & 10\% \\ \hline
+            \rowcolor{corCOULD!50}Criação de Apps Personalizados & COULD & 10\% \\ \hline
+            \rowcolor{corCOULD!50}BI Avançado & COULD & 10\% \\ \hline
+            \rowcolor{corWOULD!50}Sistemas de Insight & WOULD & 10\% \\ \hline
+            % TOTAL
+            \rowcolor{lightgray!30} \multicolumn{2}{|r|}{\large Total: \normalsize} & 100\% \\ \hline 
+    \end{tabular}    
+    \caption{\label{tab:cenFA:pesos} Pesos para \cenFA}
+    \end{center}
+\end{table}
+
+\subsection*{Resultados}  
+
+    Ao multiplicar os pesos da tabela \ref{tab:cenFA:pesos} aos \emph{scores} da tabela apresentada no Anexo \ref{anexo-tabelafw} encontramos os resultados exibidos na tabela \ref{tab:cenFA:resultados}.
+
+    % cenFA - Tabela de Resultados
+    \begin{table}[!h]
+        \begin{center}
+        \begin{tabular}{|c|cc|}
+            \hline
+                % NOME DA TABELA        
+                \rowcolor{cldfB1} \multicolumn{3}{|c|}{\Large \cenFA} \\  
+                \rowcolor{cldfB1}
+                \multicolumn{3}{|c|}{\large \textbf{Resultados}} \\ \hline \hline
+                % CABEÇALHO        
+                \rowcolor{lightgray}\textbf{Fornecedor} & \multicolumn{2}{c|}{\textbf{\emph{Score} [1-5]}} \\ \hline
+                % CONTEÚDO
+                % Código gerado pela tabela do Google SpreadSheets Cenário GB
+                \rowcolor{corP1!80}MicroStrategy & \progressbar{0.88} & 4,4 \\ \hline
+                \rowcolor{corP1!80}TIBCO Software & \progressbar{0.88} & 4,4 \\ \hline
+                \rowcolor{corPF!20}Sisense & \progressbar{0.72} & 3,6 \\ \hline
+                \rowcolor{corPF!20}Tableau Software & \progressbar{0.72} & 3,6 \\ \hline
+                \rowcolor{corPF!20}Yellowfin & \progressbar{0.72} & 3,6 \\ \hline
+                \rowcolor{corPF!20}Qlik & \progressbar{0.68} & 3,4 \\ \hline
+                \rowcolor{corPF!20}SAS & \progressbar{0.68} & 3,4 \\ \hline
+                \rowcolor{corPF!20}Birst & \progressbar{0.64} & 3,2 \\ \hline
+                \rowcolor{corPF!20}Information Builders & \progressbar{0.64} & 3,2 \\ \hline
+                \rowcolor{corPF!20}IBM & \progressbar{0.56} & 2,8 \\ \hline
+                \rowcolor{corPF!20}Microsoft & \progressbar{0.56} & 2,8 \\ \hline
+                \rowcolor{corPF!20}ThoughtSpot & \progressbar{0.56} & 2,8 \\ \hline
+                \rowcolor{corPF!20}OpenText & \progressbar{0.44} & 2,2 \\ \hline
+        \end{tabular}    
+        \caption{\label{tab:cenFA:resultados} Resultados para \cenFA}
+        \end{center}
+    \end{table}
+
+
+\subsection*{Análise dos Resultados} 
+
+    Analisando os resultados obtidos nesta tabela \ref{tab:cenFA:resultados} podemos verificar o seguinte:
+    
+    \begin{itemize}
+        \item A \emph{MicroStrategy} e a \emph{TIBCO Software} empatam em primeiro lugar com $4,4$ pontos;
+        \item Todos os demais fornecedores pontuam abaixo de $4,0$ pontos e, portanto, de acordo com o critério de seleção, são eliminados;
+    \end{itemize}
+    
+    Novamente, o \cenFA \xspace apresenta fornecedores que podem ser considerados em um caso genérico onde todas as áreas apresentam mesma importância. Em seguida, de forma parecida com o que foi realizado no capítulo anterior, vamos continuar as análises criando casos de uso com distribuições de pesos mais específicas para as necessidades avaliadas.
+    
+    

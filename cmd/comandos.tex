@@ -1,0 +1,238 @@
+\newcommand{\toPrev}{}
+\newcommand{\toProx}{}
+
+\newcommand{\red}[1]{\textcolor{red}{\textbf{#1}}}
+
+\newcommand{\DV}[1]{\colorbox{orange}{\textbf{Dúvida}: #1}}
+
+\newcommand{\WR}[1]{
+	\begin{center}
+		\colorbox{red}{#1}
+	\end{center}
+}
+
+\newcommand{\CB}[1]{
+    \begin{center}
+	    \textbf{#1}
+    \end{center}
+}
+
+\newcommand{\RPP}[1]{
+    \begin{center}
+	    \colorbox{green!10}{#1}
+    \end{center}
+}
+
+\newcommand{\sigla}[1]{\textbf{\textsc{#1}}}
+
+
+% ----------------------------------    
+\newcounter{CounterTodo}
+\setcounter{CounterTodo}{0}
+\newcommand{\TODO}[2][0]
+{
+	\ifthenelse{#1 = 0}{\renewcommand{\auxCheck}{\msrln}}{\renewcommand{\auxCheck}{\msrls}}
+	
+	%\renewcommand{\toPrev}{\hyperlink{TargetTodo\arabic{CounterTodo}}{<<}}
+		
+	\stepcounter{CounterTodo}		
+	
+	\renewcommand{\auxTitulo}{\textbf{\auxCheck \xspace TODO \xspace \arabic{CounterTodo}}: \hypertarget{TargetTodo\arabic{CounterTodo}}{\nohyphens{#2}} \toPrev}
+	
+    \begin{center}
+		\colorbox{blue!10}{\auxTitulo}
+		\listcsgadd{ListaTodo}{\ifthenelse{#1 = 0}{\msrln}{\msrls} #2}	
+	\end{center}
+}
+% -----------------------------------------------------------
+\newcounter{CounterTogil}
+\setcounter{CounterTogil}{0}
+\newcommand{\toGil}[2][0]
+{
+	\ifthenelse{#1 = 0}{\renewcommand{\auxCheck}{\msrln}}{\renewcommand{\auxCheck}{\msrls}}
+	
+	%\renewcommand{\toPrev}{\hyperlink{TargetTogil\arabic{CounterTogil}}{<<}}
+	
+	\stepcounter{CounterTogil}		
+	
+	\renewcommand{\auxTitulo}{\textbf{\auxCheck \xspace toGil \xspace \arabic{CounterTogil}}: \hypertarget{TargetTogil\arabic{CounterTogil}}{\nohyphens{#2}} \toPrev}
+	
+	\begin{center}
+		\colorbox{blue!10}{\auxTitulo}
+		\listcsgadd{ListaTogil}{\ifthenelse{#1 = 0}{\msrln}{\msrls} #2}	
+	\end{center}
+}
+% -----------------------------------------------------------
+\newcounter{CounterTopedro}
+\setcounter{CounterTopedro}{0}
+\newcommand{\toPedro}[2][0]
+{
+	\ifthenelse{#1 = 0}{\renewcommand{\auxCheck}{\msrln}}{\renewcommand{\auxCheck}{\msrls}}
+	
+	%\renewcommand{\toPrev}{\hyperlink{TargetTopedro\arabic{CounterTopedro}}{<<}}
+	
+	\stepcounter{CounterTopedro}		
+	
+	\renewcommand{\auxTitulo}{\textbf{\auxCheck \xspace toPedro \xspace \arabic{CounterTopedro}}: \hypertarget{TargetTopedro\arabic{CounterTopedro}}{\nohyphens{#2}} \toPrev}
+	
+	\begin{center}
+		\colorbox{blue!10}{\auxTitulo}
+		\listcsgadd{ListaTopedro}{\ifthenelse{#1 = 0}{\msrln}{\msrls} #2}	
+	\end{center}
+}
+% -----------------------------------------------------------
+
+% ----------------------------------
+% Comando Genérico para Imprimir Listas
+% ----------------------------------
+
+\newcommand{\printlista}[2][\\]{{
+		\def\listsep{\def\listsep{#1}}
+		\renewcommand{\do}[1]{\listsep ##1}
+		\noindent \dolistloop#2		
+}}
+
+
+% -----------------------------------------------
+% Colorir texto com quebra de linhas automáticas
+% ------------------------------------------------
+
+\newcommand{\ctextrgb}[3][RGB]{%
+	\begingroup
+	\definecolor{hlcolor}{#1}{#2}\sethlcolor{hlcolor}%
+	\hl{#3}%
+	\endgroup
+}
+%Uso: \ctextrgb[RGB]{153,221,231}{Colorido}
+
+\newcommand{\ctextcolor}[2]{%
+	\begingroup
+	\colorlet{usercolor}{#1}
+	\sethlcolor{usercolor}\hl{#2}%
+	\endgroup
+}
+%Uso: \ctextcolor{orange}{Colorido}
+
+% ----------------------------------
+%           Ger Sol Unid
+% ----------------------------------        
+
+\newcommand{\GERSOLUNID}[9]{
+	\def\argI{#1} 
+	\def\argII{#2} 
+	\def\argIII{#3} 
+	\def\argIV{#4} 
+	\def\argV{#5} 
+	\def\argVI{#6} 
+	\def\argVII{#7} 
+	\def\argVIII{#8} 
+	\def\argIX{#9} 
+	\GERSOLUNIDCMD
+}
+
+\newcommand{\GERSOLUNIDCMD}[4]{
+	% ArgI: Solicitação
+	% ArgII: Unidade Solicitante
+	% ArgIII: Tipo
+	% ArgIV: Subtipo
+	% ArgV: Prop. Numero
+	% ArgVI: Prop. Ano
+	% ArgVII: Comissão
+	% ArgVIII: Urgente
+	% ArgIX: Andamento	 
+	% Arg 10 - #1: Estado
+	% Arg 11 - #2: Elaborador(es) 
+	% Arg 12 - #3: Revisor(es) 
+	% Arg 13 - #4: Ação
+\begin{center}
+	\scalebox{0.8}{
+	\begin{tabularx}{22cm}{|c|c|X|X|}
+		\hline
+		\rowcolor{yellow!70} \multicolumn{4}{|c|}{ \textbf{Gerenciar Solicitações Unidade}} \\ \hline
+		
+		% CABEÇALHO
+		\rowcolor{yellow!20} \textbf{Solicitação} & \textbf{Estado} & \textbf{Elaborador(es)} & \textbf{Revisor(es)} \\ \hline
+
+		% CONTEUDO
+		\rowcolor{cldfG!10} \mssim \argI & #1 & #2 & #3 \\ \hline
+		% -----			
+	\end{tabularx}   
+	} 
+\end{center}
+}
+
+% ----------------------------------
+%           Área de Trabalho do CL
+% ----------------------------------        
+
+\newcommand{\AREATRABCL}[9]{
+	\def\argI{#1} 
+	\def\argII{#2} 
+	\def\argIII{#3} 
+	\def\argIV{#4} 
+	\def\argV{#5} 
+	\def\argVI{#6} 
+	\def\argVII{#7} 
+	\def\argVIII{#8} 
+	\def\argIX{#9} 
+	\AREATRABCLCMD
+}
+
+\newcommand{\AREATRABCLCMD}[4]{
+	% ArgI: Solicitação
+	% ArgII: Unidade Solicitante
+	% ArgIII: Tipo
+	% ArgIV: Subtipo
+	% ArgV: Prop. Numero
+	% ArgVI: Prop. Ano
+	% ArgVII: Comissão
+	% ArgVIII: Urgente
+	% ArgIX: Andamento	 
+	% Arg 10 - #1: Estado
+	% Arg 11 - #2: Elaborador(es) 
+	% Arg 12 - #3: Revisor(es) 
+	% Arg 13 - #4: CL
+	\begin{center}
+		\scalebox{0.8}{
+		\begin{tabularx}{22cm}{|c|c|X|X|}
+			% -----	
+			\hline
+			\rowcolor{orange!70} \multicolumn{4}{|c|}{\textbf{Área de Trabalho de #4}} \\ \hline
+			
+			% CABEÇALHO
+			\rowcolor{orange!20} \textbf{Solicitação} & \textbf{Estado} & \textbf{Elaborador(es)} & \textbf{Revisor(es)} \\ \hline
+			
+			% CONTEUDO
+			\rowcolor{cldfG!10} \mssim \argI & #1 & #2 & #3 \\ \hline
+			% -----	
+		\end{tabularx}
+		}    
+	\end{center}
+}
+
+% ----------------------------------
+%           Configuração das Unidades
+% ----------------------------------        
+
+\newcommand{\CONFIGURAUNID}[5]{
+	\begin{center}
+	\scalebox{0.8}{
+		\begin{tabularx}{\textwidth}{|c|X|}
+			% -----	
+			\hline
+			\rowcolor{cldfA!70} \multicolumn{2}{|c|}{\textbf{Configurações da Unidade #1}} \\ \hline
+			
+			% CABEÇALHO
+			\rowcolor{cldfA!20} & \textbf{Configuração} \\ \hline
+			
+			% CONTEUDO
+			\rowcolor{cldfD!30} #2 & Permitir auto-atribuição de \textbf{elaboradores} \\ \hline
+			\rowcolor{cldfD!30} #3 & Ao permitir auto-atribuição de \textbf{elaborador(es)}, dispensar consentimento do supervisor \\ \hline
+			\rowcolor{cldfG!30} #4 & Permitir auto-atribuição de \textbf{revisor(es)} \\ \hline
+			\rowcolor{cldfG!30} #5 & Ao permitir auto-atribuição de \textbf{revisor(es)}, dispensar consentimento do supervisor \\ \hline
+			% -----	
+		\end{tabularx}
+	}    
+	\end{center}
+}
+

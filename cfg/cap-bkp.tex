@@ -1,0 +1,47 @@
+% ####
+% CAPA
+% ####
+
+% ----
+% Informações da Capa
+% ----
+\newcommand{\capatitulo}{
+Análise Comparativa de
+
+Plataformas de \emph{Business Intelligence}
+}
+
+\newcommand{\capasubtitulo}{
+Projeto: Estudo Técnico sobre Plataformas de \emph{BI}
+
+\large (Ato do Vice-Presidente nº 56, de 2020)
+}
+
+\newcommand{\capaunidade}{
+\large Coordenadoria de Modernização e Informática (CMI)
+
+\Large Câmara Legislativa do Distrito Federal (CLDF)
+}
+
+% ----
+% Código  
+% ----
+\begingroup
+
+\thispagestyle{empty} % Suppress headers and footers on the title page
+
+\begin{tikzpicture}[remember picture,overlay]
+\node[inner sep=0pt] (background) at (current page.center) 
+{\includegraphics[width=\paperwidth]{capa-cldf-novo.pdf}};
+\draw (current page.center) node [fill=ocre!30!white,fill opacity=0.6,text opacity=1,inner sep=1cm]{\Huge\centering\bfseries\sffamily\parbox[c][][t]
+{\paperwidth}
+{
+\centering \capatitulo\\[15pt] % Book title
+{\Large \capasubtitulo}\\[20pt] % Subtitle
+{\capaunidade} % Author name
+}}; 
+\end{tikzpicture}
+
+\vfill
+
+\endgroup

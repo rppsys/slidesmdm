@@ -1,0 +1,438 @@
+\chapter{Funcionalidades Futuras}
+
+\begin{table}[!h]
+	\begin{center}
+		\begin{tabular}{|p{0.4\textwidth}|c|c|}
+			\hline
+			\rowcolor{corCOULD!50} \multicolumn{3}{|c|}{\Large Legenda \normalsize} \\ \hline \hline
+			% CABEÇALHO        
+			\rowcolor{lightgray}\textbf{Estado} & \textbf{Sigla} & \textbf{Ícone} \\ \hline
+			% CONTEÚDO
+			% Código escrito manualmente
+			\rowcolor{corCOULD!10} Requisitos a Levantar & RLN  & \msrln \\ \hline
+			\rowcolor{corCOULD!20} Requisitos Levantado & RLS & \msrls \\ \hline
+			\rowcolor{corCOULD!10} Requisito Novo a Aprovar & RLV & \msrlv \\ \hline
+			\rowcolor{corCOULD!20} Funcionalidade Construída & FCS & \msfcs \\ \hline
+			\rowcolor{corCOULD!10} Funcionalidade Não Construída & FCN & \msfcn \\ \hline
+		\end{tabular}    
+		\caption{\label{tab:legenda:funcionalidades} Legendas de Funcionalidades.}
+	\end{center}
+\end{table}
+
+% Requisito Levantado Sim / Não / Novo
+% Funcionalidade Construida Sim / Não
+
+
+\section{Login/Logout \msfcn - TODOS}
+
+\section{Gerenciar Usuário \msrls - ADM/APOIO DA ASSEL}
+
+	\subsection{Listar}
+	
+	Sigla
+	
+	Nome Completo
+	
+	Divisão: Interna ou Externa
+	
+	Quantidade de Usuários Participantes
+	
+		
+	\subsection{Incluir}
+	\subsection{Editar}
+	\subsection{Visualizar}
+	\subsection{Excluir}
+	\subsection{Pesquisar}
+	\subsection{Vincular Perfil}
+
+
+\section{Gerenciar Perfil \msrls - ADM DA ASSEL}
+
+
+	\subsection{Listar}
+	\subsection{Incluir}
+	\subsection{Editar}
+	\subsection{Visualizar}
+	\subsection{Excluir}
+	\subsection{Pesquisar}
+
+
+\section{Solicitar Ordem de Serviço \msfcn - SOLICITANTE}
+
+
+
+	\subsection{Listar}
+
+	\subsection{\textcolor{red}{Incluir pelo Solicitante} \msrls}
+	
+	Esse é o original.
+	
+	
+	\begin{evolutivo}[1]{\hypertarget{r160522-1}{Evolução: Campo Deputado e Orgao já vem pré-preenchido}}
+		\begin{itemize}
+			\item Juliana deu essa idéia e vale a pena acatar.
+			\item Isso é uma coisa que deverá ser alterada depois em alguma Sprint no futuro.
+			\item Coloquei isso no \hyperlink{backlog}{backlog}.
+		\end{itemize}
+		\tcblower		
+		\begin{itemize}
+			\item No Solicitar Ordem de Serviço, no formulário de criação de nova OS, existe o Campo ``Deputado/Orgao'' que está livre para o usuário escolher o que quer.
+		
+			\item 	O ideal é que isso não seja possível pois o ``Deputado/Orgao'' é aquele escolhido no ComboBox de Unidades.
+			
+			\item 	Ou seja, isso terá de ser alterado lá para que venha já pré-preenchido sem capacidade de ser Editado.
+			
+			\item Repassei isso para o Robson na reunião de 05 de Setembro 2022.	
+		\end{itemize}
+	\end{evolutivo}
+	
+
+	
+	\subsection{\textcolor{red}{Incluir pelo Apoio} \msrlv}
+	
+	Esse foi pedido pelo Gil, mas ainda não foi feito pela Fábrica.
+	
+	\subsection{Visualizar}
+	\subsection{Cancelar}
+	
+	
+	
+	%\toPedro{Melhorar Solicitar OS - Parte de como funciona no SEI} RESOLVIDO
+	
+	
+	\begin{enumerate}
+		\item Processo é gerado na Unidade do Sei pertencente ao Solicitante.
+	
+		\item 	O Arquivo da OS é gerado junto com os anexos e espera-se que ele seja assinado.
+		
+		\item 	Depois que é assinado, nada mais é feito.
+		
+		\item 	O sistema manda o processo para a ASSEL.
+		
+		\item 	Recebe na ASSEL, coloca um Acompanhamento Especial (ou algo assim) e arquiva (ou nao). Esse comportamento tem que ser conversado com o Gilberto.	
+
+		%\toGil{Qual comportamento deve ocorrer?} RESOLVIDO
+
+	\end{enumerate}
+	
+
+	
+		
+	%\TODO{Vai precisar editar OS para incluir anexos caso ocorra pendencia}.	RESOLVIDO
+	
+	
+	
+\section{\textcolor{red}{Gerenciar Usuários do Solicitante} \msrlv - SOLICITANTE}
+
+\begin{funcionalidade}{Tela Gerenciar Usuários do Solicitante}
+	Vai ter que ter essa tela no futuro.
+\end{funcionalidade}
+
+Essa tela deve estar disponível por cada Solicitante para que eles possam gerenciar seus próprios usuários.
+
+
+
+	
+
+\section{Gerenciar Unidades \msrln - ADM/APOIO ASSEL}
+
+
+	\begin{nota}{Novas Eleições}
+		Futuramente, essa Gerenciar Unidade pode ter de passar por algumas revisões para comportar a característica de coisas que podem ser necessárias quando ocorrem eleições.
+		
+		O vínculo dos Gabinetes é com os Deputados.
+		
+		Talvez seja necessário ATIVAR e DESATIVAR unidades inteiras. Ou seja, um Deputado que saiu terá sua unidade de seu Gabinete desativado e poderá ser reativado depois, caso reeleito no futuro, e assim terá de volta o histórico de Solicitações feitas por ele.
+		
+		Aqui é importante ressaltar que pode-se perder o vínculo com o SEI.
+		
+		O ideal é perguntar para o Jefferson como isso será feito no SEI e talvez espelhar o comportamento para o sistema.				
+	\end{nota}
+		
+		
+	\begin{nota}{Novas Eleições}		
+		Ao conversar com o Gilberto, ele diz que o histórico do solicitante no caso de ser Gabinete é atrelado ao Deputado. 
+		
+		Assim, o Deputado tem uma pasta. 
+		
+		Seria bom ver com o Jefferson mesmo assim como isso se dará no SEI.
+	\end{nota}
+
+	%\TODO{Perguntar isso ao Jefferson}
+	
+	
+	O negócio vai ser vincular os Gabinetes aos Deputados. Fazer uma tabela separada de Deputados e vincular eles 1 a 1. É uma forma.	
+
+
+	\subsection{Listar}
+	
+	SIGLA
+	
+	NOME
+	
+	Divisão
+	
+	Quantidade de Usuários Ativos Vinculados à Unidade
+	
+	
+	\subsection{Incluir}
+	
+	Elas terão que vir do SEI.
+	
+	Inclusão Individual: Lista com campo de pesquisa.
+	
+	Seleciona apenas 1.
+	
+	Combobox \emph{Origem} com 2 Opções: Externo Interno
+	Externo é o Default
+	
+	Salvar	
+	
+	Tem que ter vinculação com a Unidade do SEI.
+	
+	Não pode criar a Unidade Duas Vezes;
+	
+	
+	\subsection{Editar}
+	
+	Permitindo Ações
+	
+	
+	
+	
+	\subsection{Visualizar}
+	
+	Não permitiria Ação
+	
+	
+	Nome
+	
+	Sigla
+	
+	Origem: Interno ou Externo
+	
+	%\TODO[1]{Mudar o nome da divisão}
+	% Eu desisti de mudar esse nome. Vou deixar divisão. Virou origem.	
+		
+	Apresentar a Lista de Usuários Vinculados Áquela Unidade
+	
+	Filtro
+	
+	Ativar / Desativar aqui nessa Visualização
+	
+	Desvincular dessa Unidade () Não
+	
+	Imprimir um PDF  (Usuários Ativos da Unidade)
+	
+	
+	% \TODO{Fazer padrão de como seria o pdf com isso.}	
+	
+	\subsection{Excluir}
+	
+	Não pode excluir se tiverem usuários vinculados à Unidade.
+	
+	Inicialmente tornar impossível excluir as Unidades Internas que já devem vir pré-cadastradas.
+	
+	\subsection{Pesquisar}
+
+	Filtro da Lista
+
+
+
+	% \TODO{Ver questão da eleição - O que acontece com os Gabinetes?} Já tem TODO para isso.
+	
+	%\TODO{Questão de ter usuários sem unidade.} Já está nos ajustes.
+	
+	
+	
+
+\section{Gerenciar Ordens de Serviço da Assel \msrln - ASSEL}
+\label{tela:ger-os-assel}
+
+	Reuniões: \ref{reuniao:r200921}.
+	
+	Ver detalhamento em \ref{detalhes:ger-os-assel}.
+	
+
+	\subsection{Listar}
+		Ver Protótipo que fiz no Google SpreadSheets.
+		
+		Listar vai ter os campos:
+		
+		\begin{env-cor}{Campos Associados à Solicitação}{blue}
+			\begin{itemize}
+				\item Solicitação
+				\item Unidade Solicitante
+				\item Tipo
+				\item Subtipo
+				\item Urgente
+			\end{itemize}
+		\end{env-cor}
+		
+		\begin{env-cor}{Informações Enviadas Pelo Remetente}{cyan}
+			\begin{itemize}
+				\item Remetente
+				\item Assunto	
+			\end{itemize}
+		\end{env-cor}
+				
+		\begin{env-cor}{Somente Aqui na ASSEL}{orange}
+			\begin{itemize}
+				\item Atribuição
+				\item Análise
+				\item Destino
+				\item Ação	
+			\end{itemize}
+		\end{env-cor}
+
+
+		Vou descrever cada coluna:
+
+		\subsubsection{Solicitação} 
+			Contém o código único da Solicitação.
+		\subsubsection{Unidade Solicitante} 
+			Unidade Solicitante
+		\subsubsection{Tipo} 
+			Tipo
+		\subsubsection{Subtipo} 
+			Subtipo
+		\subsubsection{Urgente} 
+			Atributo da Solicitação que ainda não tinha aparecido nas especificações porque somente aqui na ASSEL que ele é definido.
+			
+			Urgente é um atributo booleano (SIM/NÃO). Default é Não.
+			
+			Aqui na ASSEL é que o Apoio vai definir se uma Solicitação é Urgente ou não.			
+		\subsubsection{Remetente} 
+			Última unidade onde tramitou a Solicitação antes de chegar aqui na ASSEL.
+		\subsubsection{Assunto} 
+			Nesse sistema, todo trâmite de solicitações terá associado uma mensagem (digitada pelo usuário) com um assunto. Os assuntos serão definidos pelo sistema.
+			
+		\subsubsection{Atribuição} 			
+		
+			Default: Não Atribuído.
+			
+			Toda vez que uma Solicitação é enviada para a ASSEL, esse campo é mantido.
+			
+
+			
+		\subsubsection{Análise}
+			
+			Default: Não Analisado.			
+			
+			Toda vez que uma Solicitação é enviada para a ASSEL, esse campo é resetado para Não Analisado.
+			
+			As opções para Usuários são: Cancelar, Pendencia, Distribuir. Mas o campo ainda pode receber o valor Não Se Aplica.
+			
+		\subsubsection{Destino}			
+		
+			Default: Não Especificado.
+				
+			Toda vez que uma Solicitação é enviada para a ASSEL, esse campo é resetado para Não Especificado.
+			
+			As opções são: Enviar para UDA, USE...
+			
+			
+		\subsubsection{Ação}			
+		
+			Ação é um resultado de uma regra aplicada sobre os campos Análise e Destino.
+			
+		
+		
+		
+		% \TODO{Falar que tem que ter 2 popups: Ementa ou Especificação do Trabalho e Texto do Remetente} RESOLVIDO
+
+		% \TODO{Falar do Memo Texto da Análise} Está previsto.
+		
+		% \TODO{Especificar as funcionalidades} Está especificado.
+	
+	\subsection{Editar}
+
+	\begin{itemize}
+		\item Atribuir Urgência
+		\item Atribuir Servidor  - Forma de Atribuir a Solicitação a um determinado Usuário da Unidade ASSEL.
+		\item Atribuir Análise
+		\item Atribuir Destino
+		\item Executar Ação
+	\end{itemize}	
+
+
+	%\begin{funcionalidade}[1]{Não esquecer disso - Funcionalidades}
+	
+	% Em algum lugar aqui deve ter que ser possível adicionar novos arquivos na Solicitação.
+		
+	% Deve ser possível também adicionar ``Anotações'' na Solicitação.
+		
+	% Deve ser possível vincular uma Solicitação a Outras.
+	
+	% Talvez o lugar para fazer essas coisas acima seja dentro da tela de Analisar.
+	
+	% Resolvido
+	
+	%\end{funcionalidade}
+
+	
+	
+
+
+
+
+
+	\subsection{Visualizar}
+
+	Vai mostrar todos os detalhes da Solicitação.
+	
+	Aqui deve ser possível inserir novos Anexos (Artefatos) à Solicitação. Artefatos incluídos aqui deverão ser classificado com o tipo ``ASSEL''.
+	 
+
+	\subsection{Pesquisar}
+	\subsection{Filtrar}
+	\subsection{Gerar Relatório}
+
+
+\section{\red{Gerenciar Ordens de Serviço das Unidades} \msrlv - UNIDADES}
+
+\TODO{A gente só vai se preocupar com isso depois de corrigir os defeitos e deixar tudo funcionando.}
+
+
+
+
+
+
+
+
+\section{Gerenciar Pacotes de Artefatos \msrln}
+
+
+	\subsection{Listar}
+	\subsection{Incluir}
+	\subsection{Excluir}
+	\subsection{Pesquisar}
+	
+	Essa funcionalidade é uma das mais importantes pois acho que aqui devemos fazer a pesquisa textual dentro dos artefatos.
+
+
+
+\section{Gerenciar Artefatos \msrln}
+
+
+	\subsection{Listar}
+	\subsection{Incluir}
+	\subsection{Editar}
+	\subsection{Excluir}
+	\subsection{Pesquisar}
+
+
+\section{Log e Auditoria \msrln}
+
+
+	\subsection{Pesquisar}
+
+
+\chapter{Telas Adicionais}
+
+
+\section{Tela de Pesquisa de Artefatos \msrln}
+
+
+
+

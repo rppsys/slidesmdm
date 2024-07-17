@@ -1,0 +1,53 @@
+\section{Necessidades Específicas}
+\label{sec-especificas}
+
+    As 15 áreas de capacidade do \emph{Gartner}
+    analisadas e avaliadas com os classificadores \emph{MoSCoW} já são suficientes para traçar um panorama de necessidades. No entanto, considerando a realidade da CLDF, é importante descrever também alguns outros requisitos que não foram explicitamente definidos no \emph{Gartner}, mas que aparecem no \emph{Forrester} e em outras referências. 
+
+\subsection{Escalabilidade} \label{sec-escalabilidade}
+
+Deve-se ter em mente que a implantação do BI na CLDF seguirá uma demanda crescente de recursos da solução. Inicialmente, o atendimento direciona-se a um projeto piloto com escopo restrito a uma necessidade específica de uma comissão específica, que criará visualizações simples sobre um conjunto simples de dados coletados. Dessa maneira, a demanda inicial é pequena nos quesitos armazenamento de dados, instâncias de SGBD para suportar o \emph{data warehouse}, processamento da camada de negócios da solução analítica, número de usuários da solução e complexidade do processamento analítico. Entretanto, espera-se um crescimento voraz dessas demandas após a implantação bem sucedida das primeiras entregas.
+
+Esse crescimento se dará em razão de alguns aspectos de demanda externa, que impactam na demanda interna da solução, conforme se vê:
+\begin{itemize}
+    \item \textbf{Novas fontes de dados}: a demanda por se integrar a novas fontes de dados, onde os clientes veem que há dados relevantes para se trabalhar em seus projetos, tem a tendência de crescimento conforme sejam feitos novos projetos. Essa demanda acarreta aumento da necessidade de recursos computacionais e de licença na camada das ferramentas de coleta, transformação e integração (ETL), bem como tende a gerar aumento de dados armazenados nas bases analíticas.
+    \item \textbf{Aumento de dados armazenados nas bases analíticas}: o aumento de dados armazenados nas bases analíticas pode dar-se em razão da implantação de novos projetos, bem como ampliação do escopo de projetos já existentes, no sentido de tratar dados mais detalhados ou históricos mais prolongados, além do cruzamento de dados de uma variedade maior de fontes. Esse aumento provoca aumento da demanda de recursos computacionais na camada de persistência, atendida pelas soluções de armazenamento analítico -- \emph{data warehouse} e \emph{datalake}, que passam a necessitar de armazenar mais dados, além de processar mais consultas por intervalo de tempo.
+    \item \textbf{Aumento do processamento das análises}: o aumento do processamento das análises dá-se em duas dimensões: uma horizontal, quando se fala que mais análises são processadas num intervalo de tempo. Isso ocorre em função do aumento da quantidade de clientes atendidos, bem como aumento da quantidade de necessidades atendidas para cada um desses clientes. Nesse sentido, há um aumento da demanda por processamento e tráfego de dados nas redes, que é proporcional à quantidade total de necessidades atendidas. A outra dimensão de relevância é a vertical, quando se fala de aprofundamento das análises que são processadas. Isso se dá pois, à medida em que a organização passa a ter um ambiente de BI mais maduro e clientes conscientes do valor que pode ser extraído do serviço, esses passam a realizar análises mais aprofundadas, além de cruzar quantidades maiores de dados. Essas análises passam a ter demanda unitária de processamento e memória crescente nesse sentido, devendo esse crescimento ser visto como natural e considerado no dimensionamento do projeto.
+\end{itemize}
+
+Nesse sentido, a solução adotada deve contar com capacidade de escalar conforme necessário. Essa escala deve ser vista sob duas perspectivas, que são a contratual e a técnica.
+
+Sob a perspectiva contratual, o contrato deve suportar a quantidade de demanda crescente, seja por previsão inicial ou por acréscimos de licença que sejam possíveis de realização. Nesse sentido, vale ressaltar que muitas ferramentas possuem licenciamento que pode ser aferido por usuário ou por núcleo de CPU. O licenciamento por usuário aparenta ser o mais adequado para a CLDF, tendo-se em vista a maior previsibilidade da quantidade de usuários da solução dentro do período temporal estipulado, que deve ter crescimento linear, limitado à quantidade de usuários vinculados à atividade de fiscalização (pessoal de comissões e gabinetes, além do pessoal técnico da CMI). Por outro lado, a quantidade de núcleos de CPU alocados para o sistema depende da quantidade de análises e da complexidade delas, sendo uma métrica de mensuração muito mais complexa e imprecisa, aumentando os riscos de um licenciamento sem dimensionamento adequado.
+
+Por outro lado, sob a perspectiva técnica, a escalabilidade é dividida em duas vertentes:
+\begin{itemize}
+    \item \textbf{Horizontal}: a escalabilidade horizontal consiste em se acrescentar instâncias de elemento computacional à topologia utilizada. Essas instâncias podem aumentar o poder de processamento, o poder de armazenamento ou o poder de conectividade. Essa escala pode ser realizada acrescentando-se instâncias da aplicação, de um servidor de aplicação, de um container ou de uma máquina virtual, a depender da forma de organização da solução. As arquiteturas modernas de nuvem, em especial as no modelo \hyperref[caas]{CaaS} contam com a possibilidade dessa escala ocorrer de forma automatizada, o que se chama de elasticidade. Essa modalidade de escalabilidade vai de encontro às melhores práticas modernas do modelo de microserviços.
+    \item \textbf{Vertical}: a escalabilidade vertical consiste em se aumentar os recursos computacionais alocados para um determinado elemento da infraestrutura. Exemplo disso se dá quando se aloca mais memória para uma máquina virtual. Essa modalidade é menos comum do que a horizontal, tendo-se em vista a limitação trazida pelos equipamentos físicos, bem como a menor flexibilidade de migração de infraestrutura virtual, tendo-se em vista que um componente maior tem maior dificuldade de encaixar-se em um certo equipamento físico. Essa prática tem tornado-se cada vez menos comum, tendo-se em vista as melhores práticas do modelo de microserviços.
+\end{itemize}
+
+Apesar de que ambas as vertentes de escalabilidade são capazes de fazer-se cumprir o requisito, deve-se preferir a horizontal, tendo-se em vista que pode ser feita de forma automatizada, diminuindo a capacidade ociosa do \emph{datacenter}. Como corolário, torna-se uma forma de menor custo de recursos computacionais. Ademais, a escalabilidade horizontal oferece maior flexibilidade para gestão do ambiente e maior balanceamento entre os equipamentos, mitigando riscos de indisponibilidade e localizando os impactos de eventual perda de performance por problema de um equipamento físico.
+
+Entende-se, portanto, que a escalabilidade tem uma importância embasada nessa contratação, que deve dar-se preferencialmente na forma horizontal. Dessa forma, essa elenca-se como requisito \SHOULD.
+
+% Escalabilidade é 2 - SHOULD
+
+\subsection{Mobile}
+
+A funcionalidade \emph{mobile} diz respeito ao uso da solução com dispositivos móveis. Essa funcionalidade é especialmente útil para a consulta de painéis por usuários que precisem dos dados à mão, tais como os deputados, que raramente se encontram de frente ao seu computador, tendo em vista a natureza móvel da sua atuação. Ainda, percebe-se grande valor agregado para consultas rápidas durante reuniões e discussões que ocorram e que um ou mais dos membros não esteja em sua estação de trabalho.
+
+Ocorre que a funcionalidade \emph{mobile} não é vista como essencial para o sucesso do projeto, apesar de ser desejável por ter valor perceptível, motivo que a coloca como \SHOULD.
+
+% Mobile é 2 - SHOULD
+
+\subsection{Containers - \hyperref[caas]{CaaS}}
+
+O modelo nuvem \hyperref[caas]{CaaS} merece especial atenção aqui. Conforme visto na seção \ref{sub-cloud}, trata-se de um modelo extremamente flexível, que permite a adoção de nuvem no formato público, privado ou híbrido.
+
+No caso do modelo de nuvem privada, é implementado pelo uso de uma solução aderente ao padrão \emph{Kubernetes}, que implementa clusters computacionais onde \emph{containers} são executados. Assim, são alocados pequenos blocos para cada componente da solução, podendo esses serem criados de modo a serem elásticos, quando a sua escalabilidade é feita de forma horizontal e automática conforme a demanda. Os nós da solução \emph{Kubernetes} podem ser criados em máquinas virtuais ou em máquinas físicas (arquitetura \emph{Bare Metal}). Vale ressaltar que a CLDF já conta com ambiente \emph{Kubernetes}, que é utilizado para outras soluções computacionais. Assim, os custos fixos de se manter, operar e sustentar o ambiente já se encontram realizados, em razão das demais demandas. Nesse sentido, uma solução aderente a esse modelo pode fazer reuso de uma arquitetura já existente e ter sua operação simplificada e otimizada.
+
+Ademais, o modelo \hyperref[caas]{CaaS} permite a migração simplificada de componentes da nuvem privada para um provedor de nuvem pública, sem aprisionamento tecnológico. Dessa forma, a adoção desse modelo permite flexibilidade para que os componentes da solução de BI possam estar sendo processados e armazenados no datacenter próprio ou em um provedor contratado, havendo liberdade de mudança dessa alocação de forma pouco custosa. Essa migração consiste somente em transpor os dados e containers para a outra infraestrutura e inicializar automaticamente os componentes. Ainda, pode-se dividir partes da solução para processarem localmente e outras não, conforme o juízo de conveniência e oportunidade.
+
+Considerando todo o exposto, a implantação da solução de BI em arquitetura \hyperref[caas]{CaaS} não é obrigatória para o sucesso da solução, porém é altamente recomendada. Entretanto, observa-se que a maioria das soluções do mercado ainda não possuem essa compatibilidade, que não pode ser motivo para se restringir competitividade do certame de forma aguda. E assim, a compatibilidade da solução com essa arquitetura deve ser vista como \COULD.
+
+
+% Kubernetes é 3 - COULD

@@ -1,0 +1,89 @@
+\documentclass[12pt,fleqn,openany]{book} 
+
+\input{cfg/pkg.tex} % Pacotes
+\input{cfg/str.tex} % Estrutura
+\input{cmd/cmd.tex} % Comandos
+
+
+\hypersetup{pdftitle={Notas Tecnicas Sistema ASSEL},pdfauthor={Ronie Porfirio}} 
+
+%----
+\begin{document}
+
+\renewcommand{\contentsname}{Sumário}
+\renewcommand\indexname{Índice}
+
+% Elementos Pré-Textuais
+
+% Descomentar as 2 proximas linhas:
+\input{cfg/cap.tex} % Capa
+%\includepdf[pages=-]{cfg/creditos.pdf}
+
+% Esses debaixo nao vai ter mesmo
+% nao descomentar
+%\input{cfg/cop.tex} % Copyright
+%\input{cfg/apr.tex} % Apresentação
+
+%----
+%	SUMÁRIO
+%----
+
+\usechapterimagefalse % If you don't want to include a chapter image, use this to toggle images off - it can be enabled later with \usechapterimagetrue
+
+
+\addtocontents{toc}{\protect\hypertarget{TargetTableOfContents}{}}
+\chapterimage{capitulos.pdf}
+\pagestyle{empty}
+\tableofcontents
+\cleardoublepage
+\pagestyle{fancy}
+
+%----
+%	DESENVOLVIMENTO
+%----
+
+%\input{txt/dev.tex}
+
+\input{txt/todos.tex}
+
+%\input{old/dev-old.tex}
+
+%\input{old/exemplos.tex}
+
+% ----
+%	BIBLIOGRAPHY
+% ----
+
+\chapterimage{Biblio.pdf}
+%\chapter*{Bibliografia}
+\printbibliography
+
+%As ilustrações utilizadas no decorrer deste documento são creditadas ao \emph{freepik.com};
+
+% ----
+%	INDEX
+% ----
+\part{Índice}
+\label{parte-indice}
+\chapterimage{capitulos.pdf}
+%\cleardoublepage % Make sure the index starts on an odd (right side) page
+\phantomsection
+\setlength{\columnsep}{0.75cm} % Space between the 2 columns of the index
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{Índice}} % Add an Index heading to the table of contents
+\printindex % Output the index
+
+% ----
+%	ANEXOS
+% ----
+
+% ----------------------------------
+        % Anexos
+% ----------------------------------
+%\clearpage
+%\newpage
+%\appendix
+%\input{txt/ANEXOS/70-ANEXOS.tex}
+
+% ----
+
+\end{document}

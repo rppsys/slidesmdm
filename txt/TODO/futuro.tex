@@ -1,0 +1,165 @@
+\chapter{Planejamento Futuro}
+
+\section{Tela de Gerenciamento de Configurações}
+
+Configurações Identificadas:
+
+\begin{itemize}
+	\item url do sei;
+
+	\item numero do processo;
+
+	\item numero do documeto de solicitao;
+
+	\item numero do documento de anexo;
+\end{itemize}
+
+os numeros atuais estao na pasta de figuras.
+
+
+
+\section{Plano}
+
+Esses 4 ficaram na 1 Sprint:
+
+Login/Logout
+Gerenciar Usuário
+Gerenciar Perfil
+Solicitar Ordem de Serviço
+
+Gerenciar Unidades tem que estar na Próxima
+
+
+Importante:
+Gerenciar Ordens de Serviço
+
+
+Fazer juntos:
+Gerenciar Pacotes de Artefatos
+Gerenciar Artefatos
+
+
+Log e Auditoria por último
+
+
+
+\section{Telas que serão necessárias}
+
+Ver modelagem-telas que estou criando. 
+
+\begin{itemize}
+	\item Duas telas para a ASSEL
+
+	\begin{itemize}
+		\item Tela para Analisar (e aprovar) OSs;
+		\item Tela para Aprovar OSs Analisadas;
+	\end{itemize}
+		
+	Temos aqui dois Papéis: O Apoio e o Chefe.	
+
+	\begin{itemize}
+		\item Chefe = Perfil de Supervisor
+		\item Apoio = Perfil de Apoio
+	\end{itemize}
+
+	
+	
+	
+	
+	
+	
+
+
+\end{itemize}
+
+
+
+
+\section{Tela Principal da ASSEL}
+
+Penso numa tela onde haverá um tabela contendo as OSs que \emph{estão} na ASSEL aguardando providências.
+
+Então temos um ``Estado Interno'' da ASSEL ou ``Classes'' da OS que podem ser:
+
+
+Classes das OSs dentro da ASSEL:
+\begin{itemize}
+	\item \textbf{Recebida} ou \textbf{Para Analisar} - OSs recebidas na ASSEL e que aguardam uma providência.
+	
+	Dentro dessa Classe temos as Subclasses baseadas em \emph{De onde a OS veio?} e para isso, as Subclasses fariam com que as Linhas da Tabela tivessem cores.
+	
+	\begin{itemize}
+		\item Vermelho - OS chegou na ASSEL originando-se de um Solicitante;
+		\item Amarelo - OS chegou na ASSEL pela via do ``Retorno'' de uma das Unidades Internas (UDA, Etc...);
+		\item Verde - OS chegou na ASSEL pela via da ``Conclusão'' de uma das Unidades Internas (UDA, Etc...);
+	\end{itemize} 
+	
+	
+	\item \textbf{Para Cancelar} - Trata de OS já analisada e assumiu o estado ``Para Cancelar''. A linha da tabela ainda tem a cor da subclasse original, contudo, a fonte torna-se negrito. Essa OS precisa receber o consentimento do ``Perfil de Chefe'' da ASSEL para que, de fato, a OS seja cancelada e siga para frente.
+	
+	\item \textbf{Para Pendência} - Trata de OS já analisada e assumiu o estado ``Para Pendencia''. A linha da tabela ainda tem a cor da subclasse original, contudo, a fonte torna-se negrito. Essa OS precisa receber o consentimento do ``Perfil de Chefe'' da ASSEL para que, de fato, a OS siga seu caminho.
+	
+	\item \textbf{Para Distribuir} - Idem.
+	
+	\item \textbf{Para Entregar} - Idem.	
+	
+	
+\end{itemize}
+
+
+Outra forma de classificar as OSs dentro da ASSEL e, portanto separá-las, são em OSs não analisadas, e OSs analisadas e esperando aprovação do ``Perfil de Chefe''.
+
+Podemos criar duas Telas separadas. 
+
+Na primeira estarão as OSs não analisadas. Na outra, as OSs analisadas e aguardando aprovação para seguir seu caminho.
+
+Na primeira, cujo acesso será do Apoio, contem as OSs não analisadas. De forma que o apoio possa analisar e dar um destino a elas até que a tabela fique sem nada. O trabalho do Apoio é justamente analisar OSs dessa tabela.
+
+Na outra, acessa somente quem tem o ``Perfil de Chefe'' e o objetivo é verificar a análise que foi feita aprovando ou não a análise feita e dando seguimento às OSs.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Backlog Futuro}
+
+\hypertarget{backlog}{Backlog}
+
+Aqui vou adicionando funcionalidades pedidas pelos usuários que deverão se tornar funcionalidades para o futuro.
+
+\begin{itemize}
+	\item \mschecknao \xspace \hyperlink{r1308-1}{Capacidade do Apoio fazer OS em nome de outro Solicitante}
+	
+	\item \mschecknao \xspace \hyperlink{r160522-1}{Evolução: Campo Deputado e Orgao do SOS já vem pré-preenchido}
+	
+	
+	
+	
+	
+	
+	
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,21 @@
+% -----------------------------------------------------------
+% Comandos
+% -----------------------------------------------------------
+\newsavebox{\selvestebox}
+\newenvironment{colbox}[1]
+  {\newcommand\colboxcolor{#1}%
+   \begin{lrbox}{\selvestebox}%
+   \begin{minipage}{\dimexpr\columnwidth-2\fboxsep\relax}}
+  {\end{minipage}\end{lrbox}%
+   \begin{center}
+   \colorbox[HTML]{\colboxcolor}{\usebox{\selvestebox}}
+   \end{center}}
+
+% Atentar para a ordem pois alguns comandos devem preceder outros
+\input{cmd/cores.tex}
+\input{cmd/comandos.tex}
+%\input{cmd/maisniveis.tex} %Tem que arrumar a posição
+\input{cmd/ambientes.tex}
+\input{cmd/atalhos.tex}
+
+

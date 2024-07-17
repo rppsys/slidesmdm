@@ -1,0 +1,67 @@
+\section{Dúvidas Respondidas}
+
+\subsection{Respostas para Wagner - Modelagem}
+
+\begin{enumerate}
+	
+	\item A seta entre Avaliar OS e Histórico parece estar no sentido contrário. É feito um registro a cada avaliação ou é consultado o histórico para verificar se o trabalho já foi demandado?
+	
+	Sim, é consultado o histórico para verificar se o trabalho já foi demandado. Troquei o sentido da seta.
+	
+	
+	\item O que acontece se o chefe da unidade não aprovar os artefatos?
+	
+	Se o chefe da unidade não aprovar os artefatos, ele devolve o artefato para o consultor legislativo corrigir.
+	
+	\item O demandante tem a opção de rejeitar a entrega?
+	
+	Não sei. Ver com eles.
+	
+	%\TODO[1]{Ver isso}	
+	
+	\item Acho que não precisa da seta entre Entregar Artefatos ao Solicitante e Solicitante já que o próximo passo é o envio do e-mail que é, para mim, o registro formal da entrega.
+	
+	Concordo.	
+	
+	\item Faltou o evento de início (círculo verde) e um evento de fim (círculo vermelho).
+	
+	O evento de início é o evento de início especial de recebimento de mensagem.
+	
+	O evento de final é o evento de final especial de envio de mensagem.	
+	
+	
+	\item Pegar opinião entre modelo com retornos ou sem. 
+	
+	Vai ser com retornos.
+\end{enumerate}
+
+\subsection{Controle de Perfis e Papéis}
+
+
+\begin{pergunta}[1]{Pergunta}
+	Dúvida sobre algo que devo precisar no Sistema da ASSEL: 
+	
+	- Que informações sobre determinado usuário consigo pegar pelo Active Directory?
+	
+	- Tem como, pelo login, saber se o usuário é Consultor Legislativo ou Consultor Técnico Legislativo?
+\end{pergunta}	
+
+\begin{resposta}[1]{Resposta}
+	não use o AD pra regra de negocio de sistema, pelo amor de deus!
+\end{resposta}	
+
+\begin{resposta}[1]{Resposta}
+	Usar o AD então só para autenticação e depois fazer um controle de papéis interno dentro do sistema. Provavelmente vou precisar de ajuda de vcs quando eu chegar nessa etapa.
+	
+	Lá na ASSEL, dependendo do Cargo da Pessoa, unidade, lotação, etc, cada um só terá acesso a uma determinada "tela" .
+\end{resposta}	
+
+\begin{resposta}[1]{Resposta}
+	Acho arriscado amarrar as atribuições em função do cargo. Com as mudanças nas chefias e no quadro de servidores, podem mudar do dia para a noite. No PLe, as funcionalidades são utilizadas para configurar os perfis de acesso e alterações podem ser feitas a qualquer tempo por um administrador do sistema.
+\end{resposta}	
+
+\begin{resposta}[1]{Resposta}
+	a falar isso: esquece a ideia de "cargo", pensa em "perfil". é atribuição do usuario gestor determinar qual pessoa tem qual perfil em qual unidade. Se ela qusier colcoar um faxineiro com perfil de CL, é problema dele, nao nosso.
+	
+	e uma mesma pessoa pode ter varios papeis. um chefe pode ser tambem um CL. E tambem assessor de um deputado.
+\end{resposta}	

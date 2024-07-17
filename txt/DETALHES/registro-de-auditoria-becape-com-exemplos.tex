@@ -1,0 +1,424 @@
+% \newcommand{\sepCapaProjeto}{Projeto Sistema ASSEL}
+% \newcommand{\sepCapaTipo}{\textsc{Funcionalidades e Requisitos}}
+% \newcommand{\sepCapaTitulo}{Registro de Auditoria}
+% \newcommand{\sepCapaData}{22 de Setembro de 2022}
+% \newcommand{\sepCapaVersao}{V1}
+% \newcommand{\sepCapaFile}{sep-capa-vinho.pdf}
+% \newcommand{\sepCapaCor}{blue}
+
+\chapter*{Alterações}
+
+\section*{29/11/2022}
+
+Melhor detalhamento de como o registro do evento deve ser escrito na seção ``\ref{sec-evento} \nameref{sec-evento}''.
+
+
+\chapter{Registro de Auditoria}
+\label{detalhes:log-auditoria}
+
+Esse documento sugere os requisitos da funcionalidade de registro de auditoria. 
+
+É importante ressaltar que abandonamos o termo ``log de auditoria'' de forma a não criar confusão com outros tipos de log do sistema. 
+
+Assim, preferimos o nome ``registro de auditoria'' para estabelecer uma funcionalidade que será usada pelos administradores do sistema para rastrear as ações dos usuários de forma a facilitar a solução de problemas futuros.
+
+\section{Modelagem do Registro de Auditoria}
+
+De forma que a modelagem da tabela de registro de auditoria no banco de dados seja simples, o registro de auditoria deve estar em uma tabela única sem relacionamentos com nenhuma outra tabela do sistema.
+
+Portanto, o registro de auditoria terá os seguintes atributos elencados nas próximas seções.
+
+\subsection{timestamp}
+
+Data e Hora completa no formato ISO8601.
+
+\subsection{tipo}
+
+Será um caracter que representa o tipo desse evento.
+
+\textbf{Tipo}: 
+\begin{itemize}
+	\item \textbf{U}: Evento cuja origem é uma ação do usuário;
+	\item \textbf{S}: Evento sem relação com usuários (gerado pelo sistema);
+\end{itemize}
+
+\subsection{ator}
+
+Identifica o ator do evento.
+
+\subsubsection{Tipo U}
+
+Se o ``tipo'' for \textbf{U} então o campo ator deverá conter o nome de rede do usuário logado no sistema.
+
+Exemplos.: ``\textbf{ronie.porfirio}'',`` \textbf{gilberto.sousa}'', ``\textbf{robson.alencar}'';
+
+\subsubsection{Tipo S}
+
+Se o ``tipo'' for \textbf{S} então o campo ator deverá conter o nome do módulo do sistema que gerou o evento e poderá ser:
+
+\begin{itemize}
+	\item ``\textbf{sistema.web}'': Evento tem origem no Sistema ASSEL; 
+	\item ``\textbf{sistema.sei}'': Evento tem origem no módulo de integração com o SEI; 
+\end{itemize}
+
+
+\subsection{host}
+
+Nome do Host ou endereço IP da máquina que o ator estava usando para acessar o sistema ou vazio caso não se aplique.
+
+\subsection{classe}
+
+Classe ou categoria de classificação;
+
+É um carácter, ou seja, uma letra maiúscula, que representa a classe ou categoria desse registro e podem ser:
+
+\textbf{Classes}:
+\begin{itemize}
+	\item \textbf{A - ACESSO}: Usuário obteve \sigla{a}cesso a uma tela/módulo/aba/formulário modal do sistema sem necessariamente realizar qualquer tipo de ação;
+	\item \textbf{D - DADO}: Eventos no qual há alteração no banco de \textbf{d}ados;
+	\item \textbf{N - NOTIFICAÇÕES}: \textbf{N}otificações emitidos pelos sistema para o usuário, que não são considerados erros;
+	\item \textbf{I - INFORMAÇÃO}: Eventos \textbf{I}nformativos que não são considerados erros;
+	\item \textbf{W - WARNING}: Eventos de Aviso (\textbf{w}arning) que potencialmente podem se transformar em erros;
+	\item \textbf{E - ERRO}: \textbf{E}rro;
+	\item \textbf{F - FATAL}: Erro \textbf{f}atal que faz o sistema parar de funcionar. Exemplo: Não conseguir acessar o SEI;
+\end{itemize}
+
+\subsection{tela}
+
+Sigla da tela ou da funcionalidade aonde o evento ocorreu.
+
+Serão 4 caracteres que representa a funcionalidade/tela/aba/modal/mensagem onde ocorreu o evento. 
+
+\begin{itemize}
+	\item Primeira Letra: Indica o ator que normalmente utilizaria aquela tela do sistema;
+	\begin{itemize}
+		\item Genérico ou \textbf{I}nício: I
+		\item \textbf{S}olicitante: S
+		\item \textbf{A}dministrador: A		
+		\item A unidade ASS\textbf{E}L: E
+		\item \textbf{U}nidades Temáticas da ASSEL: U
+		\item Consul\textbf{t}ores Legislativos: T
+	\end{itemize}
+	\item Segunda Letra: Funcionalidade
+	\item Terceira Letra: Tela
+	\item Quarta Letra: Aba / Modal / Mensagem
+\end{itemize}
+
+
+%As tabelas \ref{tab:auditoria:telas0}, \ref{tab:auditoria:telas1}, \ref{tab:auditoria:telas2} e \ref{tab:auditoria:telas3} apresentam as siglas possíveis (até o momento).
+
+
+%\begin{table}[!h]
+	\begin{center}
+		\begin{tabular}{|p{4cm}|p{1.3cm}|p{5cm}|p{0.8cm}|}
+			\hline
+			\rowcolor{corCOULD!40} \multicolumn{4}{|c|}{\Large Siglas de Telas \textbf{I}niciais do Sistema \normalsize} \\ \hline
+			
+			% CABEÇALHO
+			\rowcolor{lightgray} Funcionalidade & Tela & Aba / Modal / Mensagem & \textbf{Sigla} \\ \hline
+			% CONTEUDO
+			% -----			
+			\rowcolor{corSIM!30} \textbf{S}istema ASSEL & \sigla{P}rincipal & \sigla{L}ogin & \sigla{ISPL}  \\ \hline
+			\rowcolor{corSIM!30} \textbf{S}istema ASSEL & \sigla{P}rincipal & \sigla{P}rincipal & \sigla{ISPP}  \\ \hline
+			\rowcolor{corSIM!30} \textbf{S}istema ASSEL & Integração com o \sigla{S}EI & \sigla{P}rincipal & \sigla{ISSP}  \\ \hline
+		\end{tabular}    
+%		\caption{\label{tab:auditoria:telas0} Siglas de Telas Gerais do Sistema}
+	\end{center}
+%\end{table}
+
+
+%\begin{table}[!h]
+	\begin{center}
+		\begin{tabular}{|p{4cm}|p{1.3cm}|p{5cm}|p{0.8cm}|}
+			\hline
+			\rowcolor{corCOULD!40} \multicolumn{4}{|c|}{\Large Siglas das Telas \textbf{Administrativas} do Sistema \normalsize} \\ \hline
+			
+			% CABEÇALHO
+			\rowcolor{lightgray} Funcionalidade & Tela & Aba / Modal / Mensagem & Sigla \\ \hline
+			% CONTEUDO
+			% -----			
+			% Administrar Perfis
+			\rowcolor{cldfB!30} \textbf{A}dministrar \sigla{P}erfis & \sigla{P}rincipal & \sigla{P}rincipal & \sigla{APPP}  \\ \hline
+			\rowcolor{cldfB!30} \textbf{A}dministrar \sigla{P}erfis & \sigla{P}rincipal & Modal \sigla{N}ovo Perfil & \sigla{APPN}  \\ \hline
+			\rowcolor{cldfB!30} \textbf{A}dministrar \sigla{P}erfis & \sigla{P}rincipal & Modal \sigla{V}izualizar Perfil & \sigla{APPV}  \\ \hline
+			\rowcolor{cldfB!30} \textbf{A}dministrar \sigla{P}erfis & \sigla{P}rincipal & Modal Edi\sigla{t}ar Perfil & \sigla{APPT}  \\ \hline
+			\rowcolor{cldfB!30} \textbf{A}dministrar \sigla{P}erfis & \sigla{P}rincipal & Mensagem Tornar Padrão \sigla{I}nterno & \sigla{APPI}  \\ \hline
+			\rowcolor{cldfB!30} \textbf{A}dministrar \sigla{P}erfis & \sigla{P}rincipal & Mensagem Tornar Padrão \sigla{E}xterno & \sigla{APPE}  \\ \hline
+			\rowcolor{cldfB!30} \textbf{A}dministrar \sigla{P}erfis & \sigla{P}rincipal & Mensagem E\sigla{x}cluir & \sigla{APPX}  \\ \hline
+
+
+			% Administrar Usuários
+			\rowcolor{cldfA!30} \textbf{A}dministrar \sigla{U}suários & \sigla{P}rincipal & \sigla{P}rincipal & \sigla{AUPP}  \\ \hline
+			\rowcolor{cldfA!30} \textbf{A}dministrar \sigla{U}suários & \sigla{P}rincipal & Modal \sigla{N}ovo Usuário & \sigla{AUPN}  \\ \hline
+			\rowcolor{cldfA!30} \textbf{A}dministrar \sigla{U}suários & \sigla{P}rincipal & Modal \sigla{V}isualizar Usuário & \sigla{AUPV}  \\ \hline
+			\rowcolor{cldfA!30} \textbf{A}dministrar \sigla{U}suários & \sigla{P}rincipal & Modal Edi\sigla{t}ar Usuário & \sigla{AUPT}  \\ \hline
+			\rowcolor{cldfA!30} \textbf{A}dministrar \sigla{U}suários & \sigla{P}rincipal & Modal Vincular Per\sigla{f}il de Usuário & \sigla{AUPF}  \\ \hline
+			\rowcolor{cldfA!30} \textbf{A}dministrar \sigla{U}suários & \sigla{P}rincipal & Mensagem \sigla{A}tivar Usuário & \sigla{AUPA}  \\ \hline
+			\rowcolor{cldfA!30} \textbf{A}dministrar \sigla{U}suários & \sigla{P}rincipal & Mensagem \sigla{I}nativar Usuário & \sigla{AUPI}  \\ \hline
+			\rowcolor{cldfA!30} \textbf{A}dministrar \sigla{U}suários & \sigla{P}rincipal & Mensagem E\sigla{x}cluir Usuário & \sigla{AUPX}  \\ \hline
+
+			% Administrar Unidades
+			\rowcolor{cldfC!30} \textbf{A}dministrar U\sigla{n}idades & \sigla{P}rincipal & \sigla{P}rincipal & \sigla{ANPP}  \\ \hline
+			\rowcolor{cldfC!30} \textbf{A}dministrar U\sigla{n}idades & \sigla{P}rincipal & Modal \sigla{N}ova Unidade & \sigla{ANPN}  \\ \hline
+			\rowcolor{cldfC!30} \textbf{A}dministrar U\sigla{n}idades & \sigla{P}rincipal & Modal \sigla{V}isualizar Unidade & \sigla{ANPV}  \\ \hline
+			\rowcolor{cldfC!30} \textbf{A}dministrar U\sigla{n}idades & \sigla{P}rincipal & Modal Edi\sigla{t}ar Unidade & \sigla{ANPT}  \\ \hline
+			\rowcolor{cldfC!30} \textbf{A}dministrar U\sigla{n}idades & \sigla{P}rincipal & Mensagem E\sigla{x}cluir Unidade & \sigla{ANPX}  \\ \hline
+		\end{tabular}    
+%		\caption{\label{tab:auditoria:telas1} Siglas de Telas Administrativas}
+	\end{center}
+%\end{table}
+
+
+% \begin{table}[!h]
+	\begin{center}
+		\begin{tabular}{|p{4cm}|p{1.3cm}|p{5cm}|p{0.8cm}|}
+			\hline
+			\rowcolor{corCOULD!40} \multicolumn{4}{|c|}{\Large Siglas das Telas de \textbf{Solicitantes} do Sistema \normalsize} \\ \hline
+			
+			% CABEÇALHO
+			\rowcolor{lightgray} Funcionalidade & Tela & Aba / Modal / Mensagem & Sigla \\ \hline
+			% CONTEUDO
+			% -----			
+			
+			% Solicitar Ordem de Serviço
+			\rowcolor{cldfE!30} \textbf{S}olicitar \textbf{O}rdem de Serviço & \sigla{P}rincipal & \sigla{P}rincipal & \sigla{SOPP}  \\ \hline
+			\rowcolor{cldfE!30} \textbf{S}olicitar \textbf{O}rdem de Serviço & \sigla{P}rincipal & Modal \sigla{N}ova Solicitação & \sigla{SOPN}  \\ \hline
+			\rowcolor{cldfE!30} \textbf{S}olicitar \textbf{O}rdem de Serviço & \sigla{P}rincipal & Modal \sigla{V}izualizar Solicitação & \sigla{SOPV}  \\ \hline
+			\rowcolor{cldfE!30} \textbf{S}olicitar \textbf{O}rdem de Serviço & \sigla{P}rincipal & Mensagem \sigla{C}ancelar Solicitação & \sigla{SOPC}  \\ \hline							
+			
+		\end{tabular}    
+% 		\caption{\label{tab:auditoria:telas2} Siglas de Telas do Solicitante}
+	\end{center}
+% \end{table}
+
+
+% \begin{table}[!h]
+	\begin{center}
+		\begin{tabular}{|p{4cm}|p{1.3cm}|p{5cm}|p{0.8cm}|}
+			\hline
+			\rowcolor{corCOULD!40} \multicolumn{4}{|c|}{\Large Siglas das Telas da \textbf{ASSEL} \normalsize} \\ \hline
+			
+			% CABEÇALHO
+			\rowcolor{lightgray} Funcionalidade & Tela & Aba / Modal / Mensagem & Sigla \\ \hline
+			% CONTEUDO
+			% -----			
+			
+			% Gerenciar e Analisar Solicitações - Principal
+			\rowcolor{cldfF!30} ASS\textbf{E}L Gerenciar e Analisar S\textbf{o}licitações  & \sigla{P}rincipal & \sigla{P}rincipal & \sigla{EOPP}  \\ \hline
+			\rowcolor{cldfF!30} ASS\textbf{E}L Gerenciar e Analisar S\textbf{o}licitações  & \sigla{P}rincipal & Modal Atribuir \sigla{D}estino & \sigla{EOPD}  \\ \hline
+			\rowcolor{cldfF!30} ASS\textbf{E}L Gerenciar e Analisar S\textbf{o}licitações  & \sigla{P}rincipal & Modal Atribuir \sigla{A}tribuição & \sigla{EOPA}  \\ \hline
+
+			% Gerenciar e Analisar Solicitações - Detalhes
+			\rowcolor{cldfG!20} ASS\textbf{E}L Gerenciar e Analisar S\textbf{o}licitações  & \sigla{D}etalhar & \sigla{P}rincipal & \sigla{EODP}  \\ \hline
+
+			\rowcolor{cldfH!20} ASS\textbf{E}L Gerenciar e Analisar S\textbf{o}licitações  & \sigla{A}nalisar & \sigla{P}rincipal & \sigla{EOAP}  \\ \hline
+			\rowcolor{cldfH!20} ASS\textbf{E}L Gerenciar e Analisar S\textbf{o}licitações  & \sigla{A}nalisar & Aba Proprie\textbf{d}ades & \sigla{EOAD}  \\ \hline
+			\rowcolor{cldfH!20} ASS\textbf{E}L Gerenciar e Analisar S\textbf{o}licitações  & \sigla{A}nalisar & Aba Proto\textbf{c}olo & \sigla{EOAC}  \\ \hline
+			\rowcolor{cldfH!20} ASS\textbf{E}L Gerenciar e Analisar S\textbf{o}licitações  & \sigla{A}nalisar & Aba Propo\textbf{s}ições Relacionadas & \sigla{EOAS}  \\ \hline
+			\rowcolor{cldfH!20} ASS\textbf{E}L Gerenciar e Analisar S\textbf{o}licitações  & \sigla{A}nalisar & Aba Solicitações \textbf{R}elacionadas & \sigla{EOAR}  \\ \hline
+			\rowcolor{cldfH!20} ASS\textbf{E}L Gerenciar e Analisar S\textbf{o}licitações  & \sigla{A}nalisar & Aba Adição de O\textbf{b}servações & \sigla{EOAB}  \\ \hline
+			\rowcolor{cldfH!20} ASS\textbf{E}L Gerenciar e Analisar S\textbf{o}licitações  & \sigla{A}nalisar & Aba Adição de Ar\textbf{q}uivos & \sigla{EOAQ}  \\ \hline
+			\rowcolor{cldfH!20} ASS\textbf{E}L Gerenciar e Analisar S\textbf{o}licitações  & \sigla{A}nalisar & Aba Enca\textbf{m}inhamento & \sigla{EOAM}  \\ \hline			
+		\end{tabular}    
+% 		\caption{\label{tab:auditoria:telas3} Siglas de Telas da ASSEL}
+	\end{center}
+% \end{table}
+
+
+\subsection{Evento}
+\label{sec-evento}
+
+Descrição textual do evento com entidades envolvidas em chaves e objetos envolvidos em colchetes e seus IDs em parenteses quando existir. 
+
+\begin{center}
+ \Large
+	Verbo de Ação + \{nome da entidade\}[texto do objeto](ID)
+\end{center}
+
+\subsubsection{Verbo de Ação}
+
+O texto de evento deve iniciar com um verbo de ação conjugado no passado com a primeira letra em maiúscula e o restante da palavra em minúsculas. Exemplos.:  Acessou, Adicionou, Ativou, Selecionou, Vinculou, Excluiu.
+
+\subsubsection{Nome da Entidade}
+	Após o verbo de ação, deve haver um espaço e, em seguida, a entidade entre chaves em letras minúsculas. 
+	
+	No paradigma de orientação a objetos a entidade equivale à classe de um objeto. Em um banco de dados, a classe seria equivalente ao nome da tabela que armazena registros.      
+
+	Alguns exemplos de entidades que deverão aparecer nos cenários de BDDs foram listados a seguir:
+	
+	\begin{itemize}
+		\item \textbf{anexo}: Refere-se a um registro da tabela de anexos do banco de dados;
+
+		\item \textbf{funcionalidade}: Refere-se a um registro da tabela de funcionalidades do banco de dados. \textbf{São os módulos ou telas do sistema};
+
+		\item \textbf{minuta\_parecer}: Refere-se a um registro da tabela de minutas de pareceres do banco de dados;
+
+		\item \textbf{ordem\_servico}: Refere-se a um registro da tabela de ordens de serviços do banco de dados;
+
+		\item \textbf{perfil}: Refere-se a um registro da tabela de perfis do banco de dados;
+
+		\item \textbf{solicitante}: Refere-se a um registro da tabela de solicitantes do banco de dados;
+
+		\item \textbf{unidade}: Refere-se a um registro da tabela de unidades do banco de dados;
+
+		\item \textbf{usuario}: Refere-se a um registro da tabela de usuários do banco de dados;
+
+		\item \textbf{botao}: Refere-se a botões que são clicados no sistema;
+		 		
+		\item \textbf{modal}: Refere-se aos modais que são acessados dentro do sistema;
+		
+		\item \textbf{mensagem}: Refere-se às mensagens que são exibidas;
+		
+	\end{itemize}
+
+
+
+\subsubsection{Texto do Objeto}
+	Após o nome da entidade, em seguida sem espaços, o texto do objeto entre colchetes. 
+	
+	No paradigma de orientação a objetos o texto do objeto equivale ao objeto que é instanciado a partir de uma classe. Em um banco de dados, o objeto seria equivalente ao nome do registro particular de uma tabela. 
+	
+	O texto do objeto deve ser o mais fiel possível ao texto do registro no banco de dados ou ao do componente visual do protótipo do sistema. Ver exemplos.
+	
+\subsubsection{ID}
+	 Finalmente, se existir e se o cenário definir, o código do registro entre parênteses. 
+
+\subsubsection{Exemplos}
+
+	\begin{itemize}
+		\item Acessou \{funcionalidade\}[Administrar Usuários](1);	
+		\item Acessou \{modal\}[Modal de Novo Usuário];	
+		\item Ativou \{botao\}[Novo Usuario];	
+		\item Adicionou \{unidade\}[SEASI](20);	
+		\item Adicionou \{usuario\}[robson.alencar](5);	
+	\end{itemize}
+
+
+
+\section{Limpeza do Banco de Dados por período (ou número de registros)}
+
+Sempre que o número de registros dessa tabela ultrapassar um número considerável de registros, o sistema deverá manter apenas os registros de auditoria mais recentes  (com até alguns meses de idade). Os demais dados deverão ser exportados para CSV e deletados do banco de dados.
+
+
+\chapter{Exemplos de Registros de Auditoria}
+
+% ----------------------------------
+% Comando Tabela
+% ----------------------------------
+\newcommand{\tbLogEx}[9][U]{
+	\subsection{#2}
+	
+	\subsubsection*{Descrição do Exemplo:}	
+	
+	#9
+	
+	\begin{tabular}{|m{2cm}|m{0.4cm}|m{2.1cm}|m{2.2cm}|m{0.65cm}|m{0.6cm}|}
+		\hline
+		% CABEÇALHO 1        
+		\rowcolor{clLogF} \cellcolor{clLogA!40} \textbf{Timestamp} & \textbf{Tipo} & \textbf{Ator} & \textbf{Host} & \cellcolor{clLogB} \textbf{Classe} & \cellcolor{clLogB} \textbf{Tela} \\ \hline
+		% CONTEÚDO 1
+		\rowcolor{clLogF} \cellcolor{clLogA!40} #3 & #1 & #4 & #5 & \cellcolor{clLogB} #6 & \cellcolor{clLogB} #7 \\ \hline
+	\end{tabular}
+
+	\subsubsection*{Texto da coluna ``Evento'' da tabela:}
+
+	``#8''
+
+	\subsubsection*{Exemplo de Cenário de BDD}	
+
+	\begin{env-auditoria}{Exemplo: #2}
+		\begin{enumerate}
+			\item (...)
+			\item ...
+			\item \textbf{E} adiciona o registro de auditoria:
+			\item | Timestamp | Tipo | Ator | Host | Classe | Tela | Evento |			
+			\item | \$timestamp\$ | #1 | \$usuário logado\$ | \$host\$ | #6 | #7 | ``#8'' |
+		\end{enumerate}
+	\end{env-auditoria}
+}
+
+
+\section{Exemplos de Categoria A - Acesso}
+
+% ----- Exemplo Inicio ------------------------------------
+\tbLogEx[U]{Usuário faz login}
+{2022-09-20 15:53:58}
+{ronie.porfirio}
+{MASI1234}
+{A}
+{SSPL}
+{Login \{usuario\}[ronie.porfirio](4)}
+{Usuário faz login no sistema com êxito.}
+% ----- Exemplo Fim ------------------------------------
+
+% ----- Exemplo Inicio ------------------------------------
+\tbLogEx[U]{Usuário Acessa Tela ``Administrar Unidade''}
+{2022-09-20 16:47:10}
+{ronie.porfirio}
+{MSEASI-1234}
+{A}
+{AUPP}
+{Acessou \{funcionalidade\} [administrar unidade]}
+{Usuário acessa na barra lateral o botão para acessar a tela de administração de unidades.}
+% ----- Exemplo Fim ------------------------------------
+
+% ----- Exemplo Inicio ------------------------------------
+\tbLogEx[U]{Clica no botão novo da tela de administração de unidades}
+{2022-09-20 17:43:25}
+{ronie.porfirio}
+{MSEASI-1234}
+{A}
+{AUPN}
+{Exibiu \{modal\} [novo usuário]}
+{Usuário clica no botão novo da tela de administração de unidades e acessa modal ``Dados da Unidade''}
+% ----- Exemplo Fim ------------------------------------
+
+% ----- Exemplo Inicio ------------------------------------
+\tbLogEx[U]{Clica no botão excluir da tela de administração de perfis}
+{2022-09-20 17:43:25}
+{gilberto.sousa}
+{MSASSEL-4321}
+{A}
+{APPX}
+{Exibição de \{mensagem\} [excluir usuário]}
+{Usuário clica no botão novo da tela de administração de unidades e acessa modal ``Dados da Unidade''}
+% ----- Exemplo Fim ------------------------------------
+
+\section{Exemplos de Categoria I - Informação}
+
+% ----- Exemplo Inicio ------------------------------------
+\tbLogEx[U]{Em Solicitar Ordem de Serviço, altera o combobox da Unidade Solicitante}
+{2022-09-21 12:43:25}
+{gilberto.sousa}
+{MSASSEL-4321}
+{I}
+{SOPP}
+{Troca para \{unidade\}[LABHINOVA]}
+{Usuário está na tela de Solicitar Ordem de Serviço, e altera o combobox da Unidade Solicitante selecionando a unidade LABHINOVA}
+% ----- Exemplo Fim ------------------------------------
+
+
+\section{Exemplos de Categoria D - Alteração no Banco de Dados}
+
+\section{Exemplos de Categoria N - Notificações}
+
+\section{Exemplos de Categoria W - Warning}
+
+\section{Exemplos de Categoria E - Erro}
+
+\section{Exemplos de Categoria F - Erro Fatal}
+
+% ----- Exemplo Inicio ------------------------------------
+\tbLogEx[U]{Ao acessar sistema, o sistema não consegue se conectar ao SEI}
+{2022-09-21 12:43:25}
+{robson.alencar}
+{MSASSEL-4321}
+{F}
+{SSPP}
+{Sem comunicação com o SEI-CLDF}
+{Usuário acaba de fazer login mas sistema não consegue se conectar com o SEI.}
+% ----- Exemplo Fim ------------------------------------
+
+
+
+

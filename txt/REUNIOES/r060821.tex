@@ -1,0 +1,73 @@
+\section{Reunião 06 08 21 - Ronie, Gilberto e Pedro}
+
+
+\begin{itemize}
+
+	
+	\item \mschecksim Nomenclatura: Vamos chamar de OS ou de Solicitação? O tempo todo?
+	
+	\item \mschecksim Login/Logout
+	
+	
+	Duvida para Pedro: Como ocorre o cadastro de usuários, é um por um?
+	
+	Duvida para Gilberto: Pode ocorrer de um Usuário dentro do Gabinete não poder ter acesso ao ambiente de Solicitação/Acompanhamento de OSs? Espero que não.
+
+	Solução: Fica do jeito que está e haverá a possibilidade dentro do sistema de manualmente vincular usuários ao Cadastro de Unidades Solicitantes.
+
+	O login não muda, porém, haverá uma etapa a mais de verificação caso o usuário que tenta acessar aquela unidade não esteja naquela unidade. Será verificar dentro dos usuários vinculados àquela unidade 
+
+	Sabe de uma coisa?
+	
+	A melhor solução é criar um procedimento via SEI para que Unidades Solicitantes e Usuários sejam cadastradas no sistema manualmente.
+	
+	Unidades Solicitantes podem permitir quem eles quiserem.
+	
+	Um Usuário pode estar cadastrado em mais de uma Unidade Solicitante.
+		
+	Uma Unidade Solicitante pode ter vários Usuários Cadastrados.
+	
+	O combobox da Unidade vai trazer apenas as Unidades Solicitantes Cadastradas no Sistema.
+	
+	O sistema verifica que aquele usuário está vinculado à Unidade que ele quer entrar e autoriza ou não o acesso.
+	
+	Teremos que fazer um formulário manual no SEI para que uma unidade que quer fazer pedidos à ASSEL cadastre-se e envie uma lista de usuários permitidos.
+	
+	Isso resolve todos os problemas.
+		
+	
+	\item \mschecksim Estados das OSs
+	
+	
+	
+	
+	\item \mschecksim Inclusão da funcionalidade <<Editar>> dentro de <<Solicitar Ordem de Serviço>> 
+
+
+Dentro da funcionalidade <<Solicitar Ordem de Serviço>>
+
+Além de:
+Listar, Incluir, Visualizar, Cancelar
+
+Incluir:
+Editar
+
+A ação de Editar só será habilitada caso o Estado da OS retorne para o Solicitante com o Estado "Pendência". E aí ele teria de poder reabrir a OS e incluir novas informações para resolver a pendência. Após isso, ele devolve a OS para o Apoio.
+
+Nesse caso, como a OS já está autorizada, nada é preciso ocorrer. 
+
+
+	\item \mschecksim Dúvida para Pedro: Perguntar aos desenvolvedores se é possível incluir no Processo via SEI uma mensagem do sistema.
+	
+	\item \mschecksim Modelo de Documento Para Cancelar OS Válida
+	
+	\item \mschecksim Estados das OSs => Mostrar Tabela
+	
+	\item \mschecksim Dentro de Gerenciar OS temos que incluir funcionalidades:
+	
+	Baixar Artefatos
+	
+	Incluir Anexos
+	
+	Eu quero outra coisa também. Na hora de incluir os Anexos, quero que cada anexo tenha associado a ele os seguintes atributos: Quem incluiu? Data e Hora da Inclusao? É artefato final?
+\end{itemize}

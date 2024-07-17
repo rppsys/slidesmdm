@@ -1,0 +1,345 @@
+\chapter{Ações Recomendadas}
+\label{cap-acoes}
+% AQUI VOU MOSTRAR APENAS AS AÇÕES que estamos realizando para alcançar o cenário ideal
+
+    Vamos retomar a \METAFORADORESTAURANTE \xspace apresentada no \autoref{cap-descricao} para ajudar a descrever o problema e montar, a partir dos elementos fictícios dessa metáfora, o cenário que descreve a realidade atual (na data que este estudo foi desenvolvido) da CLDF. Em seguida, a partir do cenário elaborado, vamos explicar quais ações já estão sendo realizadas e também propor novas ações para que seja possível alcançar o cenário ideal apresentado no final do referido capítulo (na seção \ref{sec-cenarioideal}).
+    
+    \section{Cenário Atual}
+    
+    O cenário atual\footnote{O ``Cenário Atual'' corresponde à situação dos projetos relacionados aos temas até a data de entrega e assinatura deste estudo no SEI.} correspondente à situação de cada elemento fictício da \METAFORA \xspace é exibido no quadro abaixo:
+    
+    \begin{env-cenario2}{Cenário CLDF}
+            \mschecksim \xspace \CLIENTES 
+            
+            \mschecksim \xspace \CARDAPIO  
+
+            \mscheckint \xspace \LIVRODERECEITAS
+            
+            \mscheckint \xspace \FOGAO
+
+            \mschecknao \xspace \COZINHEIROS \xspace capacitados ou contratados
+        
+            \mschecknao \xspace \GERENTES \xspace treinados
+
+            \mschecknao \xspace \DESPENSA
+
+            \mschecknao \xspace \INGREDIENTES
+    \end{env-cenario2}
+
+    Os elementos \CLIENTES \xspace e \CARDAPIO \xspace são qualificados com um \mschecksim \xspace indicando que já foram realizados projetos relacionados a esses temas.
+    
+    Os elementos \LIVRODERECEITAS \xspace e \FOGAO \xspace classificados com uma \mscheckint \xspace indicam elementos da metáfora que estão sendo investigados nos diversos projetos em curso.
+    
+    Os demais elementos classificados com um \mschecknao \xspace indicam temas que ainda precisam ser desenvolvidos.
+    
+    Nas próximas seções a situação de cada elemento será analisada, ações em curso serão apresentadas e novas ações serão propostas.
+    
+    \section{Clientes}
+    
+    \begin{env-cenario2}{}
+        \mschecksim \xspace \CLIENTES 
+    \end{env-cenario2}
+    
+    Já está mais do que claro que os clientes são as unidades organizacionais da \CLDF que exercem função finalística de fiscalização.    O \emph{site} institucional da \CLDF \cite{site:cldf:comissoes} lista as seguintes Comissões Permanentes:
+    
+    \begin{env-destaque}{Comissões Permanentes da CLDF}
+    \begin{itemize}
+        \item CCJ - Comissão de Constituição e Justiça
+        \item CEOF - Comissão de Economia Orçamento e Finanças
+        \item CAS - Comissão de Assuntos Sociais
+        \item CDC - Comissão de Defesa do Consumidor
+        \item CDDHCEDP - Comissão de Defesa Direitos Humanos, Cidadania, Ética e Decoro Parlamentar
+        \item CAF - Comissão de Assuntos Fundiários
+        \item CESC - Comissão de Educação, Saúde e Cultura
+        \item CS - Comissão de Segurança
+        \item CDESCTMAT - Comissão de Desenvolvimento Econômico Sustentável, Ciência, Tecnologia, Meio Ambiente e Turismo
+        \item CFGTC - Comissão de Fiscalização Governança Transparência e Controle
+        \item CTMU - Comissão de Transporte e Mobilidade Urbana
+    \end{itemize}
+    \end{env-destaque}
+
+\index{CCJ}
+\index{CEOF}
+\index{CAS}
+\index{CDC}
+\index{CDDHCEDP}
+\index{CAF}
+\index{CESC}
+\index{CDESCTMAT}
+\index{CFGTC}
+\index{CTMU}
+    
+    Além dessas unidades organizacionais, vale mencionar, também, a ``Procuradoria Especial da Mulher'' - órgão institucional criado com o objetivo de zelar pela participação mais efetiva das deputadas nos órgãos e nas atividades da CLDF \cite{site:cldf:mulher}.
+
+\index{Procuradoria Especial da Mulher}
+    
+    \section{Cardápio de Pratos}
+    
+    \begin{env-cenario2}{}
+        \mschecksim \xspace \CARDAPIO
+    \end{env-cenario2}  
+    
+    Assim como o sucesso de um restaurante é satisfazer seus clientes, o sucesso da implantação de um ambiente de análise de dados numa instituição depende de entender as necessidades de cada cliente. 
+    Já apresentamos e discutimos na seção \ref{sub-cardapio} ``\nameref{sub-cardapio}'' o primeiro \CARDAPIO \xspace desenvolvido pela Área de Sistema de Informação (ASI) em parceria com a \CDDHCEDP.
+    Com certeza, recomenda-se que estudos semelhantes sejam realizados em cada uma dessas unidades organizacionais. 
+
+    \begin{env-proposta}{Realizar Levantamentos de Necessidades de Informação}
+        \nohyphens{Realizar projetos de levantamento de necessidades de informação com cada uma das unidades organizacionais interessadas.}
+    \end{env-proposta}
+    
+% ----------------------------------------
+    \section{Livro de Receitas}
+    \label{sec-acoes-livrodereceitas}
+% ----------------------------------------
+
+    Vamos discutir a primeira interrogação \mscheckint \xspace do cenário atual apresentado.
+
+    \begin{env-cenario2}{}
+        \mscheckint \xspace \LIVRODERECEITAS
+    \end{env-cenario2}  
+
+    O ``\nameref{sub-livrodereceitas}'' foi introduzido no \nameref{cap-descricao} como um elemento fictício para representar o conjunto de informações necessárias para fazer o processamento dos dados e, assim, gerar a informação. 
+    
+    Para isso, \textbf{para cada \PRATO \xspace do \CARDAPIO} \xspace é necessário:
+    
+    \begin{itemize}
+        \item \textbf{Especificar os \INGREDIENTES} - Quais dados são necessários? 
+        \item \textbf{Especificar os \PRODUTORES} - Esses dados existem? Onde estão? Quais órgãos os produzem? Quais órgãos os armazenam? Como acessá-los?
+        \item \textbf{Dizer como preparar os ingredientes} - Como os dados podem ser processados a fim de produzir as informações de interesse.
+    \end{itemize}
+    
+    Assim, a principal crítica que podemos fazer para a \emph{proposta} é essa: ela especifica ``o quê o cliente quer comer'' mas não diz ``como preparar os pratos''. Para sanar esse problema, chegamos à segunda ação recomendada:
+    
+    \begin{env-proposta}{Identificar Fontes de Dados Relevantes}
+        \nohyphens{Os próximos projetos de levantamento de necessidades de informação devem contar com o objetivo específico de, pelo menos, \textbf{identificar fontes de dados relevantes} para responder às questões investigativas que estão sendo elaboradas.}
+    \end{env-proposta}
+
+    De certo, essa ação já está sendo colocada em prática. Atualmente a CMI iniciou o desenvolvimento de projeto semelhante à \emph{proposta} mas com objetivo de fazer levantamento de necessidades de informação junto à \textbf{Comissão de Assuntos Sociais}  \cite{propostaCAS} e a identificação de fontes de dados já faz parte dos objetivos específicos do projeto. 
+
+    Entretanto, além de saber as fontes de dados, é necessário que haja permanente acesso a esses dados. Dessa forma, entende-se necessário que haja um meio formal pelo qual o órgão/setor que gere a base original de dados comprometa-se a manter o acesso da CLDF à respectiva base, informando-a de qualquer mudança no modelo e forma de acesso aos dados. Para sanar esse problema, chegamos à seguinte ação recomendada:
+    
+    \begin{env-proposta}{Criar meios para acesso permanente à origem dos dados}
+        \nohyphens{Os clientes (Comissões de fiscalização) devem providenciar o compromisso dos órgãos/setores de onde se originam os dados de manterem o acesso da CLDF permanente, bem como documentar as credenciais e protocolos que devem ser utilizados.}
+    \end{env-proposta}
+    
+    Após isso, tendo-se recebido os dados, deve haver validação por parte dos clientes de que os dados são suficientes em quantidade e qualidade para daí se extrair o valor pretendido, em que chegamos à seguinte ação recomendada:
+    
+    \begin{env-proposta}{Validação dos dados recebidos}
+        \nohyphens{Os clientes (Comissões de fiscalização) devem homologar as bases de dados recebidas em relação à qualidade e quantidade de dados, de forma a gerar aptidão à geração de valor.}
+    \end{env-proposta}
+
+    Finalmente, mesmo identificando as fontes de dados, criando meios para acesso permanente e existindo formas de validar os dados recebidos, pode ser necessário, ainda, realizar projetos com objetivo específico de estudar quais são as metodologias, rotinas e processos técnicos necessários para realizar o processamento dos dados. Portanto, uma última ação recomendada nesse contexto é:
+    
+    \begin{env-proposta}{Realizar Projetos Específicos}
+        \nohyphens{Realizar projetos voltados a estudar o processamento necessário para que determinadas informações específicas sejam geradas a partir dos dados disponíveis.}
+    \end{env-proposta}
+% ----------------------------------------
+    \section{Fogão}
+% ----------------------------------------    
+    
+    O ``\nameref{sub-fogao}'' representa o conjunto de ferramentas utilizados pelos cientistas e analistas de dados para transformar os dados nas informações. Com certeza, ele representa um conjunto de elementos críticos do ambiente de análise de dados de uma organização. 
+
+    \begin{env-cenario2}{}
+        \mscheckint \xspace \FOGAO
+    \end{env-cenario2}  
+    
+    Ele foi representado com uma \mscheckint \xspace porque a CLDF ainda não dispõe de ferramentas oficiais para realizar as tarefas de análise de dados. Todavia, estamos trabalhando nisso.
+    
+    Na verdade, a ideia de desenvolvimento deste projeto iniciou-se a partir da necessidade de analisar comparativamente as diferentes ferramentas de análise de dados do mercado. E conforme foi visto, essa análise comparativa foi realizada a partir do Capítulo \ref{cap-casos-gartner} até o Capítulo \ref{cap-fornecedores}. 
+    
+    Contudo, os benefícios da realização deste estudo não se resumem à essa análise comparativa pois, para realizá-la, foi imprescindível buscar conhecimentos sobre o assunto. E assim, esse processo de busca de conhecimento permitiu compreender que não existe necessidade de utilizar as ferramentas de apenas uma plataforma de BI específica de determinado fornecedor. É possível criar um ambiente de análise de dados combinando ferramentas de diversas naturezas, não necessariamente do mesmo fornecedor, podendo, inclusive, incluir ferramentas \emph{open source}. Exemplo disso foi visto na seção \ref{sub-jornadadosdados} do \nameref{cap-referencial} quando apresentamos a \nameref{sub-jornadadosdados} exemplificando com o caso de uso da \CODEPLAN \xspace (CODEPLAN). 
+
+    % ===> Nao vou colocar a proposta aqui ainda nao.
+    % Como o fogão é um item crítico vou deixar pra falar disso no capítulo seguinte onde raremos a "proposta final".
+    
+    % Aqui estamos preparando o terreno com "Ações Recomendadas". No próximo capítulo a gente vai fazer "a proposta" e aí falar do fogão e da despensa.
+    
+    % Eu vou falar agora dos gerentes treinados que é a mesma coisa que os Cozinheiros e lá vou idntificar os tipos de cursos de capacitação que serão necessários
+    
+    % Essa parte eu tirei e ficará fora mesmo
+    % Portanto, assim como na metáfora do restaurante, o cozinheiro precisa de diversas ferramentas para preparar os ingredientes e montar um prato, uma solução de análise de dados apresenta diversos componentes como: ferramentas de preparação de dados, visão computacional,  ciência de dados, \emph{log analytics}, \emph{Machine Learning}, pesquisa, ferramentas de visualização, automação e RPA, etc... 
+    
+    % Essa parte eu tirei e ficará fora mesmo
+    %As Plataformas de BI apresentadas são plataformas porque os fornecedores ofertam diversas ferramentas que trabalham juntas. Contudo, as ferramentas analisadas foram ferramentas de visualização de dados. 
+
+% ----------------------------------------    
+    \section{Gerentes e Cozinheiros}
+% ----------------------------------------        
+    
+    A partir de agora vamos falar dos dois primeiros elementos \mschecknao \xspace do cenário atual: os \COZINHEIROS \xspace e os \GERENTES. Decidimos apresentar esses elementos numa mesma seção pois as ações recomendadas para eles são semelhantes. 
+    
+    \subsection{Cozinheiros capacitados ou contratados}
+
+    \begin{env-cenario2}{}
+        \mschecknao \xspace \COZINHEIROS \xspace capacitados ou contratados
+    \end{env-cenario2}
+    
+    Conforme descrito no Capítulo \ref{cap-descricao}, o \nameref{sub-cozinheiro} representa o conjunto de cientistas e analistas de dados responsáveis por utilizar as ferramentas para fazer o processamento para transformar os dados em informações.
+    
+    Aquele capítulo introduziu também os ``tipos'' de cozinheiros, ou seja, os modelos de realização operacional dos trabalhos aonde concluiu-se que o ideal seria ter um modelo híbrido formado pela combinação de ``cozinheiros da casa'' e ``cozinheiros contratados''.
+    
+    \subsubsection*{Cozinheiros ``da Casa''}
+    
+    Em se tratando de ``cozinheiros da casa'' existe a necessidade óbvia de realizar  capacitação. Portanto, uma ação recomendada é capacitar os servidores da casa com os conhecimentos de ciências de dados.
+    
+    \begin{env-proposta}{Capacitação em Ciência de Dados}
+        \nohyphens{Oferecer cursos de capacitação em Ciência de Dados e outros assuntos relacionados de um ambiente de análise de dados para servidores da CLDF.}
+    \end{env-proposta}    
+    
+    Neste contexto, é importante ressaltar que faz parte dos objetivos específicos do projeto ``Estudo Técnico sobre Plataformas de BI'' a atividade de ``Buscar trazer conhecimentos necessários sobre o assunto para a CLDF por meio da capacitação de servidores nos temas relacionados''. 
+    Dessa forma, esforços já estão sendo empreendidos em parceria com a Escola do Legislativo (ELEGIS) para selecionar e oferecer cursos com essa temática aos servidores. 
+    Nesse sentido, cabe mencionar, finalmente, o projeto realizado pela Área de Sistema de Informação (ASI) em parceria com o Laboratório Hacker de Inovação (Labhinova) na qual uma oficina sobre Ciência de Dados Aplicada ao Poder Legislativo foi desenvolvida e apresentada \cite{asi:oficina}. Essa oficina ofereceu um primeiro contato com a temática de análise de dados e, portanto, recomenda-se que eventos como esse sejam realizados periodicamente na instituição. 
+
+    \subsubsection*{Cozinheiros ``Contratados''}
+    
+    Tendo-se em vista que a demanda de Ciência de Dados terá vertentes de trabalho que vem desde o nível estratégico até o operacional, possivelmente será preciso terceirizar as atividades operacionais relacionadas ao tema. Tendo-se isso em vista, é necessário se delimitar as fronteiras e se estudar a criação de uma "fábrica de Ciência de Dados", que servirá para atender a essas atividades operacionais, sem excluir a necessidade de se manter o conhecimento estratégico com pessoal efetivo.
+    
+    \begin{env-proposta}{Terceirizar Atividades Complexas}
+        \nohyphens{Realizar projeto de estudo técnico para verificar a viabilidade de contratação de empresa especializada em serviços operacionais de análise de dados.
+        }
+    \end{env-proposta}        
+    
+    Cumpre destacar que, ainda que o papel não seja totalmente realizado por pessoal efetivo, é necessário que haja conhecimento específico dentro da casa, tendo-se em vista a natureza estratégica que a Ciência de Dados passará a ter. Nesse âmbito, pode-se pensar inclusive em eventualmente criar carreira específica de Consultor Técnico-Legislativo no tema Ciência de Dados.
+        
+
+    \subsection{Gerentes treinados}
+
+    \begin{env-cenario2}{}
+            \mschecknao \xspace \GERENTES \xspace treinados
+    \end{env-cenario2}    
+
+    O \nameref{sub-gerente} representa os \textbf{servidores da CLDF} responsáveis por garantir que os diversos componentes do ambiente de análise de dados funcionem de maneira integrada para gerar valor para a organização. Assim, é importante que estes servidores atuem junto aos \CLIENTES \xspace verificando se suas necessidades levantadas estão sendo atendidas. Além disso, é recomendável que esses profissionais tenham, pelo menos, noção dos aspectos operacionais do trabalho desenvolvido pelos \COZINHEIROS \xspace para que seja possível fiscalizar sua atuação detectando irregularidades ou sugerindo aperfeiçoamentos. Os \GERENTES \xspace também são os responsáveis por manter e aperfeiçoar as diversas ferramentas utilizadas no ambiente de análise de dados. Finalmente, cabe a eles projetar e manter a \DESPENSA, ou seja, o armazém de dados, onde os dados coletados estarão armazenados.  
+    
+    Portanto, é imperativo que os servidores que desempenharão o papel de \GERENTES \xspace estejam preparados para lidar com os diversas desafios e deste modo podemos recomendar mais uma ação:
+    
+    \begin{env-proposta}{Capacitação em Projeto e Manutenção de Ambientes de Análise de Dados}
+        \nohyphens{Oferecer cursos de capacitação em projeto e manutenção de ambientes de análise de dados para servidores da CLDF.}
+    \end{env-proposta}    
+    
+    \subsection{Capacitação}
+    \label{sub-acoes-capacitacao}
+    
+    Conforme descrito, é fortemente recomendado treinar e capacitar esses profissionais. Contudo, a capacitação dos servidores que vão atuar no papel de \GERENTES \xspace é diferente daquela requerida pelos profissionais que vão usar o sistema. Portanto vamos diferenciar a capacitação exigida para esses profissionais.
+    
+    \subsubsection*{Cozinheiros da ``Casa''}
+    
+    Os profissionais responsáveis por utilizar as ferramentas para transformar os dados em informações, construir painéis, configurar alertas, etc.. precisam aprender a utilizar as ferramentas para trabalhar com os dados. Portanto a capacitação para esses servidores são cursos que envolvem técnicas de estatística e ciência de dados.
+    
+    \begin{env-destaque}{Tópicos para Capacitação de Usuários Finais de Ambientes de Análise de Dados}
+        \begin{itemize}
+            \item Análise Exploratória e Visualização de Dados
+            \item Ciência de Dados e Inteligência Artificial
+            \item Aprendizado de Máquina e \emph{Deep Learning}
+            \item Processamento e Mineração de Texto
+            \item Estatística para Cientistas de Dados
+            \item Mineração de dados para Séries Temporais
+            \item Modelos Preditivos
+            \item Análise de \emph{Clusters}
+            \item Visualização e Relatórios de Segmentos
+            \item Métodos Estatísticos de Apoio à Decisão
+            \item Métodos Estatísticos para Ciência de Dados
+        \end{itemize}
+    \end{env-destaque}
+    
+    Cumpre destacar que é óbvio que os cientistas de dados também precisam ser treinados para saber usar as diferentes ferramentas selecionadas para compor o ambiente de análise de dados da instituição. Assim, cursos específicos de uso dessas ferramentas também são necessários. 
+    
+    \newpage
+    
+    \subsubsection*{Gerentes}
+    
+    No outro extremo, é recomendável que os \GERENTES \xspace capacitem-se em cursos com os seguintes temas e sub-temas:   
+    
+    \begin{env-destaque}{Tópicos para Capacitação em Projeto e Manutenção de Ambientes de Análise de Dados}
+        \begin{itemize}
+            \item Capacitação em Tecnologias e Ferramentas de Suporte à Decisão Apoiada por Dados
+                \begin{itemize}
+                    \item Governança de Dados
+                    \item Qualidade de Dados
+                    \item Segurança de Ambientes de Análise de Dados
+                \end{itemize}        
+
+            \item Capacitação em Projeto e Construção de \emph{Data WareHouses}
+                \begin{itemize}
+                    \item Arquiteturas de \emph{Data Warehouse}
+                    \item Arquitetura e Ciclo de Vida de Projetos de BI
+                    \item Modelagem Dimensional, Cubos \& OLAP
+                    \item Fundamentos, Arquiteturas, Construção e Projeto de ETL
+                    \item Automação de \emph{Data Warehouse}
+                \end{itemize}
+            
+            \item Capacitação em Engenharia de \emph{Big Data}
+                \begin{itemize}
+                    \item Fundamentos de Bancos de Dados e \emph{Big Data}
+                    \item Sistemas Distribuídos        
+                    \item Computação em Nuvem
+                    \item Gerência de Dados NoSql no Big Data
+                    \item Arquitetura e Implementação de Big Data
+                    \item Administração e Operação de Big Data
+                    \item Processamento Massivo em Big Data
+                \end{itemize}
+        \end{itemize}
+    \end{env-destaque}
+
+% ----------------------------------------    
+    \section{Despensa}
+% ----------------------------------------    
+    
+    \begin{env-cenario2}{}
+            \mschecknao \xspace \DESPENSA
+    \end{env-cenario2}    
+    
+    A \nameref{sub-despensa} representa o \textbf{repositório de dados analíticos}, sendo um componente crítico para a solução como um todo. Esse repositório pode ser composto por uma ou mais ferramentas. Em geral, os dados estruturados são armazenados em um \emph{data warehouse}, à medida em que os dados não estruturados são armazenados em um \emph{datalake}. Existem diversas plataformas que atendem a essas finalidades, tanto abertas como licenciadas.
+    
+    Deve-se considerar que o repositório de dados é um componente cuja disponibilidade afeta essencialmente toda a solução e que por esse motivo deve ser dada grande atenção a esse componente.
+    
+    Considerando-se que a CLDF não possui gestão sobre as bases de dados originais, então deve-se pensar o repositório de dados analíticos de modo a manter guardados todos os dados que forem capturados e utilizados para o BI, com retenção permanente, se possível.
+    
+    Ainda, deve-se ter em mente que os dados constantes desse repositório devem ser acessíveis em todos os momentos, bem como que devem durar mais do que o tempo de uma contratação de ferramenta ou equipamento. Dessa forma, faz-se necessário que esses dados estejam armazenados da forma mais ecumênica possível, sem necessitar de facilidades proprietárias e em formato aberto e de fácil migração entre plataformas.
+    
+    Ainda, o repositório deve contar com característica marcante de escalabilidade, tanto em relação ao seu tamanho, que tenderá a crescer ao longo do tempo, bem como em relação à carga de acessos, que também pode vir a crescer. Nesse sentido, recomenda-se que seja pensada uma arquitetura elástica para esse repositório.
+    
+    Por fim, considerando que o repositório é onde ficarão armazenados os dados da inteligência do serviço, esse deve contar com robustez adequada de segurança da informação, e sua arquitetura deve seguir os padrões que forem recomendados pela Seção de Infraestrutura, tendo sua implantação no \emph{datacenter} próprio da CLDF até que haja efetivo estudo sobre a viabilidade técnica e jurídica de manter esses dados em uma nuvem pública.
+    
+    \begin{env-proposta}{Projetar e construir um repositório de dados analíticos}
+        \nohyphens{Projetar e construir um repositório de dados analíticos seguro, robusto e escalável.}
+    \end{env-proposta}    
+    
+    
+    %Tendo em vista que o \FOGAO \xspace e a \DESPENSA \xspace representam itens centrais deste estudo, as recomendações relacionadas a esses elementos serão melhor detalhadas no ``\autoref{cap-proposta} -- \nameref{cap-proposta}''.
+    
+% ----------------------------------------    
+    \section{Ingredientes}
+% ----------------------------------------    
+    
+    \begin{env-cenario2}{}
+            \mschecknao \xspace \INGREDIENTES
+    \end{env-cenario2}    
+    
+    Os \nameref{sub-ingredientes} representam os dados brutos necessários para produzir as informações desejadas. Na data de escrita deste estudo, não é do conhecimento dos autores a existência de algum meio oficial pelo qual organismos detentores de dados de interesse tenham o compromisso de fornecê-los à CLDF de forma automatizada.\footnote{A atividade de fiscalização é operada por meio dos requerimentos de informação, que solicitam relatórios já prontos dentro de um escopo determinado. A forma de funcionamento atual não serve ao propósito visado pelo estudo, tendo em vista que não criam acessos permanentes e automatizados com padronização tecnológica. Uma revisão do formato desses requerimentos pode ser vista como um excelente meio legal apto a possibilitar a coleta de dados necessária à atividade de fiscalização.}
+    
+    Vale lembrar que a presença dos dados brutos que serão necessários é requisito indispensável à entrega de valor de todo o projeto de BI, e que o prosseguimento de uma contratação sem se satisfazer essa etapa é \textbf{absolutamente não recomendado}.
+    
+    Em relação às atividades para coleta de dados, é necessário criar a diferenciação conforme as formas de coleta indicadas na subseção \ref{acessos-dados}, nos seguintes termos:
+    \begin{itemize}
+        \item \textbf{Para coletas de uma única vez}: neste caso é necessária uma única transmissão dos dados da base original para o repositório analítico da CLDF. Para isso, pode haver mais simplicidade procedimental na obtenção de dados. Entretanto, alerta-se que essa forma é pouco usada no universo de BI e que o valor extraído é limitado e tende a não se manter ao longo do tempo, em razão da não atualização da base. Assim, recomenda-se que essa forma seja utilizada apenas excepcionalmente e justificadamente.
+        \item \textbf{Para coletas periódicas}: neste caso é necessário um compromisso formal do ente gestor da base original de manter um acesso permanente das bases para a CLDF. Esse acesso deve compreender operações de busca em lote e deve seguir padronização tecnológica e atendimento de nível de serviço adequados. Nesse sentido, recomenda-se o estabelecimento de um padrão tecnológico adequado ao nível de serviço esperado, e que também esteja em conformidade com o ePING \cite{e-ping}, e de modo que o serviço de acesso seja versionado, mantendo-se o funcionamento do serviço disponibilizado, mesmo diante das atualizações tecnológicas e de modelo de dados do provedor. Para isso, entende-se necessário o estabelecimento de um instrumento legal apto à realização desse objetivo, e que sejam respeitadas todas as normas relativas à responsabilidade sobre os dados trafegados e armazenados, com destaque à Lei Geral de Proteção de Dados -- LGPD, no que couber. Este é o meio recomendado para o uso geral da solução.
+        \item \textbf{Para coletas em tempo real}: neste caso é necessária a implantação de mecanismos de inicialização da coleta acionáveis pelo provedor dos dados, sempre que houver atualização desses. Por se tratar de uma implantação mais complexa, recomenda-se que seja utilizada excepcionalmente e justificadamente. Porém, para esta implantação, todos os requisitos para coletas periódicas devem também estar atendidos.
+    \end{itemize}
+    
+    A solicitação de acesso aos dados, entretanto, não deve ser vista como responsabilidade do setor de TI da CLDF, tendo-se em vista que não é uma atividade técnica, mas sim relacionada à própria fiscalização. Nesse sentido, entende-se essa como uma responsabilidade do cliente atendido, no caso, as Comissões Permanentes. Apesar disso, cumpre ao setor de TI da CLDF estabelecer o padrão tecnológico a ser utilizado e informá-lo às Comissões para que conste da solicitação realizada aos provedores dos dados.
+    
+    É fundamental destacar que o prosseguimento do projeto sem a presença dos dados brutos tem como impacto o cenário apresentado na seção \ref{sub-cenario-naotemosingredientes}, isto é, gastar recursos públicos para adquirir ferramentas que não servirão para atingir os propósitos finais. 
+    
+    \begin{env-proposta}{Realizar o acesso aos dados}
+        \nohyphens{Criar os meios para acessar os dados.}
+    \end{env-proposta}    
+    
+% ----------------------------------------    
+    \section{Conclusões}
+% ----------------------------------------
+
+    Esse capítulo traçou o cenário atual a partir da análise separada da situação de cada elemento da metáfora e foram recomendadas ações para se atingir condições favoráveis para uma implantação de sucesso do ambiente de análise de dados almejado. 
+    
+    Assim, a análise de cada elemento e as consequentes ações recomendadas foram apresentadas \textbf{seguindo uma ordem didática} começando pelos \CLIENTES, passando pelo \CARDAPIO, \LIVRODERECEITAS, \FOGAO, \GERENTES \xspace e \COZINHEIROS, \DESPENSA  \xspace e finalizando com os \INGREDIENTES. Contudo, a ordem lógica recomendada para executar essas ações é outra.
+    
+    Deste modo, o próximo capítulo pretende estabelecer uma ordem de priorização desses esforços de forma que as energias sejam concentradas e utilizadas, primeiro, em projetos objetivando satisfazer condições críticas e, depois, o engajamento institucional percorra um caminho coerente e sensato em direção aos propósitos institucionais.

@@ -1,0 +1,119 @@
+% \renewcommand{\sepCapaTitulo}{Gerenciar OS ASSEL}
+% \renewcommand{\sepCapaData}{18 de Julho de 2022}
+% \renewcommand{\sepCapaFile}{sep-capa-verde.pdf}
+
+\chapter{Teste Latex}
+\label{detalhes:teste-latex}
+
+
+\section{Cenário: Cancelar OS “Em Execução” Com Necessidade de Criar Bloco de Assinatura - Opção \textcolor{blue}{OK}}
+\begin{enumerate}
+	\item Dado que o usuário solicita \textbf{**Cancelar**} para uma OS de <Situações>
+	
+	\begin{tabular}{|l|}
+		\hline
+		\rowcolor{blue!40} Situações \\ \hline
+		\rowcolor{blue!10} Em Execução \\ \hline
+	\end{tabular}
+	
+	\item E o sistema apresenta a funcionalidade **”Justificativa”** com um campo de texto para ser preenchido com a justificativa
+	\item E o usuário preenche o campo com a justificativa
+	\item Quando o usuário solicita **“Enviar para ASSEL”**
+	\item E verifica que a \textbf{**Unidade Solicitante no SEI**} (correspondente à \textbf{**Unidade Solicitante no SISTEMA ASSEL**) **}NÃO POSSUI\textbf{** o **}Usuário do SISTEMA SEI\textbf{** (correspondente ao **}Usuário do SISTEMA ASSEL** que está fazendo a solicitação**)
+	\item Então o sistema gera a caixa de diálogo com a <Mensagem>:
+	
+	\begin{adjustbox}{width=1\linewidth}
+		\begin{tabular}{|l|}
+			\hline
+			\rowcolor{blue!40} Mensagem \\ \hline
+			\rowcolor{blue!10} Por favor, escolha a unidade do SEI onde o Termo de Cancelamento será assinado: \\ \hline
+		\end{tabular}
+	\end{adjustbox}
+	
+	\item E apresenta um <Combobox> com uma lista de \textbf{**TODAS AS UNIDADES DO SEI**} para o usuário escolher:
+	
+	\begin{tabular}{|l|}
+		\hline
+		\rowcolor{blue!40} Combobox \\ \hline
+		\rowcolor{blue!10} CMI \\ \hline
+		\rowcolor{blue!20} DRH \\ \hline
+		\rowcolor{blue!10} GAB1 \\ \hline
+		\rowcolor{blue!20} GAB2 \\ \hline
+		\rowcolor{blue!10} GAB3 \\ \hline
+		\rowcolor{blue!20} GAB4 \\ \hline
+		\rowcolor{blue!10} GAB5 \\ \hline
+		\rowcolor{blue!20} GAB6 \\ \hline
+		\rowcolor{blue!10} GAB7 \\ \hline
+		\rowcolor{blue!20} GAB8 \\ \hline
+		\rowcolor{blue!10} GAB9 \\ \hline
+		\rowcolor{blue!20} (...) \\ \hline
+	\end{tabular}
+	
+	\item E o usuário escolhe uma \textbf{**Unidade do SEI**} da lista do \textbf{**Combobox**} e clica em OK.
+	\item Então, no SEI, na Unidade Solicitante, \textbf{**SE**} o \textbf{**PROCESSO DO SEI**} relacionado à \textbf{**ORDEM DE SERVIÇO**} do SISTEMA ASSEL que o usuário deseja cancelar \textbf{**NÃO ESTIVER ABERTO**, **}ENTÃO\textbf{** o sistema **}REABRE** o processo
+	\item E, no SEI, no PROCESSO DO SEI reaberto, adiciona nova minuta de documento do SEI do tipo \textcolor{blue}{Termo de Cancelamento}
+	\item E, no SISTEMA ASSEL, armazena e grava o n° da minuta do \textcolor{blue}{Termo de Cancelamento} no atributo interno da OS \textcolor{blue}{Informações do SEI - Número do Termo de Cancelamento}
+	\item \# Nota: O atributo interno da OS \textcolor{blue}{Informações do SEI - Número do Termo de Cancelamento} não possui lugar para ser visualizado nas interfaces gráficas ainda.
+	\item E, no SEI, no PROCESSO DO SEI reaberto, no Termo de Cancelamento, preenche-o de acordo com o modelo, as seguintes informações:
+	
+	\begin{adjustbox}{width=1\linewidth}
+		\begin{tabular}{|l|l|}
+			\hline
+			\rowcolor{blue!40} Campos do Termo de Cancelamento & Origem dos Dados \\ \hline
+			\rowcolor{blue!10} SOLICITANTE & NA \\ \hline
+			\rowcolor{blue!20} Deputado/Órgão & Atributos da Solicitação da Ordem de Serviço \\ \hline
+			\rowcolor{blue!10} Contato & Atributos da Solicitação da Ordem de Serviço \\ \hline
+			\rowcolor{blue!20} Ramal & Atributos da Solicitação da Ordem de Serviço \\ \hline
+		\end{tabular}
+	\end{adjustbox}
+	
+	\item E o pedido:
+	
+	\begin{adjustbox}{width=1\linewidth}
+		\begin{tabular}{|l|}
+			\hline
+			\rowcolor{blue!40} PEDIDO DE CANCELAMENTO \\ \hline
+			\rowcolor{blue!10} Mensagem: Solicito o cancelamento da Ordem de Serviço Nº <Número do Documento da Solicitação no SEI> \\ \hline
+			\rowcolor{blue!20} Compreendo que a execução do \\ \hline
+			\rowcolor{blue!10} serviço será interrompida e essa é uma operação irreversível. \\ \hline
+		\end{tabular}
+	\end{adjustbox}
+	
+	\item Com a justificativa:
+	
+	\begin{tabular}{|l|}
+		\hline
+		\rowcolor{blue!40} JUSTIFICATIVA \\ \hline
+		\rowcolor{blue!10} Justificativa escrita no campo de texto. \\ \hline
+	\end{tabular}
+	
+	\item E o sistema cria um \textbf{**Bloco de Assinaturas**} na \textbf{**Unidade do SEI**} da lista do \textbf{**Combobox**} informada com a seguinte <Descrição>:
+	
+	\begin{adjustbox}{width=1\linewidth}
+		\begin{tabular}{|l|l|}
+			\hline
+			\rowcolor{blue!40} Descrição do Bloco de Assinatura & Origem da Informação \\ \hline
+			\rowcolor{blue!10} Sistema ASSEL - Cancelamento de Ordem de Serviço & Título Linha da Descrição \\ \hline
+			\rowcolor{blue!20} Unidade solicitante: Gabinete 10 & Nome da Unidade \\ \hline
+			\rowcolor{blue!10} Usuário Solicitante: Nome Completo do Usuário Solicitante do Cancelamento & Nome do Usuário Solicitante \\ \hline
+		\end{tabular}
+	\end{adjustbox}
+	
+	\item E, no SISTEMA ASSEL, armazena e grava o N°/link retornado pelo \textbf{**SEI**} do \textbf{**Bloco de Assinatura**} para cancelamento no atributo interno da OS \textcolor{blue}{Informações do SEI - Bloco de Assinatura Cancelamento}
+	\item \# Nota: O atributo interno da OS \textcolor{blue}{Informações do SEI - Bloco de Assinatura Cancelamento} não possui lugar para ser visualizado nas interfaces gráficas ainda.
+	\item E inclui o \textbf{**Termo de Cancelamento**} no \textbf{**Bloco de Assinaturas**} criado
+	\item E o sistema disponibiliza o \textbf{**Bloco de Assinatura**} gerado no SEI
+	\item E o sistema apresenta a <Mensagem>:
+	
+	\begin{adjustbox}{width=1\linewidth}
+		\begin{tabular}{|l|}
+			\hline
+			\rowcolor{blue!40} Mensagem \\ \hline
+			\rowcolor{blue!10} Enviado com sucesso! \\ \hline
+			\rowcolor{blue!20} Por favor, para concluir a solicitação, o documento SEI \textbf{**N°0003216**} do processo \textbf{**00001-00000001/21-01**} disponível no \textbf{**Bloco de Assinatura N° 00001**} disponibilizado para a unidade \textbf{**Unidade do SEI escolhido no combobox**} deve ser assinado no prazo de até 15 dias! \\ \hline
+			\rowcolor{blue!10} Após a assinatura, o sistema ASSEL se encarregará de cancelar a ordem de serviço. Caso o Termo de Cancelamento não seja assinado em 15 dias, o pedido de cancelamento será desconsiderado. \\ \hline
+		\end{tabular}
+	\end{adjustbox}
+	
+	\item E o SISTEMA ASSEL fecha a janela Justificativa;
+\end{enumerate}

@@ -1,0 +1,134 @@
+\begin{landscape}
+\section{Caso 1 - Na Unidade ABC os consultores se inscrevem para elaborar e revisar uma solicitação}
+
+\subsection*{Configurações da Unidade ABC}
+
+Suponha a existência de uma unidade denominada \textbf{Unidade ABC} configurada da seguinte forma: 
+
+\CONFIGURAUNID{ABC}{\mssim}{\mssim}{\mssim}{\mssim}
+
+Conforme tabela, a Unidade ABC:
+\begin{itemize}
+	\item Permite auto-atribuição de elaboradores e dispensa o consentimento do supervisor nesses casos.
+	\item Permite auto-atribuição de revisores e dispensa o consentimento do supervisor nesses casos.
+\end{itemize}
+
+A Unidade ABC é completamente liberal permitindo não só que os consultores atribuam as solicitações para sí mesmos como dispensa o consentimento dos supervisores quando isso acontece.
+
+\subsection*{Descrição do Caso}
+
+Chega uma solicitação \SOLD à Unidade ABC e assim ocorre a seguinte sequência de eventos:
+\begin{itemize}
+	\item O supervisor recebe a solicitação, analisa e decide que sim, a Unidade ABC é a unidade competente para atende-la. Assim, coloca a situação na fila.
+	\item Três CLs se inscrevem para elaborar a solicitação \SOLD sem precisar de consentimento do supervisor.
+	\item Depois outros dois CLs se inscrevem para revisar a solicitação também sem precisar do consentimento do supervisor. 
+	\item O trabalho é feito e finalizado pela equipe de revisores e elaboradores.
+	\item O supervisor entra em cena quando o trabalho foi finalizado de modo a encaminhar os resultados para a ASSEL.
+\end{itemize}
+
+\subsection*{Simulação}
+
+\begin{enumerate}
+	\item Solicitação \SOLD chega na unidade com estado \euni{Não Lido};
+
+	\GERSOLUNID{\SOLD}{Gabinete Chico Vigilante}{CONS}{}{}{}{}{Não}{Distribuição}
+	{\euni{Não Lido}}{-}{-}{Indefinido}
+	
+	\item Curioso, \EQ, que não possui o perfil de supervisor, clica em \bVisualizar para ver do que se trata a solicitação, mas nenhum estado muda já que ele não é supervisor.
+
+	\item \ST, que é supervisor, acessa visualizar fazendo com que o estado mude para \euni{Em Análise};
+
+	\GERSOLUNID{\SOLD}{Gabinete Chico Vigilante}{CONS}{}{}{}{}{Não}{Distribuição}
+	{\euni{Em Análise}}{-}{-}{Indefinido}
+	
+	\item Supervisor \ST analisa a solicitação e verifica que sua unidade é a unidade destinada a realizar o trabalho. Assim ele seleciona ``Colocar na Fila''. Assim, o estado da solicitação passa a ser \euni{Na Fila} indicando que a solicitação está liberada para que CLs se inscrevam.
+	
+	\GERSOLUNID{\SOLD}{Gabinete Chico Vigilante}{CONS}{}{}{}{}{Não}{Distribuição}
+	{\euni{Na Fila}}{-}{-}{Indefinido}	
+	
+	\item Um belo dia, \ET acessa o módulo e verifica que a solicitação \SOLD está no estado \euni{Na Fila}. Então decide se inscrever neste trabalho para atuar como elaborador. Ele marca a solicitação e clica em \bInscrever. Abre-se um modal para que escolha-se a qualidade da inscrição: Elaborador ou Revisor?
+	
+	\item \ET clica por engano em ``Revisor'' e clica em Ok. O sistema verifica que a solicitação não possui ainda nenhum elaborador e, portanto, não permite que \ET se inscreva como revisor. 
+	
+	\item \ET se dá conta do erro e marca a opção  ``Elaborador(a)'' e clica em Ok.
+	
+	\item Neste momento o sistema verifica as configurações da Unidade ABC e verifica que a opção ``Dispensar consentimento para auto-atribuição de elaboradores'' está habilitada. Então o sistema não vai pedir que algum supervisor aceite a inscrição. O sistema pula essa parte. E assim, já que \ET é o primeiro CL a se inscrever na solicitação na qualidade de elaborador, o sistema faz a atribuição e muda o estado para \euni{Em Elaboração}.
+
+	\GERSOLUNID{\SOLD}{Gabinete Chico Vigilante}{CONS}{}{}{}{}{Não}{Distribuição}
+	{\euni{Em Elaboração}}{\ET}{-}{Indefinido}
+	
+	\item Ao mesmo tempo, na área de trabalho de \ET, aparece a seguinte linha indicando que \ET está atuando naquela solicitação na qualidade de elaborador:
+
+	
+	\item Da mesma forma, na Área de Trabalho de \ET, aparece a solicitação \SOLD com o estado \ecl{Elaboração} indicando que \ET é elaboradora daquela solicitação.
+
+	\AREATRABCL{\SOLD}{Gabinete do Chico Vigilante}{PDL}{}{}{}{}{Não}{Distribuição}
+	{\ecl{Em Elaboração}}{\ET}{-}{\ET}
+	
+	\item Em seguida, \ET pede ajuda para \EQ e \EC. Então ambos acessam o módulo, encontram a solicitação \SOLD e clicam em \bInscrever. No modal escolhem ``Elaboração'' e clicam em Ok.
+	
+	\item Como a opção de dispensar consentimento para elaboração está habilitada, o sistema automaticamente inscreve \EQ e \EC como elaboradores da solicitação. De modo análogo, nas Áreas de Trabalho individuais de cada CL vai aparecer a solicitação com o estado ``Em Elaboração''.
+
+	\AREATRABCL{\SOLD}{Gabinete do Chico Vigilante}{PDL}{}{}{}{}{Não}{Distribuição}
+	{\ecl{Em Elaboração}}{\ET, \EQ, \EC}{-}{\ET}
+
+	\AREATRABCL{\SOLD}{Gabinete do Chico Vigilante}{PDL}{}{}{}{}{Não}{Distribuição}
+	{\ecl{Em Elaboração}}{\ET, \EQ, \EC}{-}{\EQ}
+
+	\AREATRABCL{\SOLD}{Gabinete do Chico Vigilante}{PDL}{}{}{}{}{Não}{Distribuição}
+	{\ecl{Em Elaboração}}{\ET, \EQ, \EC}{-}{\EC}
+
+	
+	\item Durante o trabalho, a equipe de elaboradores acha que o trabalho pode ser revisado e assim eles pedem no grupo de whatsapp que seus colegas façam a revisão. \RT e \RQ resolvem atender ao chamado. Eles acessam a solicitação \SOLD e clicam em \bInscrever e marcam a opção ``Revisão''. 
+	
+	\item Mais uma vez, como a opção de dispensar consentimento para revisor também está habilitada, o sistema já atribui a solicitação aos dois revisores proativos:
+	
+	\AREATRABCL{\SOLD}{Gabinete do Chico Vigilante}{PDL}{}{}{}{}{Não}{Distribuição}
+	{\ecl{Em Elaboração}}{\ET, \EQ, \EC}{\RT, \RQ}{\ET}
+
+	\AREATRABCL{\SOLD}{Gabinete do Chico Vigilante}{PDL}{}{}{}{}{Não}{Distribuição}
+	{\ecl{Em Elaboração}}{\ET, \EQ, \EC}{\RT, \RQ}{\EQ}
+
+	\AREATRABCL{\SOLD}{Gabinete do Chico Vigilante}{PDL}{}{}{}{}{Não}{Distribuição}
+	{\ecl{Em Elaboração}}{\ET, \EQ, \EC}{\RT, \RQ}{\EC}
+	
+	\AREATRABCL{\SOLD}{Gabinete do Chico Vigilante}{PDL}{}{}{}{}{Não}{Distribuição}
+	{\ecl{Em Elaboração}}{\ET, \EQ, \EC}{\RT, \RQ}{\RT}
+
+	\AREATRABCL{\SOLD}{Gabinete do Chico Vigilante}{PDL}{}{}{}{}{Não}{Distribuição}
+	{\ecl{Em Elaboração}}{\ET, \EQ, \EC}{\RT, \RQ}{\RQ}	
+	
+	\item A equipe de elaboradores e revisores trabalha até que decidem que o trabalho está pronto.
+	
+	\item \RT acessa sua área de trabalho, marca a solicitação e clica em \bConcluir. Contudo o sistema não permite que isso seja feito porque \RT se esqueceu que o trabalho só pode ser concluído, com upload dos arquivos finais, por algum \textbf{elaborador}. Então ele avisa no grupo e pede que algum dos elaboradores faça upload dos arquivos. 
+	
+	\item \EC atende o pedido, acessa sua Área de Trabalho no sistema, procura a solicitação \SOLD em que ele está atuando como elaborador e clica em \bConcluir. Dessa vez, como \EC é elaborador, a primeira condição para abrir o modal de upload é satisfeita. O sistema verifica também que há de fato pelo menos um CL atuando na qualidade de revisor. Então as duas condições para liberar o upload dos arquivos estão satisfeitos. O sistema permite que o upload seja feito.
+	
+	\item Após o upload, o sistema altera o estado para \euni{Solicitação Concluída} e dentro das Áreas de Trabalho de cada elaborador e revisor também.
+	
+	\GERSOLUNID{\SOLD}{Gabinete Chico Vigilante}{PDL}{}{}{}{}{Não}{Distribuição}
+	{\euni{Conclusão da Solicitação}}{\ET, \EQ, \EC}{\RT, \RQ}{Conclusão da Solicitação}
+
+	\AREATRABCL{\SOLD}{Gabinete do Chico Vigilante}{PDL}{}{}{}{}{Não}{Distribuição}
+	{\ecl{Conclusão da Solicitação}}{\ET, \EQ, \EC}{\RT, \RQ}{\ET}
+	
+	\AREATRABCL{\SOLD}{Gabinete do Chico Vigilante}{PDL}{}{}{}{}{Não}{Distribuição}
+	{\ecl{Conclusão da Solicitação}}{\ET, \EQ, \EC}{\RT, \RQ}{\EQ}
+	
+	\AREATRABCL{\SOLD}{Gabinete do Chico Vigilante}{PDL}{}{}{}{}{Não}{Distribuição}
+	{\ecl{Conclusão da Solicitação}}{\ET, \EQ, \EC}{\RT, \RQ}{\EC}
+	
+	\AREATRABCL{\SOLD}{Gabinete do Chico Vigilante}{PDL}{}{}{}{}{Não}{Distribuição}
+	{\ecl{Conclusão da Solicitação}}{\ET, \EQ, \EC}{\RT, \RQ}{\RT}
+	
+	\AREATRABCL{\SOLD}{Gabinete do Chico Vigilante}{PDL}{}{}{}{}{Não}{Distribuição}
+	{\ecl{Conclusão da Solicitação}}{\ET, \EQ, \EC}{\RT, \RQ}{\RQ}		
+	
+	\item Uma vez concluído, alguem avisa isso para \ST. \ST marca e manda encaminhar e a solicitação é encaminhada para a ASSEL desaparecendo da caixa de entrada da unidade e também das áreas de trabalho de cada CL que participou da elaboração e revisão do trabalho.
+	
+	
+\end{enumerate}
+
+\end{landscape}
+
+\pagebreak

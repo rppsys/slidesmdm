@@ -1,0 +1,210 @@
+\chapter{Simulações de Interações}
+\label{detalhes:modulos-simula}
+
+\newcommand{\euni}[1]{\colorbox{yellow!50}{\textbf{#1}}}
+\newcommand{\ecl}[1]{\colorbox{orange!50}{\textbf{#1}}}
+
+
+\begin{nota}{Capítulo Desatualizado!}
+	Esse documento foi desenvolvido como ponto de partida para a concepção dos protótipos necessários para atingir os objetivos.
+	
+	Com a realização de reuniões com representantes das unidades temáticas da Assessoia Legislativa, alguns casos de simulações elaborados neste capítulo já podem estar desatualizados!
+	
+	\tcblower
+	
+	Contudo, esse capítulo foi mantido pois os casos de simulação ajudam o leitor a compreender as funcionalidades pretendidas.
+\end{nota}
+
+\section*{Introdução}
+
+Nesta seção vamos descrever alguns casos de uso simulando as interações entre usuários com os papéis de \textbf{Supervisor} e \textbf{Consultor Legislativo}.
+
+Sabemos que haverão pelo menos três módulos necessários para possibilitar essa interação que foram apresentados nos capítulos anteriores:
+
+\begin{itemize}
+	\item Gerenciamento de Solicitações da Unidade;
+	\item Área de Trabalho do Consultor Legislativo;
+	\item Minhas Notificações
+\end{itemize}
+
+
+\begin{landscape}
+\subsection*{Gerenciamento de Solicitações da Unidade}
+
+	Trata-se do Módulo de acesso \textbf{compartilhado} entre todos os usuários de uma mesma unidade quer possuam o papel de supervisor ou não.  
+
+	As solicitações neste módulo são apresentados numa tabela com colunas diversas. Nesta simulação vamos focar nas seguintes colunas:
+	
+	\begin{itemize}
+		\item Solicitação: Mostra o identificador da solicitação;
+		\item Estado: Mostra o estado da solicitação no módulo de gerenciamento;
+		\item Elaborador(es): Mostra os nome(s) dos consultor(es) atribuídos a essa solicitação na qualidade de \textbf{elaborador}.
+		\item Revisor(es): Mostra os nome(s) dos consultor(es) atribuídos a essa solicitação na qualidade de \textbf{revisor}.
+	\end{itemize}
+	
+	Além disso, o módulo de gerenciamento de solicitações da unidade apresentam os seguintes botões:
+	
+	\begin{itemize}
+		\item \bAnalisar: Botão de uso exclusivo de supervisores vai abrir o modal de ``Análise''. Esse modal será parecido com o desenvolvido no módulo do apoio. Será usado para o supervisor decidir se coloca a solicitação na fila para elaboração ou se devolve a solicitação para a ASSEL com o estado de ``RETORNO DA UNIDADE'' caso o supervisor acredite que a solicitação não tem condições de ser elaborada. 
+
+		\item \bGerAtrib: Botão de uso exclusivo de supervisores vai abrir o modal de ``Gerenciamento de Atribuições''. Esse modal deve listar para a solicitação selecionada quem são os consultores atribuídos como elaboradores, revisores. Permitirá fazer atribuições também.
+		
+		\item \bGerInscricoes: Botão de uso exclusivo de supervisores vai abrir o modal de ``Gerenciamento de Inscrições''. Esse modal deve listar todas as solicitações que possuam pedidos de inscrições não aprovados.
+		
+		\item \bInscrever: Botão utilizado pelo \CL para se auto-atribuir uma solicitação. Ele abre um modal para que se escolha a qualidade: elaborador ou revisor.
+		
+	\end{itemize}
+
+	Em um dado momento o módulo de ``Gerenciar Solicitações Unidade'' vai apresentar diversas solicitações presentes na Unidade: 
+
+	\begin{center}
+		\scalebox{0.8}{
+		\begin{tabularx}{22cm}{|c c|c|X|X|}
+			\hline
+			\rowcolor{yellow!70} \multicolumn{5}{|c|}{ \textbf{Gerenciar Solicitações Unidade}} \\ \hline
+			
+			% CABEÇALHO
+			\rowcolor{yellow!20} & \textbf{Solicitação} & \textbf{Estado} & \textbf{Elaborador(es)} & \textbf{Revisor(es)} \\ \hline
+			
+			% CONTEUDO
+			\rowcolor{cldfG!10} \msnao & EST0002-2023 & \euni{Não Lido} & - & - \\ \hline
+			\rowcolor{cldfG!10} \msnao & PL1700F006-2021 & \euni{Não Lido} & - & - \\ \hline			
+			\rowcolor{cldfG!10} \msnao & CONS008-2023 & \euni{Na Fila} & - & - \\ \hline			
+			\rowcolor{cldfG!10} \msnao & PL1700S007-2021 & \euni{Na Fila} & - & - \\ \hline			
+			\rowcolor{cldfG!10} \mssim & PLC73F001-2021 & \euni{Em Elaboração} & \EU, \ET, \EQ & - \\ \hline			
+			\rowcolor{cldfG!10} \mssim & DEN1994P002-2021 & \euni{Em Elaboração} & \EC & \RT \\ \hline			
+			\rowcolor{cldfG!10} \msnao & PDL279S001-2022 & \euni{Solicitação Concluída} & \EU, \ED & \RD \\ \hline			
+			% -----			
+		\end{tabularx}   
+		\begin{tabularx}{22cm}{c}
+			\rowcolor{white} \bVisualizar \\ 
+			\rowcolor{white} \bDetalhes \\ 
+			\rowcolor{white} \bAnalisar \\ 
+			\rowcolor{white} \bGerAtrib \\ 			
+			\rowcolor{white} \bGerInscricoes \\ 	
+			\rowcolor{white} \bInscrever \\ 
+			% -----			
+		\end{tabularx}   
+	}
+	\end{center}
+
+	Contudo, nesta simulação, não vamos mostrar a tabela inteira. Vamos focar em apenas um registro dessa tabela de cada vez. Também iremos ocultar os botões do lado direito. 
+	
+	Assim, por exemplo, em um dado momento o estado da solicitação \textbf{PLC73F001-2021} será mostrada assim:
+	
+	\GERSOLUNID{PLC73F001-2021}{Gabinete Delmasso}{}{}{}{}{}{Não}{Distribuição}
+	{\euni{Em Elaboração}}{\EU, \ET, \EQ}{-}{Indefinido}
+
+	Dessa forma, a tabela indica que em um determinado momento a solicitação \textbf{PLC73F001-2021} encontra-se no estado \textbf{``Em Elaboração''}, possui três consultores legislativos atribuídos a ela na qualidade de \textbf{elaboradores} e nenhum consultor atribuído na qualidade de \textbf{revisor}.
+	
+	\pagebreak
+	
+\subsection*{Área de Trabalho do Consultor Legislativo}
+	
+	Trata-se do Módulo de acesso \textbf{exclusivo} de um consultor legislativo onde ele poderá ver qual é sua carga de trabalho atual, isto é, quais são as solicitações atribuídas a ele e em qual qualidade (elaborador ou revisor).
+
+	Da mesma forma que no módulo anterior, as solicitações neste módulo são apresentados numa tabela com as mesmas colunas a saber:
+	
+	\begin{itemize}
+		\item Solicitação;
+		\item Estado;
+		\item Elaborador(es);
+		\item Revisor(es);
+	\end{itemize}	
+
+	Os botões, já descritos no capítulo destinado à área de trabalho dos consultores, são os listados abaixo:
+	
+	\begin{itemize}
+		\item \bVisualizar
+		\item \bDetalhes
+		\item \bAvaliar
+		\item \bDesistir
+		\item \bConcluir
+	\end{itemize}		
+
+	Contudo, é importante destacar que o conjunto de estados possíveis em cada módulo serão diferentes.
+	
+	Dessa forma, para facilitar o entendimento, estados que vão aparecer no módulo de gerenciamento serão apresentados com a cor de fundo \euni{amarela} enquanto estados que vão aparecer no módulo da área de trabalho serão apresentados na cor de fundo \ecl{laranja}.	
+	
+	\pagebreak
+	
+	Por exemplo, a ``Área de Trabalho'' do consultor legislativo \EU em um dado momento poderia ter os seguintes registros:
+
+	\begin{center}
+	\scalebox{0.8}{
+		\begin{tabularx}{22cm}{|c c|c|X|X|}
+			\hline
+			\rowcolor{orange!70} \multicolumn{5}{|c|}{ \textbf{Área de Trabalho de \EU}} \\ \hline
+			
+			% CABEÇALHO
+			\rowcolor{orange!20} & \textbf{Solicitação} & \textbf{Estado} & \textbf{Elaborador(es)} & \textbf{Revisor(es)} \\ \hline
+			
+			% CONTEUDO
+			\rowcolor{cldfG!10} \msnao & PL1700S006-2021 & \ecl{Aceitar Elaboração} & - & - \\ \hline			
+			\rowcolor{cldfG!10} \msnao & PL1700S007-2021 & \ecl{Aceitar Revisão} & - & - \\ \hline			
+			\rowcolor{cldfG!10} \mssim & PLC73F001-2021 & \ecl{Em Elaboração} & \EU, \ET, \EQ & - \\ \hline			
+			\rowcolor{cldfG!10} \msnao & PDL279S001-2022 & \ecl{Solicitação Concluída} & \EU, \ED & \RD \\ \hline			
+			% -----			
+		\end{tabularx}   
+		\begin{tabularx}{22cm}{c}
+			\rowcolor{white} \bVisualizar \\ 
+			\rowcolor{white} \bDetalhes \\ 
+			\rowcolor{white} \bAvaliar \\ 
+			\rowcolor{white} \bDesistir \\ 
+			\rowcolor{white} \bConcluir \\ 
+			% -----			
+		\end{tabularx}   
+		}
+	\end{center}
+
+	No entanto, da mesma forma que no módulo de gerenciamento, não vamos mostrar a tabela inteira. Vamos focar em apenas um registro dessa tabela de cada vez. Também iremos ocultar os botões do lado direito. 
+
+	Assim, por exemplo, em um dado momento o estado da solicitação \textbf{PLC73F001-2021} será mostrada assim na Área de Trabalho de \EU:
+	
+	
+	\AREATRABCL{PLC73F001-2021}{Gabinete Delmasso}{CONS}{}{}{}{}{Não}{Distribuição}
+	{\ecl{Em Elaboração}}{\EU, \ET, \EC}{-}{\EU}
+	
+	
+	\pagebreak
+	
+\subsection*{Nomes Fictícios}
+	
+Como já estamos fazendo, na descrição das simulações de casos de interação vamos utilizar os nomes fictícios de usuários abaixo.
+
+Para facilitar o entendimento, usuários do sistema que terão o papel de \textbf{Supervisores} são nomes que começam com ``S'':
+
+\begin{multicols}{3}
+\begin{itemize}
+	\item \SU
+	\item \SD
+	\item \ST
+	\item \SQ
+	\item \SC
+\end{itemize}
+\end{multicols}
+
+Consultores Legislativos que farão o papel de \textbf{Elaboradores} terão nomes que começam com ``E'':
+\begin{multicols}{3}
+\begin{itemize}
+	\item \EU
+	\item \ED
+	\item \ET
+	\item \EQ
+	\item \EC
+\end{itemize}
+\end{multicols}
+
+E Consultores Legislativos que farão o papel de \textbf{Revisores} terão nomes que começam com ``R'':
+\begin{multicols}{3}
+\begin{itemize}
+	\item \RU
+	\item \RD
+	\item \RT
+	\item \RQ
+	\item \RC
+\end{itemize}
+\end{multicols}
+\end{landscape}
+
+\pagebreak

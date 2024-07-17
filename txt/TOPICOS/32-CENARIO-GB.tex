@@ -1,0 +1,104 @@
+% Cenário Gartner B
+\newcommand{\cenGB}{Cenário \emph{Gartner} B: Distribuição \emph{MoSCoW} \emph{MUST-Only}} 
+\section{\cenGB}
+
+    O segundo cenário criado já passa a levar as classes \emph{MoSCoW} sugeridas na seção \ref{sec-avaliacao} em conta para distribuição dos pesos.
+    
+\subsection*{Distribuição dos Pesos}    
+
+
+    Dessa vez decidimos criar uma distribuição \emph{MoSCoW} ``\emph{MUST-Only}'', ou seja, o total de 100\% dos pesos será distribuído de forma igual apenas entre as áreas de capacidade classificadas como \MUST. As demais áreas receberão peso nulo.
+    
+    Assim, como temos 5 áreas críticas de capacidade classificadas como \MUST cada uma receberá peso de 20\% conforme pode ser verificado na tabela \ref{tab:cenGB:pesos}.
+    
+    % cenGB - Tabela de Pesos
+    \begin{table}[!h]
+        \begin{center}
+        \begin{tabular}{|p{0.4\textwidth}|c|c|}
+            \hline
+                % NOME DA TABELA        
+                \rowcolor{cldfB1} \multicolumn{3}{|c|}{\Large \cenGB} \\  
+                \rowcolor{cldfB1}
+                \multicolumn{3}{|c|}{\large \textbf{Tabela de Pesos}} \\ \hline \hline
+                % CABEÇALHO        
+                \rowcolor{lightgray}\textbf{Áreas de Capacidade} & \textbf{Classe MoSCoW} & \textbf{Pesos} \\ \hline
+                % CONTEÚDO
+                % Código gerado pela tabela do Google SpreadSheet Cenário GB
+                \rowcolor{corMUST!80}Segurança & MUST & 20\% \\ \hline
+                \rowcolor{corMUST!80}Capacidade de Gerenciamento & MUST & 20\% \\ \hline
+                \rowcolor{corMUST!80}Conectividade de Fontes de Dados & MUST & 20\% \\ \hline
+                \rowcolor{corMUST!80}Preparação de Dados & MUST & 20\% \\ \hline
+                \rowcolor{corMUST!80}Visualização de Dados & MUST & 20\% \\ \hline
+                \rowcolor{corSHOULD!80}Nuvem & SHOULD & 0\% \\ \hline
+                \rowcolor{corSHOULD!80}Complexidade de Modelos & SHOULD & 0\% \\ \hline
+                \rowcolor{corSHOULD!80}Catálogos & SHOULD & 0\% \\ \hline
+                \rowcolor{corSHOULD!80}Incorporação de Análises & SHOULD & 0\% \\ \hline
+                \rowcolor{corCOULD!50}Geração de Relatórios & COULD & 0\% \\ \hline
+                \rowcolor{corCOULD!50}Analytics Avançados & COULD & 0\% \\ \hline
+                \rowcolor{corCOULD!50}Data Storytelling & COULD & 0\% \\ \hline
+                \rowcolor{corWOULD!50}Insight Automatizados & WOULD & 0\% \\ \hline
+                \rowcolor{corWOULD!50}Consulta em Linguagem Natural & WOULD & 0\% \\ \hline
+                \rowcolor{corWOULD!50}Geração de Linguagem Natural & WOULD & 0\% \\ \hline
+                % TOTAL
+                \rowcolor{lightgray!30} \multicolumn{2}{|r|}{\large Total: \normalsize} & 100\% \\ \hline 
+        \end{tabular}    
+        \caption{\label{tab:cenGB:pesos} Pesos para \cenGB}
+        \end{center}
+    \end{table}    
+
+\subsection*{Resultados}   
+
+    De maneira semelhante, ao multiplicar os pesos da tabela \ref{tab:cenGB:pesos} aos \emph{scores} da tabela apresentada no Anexo \ref{anexo-tabelacc} encontramos os resultados exibidos na tabela \ref{tab:cenGB:resultados}.
+    
+    % cenGB - Tabela de Resultados
+    \begin{table}[!h]
+        \begin{center}
+        \begin{tabular}{|c|cc|}
+            \hline
+                % NOME DA TABELA        
+                \rowcolor{cldfB1} \multicolumn{3}{|c|}{\Large \cenGB} \\  
+                \rowcolor{cldfB1}
+                \multicolumn{3}{|c|}{\large \textbf{Resultados}} \\ \hline \hline
+                % CABEÇALHO        
+                \rowcolor{lightgray}\textbf{Fornecedor} & \multicolumn{2}{c|}{\textbf{\emph{Score} [1-5]}} \\ \hline
+                % CONTEÚDO
+                % Código gerado pela tabela do Google SpreadSheets Cenário GB
+                \rowcolor{corP1!80}MicroStrategy & \progressbar{0.928} & 4,6 \\ \hline
+                \rowcolor{corP2!50}Yellowfin & \progressbar{0.892} & 4,5 \\ \hline
+                \rowcolor{corP3!30}Tableau & \progressbar{0.884} & 4,4 \\ \hline
+                \rowcolor{corP3!30}TIBCO Software & \progressbar{0.88} & 4,4 \\ \hline
+                \rowcolor{corPF!20}Domo & \progressbar{0.868} & 4,3 \\ \hline
+                \rowcolor{corPF!20}Microsoft & \progressbar{0.856} & 4,3 \\ \hline
+                \rowcolor{corPF!20}Qlik & \progressbar{0.868} & 4,3 \\ \hline
+                \rowcolor{corPF!20}Salesforce & \progressbar{0.852} & 4,3 \\ \hline
+                \rowcolor{corPF!20}Sisence & \progressbar{0.864} & 4,3 \\ \hline
+                \rowcolor{corPF!20}Birst & \progressbar{0.832} & 4,2 \\ \hline
+                \rowcolor{corPF!20}Infor Builders & \progressbar{0.844} & 4,2 \\ \hline
+                \rowcolor{corPF!20}SAS & \progressbar{0.84} & 4,2 \\ \hline
+                \rowcolor{corPF!20}Logi & \progressbar{0.812} & 4,1 \\ \hline
+                \rowcolor{corPF!20}Oracle & \progressbar{0.796} & 4,0 \\ \hline
+                \rowcolor{corPF!20}Board & \progressbar{0.744} & 3,7 \\ \hline
+                \rowcolor{corPF!20}ThoughtSpot & \progressbar{0.74} & 3,7 \\ \hline
+                \rowcolor{corPF!20}IBM & \progressbar{0.724} & 3,6 \\ \hline
+                \rowcolor{corPF!20}Alibaba & \progressbar{0.692} & 3,5 \\ \hline
+                \rowcolor{corPF!20}Looker & \progressbar{0.7} & 3,5 \\ \hline
+                \rowcolor{corPF!20}SAP & \progressbar{0.692} & 3,5 \\ \hline
+        \end{tabular}    
+        \caption{\label{tab:cenGB:resultados} Resultados para \cenGB}
+        \end{center}
+    \end{table}    
+    
+\subsection*{Análise dos Resultados}    
+
+    Desta vez, ao atribuir 100\% do total dos pesos de forma igual entre as áreas de capacidade classificadas como \MUST, nosso critério de escolha definido na seção \ref{sec-criteriog} exibe os seguintes resultados: 
+    
+    \begin{itemize}
+        \item A \emph{MicroStrategy} lidera em primeiro lugar com $4,6$ pontos;
+        \item A \emph{Yellowfin} aparece sozinha em segundo lugar com $4,5$ ponto;
+        \item A \emph{Tableau} e a \emph{TIBCO Software} empatam em terceiro lugar com $4,4$ pontos cada;
+        \item Todas os demais fornecedores são eliminados;
+    \end{itemize}
+    
+    O \cenGB \xspace apresenta potenciais fornecedores para atender as necessidades mais imediatas da \CLDF de modernização da fiscalização.
+    
+    Contudo, ainda não ficamos satisfeitos com este cenário pois, mesmo que as áreas críticas de capacidade \SHOULD não sejam críticas, seu grau de importância não pode ser desprezado.

@@ -1,0 +1,40 @@
+.doc	& Documento do Word 97-2003 & O formato de arquivo binário do Word 97-Word 2003. 
+
+
+.docx &  Documento do Word & O formato de arquivo baseado em XML padrão do Word 2019, Word 2016, Word 2013, Word 2010 e Office Word 2007. 
+
+.odt & Texto OpenDocument &  Um formato de arquivo para salvar arquivos do Word 2019, Word 2016 e Word 2013 para que eles possam ser abertos em aplicativos de documentos que usam o formato OpenDocument. 
+
+.pdf & PDF  & 	Portable Document Format (PDF), um formato de arquivo eletrônico baseado em PostScript desenvolvido pela Adobe Systems. Preserva a formatação de documento e permite o compartilhamento de arquivos. 
+
+.rtf & Formato Rich Text  & O RTF controla a representação e formatação de um documento, na tela e impresso. Quando eles usam o formato de arquivo .rtf, os documentos criados em diferentes sistemas operacionais e com diferentes aplicativos de software podem ser transferidos entre estes sistemas operacionais e aplicativos. 
+
+.txt & Texto sem Formatação  & 
+
+EXCEL
+
+.csv 
+
+.ods 
+
+.xls 
+
+.xlsx 
+
+.bmp 
+
+.gif 
+
+.jpg 
+
+.odp 
+
+.png 
+
+.ppt 
+
+.pptx
+
+.tif 
+
+.odg

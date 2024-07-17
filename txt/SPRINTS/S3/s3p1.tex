@@ -1,0 +1,503 @@
+\section{Falhas - Homologação 1}
+
+% ##########################################################################################
+% ----------------------------------------------------------------------------------------
+
+% ##########################################################################################
+% ----------------------------------------------------------------------------------------
+\subsection{Combobox de Unidades da Tela de Solicitar Ordem de Serviço Não Atualiza}
+\begin{falha}[1]{Combobox de Unidades da Tela de Solicitar Ordem de Serviço Não Atualiza}
+% ----------------------------------------------------------------------------------------
+
+% https://sgo.basis.com.br/browse/CLDF072020-1675?focusedCommentId=1816906&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-1816906
+
+\textbf{Previsto na Documentação?}: \mschecksim
+\begin{itemize}
+	\item \textbf{Funcionalidade}: \sosFu
+	\item \textbf{Cenário}: \sosFuCu
+\end{itemize}
+
+\textbf{Controle}:
+	\begin{itemize}
+		\item \textbf{Relatado no SGO}? \mschecksim 
+	\end{itemize}
+
+
+% ----------------------------------------------------------------------------------------
+\tcblower
+% ----------------------------------------------------------------------------------------
+
+\textbf{Detalhamento:}
+\begin{enumerate}
+	\item \textbf{Quando} entramos na tela de ``Gerenciar Usuário'' e adicionamos uma nova unidade para o usuário logado;
+
+	\item \textbf{E} entramos na tela de ``Solicitar Ordem de Serviço'' e selecionamos o ComboBox de escolha da Unidade
+	
+	\item \textbf{Então} a lista de Unidades do usuário não está sendo atualizada.	
+\end{enumerate}
+
+\end{falha}
+% ##########################################################################################
+
+% ##########################################################################################
+% ----------------------------------------------------------------------------------------
+\subsection{Combobox de Unidades da Tela de Solicitar Ordem de Serviço Não Atualiza Após Troca}
+\begin{falha}[1]{Combobox de Unidades da Tela de Solicitar Ordem de Serviço Não Atualiza Após Troca}
+	% ----------------------------------------------------------------------------------------
+	\textbf{Previsto na Documentação?}: \mschecknao
+	
+	% ----------------------------------------------------------------------------------------
+	\tcblower
+	% ----------------------------------------------------------------------------------------
+	
+	\textbf{Detalhamento:}
+	\begin{enumerate}
+		\item \textbf{Quando} entramos na tela de ``Solicitar Ordem de Serviço'' e selecionamos o ComboBox de escolha da Unidade
+		
+		\item \textbf{E} trocamos a Unidade
+		
+		\item \textbf{Então}, a tabela de listagem deve ser atualizada sem precisar clicar em pesquisar.
+	\end{enumerate}
+\end{falha}
+
+\TODO{Colocar isso na próxima Sprint}
+
+% ##########################################################################################
+
+
+
+
+
+
+\subsection{Ementa não é pesquisada e atualizada}
+\begin{falha}[1]{Ementa não é pesquisada e atualizada}
+	% https://sgo.basis.com.br/browse/CLDF072020-1675?focusedCommentId=1818044&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-1818044
+	% ----------------------------------------------------------------------------------------
+	\textbf{Previsto na Documentação?}: \mschecksim
+	\begin{itemize}
+		\item \textbf{Funcionalidade}: \sosFd
+		\item \textbf{Cenário}: \sosFdCc
+	\end{itemize}
+	
+	\textbf{Controle}:
+	\begin{itemize}
+		\item \textbf{Relatado no SGO}? \mschecksim % https://sgo.basis.com.br/browse/CLDF072020-1675?focusedCommentId=1816906&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-1816906
+	\end{itemize}
+	
+	
+	% ----------------------------------------------------------------------------------------
+	\tcblower
+	% ----------------------------------------------------------------------------------------
+	
+	\textbf{Detalhamento:}
+	\begin{enumerate}
+		\item Na Tela ``Solicitar Ordem de Serviço''
+		
+		\item Ao clicar em Novo
+		
+		\item No subform de Inclusão de OS
+		
+		\item Ao escolher o Tipo ``Minuta de Parecer''
+		
+		\item Ao informar o Número e o Ano
+		
+		\item Ao clicar na Lupa
+		
+		\item A Ementa não está sendo atualizada.
+	\end{enumerate}
+	
+\end{falha}
+
+
+
+%\section{}
+
+%\textbf{Alias}: 
+%\textbf{Detalhamento}:
+%\textbf{EPE}:
+
+
+\subsection{O Sistema ASSEL não permite criar OS sem anexos.}
+\begin{falha}[1]{O Sistema ASSEL não permite criar OS sem anexos.}
+	% ----------------------------------------------------------------------------------------
+	
+	% https://sgo.basis.com.br/browse/CLDF072020-1675?focusedCommentId=1818047&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-1818047
+	
+	
+	\textbf{Previsto na Documentação?}: \mscheckint
+	\begin{itemize}
+		\item \textbf{Funcionalidade}: \mscheckint
+		\item \textbf{Cenário}: \mscheckint
+	\end{itemize}
+
+	
+	\textbf{Controle}:
+	\begin{itemize}
+		\item \textbf{Relatado no SGO}? \mschecksim % https://sgo.basis.com.br/browse/CLDF072020-1675?focusedCommentId=1816906&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-1816906
+	\end{itemize}
+	
+	
+	% ----------------------------------------------------------------------------------------
+	\tcblower
+	% ----------------------------------------------------------------------------------------
+	
+	\textbf{Detalhamento:}
+	\begin{enumerate}
+		\item Não encontrei na documentação o cenário que impede que a OS seja criada sem anexo.
+		\item Além disso, não encontrei na documentação onde que limita a quantidade de anexos em apenas dois.
+	\end{enumerate}
+	
+
+	
+\end{falha}
+
+
+
+
+
+
+\subsection{Aparecendo arrobas na minuta}
+\begin{falha}[1]{Aparecendo arrobas na minuta}
+	
+	% https://sgo.basis.com.br/browse/CLDF072020-1675?focusedCommentId=1816906&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-1816906
+	
+	% ----------------------------------------------------------------------------------------
+	\textbf{Previsto na Documentação?}: \mschecksim
+	\begin{itemize}
+		\item Está no modelo de documento que enviei a eles.
+	\end{itemize}
+	
+	\textbf{Controle}:
+	\begin{itemize}
+		\item \textbf{Relatado no SGO}? \mschecksim 
+	\end{itemize}
+	
+	
+	% ----------------------------------------------------------------------------------------
+	\tcblower
+	% ----------------------------------------------------------------------------------------
+	
+	\textbf{Detalhamento:}
+	\begin{enumerate}
+		\item 1
+	\end{enumerate}
+	
+\end{falha}
+
+
+\subsection{Origem do documento está sendo modificada para ASSEL}
+\begin{falha}[1]{Origem do documento está sendo modificada para ASSEL}
+	% ----------------------------------------------------------------------------------------
+
+	% https://sgo.basis.com.br/browse/CLDF072020-1675?focusedCommentId=1818049&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-1818049
+
+	\textbf{Previsto na Documentação?}: \mschecksim
+	\begin{itemize}
+		\item \textbf{Funcionalidade}: \sosFu
+		\item \textbf{Cenário}: \sosFuCut
+	\end{itemize}
+
+	
+	\textbf{Controle}:
+	\begin{itemize}
+		\item \textbf{Relatado no SGO}? \mschecksim 
+	\end{itemize}
+	
+	
+	% ----------------------------------------------------------------------------------------
+	\tcblower
+	% ----------------------------------------------------------------------------------------
+	
+	\textbf{Detalhamento:}
+	\begin{enumerate}
+		\item Após procedimento de solicitação e assinatura, após trocar status para ``Em Execução'', a origem está sendo trocada para ``ASSEL'' enquanto deveria permanecer na Unidade de Solicitante.
+	\end{enumerate}
+	
+\end{falha}
+
+
+\subsection{Cancelamento de OS Assinada parece não estar funcionando}
+\begin{falha}[0]{Cancelamento de OS Assinada parece não estar funcionando}
+	% ----------------------------------------------------------------------------------------
+	
+	% https://sgo.basis.com.br/browse/CLDF072020-1675?focusedCommentId=1816906&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-1816906
+	
+	\textbf{Previsto na Documentação?}: \mschecksim
+	\begin{itemize}
+		\item \textbf{Funcionalidade}: \sosFq
+		\item \textbf{Cenários}: 
+		\begin{itemize}
+			\item \sosFqCu 
+			\item \sosFqCd 
+			\item \sosFqCt 
+			\item \sosFqCq 
+			\item \sosFqCc 
+			\item \sosFqCs
+		\end{itemize}
+	\end{itemize}
+
+	\textbf{Controle}:
+	\begin{itemize}
+		\item \textbf{Relatado no SGO}? \mschecksim 
+	\end{itemize}
+
+% https://sgo.basis.com.br/browse/CLDF072020-2034?focusedCommentId=1827544&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-1827544
+	
+	% ----------------------------------------------------------------------------------------
+	\tcblower
+	% ----------------------------------------------------------------------------------------
+	
+	\textbf{Detalhamento:}
+	\begin{enumerate}
+		\item Não faz cancelamento de OS Em execução
+	\end{enumerate}
+	
+\end{falha}
+
+
+\subsection{Numeracao dos Documentos de Grupo II nao esta fazendo por tipo}
+\begin{falha}[1]{Numeracao dos Documentos de Grupo II nao esta fazendo por tipo}
+	
+	% https://sgo.basis.com.br/browse/CLDF072020-1675?focusedCommentId=1818070&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-1818070
+	
+	% ----------------------------------------------------------------------------------------
+	\textbf{Previsto na Documentação?}: \mschecksim
+	\begin{itemize}
+	\item \textbf{Funcionalidade}: 
+	\item \textbf{Cenários}:
+	\begin{itemize}
+		\item \sosFuCuz 
+		\item \sosFuCuu 
+		\item \sosFuCud
+	\end{itemize}
+	
+	\textbf{Controle}:
+	\begin{itemize}
+		\item \textbf{Relatado no SGO}? \mschecksim 
+	\end{itemize}
+	
+		
+		
+	\end{itemize}
+	
+	% ----------------------------------------------------------------------------------------
+	\tcblower
+	% ----------------------------------------------------------------------------------------
+	
+	\textbf{Detalhamento:}
+	\begin{enumerate}
+		\item A contagem está sendo feita de forma total e não relativa ao tipo de documento que está sendo criado.
+		\item Ver imagem Captura de tela de 2022-05-03 19-42-38
+	\end{enumerate}
+	
+\end{falha}
+
+\subsection{Botão Pesquisar não existe no protótipo}
+
+\begin{falha}[1]{Botão Pesquisar não existe no protótipo}
+	
+	% https://sgo.basis.com.br/browse/CLDF072020-2040
+	
+	% ----------------------------------------------------------------------------------------
+	\textbf{Previsto na Documentação?}: \mschecksim
+	\begin{itemize}
+		
+		\item \textbf{Controle}:
+		\begin{itemize}
+			\item \textbf{Relatado no SGO}? \mschecksim 
+			% Relatado em 16/05/2022
+		\end{itemize}
+	\end{itemize}
+	
+	% ----------------------------------------------------------------------------------------
+	\tcblower
+	% ----------------------------------------------------------------------------------------
+	
+	\textbf{Detalhamento:}
+	\begin{enumerate}
+		\item Botão ``Pesquisar'' não era para existir no protótipo.
+	\end{enumerate}
+\end{falha}
+
+\subsection{Tamanho máximo de caracteres de campos do formulário de inclusão de OS}
+
+\begin{falha}[1]{Tamanho máximo de caracteres de campos do formulário de inclusão de OS}
+	
+	% https://sgo.basis.com.br/browse/CLDF072020-2042
+	
+----------------------------------------------------------------------------------------
+	\textbf{Previsto na Documentação?}: \mschecknao
+	\begin{itemize}
+		\item \textbf{Controle}:
+		\begin{itemize}
+			\item \textbf{Relatado no SGO}? \mschecksim
+		\end{itemize}
+	\end{itemize}
+	
+	\tcblower
+	
+	\textbf{Detalhamento:}
+	\begin{enumerate}
+		\item Eu não encontrei na documentação nenhum lugar especificando quais seriam as quantidades máximas de caracteres de cada campo.
+		\item Dessa forma, em alguns campos, a limitação de 200 caracteres é muito pequena.
+		\item Assim, resolvi especificar para cada campo, qual seria o tamanho máximo.
+	\end{enumerate}
+
+
+\end{falha}
+
+
+
+\subsubsection{Campo ``Deputado/Órgão''}
+
+	Encontrei esses exemplos reais no SEI:
+	\begin{itemize}
+		\item GAB DEP. MARTINS MACHADO-LEGIS - GABINETE DO DEPUTADO MARTINS MACHADO - REPUBLICANOS/DF - GAB. 10 - 98 caracteres
+		\item CDESCTMAT-LEGIS - COMISSÃO DE DESENVOLVIMENTO ECONÔMICO SUSTENTÁVEL, CIÊNCIA, TECNOLOGIA, MEIO AMBIENTE E TURISMO - 114 caracteres    
+	\end{itemize}
+
+	Portanto acho que podemos dar uma folga e especificar que esse campo deve aceitar até 120 caracteres.
+
+\subsubsection{Campo ``Contato''}
+
+120 caracteres máximos.
+
+\subsubsection{Campo ``Ramal''}
+
+14 caracteres máximos.
+
+\subsubsection{Campo ``Número'' da Preposição}
+
+% https://legislacao.cl.df.gov.br/Legislacao/consultaProposicao-1!1505!2020!visualizar.action
+
+4 caracteres máximos.
+
+\subsubsection{Campo ``Ementa'' da Preposição}
+
+Não pode ser editável pois ela recebe o conteúdo da Ementa da Preposição.
+
+Tamanho máximo: 3000 caracteres.
+
+Maior exemplo real que encontrei até o momento:
+
+Ficha Técnica:
+
+PL 1666/2017
+
+Recepciona no Distrito Federal a Lei Federal n.º 13.465, de 11 de julho de 2017, que 'dispõe sobre a regularização fundiária rural e urbana, sobre a liquidação de créditos concedidos aos assentados da reforma agrária e sobre a regularização fundiária no âmbito da Amazônia Legal; institui mecanismos para aprimorar a eficiência dos procedimentos de alienação de imóveis da União; altera as Leis n.ºs 8.629, de 25 de fevereiro de 1993, 13.001, de 20 de junho de 2014, 11.952, de 25 de junho de 2009, 13.340, de 28 de setembro de 2016, 8.666, de 21 de junho de 1993, 6.015, de 31 de dezembro de 1973, 12.512, de 14 de outubro de 2011, 10.406, de 10 de janeiro de 2002 (Código Civil), 13.105, de 16 de março de 2015 (Código de Processo Civil), 11.977, de 7 de julho de 2009, 9.514, de 20 de novembro de 1997, 11.124, de 16 de junho de 2005, 6.766, de 19 de dezembro de 1979, 10.257, de 10 de julho de 2001, 12.651, de 25 de maio de 2012, 13.240, de 30 de dezembro de 2015, 9.636, de 15 de maio de 1998, 8.036, de 11 de maio de 1990, 13.139, de 26 de junho de 2015, 11.483, de 31 de maio de 2007, e a 12.712, de 30 de agosto de 2012, a Medida Provisória nº 2.220, de 4 de setembro de 2001, e os Decretos-Leis nºs 2.398, de 21 de dezembro de 1987, 1.876, de 15 de julho de 1981, 9.760, de 5 de setembro de 1946, e 3.365, de 21 de junho de 1941; revoga dispositivos da Lei Complementar nº 76, de 6 de julho de 1993, e da Lei n° 13.347, de 10 de outubro de 2016; e dá outras providências.'.
+
+São quase 1500 caracteres.
+
+Então acho que 3000 deve dar conta.
+
+\subsubsection{Campo ``Especificação do Trabalho''}
+
+Tamanho máximo: 3000 caracteres.
+
+\subsubsection{Campo ``Descrição'' de Anexos}
+
+Tamanho máximo: 1500 caracteres.
+
+
+
+
+
+
+
+% \noindent\makebox[\linewidth]{\rule{\paperwidth}{4pt}} % Isso cria uma linha horizontal
+
+\section{Testes Por Fazer} 
+
+\subsection{Testar os Ses}
+
+No Cenário: Os Assinada (linha 161)
+
+Tenho que testar esses ``SEs'' aqui:
+
+\begin{itemize}
+	\item E, no SEI, na unidade solicitante, se o PROCESSO tiver sido concluído, o Sistema **REABRE** o PROCESSO
+	
+	\item E, no SEI, na unidade solicitante, o sistema envia o PROCESSO para a <Unidade> "ASSEL" do SEI
+	
+	\item E, no SEI, na <Unidade> "ASSEL", se o PROCESSO ainda não tiver sido recebido, o sistema recebe o PROCESSO
+	
+	\item E, no SEI, na <Unidade> "ASSEL", se o PROCESSO ainda não tiver sido concluído, o sistema conclui o PROCESSO
+\end{itemize}
+
+Ou seja, antes que o sistema faça as coisas eu vou lá e vou fazer eu mesmo pra ver se o sistema vai bugar ou não.
+
+
+
+
+
+
+
+\section{Anotações}
+
+Cenário: Listar Solicitações da Última Unidade Selecionada
+Dado que no último acesso à funcionalidade "Solicitar Ordem de Serviço" o usuário solicitou a seguinte unidade do combobox "Unidade":
+| Unidade     |
+| Gabinete 10 |
+Quando o usuário solicita "Solicitar Ordem de Serviço"
+Então o sistema apresenta automaticamente as solicitações da última unidade selecionada
+
+
+Nesse cenário aí terá que adicionar essa linha aí:
+
+E não apresentar as solicitações com status "Cancelado" ou "Descontinuado" SEMPRE
+
+
+
+\subsection{Filtros não estão funcionando}
+
+\begin{falha}[1]{Filtros não estão funcionando}
+	
+	% https://sgo.basis.com.br/browse/CLDF072020-2064
+	
+	% ----------------------------------------------------------------------------------------
+	\textbf{Previsto na Documentação?}: \mschecksim
+	\begin{itemize}
+		
+		\item \textbf{Controle}:
+		\begin{itemize}
+			\item \textbf{Relatado no SGO}? \mschecksim 
+			% Relatado em 02/06/2022
+		\end{itemize}
+	\end{itemize}
+	
+	% ----------------------------------------------------------------------------------------
+	\tcblower
+	% ----------------------------------------------------------------------------------------
+	
+	\textbf{Detalhamento:}
+	\begin{enumerate}
+		
+		\item Funcionalidade: \sosFu
+		\item Cenários:
+		\begin{itemize}
+			\item \sosFuCs
+			\item \sosFuCe
+			\item \sosFuCo
+		\end{itemize}
+		
+	\end{enumerate}
+\end{falha}
+
+
+\TODO{Faltou Mensagem na EPE de Cancelar Sem Bloco de Assinatura}
+
+
+
+\TODO{Ementa}
+
+Ao Pesquisar a Ementa, o Subtipo deve fazer parte da pesquisa
+
+Mudar o nome do "SISTEMA ASSEL" para Sistema ASSEL no SEI.
+
+
+Filtro tem que ser mais recente e priorizar a Comissao igual ao do pedido
+
+
+
+
+

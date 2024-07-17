@@ -1,0 +1,164 @@
+\begin{landscape}
+\section{Caso 3 - Na Unidade GHI o supervisor é quem atribui os elaboradores e revisores de uma dada solicitação}
+
+\subsection*{Configurações da Unidade GHI}
+
+Suponha a existência de uma unidade denominada \textbf{Unidade GHI} configurada da seguinte forma: 
+
+\CONFIGURAUNID{GHI}{\msnao}{\msnao}{\msnao}{\msnao}
+
+Conforme tabela, a Unidade GHI:
+\begin{itemize}
+	\item Não permite auto-atribuição de elaboradores;
+	\item Não permite auto-atribuição de revisores;
+\end{itemize}
+
+Ou seja, a Unidade GHI é a mais conservadora das três unidades e funciona de maneira oposta à Unidade ABC pois não permite auto-atribuição de consultores.
+
+\subsection*{Descrição do Caso}
+
+Chega uma solicitação \SOLU à Unidade GHI e assim ocorre a seguinte sequência de eventos:
+\begin{itemize}
+	\item O supervisor \SU recebe a solicitação e vai atribuir a solicitação para os consultores \EU e \ED atuarem como \textbf{elaboradores}. Contudo, \EU vai recusar a atribuição.
+	\item Depois, outro supervisor, \SD, vai atribuir a solicitação para um outro consultor, \RU, atuar como revisor.
+	\item Ao final do trabalho, \SD encaminha a solicitação finalizada para a ASSEL devolver ao solicitante.		
+\end{itemize}
+
+Nesse caso, não há auto-atribuição de nenhuma parte até porque as configurações da Unidade GHI não permite isso. As atribuições de elaboradores e revisores só são feitas pelo supervisor da unidade e, assim, precisam passar pela aceitação dos consultores atribuídos. 
+
+\subsection*{Simulação}
+
+\begin{enumerate}
+	\item Solicitação \SOLU chega na unidade com estado \euni{Não Lido};
+
+	\GERSOLUNID{CONS008-2023}{Gabinete Delmasso}{CONS}{}{}{}{}{Não}{Distribuição}
+	{\euni{Não Lido}}{-}{-}{Indefinido}
+
+
+	\item Curioso, \EC, que não possui o perfil de supervisor, clica em \bVisualizar para ver do que se trata, mas nenhum estado muda já que ele não é supervisor. Portanto, o estado mantém-se em \euni{Não Lido}.
+
+	\item Mais tarde, \SU, que é supervisor, marca a solicitação na tabela e acessa \bVisualizar fazendo com que o estado da solicitação mude para \euni{Em Análise}:
+	
+	\GERSOLUNID{CONS008-2023}{Gabinete Delmasso}{CONS}{}{}{}{}{Não}{Distribuição}
+	{\euni{Em Análise}}{-}{-}{Indefinido}
+	
+	
+	\item Supervisor \SU clica em \bAnalisar para analisar a solicitação. Decide que a solicitação está correta em ter sido distribuída para a Unidade GHI.	Assim, fecha o modal de análise e clica em \bGerAtrib para escolher os elaboradores. 
+	
+	\item No modal de gerenciamento de atributos, ele escolhe os CLs \EU e \ED e salva. 
+	
+		\begin{enumerate}
+			\item Neste momento o sistema coloca o estado para \euni{Na Fila} mostrando que a solicitação passou pela análise e entrou para esse estado. 
+
+			\item Além disso, todos os usuários com perfil de \textbf{Supervisor da Unidade GHI} recebem notificações:
+			
+			\begin{itemize}
+				\item ``\SU atribuiu a solicitação \SOLU para \EU \textbf{elaborar}.'' 
+				\item ``\SU atribuiu a solicitação \SOLU para \ED \textbf{elaborar}.''
+			\end{itemize}
+
+			\item Contudo, a solicitação não entra ainda no estado ``Em Elaboração'' porque pelo menos um dos CLs precisa aceitar a atribuição.			
+			
+			\item Neste momento, tanto \EU e \ED recebem, nos seus respectivos pools de notificação, uma mensagem padrão do sistema ``Você foi atribuído para ser \textbf{elaborador} da solicitação \SOLU. Por favor, acesse sua área de trabalho para avaliar a atribuição.'' 
+		\end{enumerate}	
+	
+	\GERSOLUNID{CONS008-2023}{Gabinete Delmasso}{CONS}{}{}{}{}{Não}{Distribuição}
+	{\euni{Na Fila}}{-}{-}{Indefinido}
+	
+	\item Embora o estado seja \euni{Na Fila}, não há como nenhum outro CL se inscrever na solicitação por causa das configurações mais restritivas da unidade que não permite auto-inscrição.	
+	
+	\item Já dentro da Área de Trabalho dos Consultores \EU e \ED aparece uma linha na tabela de solicitações mostrando a solicitação com o estado de \ecl{Aceitar Elaboração} indicando que o CL precisa aceitar ou rejeitar a atribuição de elaboração.
+	
+	\AREATRABCL{CONS008-2023}{Gabinete Delmasso}{CONS}{}{}{}{}{Não}{Distribuição}
+	{\ecl{Aceitar Elaboração}}{-}{-}{\EU}
+
+	\AREATRABCL{CONS008-2023}{Gabinete Delmasso}{CONS}{}{}{}{}{Não}{Distribuição}
+	{\ecl{Aceitar Elaboração}}{-}{-}{\ED}
+
+	
+	\item \EU está afastado e portanto não faz nada. Assim, na sua Área de Trabalho a solicitação se mantém naquele estado de \ecl{Aceitar Elaboração}.
+	
+	\item \ED, por sua vez, acessa sua Área de Trabalho, marca a solicitação \SOLU e clica em \bAvaliar fazendo com que o modal de ``Avaliação'' apareça mostrando as propriedades da solicitação bem como o andamento. O modal também indica que ele está sendo atribuído na qualidade de \textbf{Elaborador}. No final do modal há uma aba denominada ``Avaliação'' com duas opções: Aceitar ou Rejeitar. Ele opta por \textbf{Aceitar}.
+	
+	\item Nesse momento, o sistema verifica que pelo menos um CL aceitou ser o \textbf{elaborador} da solicitação. Então o estado no módulo de Gerenciamento de Unidades passa para \euni{Em Elaboração}. 
+
+	\GERSOLUNID{CONS008-2023}{Gabinete Delmasso}{CONS}{}{}{}{}{Não}{Distribuição}
+	{\euni{Em Elaboração}}{\ED}{-}{Indefinido}
+
+	\item Ao mesmo tempo, na Área de Trabalho de \ED em particular, o estado muda para \ecl{Em Elaboração} indicando que aquela solicitação está na carga de trabalho dele. Ele sabe que seu papel ali é o de elaborador porque seu nome aparece na coluna de elaboradores.
+	 
+	 
+	\item Veja que para \EU, o estado continua no estado \ecl{Aceitar Elaboração} visto que ele ainda não aceitou nem rejeitou a atribuição de elaborador daquela solicitação.
+
+	\AREATRABCL{CONS008-2023}{Gabinete Delmasso}{CONS}{}{}{}{}{Não}{Distribuição}
+	{\ecl{Aceitar Elaboração}}{-}{-}{\EU}
+
+	\AREATRABCL{CONS008-2023}{Gabinete Delmasso}{CONS}{}{}{}{}{Não}{Distribuição}
+	{\ecl{Em Elaboração}}{\ED}{-}{\ED}
+	
+	\item Pois então, após voltar ao trabalho, \EU verifica sua área de trabalho e encontra a solicitação no estado  ``Aceitar Elaboração''. Ele analisa a solicitação e decide por rejeitar a atribuição. Assim, ele marca a solicitação em sua tabela da área de trabalho, clica em \bAvaliar e no modal de avaliação escolhe a opção \textbf{``Rejeitar''}. Abre-se um modal para ele digitar um texto da justificativa da rejeição. Ele escreve: ``Eu não atuo nessa temática.''.
+	
+	\item \textbf{Todos os Supervisores da Unidade GHI} recebem no seu pool de notificações uma notificação dizendo ``\EU rejeitou a atribuição de \textbf{elaborador} da solicitação \SOLU com a seguinte justificativa: ``Eu não atuo nessa temática''.
+	
+	\item Assim, a solicitação \SOLU possui apenas um elaborador e já está com o estado \euni{Em Elaboração} setado indicando que há alguém trabalhando naquela solicitação.
+	
+	\item Durante o trabalho \ED finalmente entende que seu trabalho está finalizado. Assim, ele acessa a sua Área de Trabalho, marca a solicitação e clica em \bConcluir.
+	
+	\item Contudo ele é surpreendido com uma mensagem do sistema ``\textbf{Solicitação não pode ser concluída pois não passou por revisão}''. De fato, o sistema não permite que uma solicitação seja concluída se não houver no mínimo um usuário atribuído a ela na qualidade de revisor.
+	
+	\item Então \ED avisa \SU por whatsapp/email/pessoalmente que a solicitação precisa ser revisada já que até o momento nenhum revisor foi atribuído à solicitação. Contudo, \SU está de férias e pede para \SD, que é a chefe substituta, escolher um revisor.
+	
+	\item Assim \SD acessa o Módulo Gerenciar Solicitações da Unidade, encontra a solicitação \SOLU e clica em \bGerAtrib. Dentro do modal ele escolhe \RU para ser o revisor e clica em salvar.
+	
+	\item Contudo, \RU não se torna o revisor da solicitação automaticamente. Da mesma forma que na atribuição do elaborador, \RU deve aceitar ou rejeitar essa atribuição de revisor.
+	
+	\item Dessa forma, de modo análogo, dentro da Área de Trabalho  do CL \RU aparece uma linha na tabela de solicitações mostrando a solicitação com o estado de \ecl{Aceitar Revisão} indicando que o CL precisa aceitar ou rejeitar a atribuição de \textbf{revisão}.
+	
+	\AREATRABCL{CONS008-2023}{Gabinete Delmasso}{CONS}{}{}{}{}{Não}{Distribuição}
+	{\ecl{Aceitar Revisão}}{\ED}{-}{\RU}
+	
+	
+	\item Dessa feita, \RU marca a solicitação e clica em \bAvaliar para avaliar a atribuição. Opta por \textbf{``Aceitar''}. Esse evento gera uma notificação para todos os supervisores indicando que \RU aceitou ser revisor da solicitação \SOLU.
+	
+	\AREATRABCL{CONS008-2023}{Gabinete Delmasso}{CONS}{}{}{}{}{Não}{Distribuição}
+	{\ecl{Em Elaboração}}{\ED}{\RU}{\RU}
+	
+	\item Contudo, o estado da solicitação no módulo de gerenciamento de solicitações da unidade não se altera. Continua em \euni{Em Elaboração}. Isso acontece porque a revisão faz parte da elaboração.
+	
+	\GERSOLUNID{CONS008-2023}{Gabinete Delmasso}{CONS}{}{}{}{}{Não}{Distribuição}
+	{\euni{Em Elaboração}}{\ED}{\RU}{Indefinido}	
+	
+	\item \RU e \ED trabalham juntos até que ambos decidem que o trabalho está finalizado.
+	
+	\item Cabe a \ED, como elaborador, acessar sua Área de Trabalho, e clicar em \bConcluir. Ele faz isso.
+	
+	\item Nesse caso, como o sistema identifica que a solicitação \SOLU possui pelo menos um revisor, no caso, \RU. O sistema abre o modal de upload de artefatos permitindo que \ED faça upload do trabalho finalizado. 
+	
+	\item Feito o upload, o sistema coloca a solicitação no estado \euni{Conclusão da Solicitação}. Todos os supervisores são notificados disso. Esse estado indica que aquele serviço está pronto para ser devolvido para a ASSEL.
+
+	\GERSOLUNID{CONS008-2023}{Gabinete Delmasso}{CONS}{}{}{}{}{Não}{Distribuição}
+	{\euni{Conclusão da Solicitação}}{\ED}{\RU}{Conclusão da Solicitação}
+	
+	\item Nas respectivas áreas de trabalho de todos os envolvidos, as solicitações continuam lá com esse mesmo estado. Alí não há mais nada a ser feito. 
+
+	\AREATRABCL{CONS008-2023}{Gabinete Delmasso}{CONS}{}{}{}{}{Não}{Distribuição}
+	{\ecl{Conclusão da Solicitação}}{\ED}{\RU}{\ED}
+
+	\AREATRABCL{CONS008-2023}{Gabinete Delmasso}{CONS}{}{}{}{}{Não}{Distribuição}
+	{\ecl{Conclusão da Solicitação}}{\ED}{\RU}{\RU}
+
+	
+	\item A solicitação se mantém na tabela do módulo de gerenciamento de solicitações da unidade aguardando ser selecionado e encaminhado para a ASSEL. Essa ação só pode ser realizada por algum supervisor.
+	
+	\item Após aguns dias, \SD acessa o módulo, marca a solicitação e clica em \bEncaminhar. A solicitação é encaminhada para a ASSEL com andamento de conclusão e desaparece da caixa de entrada da unidade e, portanto, também vai desaparecer das ``Áreas de Trabalho'' de \ED e \RU.
+\end{enumerate}
+
+% -------------------------------------------------------------------------------------------------------------------------------------------------------
+\end{landscape}
+
+\pagebreak
+
+\section{Conclusão}
+
+Foram apresentados três simulações para estudo da lógica dos fluxos de trabalho no sistema e da interdependência do módulo de gerenciamento de solicitações das unidades, do módulo de área de trabalho do consultor e do sistema de notificações.
+

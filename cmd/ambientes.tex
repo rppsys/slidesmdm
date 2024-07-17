@@ -1,0 +1,419 @@
+% -----------------------------------------------------------
+                % Elementos: Atores, Artefatos, Etc...
+% -----------------------------------------------------------
+\newcommand{\auxTitulo}{}
+\newcommand{\auxCheck}{}
+
+\newenvironment{env-definicao}
+    {
+        \begin{colbox}{\corDefinicao}
+        \textbf{Definição:}
+        \parindent12pt
+        \begin{quote}
+        
+    }
+    {   \end{quote}
+        \end{colbox}
+    }
+% -----------------------------------------------------------
+\newenvironment{env-competencia}
+    {
+        \begin{colbox}{\corCompetencia}
+        \parindent12pt
+        \begin{quote}
+        
+    }
+    {   \end{quote}
+        \end{colbox}
+    }
+%--------------------------------------    
+\newenvironment{env-nota}
+    {
+        \begin{colbox}{\corNota}
+        \textbf{Nota:}
+        \parindent12pt
+    }
+    {
+        \end{colbox}
+    }
+%--------------------------------------
+\newenvironment{env-nota-i}
+    {
+        \begin{colbox}{\corDuvida}
+        \textbf{Nota:}
+        \begin{itemize}
+    }
+    {
+        \end{itemize}
+        \end{colbox}
+    }
+%--------------------------------------
+\newenvironment{env-cinza}
+    {
+        \begin{colbox}{\corCinza}
+        \parindent12pt
+    }
+    {
+        \end{colbox}
+    }
+%--------------------------------------    
+%\newcounter{envtodo}[section]
+\newenvironment{envtodo}[2][]
+    {
+        \begin{colbox}{\corTodo}
+        \refstepcounter{cmdtodo}\par\medskip
+        \textbf{TODO~\thecmdtodo \xspace: ``#2''} \rmfamily
+        \addcontentsline{expcmdtodo}{cmdtodo}{\protect\numberline{\thecmdtodo}#2}\par
+        \parindent12pt
+    }
+    {
+        \end{colbox}
+    }    
+%--------------------------------------    
+\newenvironment{env-destaque}[2][]
+    {
+    \begin{tcolorbox}[colback=cldfA!40,colframe=cldfA!80!black,title=\textbf{\nohyphens{#2}},after skip=0.2cm,before skip=0.2cm]
+    }
+    {
+        \end{tcolorbox}
+    }
+% -----------------------------------------------------------
+\newenvironment{env-cor}[3][]
+{
+	\begin{tcolorbox}[colback=#3!40,colframe=#3!80!black,title=\textbf{\nohyphens{#2}},after skip=0.2cm,before skip=0.2cm]
+	}
+	{
+	\end{tcolorbox}
+}
+% -----------------------------------------------------------
+\newenvironment{env-regra}[2][]
+{
+	\begin{tcolorbox}[colback=cldfD!40,colframe=cldfC!80!black,title=\textbf{\nohyphens{#2}},after skip=0.2cm,before skip=0.2cm]
+	\begin{center}
+
+	}
+	{
+	\end{center}
+	\end{tcolorbox}
+}
+% -----------------------------------------------------------
+\newenvironment{env-aplica}[2][]
+{
+	\begin{tcolorbox}[colback=cldfF!40,colframe=cldfE!80!black,title=\textbf{\nohyphens{#2}},after skip=0.2cm,before skip=0.2cm]
+		\begin{multicols}{2}
+		\begin{itemize}
+			
+		}
+		{
+		\end{itemize}
+		\end{multicols}
+	\end{tcolorbox}
+}
+% -----------------------------------------------------------
+\newenvironment{env-cenario}[2][]
+    {
+    \begin{tcolorbox}[colback=cldfA!40,colframe=cldfA!80!black,title=\textbf{\nohyphens{#2}},leftright skip=4cm,after skip=0.2cm,before skip=0.2cm]
+    }
+    {
+        \end{tcolorbox}
+    }
+% -----------------------------------------------------------
+\newenvironment{env-cenario2}[2][]
+    {
+    \begin{tcolorbox}[colback=cldfA!40,colframe=cldfA!80!black,title=\textbf{\nohyphens{#2}},leftright skip=2.5cm,after skip=0.2cm,before skip=0.2cm]
+    }
+    {
+        \end{tcolorbox}
+    }
+% -----------------------------------------------------------
+\newenvironment{env-exemplo}[2][]
+    {
+    \begin{tcolorbox}[colback=cldfB!40,colframe=cldfB!70!black,title=\textbf{\nohyphens{#2}},after skip=0.2cm,before skip=0.2cm]
+    }
+    {
+        \end{tcolorbox}
+    }
+% -----------------------------------------------------------
+\newenvironment{env-auditoria}[2][]
+{
+	\begin{tcolorbox}[colback=cldfA!20,colframe=cldfA!70,title=\textbf{\nohyphens{#2}},left skip=0.3cm,after skip=0.1cm,before skip=0.1cm]
+	}
+	{
+	\end{tcolorbox}
+}
+% -----------------------------------------------------------
+\newenvironment{env-popup}[2][]
+{
+	\begin{center}
+		\begin{tcolorbox}[colback=cldfF!40,colframe=cldfF!70!black,title=\textbf{\nohyphens{#2}},after skip=0.2cm,before skip=0.2cm,width=10cm]
+		}
+		{
+		\end{tcolorbox}
+	\end{center}
+}
+% -----------------------------------------------------------
+\newenvironment{env-sistemas}[2][]
+    {
+    \begin{tcolorbox}[colback=cldfB!40,colframe=cldfB!70!black,title=\textbf{\nohyphens{#2}},after skip=0.2cm,before skip=0.2cm]
+    }
+    {
+        \end{tcolorbox}
+    }
+% -----------------------------------------------------------
+\newenvironment{env-caso}[2][]
+    {
+    \begin{tcolorbox}[colback=cldfB!40,colframe=cldfB!70!black,title=\textbf{\nohyphens{#2}},after skip=0.2cm,before skip=0.2cm]
+    }
+    {
+        \end{tcolorbox}
+    }
+% -----------------------------------------------------------
+\newenvironment{env-proposta}[2][]
+    {
+    \begin{tcolorbox}[colback=cldfC!40,colframe=cldfC!80!black,title=\large \textbf{Ação Recomendada \xspace -- \nohyphens{#2}},after skip=0.2cm,before skip=0.2cm]
+    \par\parindent12pt
+    }
+    {
+        \end{tcolorbox}
+    }
+% -----------------------------------------------------------
+\newcounter{CounterPergunta}
+\setcounter{CounterPergunta}{0}
+\newenvironment{pergunta}[2][0]
+{
+	\ifthenelse{#1 = 0}{\renewcommand{\auxCheck}{\msrln}}{\renewcommand{\auxCheck}{\msrls}}
+	
+	\stepcounter{CounterPergunta}	
+	
+	\renewcommand{\auxTitulo}{\hypertarget{TargetPergunta\arabic{CounterPergunta}}{\textbf{\auxCheck \xspace \nohyphens{#2}}}}
+	
+	\begin{tcolorbox}[colback=cldfC!40,colframe=cldfC!80!black,title=\auxTitulo,after skip=0.2cm,before skip=0.2cm]		
+		
+		\listcsgadd{ListaPergunta}{\ifthenelse{#1 = 0}{\msrln}{\msrls} #2}	
+	}
+	{
+	\end{tcolorbox}
+}
+% -----------------------------------------------------------
+\newcounter{CounterResposta}
+\setcounter{CounterResposta}{0}
+\newenvironment{resposta}[2][0]
+{
+	\ifthenelse{#1 = 0}{\renewcommand{\auxCheck}{\msrln}}{\renewcommand{\auxCheck}{\msrls}}
+	
+	\stepcounter{CounterResposta}	
+	
+	\renewcommand{\auxTitulo}{\hypertarget{TargetResposta\arabic{CounterResposta}}{\textbf{\auxCheck \xspace \nohyphens{#2}}}}
+	
+	\begin{tcolorbox}[colback=cldfD!40,colframe=cldfD!80!black,title=\auxTitulo,after skip=0.2cm,before skip=0.2cm]		
+		
+		\listcsgadd{ListaResposta}{\ifthenelse{#1 = 0}{\msrln}{\msrls} #2}	
+	}
+	{
+	\end{tcolorbox}
+}
+% -----------------------------------------------------------
+\newcounter{CounterRequisito}
+\setcounter{CounterRequisito}{0}
+\newenvironment{requisito}[2][0]
+{
+	\ifthenelse{#1 = 0}{\renewcommand{\auxCheck}{\msrln}}{\renewcommand{\auxCheck}{\msrls}}
+	
+	\stepcounter{CounterRequisito}	
+	
+	\renewcommand{\auxTitulo}{\hypertarget{TargetRequisito\arabic{CounterRequisito}}{\textbf{\auxCheck \xspace \nohyphens{#2}}}}
+	
+	\begin{tcolorbox}[colback=cldfE!40,colframe=cldfE!80!black,title=\auxTitulo,after skip=0.2cm,before skip=0.2cm]		
+		
+		\listcsgadd{ListaRequisito}{\ifthenelse{#1 = 0}{\msrln}{\msrls} #2}	
+	}
+	{
+	\end{tcolorbox}
+}
+% -----------------------------------------------------------
+\newcounter{CounterExemplo}
+\setcounter{CounterExemplo}{0}
+\newenvironment{exemplo}[2][0]
+{
+	\ifthenelse{#1 = 0}{\renewcommand{\auxCheck}{\msrln}}{\renewcommand{\auxCheck}{\msrls}}
+	
+	\stepcounter{CounterExemplo}	
+	
+	\renewcommand{\auxTitulo}{\hypertarget{TargetExemplo\arabic{CounterExemplo}}{\textbf{\auxCheck \xspace \nohyphens{#2}}}}
+	
+	\begin{tcolorbox}[colback=cldfD!40,colframe=cldfD!80!black,title=\auxTitulo,after skip=0.2cm,before skip=0.2cm]		
+		
+		\listcsgadd{ListaExemplo}{\ifthenelse{#1 = 0}{\msrln}{\msrls} #2}	
+	}
+	{
+	\end{tcolorbox}
+}
+% -----------------------------------------------------------
+\newcounter{CounterImportante}
+\setcounter{CounterImportante}{0}
+\newenvironment{importante}[2][0]
+{
+	\ifthenelse{#1 = 0}{\renewcommand{\auxCheck}{\msrln}}{\renewcommand{\auxCheck}{\msrls}}
+	
+	\stepcounter{CounterImportante}	
+	
+	\renewcommand{\auxTitulo}{\hypertarget{TargetImportante\arabic{CounterImportante}}{\textbf{\auxCheck \xspace \nohyphens{#2}}}}
+	
+	\begin{tcolorbox}[colback=cldfG!40,colframe=cldfG!80!black,title=\auxTitulo,after skip=0.2cm,before skip=0.2cm]		
+	
+	\listcsgadd{ListaImportante}{\ifthenelse{#1 = 0}{\msrln}{\msrls} #2}	
+	}
+	{
+	\end{tcolorbox}
+}
+
+% -----------------------------------------------------------
+\newcounter{CounterFuncionalidade}
+\setcounter{CounterFuncionalidade}{0}
+\newenvironment{funcionalidade}[2][0]
+{
+	\ifthenelse{#1 = 0}{\renewcommand{\auxCheck}{\msrln}}{\renewcommand{\auxCheck}{\msrls}}
+	
+	\stepcounter{CounterFuncionalidade}	
+	
+	\renewcommand{\auxTitulo}{\hypertarget{TargetFuncionalidade\arabic{CounterFuncionalidade}}{\textbf{\auxCheck \xspace \nohyphens{#2}}}}	
+	
+	
+	\begin{tcolorbox}[colback=cldfJ!40,colframe=cldfJ!80!black,title=\auxTitulo,after skip=0.2cm,before skip=0.2cm]
+		
+	\listcsgadd{ListaFuncionalidade}{\ifthenelse{#1 = 0}{\msrln}{\msrls} #2}
+	}
+	{
+	\end{tcolorbox}
+}
+% -----------------------------------------------------------
+\newcounter{CounterNota}
+\setcounter{CounterNota}{0}
+\newenvironment{nota}[2][0]
+{
+	\ifthenelse{#1 = 0}{\renewcommand{\auxCheck}{\msrln}}{\renewcommand{\auxCheck}{\msrls}}
+	
+	\stepcounter{CounterNota}	
+	
+	\renewcommand{\auxTitulo}{\hypertarget{TargetNota\arabic{CounterNota}}{\textbf{\auxCheck \xspace \nohyphens{#2}}}}
+	
+	\begin{tcolorbox}[colback=cldfC1!40,colframe=cldfC1!50!black,title=\auxTitulo,after skip=0.2cm,before skip=0.2cm]		
+		
+		\listcsgadd{ListaNota}{\ifthenelse{#1 = 0}{\msrln}{\msrls} #2}	
+	}
+	{
+	\end{tcolorbox}
+}
+% -----------------------------------------------------------
+\newcounter{CounterFalha}
+\setcounter{CounterFalha}{0}
+\newenvironment{falha}[2][0]
+{
+	\ifthenelse{#1 = 0}{\renewcommand{\auxCheck}{\msrln \xspace Falha Pendente:   }}{\renewcommand{\auxCheck}{\msrls \xspace Falha Resolvida:}}
+	
+	\stepcounter{CounterFalha}	
+	
+	\renewcommand{\auxTitulo}{\hypertarget{TargetFalha\arabic{CounterFalha}}{\textbf{\auxCheck \nohyphens{#2}}}}
+	
+	\begin{tcolorbox}[colback=cldfA!20!white,colframe=cldfA!90!black,title=\auxTitulo,after skip=0.2cm,before skip=0.2cm]		
+		
+		\listcsgadd{ListaFalha}{\ifthenelse{#1 = 0}{\msrln}{\msrls} #2}	
+	}
+	{
+	\end{tcolorbox}
+}
+% -----------------------------------------------------------
+\newcounter{CounterImagine}
+\setcounter{CounterImagine}{0}
+\newenvironment{imagine}[2][0]
+{
+	\ifthenelse{#1 = 0}{\renewcommand{\auxCheck}{\msrln}}{\renewcommand{\auxCheck}{\msrls}}
+	
+	\stepcounter{CounterImagine}	
+	
+	\renewcommand{\auxTitulo}{\hypertarget{TargetImagine\arabic{CounterImagine}}{\textbf{\auxCheck \xspace \nohyphens{#2}}}}
+	
+	\begin{tcolorbox}[colback=cldfF!40,colframe=cldfF!80!black,title=\auxTitulo,after skip=0.2cm,before skip=0.2cm]		
+		
+		\listcsgadd{ListaImagine}{\ifthenelse{#1 = 0}{\msrln}{\msrls} #2}	
+	}
+	{
+	\end{tcolorbox}
+}
+% -----------------------------------------------------------
+\newcounter{CounterAjuste}
+\setcounter{CounterAjuste}{0}
+\newenvironment{ajuste}[2][0]
+{
+	\ifthenelse{#1 = 0}{\renewcommand{\auxCheck}{\msrln}}{\renewcommand{\auxCheck}{\msrls}}
+	
+	\stepcounter{CounterAjuste}	
+	
+	\renewcommand{\auxTitulo}{\hypertarget{TargetAjuste\arabic{CounterAjuste}}{\textbf{\auxCheck \xspace \nohyphens{#2}}}}
+	
+	\begin{tcolorbox}[colback=cldfF!40,colframe=cldfF!80!black,title=\auxTitulo,after skip=0.2cm,before skip=0.2cm]		
+		
+		\listcsgadd{ListaAjuste}{\ifthenelse{#1 = 0}{\msrln}{\msrls} #2}	
+	}
+	{
+	\end{tcolorbox}
+}
+% -----------------------------------------------------------
+% -----------------------------------------------------------
+\newcounter{CounterEvolutivo}
+\setcounter{CounterEvolutivo}{0}
+\newenvironment{evolutivo}[2][0]
+{
+	\ifthenelse{#1 = 0}{\renewcommand{\auxCheck}{\msrln}}{\renewcommand{\auxCheck}{\msrls}}
+	
+	\stepcounter{CounterEvolutivo}	
+	
+	\renewcommand{\auxTitulo}{\hypertarget{TargetEvolutivo\arabic{CounterEvolutivo}}{\textbf{\auxCheck \xspace \nohyphens{#2}}}}
+	
+	\begin{tcolorbox}[colback=cldfE!40,colframe=cldfE!80!black,title=\auxTitulo,after skip=0.2cm,before skip=0.2cm]		
+		
+		\listcsgadd{ListaEvolutivo}{\ifthenelse{#1 = 0}{\msrln}{\msrls} #2}	
+	}
+	{
+	\end{tcolorbox}
+}
+% -----------------------------------------------------------
+% -----------------------------------------------------------
+	% Ambientes com Contadores
+% -----------------------------------------------------------
+\newcounter{counterpropostanumerada}
+\newenvironment{env-propostanumerada}[2][]
+    {
+    \refstepcounter{counterpropostanumerada}\par\medskip
+    \addcontentsline{exppropostas}{counterpropostanumerada}{\protect\numberline{\thecounterpropostanumerada}#2}
+    \begin{tcolorbox}[colback=cldfC!40,colframe=cldfC!80!black,title=\large \textbf{Ação Recomendada~\thecounterpropostanumerada \xspace \xspace -- \nohyphens{#2}},after skip=0.2cm,before skip=0.2cm]
+    \par\parindent12pt
+    }
+    {
+    \end{tcolorbox}
+    }
+% -----------------------------------------------------------
+
+
+
+
+% -----------------------------------------------------------
+% Comando para Enumerar Ambientes
+% -----------------------------------------------------------
+
+\newcounter{CounterCMDListarAmbiente}
+\newcommand{\listarAmbiente}[2][]{
+	\setcounter{CounterCMDListarAmbiente}{0}
+	\begin{itemize}
+		\forlistloop{\stepcounter{CounterCMDListarAmbiente} \item \hyperlink{#1\arabic{CounterCMDListarAmbiente}}}{#2}
+	\end{itemize}
+}
+
+
+
+
+
+
+% https://tex.stackexchange.com/questions/66154/how-to-construct-a-coloured-box-with-rounded-corners
+
+% https://www.ctan.org/pkg/tcolorbox

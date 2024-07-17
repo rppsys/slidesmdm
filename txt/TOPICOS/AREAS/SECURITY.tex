@@ -1,0 +1,53 @@
+\subsection{Segurança (\emph{Security}) }
+\label{sub-security}
+\index{Segurança}
+% 1 - MUST 
+
+Convém começar o estudo de cada Área Crítica de Capacidade pela área de Capacidade de Segurança cuja definição é apresentada a seguir: 
+
+\begin{definition}[Capacidade de Segurança]
+Trata-se da capacidade de prover um ambiente seguro permitindo administrar usuários, fazer autenticação e realizar auditorias de acesso à plataforma.
+\end{definition}
+
+\subsubsection*{Importância Estratégica}
+
+Conforme discutido na seção \ref{sec-pĺataformasdebi}, o propósito principal de uma Plataforma de BI é auxiliar a tomada de decisões. No contexto da função finalística de fiscalização da \CLDF, isto significa que o direcionamento de recursos tangíveis e intangíveis será influenciado pelo panorama criado por meio da análise de dados disponíveis sobre determinado tema. Portanto, é imperativo que os dados sejam íntegros e confiáveis e além disso estejam disponíveis quando necessário para as pessoas autorizadas a acessá-los. Ora, estamos claramente nos referindo aos pilares da segurança de informação. Portanto a Plataforma de BI deve oferecer minimamente:
+
+% https://atos.cnj.jus.br/atos/detalhar/atos-normativos?documento=2487
+
+\begin{itemize}
+    \item \textbf{Confidencialidade}: propriedade de que a informação não será disponibilizada ou divulgada a indivíduos, entidades ou processos sem autorização; 
+    \item \textbf{Integridade}: propriedade de que a informação não foi modificada ou destruída, de maneira não autorizada ou acidental, por indivíduos, entidades ou processos;
+    \item \textbf{Disponibilidade}: propriedade de que a informação esteja acessível e utilizável sob demanda por indivíduo, entidades ou processos;
+    \item \textbf{Autenticidade}: propriedade de que a informação foi produzida, expedida, modificada ou destruída por um determinado indivíduo, entidade ou processo;
+    \item \textbf{Controle de Acesso}: O impedimento do uso não autorizado dos recursos;
+\end{itemize}
+
+\index{Integridade}
+\index{Disponibilidade}
+\index{Autenticação}
+\index{Controle de Acesso}
+
+%CIDAICa
+% Confidencialidade
+% Integridade
+% Disponibilidade
+% Autenticação
+% Irretratabilidade
+% Controle de Acesso
+
+%Nesse contexto, a capacidade de administrar usuários e realizar auditorias de acesso à plataforma é fundamental.  
+
+\subsubsection*{Questões de Regulamentação}
+
+Cumpre destacar, ainda, que segurança ganhou uma importância ainda maior após a entrada em vigor da Lei Geral de Proteção de Dados (LGPD), tendo em vista que o ambiente de BI potencialmente armazenará dados pessoais, e que a auditoria de todos os acessos a dados pessoais é um requisito técnico fundamental para o cumprimento da legislação. 
+
+\index{LGPD}
+
+Especificamente, em razão da LGPD, é necessário que a ferramenta possua \emph{tags} para identificar os campos que possuam dados pessoais, bem como seus titulares, o \emph{log} de tratamento desses dados (este compreendendo inclusive com que finalidade o dado foi tratado e o operador do tratamento) e a que finalidades o tratamento desses dados foi autorizado pelo seu titular. Ainda, é necessário haver rastreamento dos dados com indexação por titular de modo a possibilitar o exercício do direito de esquecimento ou de alteração dos termos de autorização para tratamento de dados pessoais.
+
+Além disso, também é importante destacar o aspecto da segurança, de modo que a ferramenta deve guardar conformidade com a Política de Segurança da Informação (POSID) da CLDF, que durante a realização deste estudo estava em vias de ser publicada.
+
+\index{POSID}
+
+Em virtude do exposto, entende-se que a Área de Capacidade de Segurança é crítica e portanto será avaliada como \MUST.

@@ -1,0 +1,82 @@
+\chapter{Sistema de Notificações}
+\label{detalhes:modulos-notificacoes}
+
+\section{Pool de notificações}
+
+Existe uma necessidade do sistema informar cada usuário uma série de eventos. São mensagens informativas. Notificações. \textbf{Vamos usar as notificações no canto superior direito do sistema}. Contudo, deverá haver um módulo intitulado ``Minhas Notificações'' onde cada usuário poderá ver e gerenciar as notificações que recebeu.
+
+As notificações devem ser mensagens que o sistema envia para um dado usuário com um texto para informá-lo de algum acontecimento no sistema.
+
+Deve ser um pool, ou seja, uma lista de notificações. 
+
+As mais novas aparecem primeiro com estado ``Não Lida''. Quando a pessoa clica e vê, o estado é alterado para ``Lida''.
+
+A notificação é uma mensagem enviada pelo sistema para informar algo para o usuário. Ele não executa nenhuma ação nem tão pouco responde pois não é um chat. É um pool de notificações puro e simples.
+
+Podemos acessar ele pelo ícone de notificações no canto superior direito do sistema ou por um módulo destinado a mostrar as notificações.
+
+\subsection{Atributos de uma notificação}
+
+Uma notificação pode ser enviada nominalmente para um usuário ou para um perfil e uma unidade e assim todos os usuários com aquele perfil e cadastrados naquela unidade devem receber uma cópia daquela notificação.
+
+Alguns atributos interessantes para modelar uma notificação são:
+
+\begin{itemize}
+	\item Data e hora do envio;
+	\item Mensagem;
+	\item Se foi lida ou não;
+	\item Data e Hora em que o usuário leu.
+	\item Tipo de notificação: ``Direto para o usuário'' ou ``Destinado a um perfil e unidade'';
+\end{itemize}
+
+O importante é que uma notificação possa ser enviada:
+\begin{itemize}
+	\item Diretamente para um usuário do sistema;
+	\item Para todos os usuários que compartilham de um mesmo perfil e estão cadastrados numa mesma unidade;
+\end{itemize}
+
+Assim, uma notificação pode ter mais atributos dependendo do seu tipo.
+
+\subsubsection{Notificações do tipo ``Direto para o usuário''}
+
+Atributos adicionais caso a notificação foi enviada diretamente para um usuário específico:
+\begin{itemize}
+	\item Usuário de destino;
+\end{itemize}
+
+\subsubsection{Notificações do tipo ``Destinado a um perfil e unidade''}
+
+Atributos adicionais caso a notificação foi enviada para todos usuários com um determinado perfil e unidade:
+\begin{itemize}
+	\item Perfil de destino;
+	\item Unidade de destino;
+\end{itemize}
+
+\subsection{Uma notificação não é um chat}
+
+\begin{importante}{Não é um chat}
+	O emissor é sempre o sistema. Determinados eventos no sistema vão criar as notificações. A única ação possível de quem recebe é ler a notificação marcando-a como ``Lida'' ou pedir para marca-las como ``Não Lida'' para ler depois.
+\end{importante}
+
+
+Nos módulos de gerenciamento de solicitações das unidades e na área de trabalho dos consultores, as interações entre supervisores e consultores serão feitas mediante notificações. Contudo, como podem haver mais de um usuário com perfil de supervisor em uma mesma unidade, é importante que uma evento de notificação consiga entregar uma determinada mensagem somente para um grupo de usuários que possuem ao mesmo tempo um determinado perfil e estejam cadastrados numa mesma unidade.
+
+\begin{exemplo}{Exemplo de notificação}
+	Suponha que o sistema precise notificar todos os usuários com perfil de supervisor da UCJ de que um determinado consultor se inscreveu em uma solicitação para atuar como elaborador.
+	
+	\tcblower
+
+	Uma vez que a mensagem só interessa aos supervisores da UCJ, essa notificação não pode ser enviada para usuários com perfil de supervisor cadastrados na Unidade UDA.
+\end{exemplo}
+
+Em suma, podemos usar esse sistema de notificações para fazer mais coisas. Mas a necessidade dele aparece  no módulo de gerenciamento de unidades pois deve haver uma comunicação mínima entre os supervisores e os \CLs nos momentos de realizar a distribuição das atividades de uma unidade. Essa comunicação será realizada por meio de notificações.
+
+\section{Módulo ``Minhas Notificações''}
+
+Será um módulo em que cada usuário poderá ver todas as notificações que já recebeu como se fossem mensagens empilhadas das mais recentes para as mais antigas. Valem as seguintes regras: 
+
+\begin{itemize}
+	\item Notificações armazenam informação de estado ``Não Lido'' e ``Lido''. 
+	\item Ao visualizar uma notificação ela mudará para estado ``Lido''.
+	\item O usuário pode escolher um conjunto de notificações e mudar seus estados de ``Lido'' para ``Não Lido'' e vice-versa.
+\end{itemize}

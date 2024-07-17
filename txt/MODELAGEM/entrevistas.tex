@@ -1,0 +1,339 @@
+\chapter{Entrevistas}
+
+\section{Gilberto - Apoio da ASSEL}
+
+O sistema deve ser integrado ao SEI de forma a documentar no SEI o histórico na mudança dos estados.
+
+Então, as Ordens de Serviços para a Assel, que atualmente vem por intermédio de um Formulário do SEI, deveriam vir por intermédio de um Formulário Preenchido dentro do Portal, que alimenta o sistema e, por sua vez, o sistema registra isso no SEI.
+
+\begin{requisito}{Requisito}
+	Deve haver alguma forma de registrar quem foi o(s) solicitante(s) de uma Demanda. Inclusive, se combinado, quando o Solicitante entrar no sistema para fazer uma nova Solicitação, ele consiga ver o histórico dos pedidos que ele fez acompanhado do Status dos pedidos já realizados por ele: Em Execução, Concluído, Suspenso, etc… Isso seria possível através de uma ``Tela de Acompanhamento'' na qual o Solicitante loga-se e pode acompanhar o ``Estado'' de cada uma de suas demandas. Isso atende A1-3:19.
+\end{requisito}
+
+\subsection{A1 8:20 até 16:00 - Duas ou mais demandas de mesmo PL}
+
+	\textbf{Questão de ter duas ou mais Demandas relacionadas a um mesmo projeto, mas designado por Deputados diferentes, e portanto, de Comissões diferentes.} 
+  
+	Nesses casos, os pareceres serão diferentes, então mesmo que as duas demandas estejam relacionadas com um mesmo Projeto de Lei, os pareceres terão de ser feitos com pontos de vista diferentes e, assim, serão pareces diferentes. No processo de “RECEBER OS E APOIAR” o pessoal do Apoio quer ser capaz de verificar no histórico, todos os processos relacionados a, por exemplo, uma mesma PL. Assim, mesmo que seja uma demanda nova “que necessite elaboração” , ela já pode encaminhar essa informação para o Consultor que fará o trabalho. Então o processo de “APOIO” gera artefatos novos que serão apensados à OS. Um desses artefatos são informações de, por exemplo, demandas já realizadas pela ASSEL que relacionam-se com aquela demanda. Esse “pacote”  é que segue para frente.
+
+	Em relação a isso, vislumbro uma tela onde o Apoio tem como se fosse uma “Caixa de Entrada” com as demandas recebidas, por quem, etc… Ali, o servidor da ASSEL será capaz de analisar cada demanda recebida e destiná-la. Quando o destino for “Necessita de Elaboração” ele já pode anexar no “Processo” informações de outras demandas já concluídas pela ASSEL que estão relacionadas àquela demanda. O sistema já poderia até sugerir isso para ele automaticamente.  
+
+\subsection{A1 17:00 - Código de Nomenclatura}
+
+	Ele fala de uma metodologia que eles já usam atualmente para nomear o artefato que será produzido. É como se fosse uma Primary Key, isto é, um Código Chave, um identificador único que eles criam para cada documento que será elaborado de forma que isto facilite, depois, o controle deles. Acho importante mantermos essa forma de organizar as coisas, ou se não, podemos melhorar, mas com o cuidado de “melhorar mas manter compatibilidade”.
+
+\subsection{A1 18:30 - Diversos Tipos de Demandas}
+
+Não podemos restringir o sistema a “Demandas relacionadas somente com PLs”. O sistema deve ser capaz de controlar atividades relacionadas a quaisquer tipo de “Demandas” dentre os tipos de Demandas Possíveis.
+
+\subsection{A1 20:55}
+
+Está falando os diferentes tratamentos dados aos diferentes “tipos de demandas”. Cada “Demanda” tem um “Tipo” e “Demandas” de cada “Tipo” terão atributos diferentes. Alguns desses atributos já virão preenchidos.
+
+Aqui no *1 deve haver uma etapa na qual o Apoio consegue classificar e até “corrigir” a Demanda que chegou. Talvez na “Tela de Envio” o usuário poderá selecionar o tipo de demanda que ele “Acha” que é e já preencher os dados.
+
+E haverá uma “tela de classificação” na qual o Servidor do Apoio poderá ver os dados brutos preenchidos pelo Solicitante e classificar aquela demanda corrigindo se isso for necessário. 
+
+
+\begin{exemplo}{Exemplo}
+	O Solicitante solicita uma Consulta e em um campo “Descrição” ele descreve o que quer. Chegando na ASSEL, o Servidor do Apoio analisa o pedido e verifica que o que o Solicitante deseja é, na verdade, ´um “Estudo” e não uma “Consulta”. Reclassifica essa demanda e segue.
+\end{exemplo}
+
+\begin{requisito}{Requisito}
+	Pesquisa textual dentro de todos os Documentos já produzidos pela ASSEL.
+\end{requisito}
+
+\begin{exemplo}{Exemplo}
+	APOIO = RECEBER $\rightarrow$ FILTRAR $\rightarrow$ REGISTRAR NO SISTEMA $\rightarrow$ ENVIA PARA CHEFE DISTRIBUIR
+\end{exemplo}
+
+Aqui um dos Metadados possíveis seria a possibilidade do Apoio “Sugerir” para qual unidade isso deve ser distribuído. Depois, a Chefe, no momento de Distribuir para a Unidade, recebe essa sugestão e decide se “Acata e Aprova” ou se manda para outra Unidade.
+
+Haverá uma “Tela de Distribuição” na qual somente o Chefe pode assessar e lá o Chefe deve distribuir o processo ou mandar voltar.
+
+Acho que sempre deve existir o botão de “VOLTAR” ou “RETORNAR” com uma mensagem de forma que correções de fluxo possam ser realizados. Por exemplo, alguem erra e manda pra frente. Lá na frente, a pessoa pode mandar “VOLTAR” e claro, justifica. Ou seja, depois que vai, pra voltar, quem manda de volta é quem recebe.
+
+\begin{requisito}{Requisito}
+	Toda a ASSEL terá que ter acesso ao Sistema. O Sistema é quem distribui  etc.
+\end{requisito}
+
+
+13/05/21 Gilberto me disse:
+
+\begin{importante}[1]{Ao receber OS}
+	Verificando a Modelagem de processo, na questão de recebimento da Ordem de Serviço, ocorre que em primeiro momento quem recebe a demanda no Apoio é a própria Chefe da Assessoria que lê e defini qual a Unidade da Assessoria Legislativa é competente para analisar o pedido, depois distribui para nós alimentarmos os sistema atual, nessa etapa verificamos se já houve algum pedido do mesmo solicitante, ou de outro. A OS estando OK para seguir, liberamos o documento para seguir, geramos o Despacho para a Chefe da Assessoria Legislativa assinar e dar seguimento.
+\end{importante}
+
+Assim, já entendi que a Chefe da Assel deve fazer as interfaces com os demais atores.
+
+O Apoio conversa unicamente com a Chefe da Assel.  
+
+ 
+
+
+\section{Ana - Consultora Legislativa da UDA}
+
+A Ana é Consultora Legislativa da UDA.
+
+\subsection{Papéis Desempenhados}
+
+Ela me alertou que o CL pode trabalhar de duas formas:
+
+\begin{enumerate}
+	\item Titular da Demanda: Responsável pelo trabalho de elaboração dos Artefato(s) demandados.
+	
+	\item Revisor de Artefato(s): Responsável pelo trabalho de revisar o trabalho de outro colega.
+\end{enumerate}
+
+Inclusive ela me disse que esse papel de ``Revisão'' faz parte formal do trabalho do CL.
+
+\begin{requisito}{Requisito}
+	Portanto, é importante separar esse Estado onde o processo se encontra. Está sendo elaborado ou está sendo revisado?
+\end{requisito}
+
+\subsection{Função do Chefe}
+
+Quando os trabalhos de elaboração e revisão terminam, os artefato(s) são entregues para o Chefe, que faz uma revisão ``menor'' nos produtos.
+
+Basicamente eles apenas tomam conhecimentos e devolvem os artefatos para o Apoio.
+
+\subsection{Controle de Estado de Elaboração}
+
+
+\begin{requisito}{Requisito}
+	Haver forma de ``medir'' ou se fazer controle de estado da Elaboração / Revisão;	
+\end{requisito}
+
+
+\subsection{Distribuição dos Artefatos}
+
+Os artefato(s) criados vão para a Pasta do CL. O apoio tem acesso a todas as pastas de todos os CLs.
+
+Os CLs só tem acesso às suas próprias pastas na rede.
+
+Por enquanto, a troca de arquivos ocorre dessa forma. Pastas na rede.
+
+
+\section{Josué Alves - Chefe da USE}
+
+Josué Alves é Chefe da USE
+
+\subsection{01m30 - Aspectos Internos}
+
+Fala das minutas de parecer pela prejudicialidade.
+
+\subsection{02m30 - Elaboração e Distribuição}
+
+``Atividade de Elaboração'' pode ser realizada pelo Próprio Chefe de Unidade desde que ele seja Consultor Legislativo. Caso, ele seja CTL, então ele não pode.
+
+\begin{importante}{Puxar Demanda}
+	Na atividade de ``Distrubuição de OS'' do Chefe da Unidade, em vez do ``Chefe Empurrar'' a demanda para o CL. Há opção do CL escolher a atividade para sí, ie, puxar.			
+\end{importante}
+
+
+\subsection{04m40 - Sigilo da Minuta de Parecer}
+
+05m20 - Minuta de Pareces, Nota Técnica, Estudo (tudo eu acho) são atividades cujo conteúdo durante a elaboração são sigilosos.
+
+\subsection{07m25 - Questão do controle de estado da Demanda}
+
+\begin{funcionalidade}[1]{Possibilidade de o Solicitante poder acompanhar aonde o trabalho está}
+	Possibilidade de o Solicitante poder acompanhar aonde o ``trabalho está''.
+\end{funcionalidade}
+
+Exemplo: Está em elaboração, está em revisão, está no apoio, está esperando distribuição, etc...
+
+\subsection{09m12 - Funcionalidade: Vínculo entre Demanda e PL}
+
+Acompanhar estado da Proposição que originou o Parecer.
+
+\begin{funcionalidade}{Acompanhar estado da Proposição que originou o Parecer}
+	Se houver vínculo entre a demanda do tipo ``Minuta de Parecer'' com o PL originário em tramitação, então seria importante que o sistema oferecesse uma forma de verificar o estado do PL.
+	
+	Aqui talvez seja necessário fazer integração com o Sistema do PLE.
+\end{funcionalidade}
+
+\subsection{14m10 - Aula sobre Proposição}
+
+PELO
+PLC
+PL
+PDC
+PR
+Emendas
+
+\subsection{16m30 - Nomenclatura da OS}
+
+Nomenclatura: OS ou Solicitação
+
+\subsection{19m16 - Classificação das Demandas}
+
+\begin{funcionalidade}{Classificação das Demandas}
+	Dentro do processo das Unidades, cada unidade deveria poder classificar suas demandas da forma que quisesse.
+	
+	É quase igual ao sei onde podemos criar marcadores e depois filtrar por marcadores com diferentes cores e etc.		
+\end{funcionalidade}	
+
+Na unidade do Josué eles classificam as demandas.
+
+ 
+\subsection{22m30 - Distribuição interna das demandas}
+
+Possibilidade de puxar as demandas para sí mais do que esperar o Chefe atribuir para vc uma demanda.
+
+Normalmente o \CL ele próprio escolhe o trabalho que vai realizar.
+
+Claro, se sobra algo lá que ninguem quer, cabe ao Chefe designar alguém para desenvolver determinada demanda.
+
+\subsection{25m00 - Como as revisões são escolhidas e verificação}
+
+Nome: Revisão e Verificação.
+
+Nome: Verificação;
+
+Nome: Revisão Final;
+
+\subsection{29m50 - Outros documentos}
+
+Aqui eu aviso que o sistema não pode substituir o SEI. Então, vocês continuarão usando o SEI para coisas paralelas.
+
+Agora, as solicitações e o processo, embora será, de alguma forma documentada no SEI, vocês usaram o sistema pois aí o sistema trará mais recursos. 
+
+Josué diz que podem ser necessários fazer consultas aos orgaos sobre os pareces. Seria bom que essas consultas fossem relacionadas com a demanda.
+
+Talvez seria interessante conversar mais sobre essa questão.
+
+\begin{importante}{Automatiza o SEI?}
+ Automatizar o SEI para fazer consultas relacionadas a demandas em andamento?	
+ 
+ Lógico que não.
+ 
+ Esse caso deve ser sim conversado e aprofundado. Mas no futuro. Vamos trabalhar no MVP por enquanto. 
+\end{importante}
+
+\section{Milena - Chefe da Assel}
+
+A ``Distribuição'' é do tipo empurra. Ela e o apoio analisam a OS e mandam para o Unidade que eles acham que é.
+
+Ela atenta para a questão do Sigilo ao mesmo tempo que deve haver possibilidade do CL pesquisar o Banco de Dados. 
+
+\begin{importante}{Pesquisar sem comprometer Sigilo}
+	Deverão haver mais conversar para entender como seriam feitas essas pesquisas sem comprometer o Sigilo.
+	
+	Quem pode pesquisar? Etc...	
+\end{importante}
+
+Milena também pontua que o Sistema deve eliminar a necessidade de realizar o Acesso Remoto nos computadores. O sistema deve funcionar on-line na Internet mediante autenticação do usuário (login). 
+
+Seria bom que o sistema também fosse responsável para receber os artefato(s) e realizar a distribuição desses artefato(s) em cada fase até finalizar entregando isso para o Solicitante.
+
+Ela diz que um problema que eles tem é que as vezes eles não conseguem acessar a pasta deles na rede e isso impacta o trabalho.
+
+
+\section{Jeison - Chefe da UCJ}
+
+\subsection{Nota Técnica}
+
+Ao ``Elaborar Artefatos'' pode surgir a necessidade de criar uma ``Nota Técnica'' com algo que deve ser informado ao Solicitante.
+
+\begin{importante}{Nota Técnica}
+	Questão da Nota Técnica: A demanda pode gerar a necessidade de que o \CL crie uma Nota Técnica contendo conteúdo importante.
+	
+	O ideal é fazer novas conversas sobre isso.		
+\end{importante}
+
+\subsection{Pesquisa Prévia no Apoio}
+
+Incluir na atividade de apoio a capacidade de que, quando entende-se que necessita-se de elaboração, essa elaboração possa ser precedida de uma pesquisa prévia. 
+
+Ou seja, ao processo já podem ser inseridos artefato(s) de auxílio aos Consultores Legislativos que receberão a demanda lá na frente no futuro.
+
+   
+\section{Cláudio UEF}
+
+
+% Isso já foi contemplado.
+%\begin{importante}[1]{Importante}
+%	Não é obrigatório passar pela revisão;
+%\end{importante}
+
+
+
+Ele traz outras funcionalidades:
+
+- Acompanhamento Temporal
+
+
+\begin{importante}{Mudança de relator de um OS}
+	Mudança de relator de um OS.
+\end{importante}
+
+%\TODO{Incluir Ciencia na ASSEL antes de Arquivar}
+
+\begin{importante}{Abortar a OS}
+	Possibilidade de abortar a OS a qualquer momento.	
+\end{importante}
+
+Mudar nome do losango de ``Necessita de Elaboração'' para ``Cumpre Requisitos?''
+
+
+\section{Ana Alice UDA}
+
+
+\begin{funcionalidade}{Organização via bloco interno}
+	Quando for a época a gente vê isso. Ana disse que podia mostrar.
+\end{funcionalidade}
+
+
+Seria bom pedir para ela me mostrar se possivel no SEI como é a atual organização via Bloco Interno das coisas no SEI.
+
+Nessa parte eu pensei que o ideal seria criar um sistema de organização igual às Tags do Gmail. 
+
+%\TODO{Ver com a Ana Alice se um sistema de Tags... }
+
+%Ver com a Ana Alice se um sistema de Tags igual ao do Gmail satisfaria as necessidades dela de organização.
+
+%Vou fazer assim
+
+
+\section{Pedro da Basis}
+
+Para o Módulo II fazer Exportação de Dados para BI.
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

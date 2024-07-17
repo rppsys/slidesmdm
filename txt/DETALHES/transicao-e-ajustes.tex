@@ -1,0 +1,193 @@
+\chapter{Backlog de Ajustes no Sistema}
+\label{detalhes:transicao-e-ajustes}
+
+\section*{Ajustes}
+
+Na reunião de hoje vou apresentar essas coisas que precisam ser resolvidas.
+
+\textbf{Evolutivo:}
+\begin{itemize}
+	\item Solicitar OS - MPAR - Listagem de Ementa;
+	\item Alteração dos Nomes das Telas Atuais
+	\item Alteração Cenário - OS Assinada - Enviar OS para ASSEL e Gerar Primeiros Ramos da Árvore de Histórico (E aqui entra modo de modelar o BD)
+	\item Cenário adicional para Solicitar OS (Quando a Unidade Solicitante é a própria ASSEL)
+	\item Log de Auditoria
+\end{itemize}
+
+
+\textbf{Manutenção:}
+\begin{itemize}
+	\item Tela Gerenciar Perfil - Não está funcionando;
+	\item Solicitar Ordem de Serviço - SEI - Tramitação não está funcionando;
+\end{itemize}
+
+\section{Evolutivo}
+
+
+\subsection{Solicitar OS - Campo Solicitante Já vem Preenchido}
+
+Isso é importante.
+
+\begin{importante}{Destacar em qual Unidade está}
+	Na tela deve aparecer em algum lugar o nome da Unidade.
+	Em letras maiusculas e bem grande.
+	
+	Para que o usuário ignorante veja.
+	
+	Na verdade o ideal é que raros usuários possam solicitar para mais de uma Unidade.
+	
+	A imensa maioria só poderá solicitar para uma única unidade. Isso vai resolver problemas de BIOS.
+	
+\end{importante}
+
+
+\subsection{Solicitar OS - MPAR - Listagem de Ementa}
+
+Tem que arrumar isso.
+
+\subsection{Alteração dos Nomes das Telas Atuais}
+
+Ver mapeamento de telas e perfis.
+
+
+
+\subsection{Alteração Cenário - OS Assinada}
+
+
+Idéia do João.
+
+João deu idéia valiosa de como controlar a tramitação da OS. Tirei foto. Está desenhando na prancheta.
+
+Dessa forma conseguimos saber onde está e ainda guardamos o histórico.
+
+
+\subsection{Comunicação com o SEI}
+
+Exibir mensagem de erro quando não conseguir acessar o SEI;
+
+Gravar log de erro quando não conseguir isso;
+
+
+
+\subsection{Cenário adicional para Solicitar OS}
+
+Se necessário, cenário para quando a OS partir da ASSEL.
+
+Na prática isso não deve existir.
+
+ASSEL não deve poder fazer solicitações.
+
+
+\subsection{Log de Auditoria}
+
+Temos que definir e criar uma tabela de log para gravar ações de interesse do usuário e do sistema. 
+
+\textbf{Gravar:}
+
+\begin{itemize}
+	\item Data e Hora;
+	\item Tipo de Ator: Usuário, Sistema, Sistema-SEI
+	\item Usuário que realizou a ação;
+	\item Nome da Máquina de onde a ação foi realizada;
+	\item Tela aonde ocorreu a ação;
+	\item Tipo de Ação (Erro e outros tipos);
+	\item Detalhes;
+\end{itemize}
+
+Pedir à THS propor uma modelagem de tabelas para organizar esse log.
+
+
+\subsection{Correções da Tela de Gerenciar Unidades}
+
+Em tese o ideal é que as Unidades adicionadas sejam somente Unidades Solicitantes.
+
+Eliminar Unidade Interna e Externa. Isso foi sugestão do Pedro lá atrás quando não estava claro ainda como realizariamos o controle de exibição de telas.
+
+Na prática o controle de exibição de telas será realizado de acordo com os Perfis.
+
+\subsection{Gerenciamento de Cor de Fundo para Linhas Baseado em Andamento}
+
+Tabela que contem os tipos de andamento deve ter um atributo cor. Essa cor será usada para pintar o fundo da linha da tabela nas caixas de entrada.
+
+
+
+
+
+\section{Manutenções}
+
+\subsection{Tela Gerenciar Perfil}
+
+Tela Gerenciar Perfil - Não está funcionando;
+
+Precisamos remover aqueles perfis e criar novos.
+Um para cada tela que será criada.
+
+E ao atribuir um Perfil a uma funcionalidade, usuários com aquele Perfil só terão acesso àquelas funcionalidades. Isso não está funcionando.
+
+Criar logo todos os demais Perfis que serão necessários no sistema.
+
+Perfis para acesso de supervisor ou consultor para cada Unidade Interna. Acesso de supervisor ou apoio para ASSEL. Acesso de Solicitante para Solicitante.
+
+
+
+Alterar os Perfis para que exista um Perfil para cada possibilidade de Perfil de Uso do Sistema. Ou seja, usar principio MSMS (Simples e Estúpido).
+
+Os perfis criados e cadastrados por padrão (hard-coded) que vão existir são:
+
+\begin{itemize}
+	\item ADMINISTRADOR SUPERVISOR
+	
+	\item  SOLICITANTE - SUPERVISOR
+	\item  SOLICITANTE - NORMAL
+	\item  SOLICITANTE - SOMENTE-LEITURA
+	
+	\item  ASSEL - ADMINISTRADOR
+	\item  ASSEL - SUPERVISOR
+	\item  ASSEL - APOIO
+	
+	\item  UNIDADE - SUPERVISOR
+	\item  UNIDADE - ELABORADOR
+	\item  UNIDADE - REVISOR
+	\item  UNIDADE - SOMENTE-LEITURA
+\end{itemize}
+
+\begin{table}[!h]
+	\begin{center}
+		\begin{tabular}{|p{0.4\textwidth}|c|c|}
+			\hline
+			\rowcolor{lightgray!50} \multicolumn{3}{|c|}{\Large PERFIS \normalsize} \\ \hline \hline
+			% CABEÇALHO        
+			\rowcolor{lightgray}\textbf{Perfil} & \textbf{Permissões} & \textbf{Acesso} \\ \hline
+			% CONTEÚDO
+			% Código escrito manualmente
+			\rowcolor{corCOULD!10} SOLICITANTE - SUPERVISOR  & COMPLETA & LEITURA E ESCRITA  \\ \hline
+			\rowcolor{corCOULD!10} SOLICITANTE - APOIO  & LIMITADA & LEITURA E ESCRITA  \\ \hline
+			\rowcolor{corCOULD!10} SOLICITANTE - ESPECTADOR  & LIMITADA & SOMENTE LEITURA  \\ \hline 
+			\hline
+			
+			
+			\rowcolor{corCOULD!20} ASSEL - SUPERVISOR  & COMPLETA & LEITURA E ESCRITA  \\ \hline
+			\rowcolor{corCOULD!20} ASSEL - APOIO  & LIMITADA & LEITURA E ESCRITA  \\ \hline
+			\rowcolor{corCOULD!20} ASSEL - ESPECTADOR  & LIMITADA & SOMENTE LEITURA  \\ \hline 
+			\hline
+			
+			\rowcolor{corWOULD!20} UNIDADE - SUPERVISOR  & COMPLETA & LEITURA E ESCRITA  \\ \hline
+			\rowcolor{corWOULD!20} UNIDADE - ELABORADOR  & LIMITADA & LEITURA E ESCRITA  \\ \hline
+			\rowcolor{corWOULD!20} UNIDADE - ESPECTADOR  & LIMITADA & SOMENTE LEITURA  \\ \hline 
+			\hline
+			
+		\end{tabular}    
+		\caption{\label{tab:perfis:mapeamento} Perfis do Sistema.}
+	\end{center}
+\end{table}
+
+
+
+\subsection{Solicitar OS SEI - Tramitação está com Bug}
+
+Solicitar Ordem de Serviço - SEI - Tramitação não está funcionando;
+
+Ao tramitar, o sistema não está recebendo a OS direito.
+
+Isso aqui é complicado e vamos precisar de ajuda do joão.
+

@@ -1,0 +1,135 @@
+\chapter{Informações Coletadas}
+
+%Depois de consolidado cada seção aqui tem que virar uma nota técnica no SEI.
+
+\section{Unidades Internas}
+
+\begin{itemize}
+	\item ASSEL - Assessoria Legislativa;
+	\item UCJ - Unidade de Constituição e Justiça;
+	\item URP - Unidade de Redação Parlamentar e Consolidação dos Textos Legislativos;
+	\item UEF - Unidade de Economia e Finanças;
+	\item USE - Unidade de Saúde, Educação, Cultura e Desenvolvimento Científico e Tecnológico; 
+	\item UDA - Unidade de Desenvolvimento Urbano e Rural e Meio Ambiente;
+\end{itemize}
+
+
+\section{Unidades Externas}
+
+São quaisquer unidades do SEI que forem cadastradas no sistema e atuam somente como Solicitantes.
+
+
+\section{Tipos de Solicitações}
+
+%\TODO{Consolidar e subir para SEI como Nota Técnica}
+
+As demandas recebidas pela ASSEL classificam-se no \textbf{Tipos de Solicitação} a seguir:
+
+%Isto foi me enviado pelo Gilberto no dia 27/04/21.
+
+\begin{itemize}
+	\item Consulta (CONS)
+	\item Estudo (EST)
+	\item Minuta de Pronunciamento / Discurso (PRO)
+	\item Minuta de Parecer
+	\begin{itemize}
+		\item Denúncia (DEN)
+		\item Indicação (IND)
+		\item Mensagem (MENS) 
+		\item Projeto de Decreto Legislativo (PDL)
+		\item Proposta de Emenda à Lei Orgânica (PELO)
+		\item Projeto de Lei (PL)
+		\item Projeto de Lei Complementar (PLC) 
+		\item Projeto de Resolução (PR)
+		\item Moção (MOC)
+		\item Recurso (REC)
+		\item Requerimento (RQ)		
+    \end{itemize}
+
+
+	\item Minuta de Proposição (MP)
+	\begin{itemize}
+		\item Denúncia (DEN)
+		\item Indicação (IND)
+		\item Mensagem (MENS) 
+		\item Projeto de Decreto Legislativo (PDL)
+		\item Proposta de Emenda à Lei Orgânica (PELO)
+		\item Projeto de Lei (PL)
+		\item Projeto de Lei Complementar (PLC) 
+		\item Projeto de Resolução (PR)
+		\item Moção (MOC)
+		\item Recurso (REC)
+		\item Requerimento (RQ)		
+    \end{itemize}
+
+	\item Nota Técnica (NT)
+	\item Relatório de Veto (RV)
+	\item Outros (OUT)
+\end{itemize}
+
+\begin{importante}{Mudar aqui muda lá}
+	Mudar esses tipos tem que definir novos códigos em \ref{ref:codigos}.
+\end{importante}
+
+\section{Módulos}
+
+	Verificamos dois principais necessidades da \ASSEL:
+	
+	\begin{itemize}
+		\item  \textbf{Sistema de Protocolo} - 	A necessidade da \ASSEL \xspace é de um sistema de protocolo integrado ao SEI que controle as atividades da unidade.  
+		
+		\item \textbf{Controle e Distribuição dos Artefato(s)} - Necessidade de controlar a forma como os artefato(s) desenvolvidos são distribuidos para os seus solicitantes.
+	\end{itemize}
+
+	Assim, acredita-se que para fins de desenvolvimento o sistema pode ser desenvolvidos em dois módulos.
+
+\subsection{Módulo I - Sistema de Protocolo}
+
+	Num primeiro momento seria desenvolvido um \textbf{sistema de protocolo integrado ao SEI} para controlar o fluxo de atividades da \ASSEL.
+	
+	Neste primeiro momento, a \textbf{forma de distribuição} dos artefato(s) criados pela \ASSEL não seria objeto de desenvolvimento. Isto é, a \ASSEL continuaria fazendo o controle e distribuição de Artefato(s) da maneira antiga, isto é, manualmente, utilizando a estrutura de rede da casa.   
+
+
+\subsection{Módulo II - Controle e Distribuição de Artefato(s) produzidos}
+
+	Em um segundo momento, após ter uma versão do Módulo I desenvolvida, em produção, funcionando com recursos mínimos, passaríamos a focar em fazer o \textbf{Controle e Distribuição de Artefato(s) produzidos}.
+	
+	Assim, neste momento, a distribuição dos artefato(s) produzidos deixariam de ser uma tarefa manual executada pela equipe de Apoio da \ASSEL e passaria a ser executada pelo próprio sistema.
+	
+	Em um experimento de imaginação, quando o \CL finalizasse uma demanda, ele faria \emph{upload} do(s) arquivos produzidos para o sistema e na outra ponta, o Solicitante faria o \emph{download} desses arquivos.
+	
+	Neste momento, as preocupações com os requisitos não funcionais de ``Sigilo'' passariam a ser considerados. 	
+
+
+\section{Requisitos Funcionais}
+
+
+\subsection{Requisito: Capacidades de Pesquisa}
+
+Trata-se da capacidade de realizar pesquisas como:
+
+\begin{itemize}
+	\item Pesquisa textual dentro de todos os documentos já produzidos pela \ASSEL.
+	
+	\item Pesquisar os metadados de processos já tramitados pela Assel e que originaram artefato(s).	
+\end{itemize}
+
+\subsection{Requisito: Monitorar Estado das Solicitações}
+
+Capacidade de permitir que o solicitante saiba onde o processo está e receba informações sobre o estado da solicitação.
+
+\section{Requisitos Não Funcionais}
+
+\subsection{ReqNFunc: Integração com o SEI}
+
+Uma das restrições do projeto previsto no TAP é que o Sistema não pode substituir o SEI. Então um requisito não funcional muito importante é que o Sistema funcione juntamente com o SEI.
+
+
+\subsection{ReqNFunc: Sigilo}
+
+Da elaboração até a entrega dos artefato(s) aos Solicitantes, esses artefato(s) são sigilosos. Ou seja, só ganhará acesso ao artefato quem demandou.
+
+\subsection{ReqNFunc: Acesso via Internet}
+
+	O Sistema deve eliminar a necessidade de realizar o Acesso Remoto nos computadores. O sistema deve funcionar on-line na Internet mediante autenticação do usuário (login).
+

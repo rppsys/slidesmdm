@@ -1,0 +1,68 @@
+% ####
+% CAPA
+% ####
+
+\newcommand{\sepCapaTipo}{\textsc{Backlog Atual}}
+\newcommand{\sepCapaTitulo}{Documento em Elaboração}
+\newcommand{\sepCapaData}{Documento não oficial e sem validade}
+\newcommand{\sepCapaFile}{sep-capa-verde.pdf}
+\newcommand{\sepCapaCor}{green}
+
+
+% \newcommand{\sepCapaTipo}{\textsc{Nota Técnica}}
+% \newcommand{\sepCapaTitulo}{Mapeamento de Andamentos}
+% \newcommand{\sepCapaData}{18 de Julho de 2022}
+% \newcommand{\sepCapaFile}{sep-capa-azul.pdf}
+% \newcommand{\sepCapaCor}{blue}
+
+
+% ----
+% Informações da Capa
+% ----
+\newcommand{\capatitulo}{
+\vphantom{espaço vertical em branco}
+Projeto Sistema da ASSEL
+
+\sepCapaTipo
+}
+
+\newcommand{\capasubtitulo}{
+
+\Huge \sepCapaTitulo
+
+\vphantom{\small Publicado no DCL nº 22, de 16 de março de 2021}
+}
+
+\newcommand{\capaunidade}{
+%\large \red{AINDA EM ELABORAÇÃO}
+
+%\red{SEM VALIDADE}
+\large \sepCapaData
+
+\large 05 de Setembro de 2022
+
+%\vphantom{espaço vertical em branco}
+}
+
+% ----
+% Código  
+% ----
+\begingroup
+
+\thispagestyle{empty} % Suppress headers and footers on the title page
+
+\begin{tikzpicture}[remember picture,overlay]
+\node[inner sep=0pt] (background) at (current page.center) 
+{\includegraphics[width=\paperwidth]{\sepCapaFile}};
+\draw (current page.center) node [fill=\sepCapaCor!30!white,fill opacity=0.8,text opacity=1,inner sep=1cm]{\Huge\centering\bfseries\sffamily\parbox[c][][t]
+{\paperwidth}
+{
+\centering \capatitulo\\[15pt] % Book title
+{\Large \capasubtitulo}\\[20pt] % Subtitle
+{\capaunidade} % Author name
+}}; 
+\end{tikzpicture}
+
+\vfill
+
+\endgroup

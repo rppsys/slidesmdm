@@ -1,0 +1,154 @@
+% -----------------------------------------------------------
+                % Atalhos
+% -----------------------------------------------------------
+
+% Geral
+\newcommand{\CLDF}{Câmara Legislativa do Distrito Federal \xspace}
+\newcommand{\CMI}{Coordenadoria de Modernização e Informática \xspace}
+\newcommand{\Gartner}{Grupo \emph{Gartner} \xspace}
+\newcommand{\CDDHCEDP}{Comissão de Defesa dos Direitos Humanos, Cidadania, Ética e Decoro Parlamentar}
+\newcommand{\CODEPLAN}{Companhia de Planejamento do Distrito Federal}
+
+\newcommand{\ASSEL}{Assessoria Legislativa}
+\newcommand{\CL}{consultor legislativo \xspace}
+\newcommand{\CLs}{consultores legislativos \xspace}
+\newcommand{\CTL}{consultor técnico-legislativo \xspace}
+\newcommand{\CTLs}{consultores técnico-legislativos \xspace}
+
+% Relatórios Nomes Simples
+\newcommand{\relGMQ}{relatório ``\emph{Gartner Magic Quadrant}''} 
+\newcommand{\relGCC}{relatório ``\emph{Gartner Critical Capabilities}''}  
+\newcommand{\relFCM}{relatório ``\emph{The Forrester Wave Client-Managed}''} 
+\newcommand{\relFVM}{relatório ``\emph{The Forrester Wave Vendor-Managed}''} 
+
+% Relatórios Nomes Completos
+\newcommand{\relatorioGMQ}{relatório ``\emph{Magic Quadrant for Analytics and Business Intelligence Platforms} 2020''} 
+\newcommand{\relatorioGCC}{relatório ``\emph{Critical Capabilities for Analytics and Business Intelligence Platforms} 2020''}
+\newcommand{\relatorioFVM}{relatório ``\emph{The Forrester Wave: Enterprise BI Platforms (Vendor-Managed), Q3 2019''}} 
+\newcommand{\relatorioFCM}{relatório ``\emph{The Forrester Wave: Enterprise BI Platforms (Client-Managed), Q3 2019''}} 
+
+\newcommand{\RelatorioGMQ}{Relatório ``\emph{Magic Quadrant for Analytics and Business Intelligence Platforms} 2020''} 
+\newcommand{\RelatorioGCC}{Relatório ``\emph{Critical Capabilities for Analytics and Business Intelligence Platforms} 2020''}
+\newcommand{\RelatorioFVM}{Relatório ``\emph{The Forrester Wave: Enterprise BI Platforms (Vendor-Managed), Q3 2019''}} 
+\newcommand{\RelatorioFCM}{Relatório ``\emph{The Forrester Wave: Enterprise BI Platforms (Client-Managed), Q3 2019''}} 
+
+
+
+
+
+% Critério MoSCoW
+\newtcbox{\moscowTag}[1][red]{on line,
+arc=7pt,colback=#1!80!white,colframe=#1!50!black,
+before upper={\rule[-3pt]{0pt}{10pt}},boxrule=1pt,
+boxsep=0pt,left=6pt,right=6pt,top=2pt,bottom=2pt}
+
+% \colorbox{corDoFundo}{\textcolor{corDoTexto}{texto}}
+\newcommand{\MUST}{\moscowTag[corMUST]{MUST}}
+\newcommand{\SHOULD}{\moscowTag[corSHOULD]{SHOULD}}
+\newcommand{\COULD}{\moscowTag[corCOULD]{COULD}}
+\newcommand{\WOULD}{\moscowTag[corWOULD]{WOULD}}
+
+% Botões
+
+% Botões nos dois módulos
+\newcommand{\bVisualizar}{\moscowTag[cldfG]{Visualizar}\xspace}
+\newcommand{\bDetalhes}{\moscowTag[cldfG]{Detalhes}\xspace}
+
+% Botões de Gerenciar Solicitações da Unidade
+\newcommand{\bGerAtrib}{\moscowTag[cldfA]{Gerenciar Atribuições}\xspace}
+\newcommand{\bGerInscricoes}{\moscowTag[cldfA]{Gerenciar Inscrições}\xspace}
+\newcommand{\bInscrever}{\moscowTag[yellow]{Inscrever-se}\xspace}
+\newcommand{\bEncaminhar}{\moscowTag[cldfA]{Encaminhar}\xspace}
+\newcommand{\bAnalisar}{\moscowTag[cldfA]{Analisar}\xspace}
+
+% Botões da Área de Trabalho do CL
+\newcommand{\bAvaliar}{\moscowTag[cldfJ]{Avaliar}\xspace}
+\newcommand{\bDesistir}{\moscowTag[cldfJ]{Desistir}\xspace}
+\newcommand{\bConcluir}{\moscowTag[cldfJ]{Concluir}\xspace}
+
+% Simulação
+\newcommand{\SU}{\ctextcolor{yellow!40}{Sergio Uchoa}\xspace}
+\newcommand{\SD}{\ctextcolor{yellow!50}{Samuel Duarte}\xspace}
+\newcommand{\ST}{\ctextcolor{yellow!60}{Sandro Teixeira}\xspace}
+\newcommand{\SQ}{\ctextcolor{yellow!70}{Sebastiao Quintana}\xspace}
+\newcommand{\SC}{\ctextcolor{yellow!80}{Savio Castro}\xspace}
+
+\newcommand{\EU}{\ctextcolor{blue!10}{Eduardo Uchoa}\xspace}
+\newcommand{\ED}{\ctextcolor{blue!20}{Erick Duarte}\xspace}
+\newcommand{\ET}{\ctextcolor{blue!30}{Edson Teixeira}\xspace}
+\newcommand{\EQ}{\ctextcolor{blue!40}{Emerson Costa}\xspace}
+\newcommand{\EC}{\ctextcolor{blue!50}{Emanuel Santos}\xspace}
+
+\newcommand{\RU}{\ctextcolor{green!20}{Rodrigo Uchoa}\xspace}
+\newcommand{\RD}{\ctextcolor{green!30}{Rafael Dias}\xspace}
+\newcommand{\RT}{\ctextcolor{green!40}{Roberto Torres}\xspace}
+\newcommand{\RQ}{\ctextcolor{green!50}{Renato Queiroz}\xspace}
+\newcommand{\RC}{\ctextcolor{green!60}{Ricardo Castro}\xspace}
+
+\newcommand{\SOLU}{\ctextcolor{orange!20}{CONS008-2023}\xspace}
+\newcommand{\SOLD}{\ctextcolor{orange!40}{PL1700F006-2021}\xspace}
+\newcommand{\SOLT}{\ctextcolor{orange!60}{DEN1994P002-2021}\xspace}
+
+
+
+
+% Tabelas
+\newcommand{\msnone}{\textemdash}
+\newcommand{\msmark}{\checkmark}
+
+% Cenários
+\newcommand{\mssim}{\Large \Checkedbox \xspace \normalsize}
+\newcommand{\msnao}{\Large  \HollowBox \xspace \normalsize}
+\newcommand{\msint}{\Large  \faQuestion \xspace \normalsize}
+
+\newtcbox{\cenarioTag}[1][red]{on line,
+arc=1pt,colback=#1!80!white,colframe=#1!50!black,
+before upper={\rule[-3pt]{0pt}{10pt}},boxrule=1pt,
+boxsep=0pt,left=6pt,right=6pt,top=2pt,bottom=2pt}
+
+\newcommand{\mschecksim}{\cenarioTag[corSIM]{\mssim}}
+\newcommand{\mschecknao}{\cenarioTag[corNAO]{\msnao}}
+\newcommand{\mscheckint}{\cenarioTag[corMED]{\msint}}
+
+
+% Estados das Funcionalidades
+\newcommand{\msrls}{\Large \Checkedbox \xspace \normalsize}
+\newcommand{\msrln}{\Large  \HollowBox \xspace \normalsize}
+\newcommand{\msrlv}{\Large  \faQuestion \xspace \normalsize}
+\newcommand{\msfcs}{\cenarioTag[corSIM]{\mssim}}
+\newcommand{\msfcn}{\cenarioTag[corNAO]{\msnao}}
+
+
+
+% Metáfora do Restaurante
+\newcommand{\METAFORADORESTAURANTE}{\textsc{Metáfora do Restaurante}}
+\newcommand{\METAFORA}{\textsc{Metáfora}}
+\newcommand{\RESTAURANTE}{\textsc{Restaurante}}
+\newcommand{\CLIENTE}{\textsc{Cliente}}
+\newcommand{\CLIENTES}{\textsc{Clientes}}
+\newcommand{\CLIENTEDORESTAURANTE}{\textsc{Cliente do Restaurante}}
+\newcommand{\PRATO}{\textsc{Prato}}
+\newcommand{\PRATOS}{\textsc{Pratos}}
+\newcommand{\CARDAPIO}{\textsc{Cardápio de Pratos}}
+\newcommand{\LIVRODERECEITAS}{\textsc{Livro de Receitas}}
+\newcommand{\RECEITA}{\textsc{Receita}}
+\newcommand{\RECEITAS}{\textsc{Receitas}}
+\newcommand{\INGREDIENTE}{\textsc{Ingrediente}}
+\newcommand{\INGREDIENTES}{\textsc{Ingredientes}}
+\newcommand{\PRODUTOR}{\textsc{Produtor de Ingrediente}}
+\newcommand{\PRODUTORES}{\textsc{Produtores de Ingrediente}}
+\newcommand{\DESPENSA}{\textsc{Despensa}}
+\newcommand{\COZINHEIRO}{\textsc{Cozinheiro}}
+\newcommand{\COZINHEIROS}{\textsc{Cozinheiros}}
+\newcommand{\FOGAO}{\textsc{Fogão}}
+\newcommand{\GERENTE}{\textsc{Gerente}}
+\newcommand{\GERENTES}{\textsc{Gerentes}}
+
+
+% Tipos de Itens para Protocolo
+
+\newcommand{\msUnd}{\faUsers \xspace}
+\newcommand{\msArt}{\faFilePictureO \xspace}
+\newcommand{\msObs}{\faFileTextO \xspace}
+\newcommand{\msAnd}{\faMailForward \xspace}
+\newcommand{\msAct}{\faGears \xspace}

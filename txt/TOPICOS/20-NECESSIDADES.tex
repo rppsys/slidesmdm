@@ -1,0 +1,132 @@
+\part{Necessidades}
+\label{parte-necessidades}
+
+\chapter{Avaliando Necessidades}
+\label{cap-necessidades}
+
+A análise desenvolvida em \cite[7]{analisegartner2020} juntamente com o estudo de outros referenciais ajudou a compreender que o melhor produto para uma instituição é aquele que atende suas necessidades específicas. Dessa forma é imprescindível identificar as necessidades da instituição para, a partir disso, verificar quais tecnologias oferecerão melhor alinhamento. 
+
+Assim, nesse capítulo pretende-se avaliar as necessidades específicas da \CLDF no que tange sua competência finalística de fiscalização. Em particular, a avaliação de necessidades será feita com base nas necessidades do \CLIENTE \xspace(isto é, a \CDDHCEDP) identificadas por meio da \emph{proposta} elaborada no primeiro semestre de 2020.
+
+Portanto, vamos iniciar este capítulo descrevendo a metodologia utilizada para identificar e avaliar capacidades de uma Plataforma de BI. Em seguida, as capacidades identificadas serão avaliadas, uma por um, a partir da perspectiva da referida Comissão.
+
+\section{Metodologia Utilizada}
+\label{sec-metodologia}
+
+Identificar necessidades é uma tarefa complexa. Essa tarefa pode ser simplificada em duas etapas:
+
+    \begin{env-destaque}{Etapas para identificar e avaliar necessidades}
+
+    \begin{enumerate}
+        \item Primeiramente, identifica-se quais capacidades são oferecidas pelos diversas tecnologias de mercado.
+        
+        \item Em seguida, avalia-se cada capacidade a partir da perspectiva de necessidades da instituição.
+    \end{enumerate}
+
+    \end{env-destaque}
+
+Em seguida vamos explicar cada etapa.
+
+\subsection{Identificar Capacidades}
+
+Para realizar a primeira etapa de identificação das capacidades, realizou-se estudo de diferentes relatórios. Dentre eles, o relatório ``\emph{Magic Quadrant for Analytics and Business Intelligence Platforms}'' de 2020 \cite{gartner:magicquadrant} apresentou as seguintes 15 \emph{critical capability areas}, isto é, áreas críticas de capacidade:
+
+\begin{env-destaque}{Áreas Críticas de Capacidade}
+ \begin{multicols}{2}
+    \begin{itemize}
+        \item Segurança
+        \item Nuvem
+        \item Capacidade de Gerenciamento
+        \item Conectividade de Fontes de Dados
+        \item Preparação de Dados
+        \item Complexidade de Modelos
+        \item Catálogos
+        \item Visualização de Dados
+        \item Geração de Relatórios
+        \item \emph{Analytics} Avançados
+        \item \emph{Insights} Automatizados
+        \item \emph{Data Storytelling}
+        \item Incorporação de Análises
+        \item Consulta em Linguagem Natural
+        \item Geração de Linguagem Natural
+    \end{itemize}
+ \end{multicols}
+\end{env-destaque}
+
+Essas áreas podem ser entendidas como um conjunto de diferenciadores críticos identificados pelos pesquisadores do \emph{Gartner} para medir os produtos de cada fornecedor \cite[8]{analisegartner2020}.
+
+\subsection{Avaliar Capacidades}
+\label{sec-moscow}
+
+As capacidades identificadas devem ser bem analisadas e investigadas a partir de necessidades específicas da instituição. A avaliação final das capacidades deve ser realizada comparando as capacidades entre sí. Uma técnica útil, que será utilizada para fazer essa avaliação, é a técnica \emph{MoSCoW} descrita a seguir:
+
+%https://sitecampus.com.br/tecnica-moscow-na-priorizacao-dos-requisitos/
+
+\begin{env-destaque}{Avaliação MoSCoW}
+    \begin{itemize}
+        \item \textbf{MUST}: Capacidades classificadas como \emph{MUST} são críticas para a geração de valor ou estão relacionados a riscos/compliance e portanto possuem alta importância;
+        
+        \item \textbf{SHOULD}: Capacidades classificadas como \emph{SHOULD} são importantes, mas não são necessários do ponto de vista estratégico. Capacidades \emph{SHOULD} são tão importantes como capacidades \emph{MUST}, mas geralmente não são críticos. 
+                
+        \item \textbf{COULD}: Capacidades \emph{COULD} são desejáveis, mas não são necessárias do ponto de vista estratégico. 
+        
+        \item \textbf{WOULD}: \nohyphens{Capacidades \emph{WOULD} não são críticas e portanto não são prioritárias.}
+    \end{itemize}
+\end{env-destaque}
+
+\input{txt/TOPICOS/22-AREAS.tex}
+
+\input{txt/TOPICOS/28-ESPECIFICAS.tex}
+
+\input{txt/TOPICOS/29-OUTROS.tex}
+
+\section{Tabelas Resumo}
+
+As necessidades foram determinadas como um conjunto de capacidades oferecidas pelas diferentes ferramentas avaliadas a partir de um critério de classificação que mede o grau de importâncias de uma capacidade a partir da perspectiva do cliente. Dessa forma, a tabela \ref{tab:moscow} apresenta um resumo da classificação \emph{MoSCoW} sugerida para cada uma das 15 áreas de capacidade \emph{Gartner} analisadas e a tabela \ref{tab:moscow:especificas}, um resumo da classificação \emph{MoSCoW} para as Necessidades Específicas exploradas nesse capítulo.
+
+\begin{table}[!h]
+    \begin{center}
+    \begin{tabular}{|p{0.4\textwidth}|c|}
+        \hline
+            \rowcolor{cldfB1} \multicolumn{2}{|c|}{\Large Áreas de Capacidade \emph{Gartner} \normalsize} \\ \hline \hline
+            % CABEÇALHO        
+            \rowcolor{lightgray}\textbf{Área de Capacidade} & \textbf{Classe MoSCoW} \\ \hline
+            % CONTEÚDO
+            % Código gerado pela tabela do Google SpreadSheets
+            \rowcolor{corMUST!80}Segurança & MUST \\ \hline
+            \rowcolor{corSHOULD!80}Nuvem & SHOULD \\ \hline
+            \rowcolor{corMUST!80}Capacidade de Gerenciamento & MUST \\ \hline
+            \rowcolor{corMUST!80}Conectividade de Fontes de Dados & MUST \\ \hline
+            \rowcolor{corMUST!80}Preparação de Dados & MUST \\ \hline
+            \rowcolor{corSHOULD!80}Complexidade de Modelos & SHOULD \\ \hline
+            \rowcolor{corSHOULD!80}Catálogos & SHOULD \\ \hline
+            \rowcolor{corMUST!80}Visualização de Dados & MUST \\ \hline
+            \rowcolor{corCOULD!50}Geração de Relatórios & COULD \\ \hline
+            \rowcolor{corCOULD!50}Analytics Avançados & COULD \\ \hline
+            \rowcolor{corWOULD!50}Insight Automatizados & WOULD \\ \hline
+            \rowcolor{corCOULD!50}Data Storytelling & COULD \\ \hline
+            \rowcolor{corSHOULD!80}Incorporação de Análises & SHOULD \\ \hline
+            \rowcolor{corWOULD!50}Consulta em Linguagem Natural & WOULD \\ \hline
+            \rowcolor{corWOULD!50}Geração de Linguagem Natural & WOULD \\ \hline
+    \end{tabular}    
+    \caption{\label{tab:moscow} Classificações MoSCoW para as Áreas de Capacidade \emph{Gartner} analisadas.}
+    \end{center}
+\end{table}
+
+\begin{table}[!h]
+    \begin{center}
+    \begin{tabular}{|p{0.4\textwidth}|c|}
+        \hline
+            \rowcolor{cldfB1} \multicolumn{2}{|c|}{\Large Necessidades Específicas \normalsize} \\ \hline \hline
+            % CABEÇALHO        
+            \rowcolor{lightgray}\textbf{Necessidade} & \textbf{Classe MoSCoW} \\ \hline
+            % CONTEÚDO
+            % Código escrito manualmente
+            \rowcolor{corSHOULD!80}Escalabilidade & SHOULD \\ \hline
+            \rowcolor{corSHOULD!80}Mobile & SHOULD \\ \hline
+            \rowcolor{corCOULD!50}Containers CaaS & COULD \\ \hline
+    \end{tabular}    
+    \caption{\label{tab:moscow:especificas} Classificações MoSCoW para as Necessidades Específicas exploradas.}
+    \end{center}
+\end{table}
+

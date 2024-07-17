@@ -1,0 +1,70 @@
+\chapter{Área de Trabalho do CL}
+\label{detalhes:areadetrabalho-cl}
+
+Os objetivos do módulo de ``Área de Trabalho do CL'' são:
+
+\begin{itemize}
+	\item Listar as solicitações que estão a cargo de trabalho do \CL e em qual qualidade: \textbf{elaborador} ou \textbf{revisor};
+	
+	\item Fornecer acesso às funcionalidades que permitam que o \CL aceite ou rejeite uma solicitação que foi atribuída a ele pelo supervisor (empurrado). Essa ação deve ser gravada na árvore de histórico.
+
+	\item Fornecer acesso às funcionalidades que permitam que o \CL desista de ser elaborador ou revisor de uma solicitação à qual ele foi previamente atribuído. Ação também deve ser gravada na árvore de histórico.
+	
+	\item Quando o \CL for \textbf{elaborador}, ele poderá acessar um botão para fazer o upload dos arquivos entregáveis resultados do trabalho e, portanto, finalizar o serviço colocando a solicitação no estado de  ``Solicitação Concluída''. Ação gravada na árvore de histórico.
+
+	\item O módulo também deverá contar com ferramentas diversas para ajudar o consultor no seu trabalho de elaboração e revisão dos documentos pedidos nas solicitações.
+\end{itemize}
+
+\section{Estados das solicitações}
+
+Da mesma forma como há estados no módulo ``Gerenciar Solicitações da Unidade'', aqui deverão haver estados indicando situações que dependem de ações do \CL:
+
+\begin{itemize}
+	\item \textbf{Aceitar Elaboração}: Toda vez que um supervisor atribui (\emph{empurra}) uma solicitação para um CL elaborar, mas ele ainda deve aceitar ou rejeitar essa atribuição. Esse estado só aparece quando um supervisor atribui uma solicitação a um CL na qualidade de \textbf{elaborador}.
+	
+	\item \textbf{Aceitar Revisão}: Toda vez que um supervisor atribui (\emph{empurra}) uma solicitação para um CL revisar, mas ele ainda deve aceitar ou rejeitar essa atribuição. Esse estado só aparece quando um supervisor atribui uma solicitação a um CL na qualidade de \textbf{revisor}.
+
+	\item \textbf{Aguardando consentimento para elaboração}: Toda vez que um CL \emph{puxa} uma solicitação para si, na qualidade de \textbf{elaborador}, mas algum supervisor deve consentir aceitando ou rejeitando a auto-atribuição (se assim estiver configurado).
+
+	\item \textbf{Aguardando consentimento para revisão}: Toda vez que um CL \emph{puxa} uma solicitação para si, na qualidade de \textbf{revisor}, mas algum supervisor deve consentir aceitando ou rejeitando a a auto-atribuição (se assim estiver configurado).
+	
+	\item \textbf{Em Elaboração}: Indica que a solicitação está a cargo do \CL atuar. Ele saberá a qualidade da atribuição (se é como elaborador ou revisor) observando em qual das colunas ``Elaborador(es)'' ou ``Revisor(es)'' onde o nome dele está escrito. 
+	
+	\item \textbf{Solicitação Concluída}: Indica que a solicitação que esteve a cargo do \CL atuar foi concluída com o upload dos artefatos. Contudo, como a solicitação não foi ainda encaminhada para a ASSEL por alguns dos supervisores, a solicitação permanece tanto no módulo de ``Gerenciar Solicitações Unidade'' quanto no módulo da ``Área de Trabalho do CL'' até que essa ação de encaminhamento seja feita. Não há ações a serem feitas quando a ação encontra-se neste estado. Quando finalmente algum dos supervisores encaminha a solicitação concluída para a ASSEL, a solicitação vai desaparecer tanto do módulo de gerenciamento da unidade como da área de trabalho de todos os \CLs envolvidos com aquela solicitação.
+\end{itemize}
+
+\section{Conjuntos de componentes}
+
+De modo análogo, a ``Área de Trabalho do CL'' será composta com uma tabela, um conjunto de botões e modais:
+
+\begin{itemize}
+	\item \textbf{Tabela de solicitações a cargo do CL};
+	\item \textbf{Botões para acesso de funcionalidades};
+	\item \textbf{Modais para implementação de funcionalidades};
+\end{itemize}
+
+\subsection{Botões e Modais} 	
+
+Alguns botões e respectivos modais necessários para implementar funcionalidades de interesse:
+\begin{itemize}
+	\item \textbf{Visualizar}: Funcionalidade idêntica que no módulo de gerenciamento das unidades.
+	
+	\item \textbf{Detalhes}: Idem.
+	
+	\item \textbf{Avaliar}: Permite abrir modal para avaliar uma atribuição nos estados ``Aceitar Elaboração'' ou ``Aceitar Revisão'' e escolher a ação de ``Aceitar'' ou ``Rejeitar'' a atribuição. Ação grava da árvore de histórico.  Ao rejeitar, deveria haver um texto que seria transformado em observação no histórico para ele informar o motivo de estar rejeitando a atribuição;
+
+	\item \textbf{Marcadores}: Permitirá ao \CL atribuído à solicitação na qualidade de elaborador acessar modal para modificar os marcadores daquela solicitação.
+
+	\item \textbf{Desistir}: Permitiria ao \CL desistir da atribuição previamente atribuída a ele. Aqui seria interessante haver dupla confirmação com campo para o \CL informar o motivo da desistência. Essa ação deveria gerar notificação aos supervisores e ser gravada na árvore de histórico. Da mesma forma, o texto inserido será transformado no artefato de observação com o motivo pelo qual está desistindo.
+	
+	\item \textbf{Concluir}: Caso o \CL atue como elaborador, permitirá abrir modal para fazer upload dos artefatos finais da solicitação e assim faze-la mudar para o estado final de ``Solicitação Concluída'' tanto na área de trabalho quando no módulo de gerenciamento de solicitações da unidade. Ação gera notificação aos supervisores e deverá ser grava na árvore de histórico. Esse botão só pode funcionar caso o CL seja elaborador da Solicitação. Caso seja revisor, aparece uma mensagem de erro informando que somente elaboradores podem concluir a solicitação. 
+\end{itemize}
+
+
+\section{Usuários que poderão acessar o módulo}
+
+Os usuários que poderão acessar o módulo ``Área de Trabalho do CL'' devem ser todos os usuários que estiverem inscritos numa mesma unidade interna e que possuírem o perfil de consultor de unidade.
+
+
+	
+

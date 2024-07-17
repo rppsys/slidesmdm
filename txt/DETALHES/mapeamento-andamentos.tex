@@ -1,0 +1,78 @@
+\chapter{Mapeamento de Andamentos}
+\label{detalhes:mapeamento-andamentos}
+
+\section*{Alterações}
+
+% Não colocar dentro de table para não recriar a numeração e mudar os números de tabelas já existentes
+
+\begin{center}
+	\begin{tabular}{|c|p{0.4\textwidth}|c|}
+		\hline
+		\rowcolor{lightgray!50} \multicolumn{3}{|c|}{\Large Alterações Mapeamento de Andamentos \normalsize} \\ \hline \hline
+		% CABEÇALHO        
+		\rowcolor{lightgray}\textbf{Data e Hora} & \textbf{Alterações} & \textbf{Ref Hash}  \\ \hline
+		% CONTEÚDO
+		% Código escrito manualmente
+		\rowcolor{corCOULD!10} 18/07/2022 11:30:00 & Criação do Documento & 0a15c04 \\ \hline			
+	\end{tabular}    
+\end{center}
+
+\section{Introdução}
+
+O ``Andamento'' é um conceito importante no Sistema ASSEL pois ele identifica quando uma Solicitação tramita de uma unidade para outra dentro do Sistema ASSEL.
+
+O BDD\_02\_JANELA\_DETALHAR.feature recém criado peça THS modificou as propriedades de um ``Andamento''.
+
+A partir de agora um ``Andamento'' contém todas as informações da ``Caixa de Informações do Andamento'' que é o grupo de componentes da Tela ``Gerenciar e Analisar OS pela ASSEL''.
+
+\textbf{Atributos de um Andamento}:
+
+\begin{itemize}
+	\item Unidade Remetente
+	\item Usuário Remetente
+	\item Unidade de Destino
+	\item \textbf{Andamento} - Andamento propriamente dito.
+	\item Mensagem
+	\item Data e Hora do Andamento
+\end{itemize}
+
+O \textbf{Andamento propriamente dito} é um atributo que possui opções \emph{hard-coded} no sistema que o usuário pode escolher no momento de definir um Encaminhamento.
+
+O \textbf{encaminhamento} de hoje será o \textbf{andamento} de amanhã.
+
+Dessa forma é preciso mapear quais serão os ``Andamentos'' possíveis dentro do Sistema ASSEL.
+
+O objetivo desse documento é esse.
+
+\section{Mapeamento de Andamentos}
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{|c|c|p{0.5\textwidth}|}
+			\hline
+			\rowcolor{lightgray} \multicolumn{3}{|c|}{\Large Mapeamento de Andamentos \normalsize} \\ \hline \hline
+			% CABEÇALHO        
+			\rowcolor{lightgray}\textbf{UNIDADE} & \textbf{UNIDADE} &   \\ 
+			\rowcolor{lightgray}\textbf{REMETENTE} & \textbf{DESTINO} & \textbf{ANDAMENTO} \\ 
+			\rowcolor{lightgray}\textbf{(DE)} & \textbf{(PARA)} &  \\ \hline
+			% CONTEÚDO
+			% Código escrito manualmente
+			\rowcolor{corCOULD!10} SOLICITANTE & ASSEL & NOVA SOLICITAÇÃO \\ \hline
+			\rowcolor{corCOULD!10} SOLICITANTE & ASSEL & RESOLUÇÃO DE PENDÊNCIA \\ \hline
+			\rowcolor{corSHOULD!20} ASSEL & SOLICITANTE & ENTREGAR SOLICITAÇÃO CONCLUÍDA \\ \hline
+			\rowcolor{corSHOULD!20} ASSEL & SOLICITANTE & NOTIFICAÇÃO DE DESCONTINUIDADE \\ \hline
+			\rowcolor{corSHOULD!20} ASSEL & SOLICITANTE & SOLICITAÇÃO DE PENDÊNCIA \\ \hline
+			\rowcolor{corSHOULD!20} ASSEL & UNIDADE & DISTRIBUIÇÃO \\ \hline
+			\rowcolor{corSHOULD!20} ASSEL & UNIDADE & SOLICITAÇÃO DE REVISÃO \\ \hline			
+			\rowcolor{corMUST!20} UNIDADE & ASSEL & CONCLUSÃO DA SOLICITAÇÃO \\ \hline
+			\rowcolor{corMUST!20} UNIDADE & ASSEL & RETORNO DA UNIDADE \\ \hline
+		\end{tabular}    
+		\caption{\label{tab:mapeamento-andamentos:andamentos:todos} Todos os Andamentos}
+	\end{center}
+\end{table}
+
+\textbf{Observações}
+
+\begin{itemize}
+	\item Os andamentos disponíveis no Sistema ASSEL para escolha dentro de telas usadas pela Unidade ASSEL serão apenas aquelas cujo remetente será a própria Unidade ASSEL.
+\end{itemize}

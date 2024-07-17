@@ -1,0 +1,54 @@
+https://dreampuf.github.io/GraphvizOnline/#digraph%20G%20%7B%0A%0Asubgraph%20cluster_legenda%20%7B%0A%20%20%20%20label%20%3D%20%22LEGENDA%22%3B%0A%20%20%20%20%22ESTADO%22%20%5Bshape%3Dellipse%2Ccolor%3Dblack%2Cfillcolor%3Dlightyellow%2Cstyle%3Dfilled%5D%3B%0A%20%20%20%20%22A%C3%87%C3%83O%22%20%5Bshape%3Dbox%2Ccolor%3Dblack%2Cfillcolor%3Dlightcyan%2Cstyle%3Dfilled%5D%3B%0A%20%20%20%20%22RESULTADO%22%20%5Bshape%3Dnote%2Ccolor%3Dblack%2Cfillcolor%3Dgray88%2Cstyle%3Dfilled%5D%3B%0A%20%20%20%20%22ESTADO%20FINAL%22%20%5Bshape%3Doctagon%2Ccolor%3Dblack%2Cfillcolor%3Dwhite%2Cstyle%3Dfilled%5D%3B%0A%7D%0A%0A%0A%0Anode%20%20%5Bshape%3Dellipse%2Ccolor%3Dblack%2Cfillcolor%3Dlightyellow%2Cstyle%3Dfilled%5D%3B%0A%22IN%C3%8DCIO%22%20%5Bshape%3Dellipse%2Ccolor%3Dblack%2Cfillcolor%3Dgray88%2Cstyle%3Dfilled%5D%3B%0A%22FIM%22%20%5Bshape%3Dellipse%2Ccolor%3Dblack%2Cfillcolor%3Dgray88%2Cstyle%3Dfilled%5D%3B%0A%22SUCESSO%20PELA%20REDE%22%20%5Bshape%3Doctagon%2Ccolor%3Dblack%2Cfillcolor%3Dgreen%2Cstyle%3Dfilled%5D%3B%0A%22SUCESSO%20PELO%20OFICIO%22%20%5Bshape%3Doctagon%2Ccolor%3Dblack%2Cfillcolor%3Dgreen%2Cstyle%3Dfilled%5D%3B%0A%22OF%C3%8DCIO%20IGNORADO%22%20%5Bshape%3Doctagon%2Ccolor%3Dblack%2Cfillcolor%3Dtomato%2Cstyle%3Dfilled%5D%3B%0A%22PERDA%20DE%20OBJETO%22%20%5Bshape%3Doctagon%2Ccolor%3Dblack%2Cfillcolor%3Dorange%2Cstyle%3Dfilled%5D%3B%0A%0A%0A%0A%20%20%20%20%22IN%C3%8DCIO%22%20-%3E%20%22DEMANDA%20REGISTRADA%22%20-%3E%20%22DEMANDA%20AGUARDA%20INFORMA%C3%87%C3%95ES%22%20-%3E%20%22DEMANDA%20EM%20AN%C3%81LISE%22%3B%0A%20%20%20%20%22DEMANDA%20REGISTRADA%22%20-%3E%20%22DEMANDA%20EM%20AN%C3%81LISE%22%20-%3E%20%22DEMANDA%20AGUARDA%20INFORMA%C3%87%C3%95ES%22%3B%0A%0A%0A%0A%20%20%20%20%22DEMANDA%20EM%20AN%C3%81LISE%22%20-%3E%20%22ENCAMINHAMENTO%20PELA%20REDE%22%20-%3E%20%22SUCESSO%20PELA%20REDE%22%20-%3E%20%22FIM%22%3B%0A%20%20%20%20%22ENCAMINHAMENTO%20PELA%20REDE%22%20-%3E%20%22ELABORAR%20OF%C3%8DCIO%22%3B%20%0A%0A%0A%0A%20%20%20%20%22DEMANDA%20EM%20AN%C3%81LISE%22%20-%3E%20%22ELABORAR%20OF%C3%8DCIO%22%20-%3E%20%22REVISAR%20OF%C3%8DCIO%22%20-%3E%20%22ASSINAR%20OF%C3%8DCIO%22%20-%3E%20%22OF%C3%8DCIO%20REMETIDO%22%20-%3E%20%22MONITORAR%20RESPOSTA%22%3B%0A%20%20%20%20%22MONITORAR%20RESPOSTA%22%20-%3E%20%22RESPOSTA%20RECEBIDA%22%20-%3E%20%22REGISTRAR%20RESPOSTA%20DO%20OF%C3%8DCIO%22%3B%0A%20%20%20%20%22MONITORAR%20RESPOSTA%22%20-%3E%20%22RESPOSTA%20ATRASADA%22%3B%0A%0A%0A%20%20%20%20%22RESPOSTA%20ATRASADA%22%20-%3E%20%22REITERAR%20OF%C3%8DCIO%22%20-%3E%20%22ELABORAR%20OF%C3%8DCIO%22%20%3B%0A%0A%20%20%20%20%22RESPOSTA%20ATRASADA%22%20-%3E%20%22OF%C3%8DCIO%20IGNORADO%22%20-%3E%20%22FIM%22%3B%0A%20%20%20%20%0A%0A%20%20%20%20%22REGISTRAR%20RESPOSTA%20DO%20OF%C3%8DCIO%22%20-%3E%20%22COMUNICAR%20DEMANDANTE%22%3B%0A%20%20%20%20%0A%20%20%20%20%22COMUNICAR%20DEMANDANTE%22%20-%3E%20%22RESULTADO%20SATISFAT%C3%93RIO%22%20-%3E%20%22SUCESSO%20PELO%20OFICIO%22%20-%3E%20%22FIM%22%3B%0A%20%20%20%20%0A%20%20%20%20%22COMUNICAR%20DEMANDANTE%22%20-%3E%20%22RESULTADO%20INSATISFAT%C3%93RIO%22%20-%3E%20%22DEMANDA%20EM%20AN%C3%81LISE%22%3B%0A%0A%20%20%20%20%0A%20%20%20%20%22DEMANDA%20EM%20AN%C3%81LISE%22%20-%3E%20%22AVALIAR%20PERDA%20DE%20OBJETO%22%20-%3E%20%22PERDA%20DE%20OBJETO%22%20-%3E%20%22FIM%22%3B%0A%0A%20%20%20%20%22AVALIAR%20PERDA%20DE%20OBJETO%22%20-%3E%20%22DEMANDA%20EM%20AN%C3%81LISE%22%3B%0A%0A%0A%0A%0A%0A%20%20%20%20%22OF%C3%8DCIO%20REMETIDO%22%20%5Bcolor%3Dblack%2Cfillcolor%3Dyellow%2Cstyle%3Dfilled%5D%3B%0A%20%20%20%20%22DEMANDA%20EM%20AN%C3%81LISE%22%20%5Bcolor%3Dblack%2Cfillcolor%3Dyellow%2Cstyle%3Dfilled%5D%3B%0A%0A%0A%20%20%20%20%0A%20%20%20%20%22MONITORAR%20RESPOSTA%22%20%5Bshape%3Dbox%2Ccolor%3Dblack%2Cfillcolor%3Dlightcyan%2Cstyle%3Dfilled%5D%3B%0A%20%20%20%20%0A%0A%0A%20%20%20%20%22RESPOSTA%20ATRASADA%22%20%5Bshape%3Dnote%2Ccolor%3Dblack%2Cfillcolor%3Dgray88%2Cstyle%3Dfilled%5D%3B%0A%20%20%20%20%22RESULTADO%20SATISFAT%C3%93RIO%22%20%5Bshape%3Dnote%2Ccolor%3Dblack%2Cfillcolor%3Dgray88%2Cstyle%3Dfilled%5D%3B%0A%20%20%20%20%22RESULTADO%20INSATISFAT%C3%93RIO%22%20%5Bshape%3Dnote%2Ccolor%3Dblack%2Cfillcolor%3Dgray88%2Cstyle%3Dfilled%5D%3B%0A%20%20%20%20%22RESPOSTA%20RECEBIDA%22%20%5Bshape%3Dnote%2Ccolor%3Dblack%2Cfillcolor%3Dgray88%2Cstyle%3Dfilled%5D%3B%0A%0A%0A%0A%7D%0A%0A
+
+digraph G {
+
+subgraph cluster_legenda {
+    label = "LEGENDA";
+    "ESTADO" [shape=ellipse,color=black,fillcolor=lightyellow,style=filled];
+    "AÇÃO" [shape=box,color=black,fillcolor=lightcyan,style=filled];
+    "RESULTADO" [shape=note,color=black,fillcolor=gray88,style=filled];
+    "ESTADO FINAL" [shape=octagon,color=black,fillcolor=white,style=filled];
+}
+
+
+
+node  [shape=ellipse,color=black,fillcolor=lightyellow,style=filled];
+"INÍCIO" [shape=ellipse,color=black,fillcolor=gray88,style=filled];
+"FIM" [shape=ellipse,color=black,fillcolor=gray88,style=filled];
+"SUCESSO PELA REDE" [shape=octagon,color=black,fillcolor=green,style=filled];
+"SUCESSO PELO OFICIO" [shape=octagon,color=black,fillcolor=green,style=filled];
+"OFÍCIO IGNORADO" [shape=octagon,color=black,fillcolor=tomato,style=filled];
+"PERDA DE OBJETO" [shape=octagon,color=black,fillcolor=orange,style=filled];
+
+"OFÍCIO REMETIDO" [color=black,fillcolor=yellow,style=filled];
+"DEMANDA EM ANÁLISE" [color=black,fillcolor=yellow,style=filled];
+"MONITORAR RESPOSTA" [shape=box,color=black,fillcolor=lightcyan,style=filled];
+"RESPOSTA ATRASADA" [shape=note,color=black,fillcolor=gray88,style=filled];
+"RESULTADO SATISFATÓRIO" [shape=note,color=black,fillcolor=gray88,style=filled];
+"RESULTADO INSATISFATÓRIO" [shape=note,color=black,fillcolor=gray88,style=filled];
+"RESPOSTA RECEBIDA" [shape=note,color=black,fillcolor=gray88,style=filled];
+
+"INÍCIO" -> "NÃO LIDA" -> "EM ANÁLISE" -> "NA FILA" -> "EM ELABORAÇÃO" -> "CONCLUÍDA";
+
+
+
+}
+
+https://dreampuf.github.io/GraphvizOnline/#digraph%20G%20%7B%0A%0Anode%20%20%5Bshape%3Dellipse%2Ccolor%3Dblack%2Cfillcolor%3Dlightyellow%2Cstyle%3Dfilled%5D%3B%0A%22IN%C3%8DCIO%22%20%5Bshape%3Dellipse%2Ccolor%3Dblack%2Cfillcolor%3Dgray88%2Cstyle%3Dfilled%5D%3B%0A%22FIM%22%20%5Bshape%3Dellipse%2Ccolor%3Dblack%2Cfillcolor%3Dgray88%2Cstyle%3Dfilled%5D%3B%0A%0A%0A%22IN%C3%8DCIO%22%20-%3E%20%22N%C3%83O%20LIDA%22%20-%3E%20%22EM%20AN%C3%81LISE%22%20-%3E%20%22NA%20FILA%22%20-%3E%20%22EM%20ELABORA%C3%87%C3%83O%22%20-%3E%20%22CONCLU%C3%8DDA%22%20-%3E%20%22FIM%22%3B%0A%0A%0A%7D%0A%0A
+
+digraph G {
+
+node  [shape=ellipse,color=black,fillcolor=lightyellow,style=filled];
+"INÍCIO" [shape=ellipse,color=black,fillcolor=gray88,style=filled];
+"FIM" [shape=ellipse,color=black,fillcolor=gray88,style=filled];
+
+
+"INÍCIO" -> "NÃO LIDA" -> "EM ANÁLISE" -> "NA FILA" -> "EM ELABORAÇÃO" -> "CONCLUÍDA" -> "FIM";
+
+
+}
+
+
+
+
+

@@ -1,0 +1,123 @@
+% ####
+% CAPA
+% ####
+
+% \newcommand{\sepCapaProjeto}{Projeto Sistema ASSEL}
+% \newcommand{\sepCapaTipo}{\textsc{Nota Técnica}}
+% \newcommand{\sepCapaTitulo}{Especificação de formatos de arquivos suportados para upload no Sistema ASSEL}
+% \newcommand{\sepCapaData}{14 de Julho de 2023}
+% \newcommand{\sepCapaVersao}{V1}
+% \newcommand{\sepCapaFile}{sep-capa-azul.pdf}
+% \newcommand{\sepCapaCor}{blue}
+
+% \newcommand{\sepCapaProjeto}{Projeto Sistema ASSEL}
+% \newcommand{\sepCapaTipo}{\textsc{Detalhamento V4}}
+% \newcommand{\sepCapaTitulo}{Gerenciar Solicitações da Unidade, 
+% 	
+% Área de Trabalho do CL, 
+% 
+% Sistema de Notificações}
+% \newcommand{\sepCapaData}{27 de Setembro de 2023}
+% \newcommand{\sepCapaVersao}{}
+% \newcommand{\sepCapaFile}{sep-capa-amarelo.pdf}
+% \newcommand{\sepCapaCor}{yellow}
+
+% Capa: Registro de Auditoria
+\newcommand{\sepCapaProjeto}{Projeto Sistema ASSEL}
+\newcommand{\sepCapaTipo}{\textsc{Nota Técnica}}
+\newcommand{\sepCapaTitulo}{Registro de Auditoria}
+\newcommand{\sepCapaData}{07 de Novembro de 2023}
+\newcommand{\sepCapaVersao}{V9}
+\newcommand{\sepCapaFile}{sep-capa-vinho.pdf}
+\newcommand{\sepCapaCor}{blue}
+
+% \newcommand{\sepCapaProjeto}{Projeto Sistema ASSEL}
+% \newcommand{\sepCapaTipo}{\textsc{Funcionalidades e Requisitos}}
+% \newcommand{\sepCapaTitulo}{Gerenciar e Analisar Serviços
+% 
+% Tela da ASSEL
+% }
+% \newcommand{\sepCapaData}{30 de Setembro de 2022}
+% \newcommand{\sepCapaVersao}{V2}
+% \newcommand{\sepCapaFile}{sep-capa-verde.pdf}
+% \newcommand{\sepCapaCor}{green}
+
+
+% \renewcommand{\sepCapaTitulo}{Gerenciar OS ASSEL}
+% \renewcommand{\sepCapaData}{18 de Julho de 2022}
+% \renewcommand{\sepCapaFile}{sep-capa-verde.pdf}
+
+
+% \newcommand{\sepCapaProjeto}{Projeto Sistema ASSEL}
+% \newcommand{\sepCapaTipo}{\textsc{Funcionalidades e Requisitos}}
+% \newcommand{\sepCapaTitulo}{Registro de Auditoria}
+% \newcommand{\sepCapaData}{22 de Setembro de 2022}
+% \newcommand{\sepCapaVersao}{V1}
+% \newcommand{\sepCapaFile}{sep-capa-amarelo.pdf}
+% \newcommand{\sepCapaCor}{yellow}
+
+
+% \newcommand{\sepCapaTipo}{\textsc{Funcionalidades \& Requisitos }}
+% \newcommand{\sepCapaTitulo}{Registro de Auditoria V5.1}
+% \newcommand{\sepCapaData}{20 de Setembro de 2022}
+% \newcommand{\sepCapaFile}{sep-capa-verde.pdf}
+% \newcommand{\sepCapaCor}{green}
+
+
+
+% \newcommand{\sepCapaTipo}{\textsc{Nota Técnica}}
+% \newcommand{\sepCapaTitulo}{Mapeamento de Andamentos}
+% \newcommand{\sepCapaData}{18 de Julho de 2022}
+% \newcommand{\sepCapaFile}{sep-capa-azul.pdf}
+% \newcommand{\sepCapaCor}{blue}
+
+
+% ----
+% Informações da Capa
+% ----
+\newcommand{\capatitulo}{
+\vphantom{espaço vertical em branco}
+\sepCapaProjeto
+
+\sepCapaTipo
+}
+
+\newcommand{\capasubtitulo}{
+
+\Huge \sepCapaTitulo \xspace \sepCapaVersao
+
+\vphantom{\small Publicado no DCL nº 22, de 16 de março de 2021}
+}
+
+\newcommand{\capaunidade}{
+%\large \red{DOCUMENTO EM ELABORAÇÃO}
+
+\large Autor: Ronie Paulucio Porfirio
+
+\large \sepCapaData
+
+%\vphantom{espaço vertical em branco}
+}
+
+% ----
+% Código  
+% ----
+\begingroup
+
+\thispagestyle{empty} % Suppress headers and footers on the title page
+
+\begin{tikzpicture}[remember picture,overlay]
+\node[inner sep=0pt] (background) at (current page.center) 
+{\includegraphics[width=\paperwidth]{\sepCapaFile}};
+\draw (current page.center) node [fill=\sepCapaCor!30!white,fill opacity=0.8,text opacity=1,inner sep=1cm]{\Huge\centering\bfseries\sffamily\parbox[c][][t]
+{\paperwidth}
+{
+\centering \capatitulo\\[15pt] % Book title
+{\Large \capasubtitulo}\\[20pt] % Subtitle
+{\capaunidade} % Author name
+}}; 
+\end{tikzpicture}
+
+\vfill
+
+\endgroup

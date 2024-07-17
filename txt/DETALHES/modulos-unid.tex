@@ -1,0 +1,86 @@
+\chapter*{Alterações}
+
+\section*{23/08/2023}
+
+Alterações realizadas em função da reunião com o Saulo ocorrida no dia 22 de agosto de 2023:
+
+\begin{itemize}
+	\item Alteração na \hyperlink{data230823mudanca1}{\textbf{regra que informa o que acontece caso haja uma solicitação com um único elaborador e ele desejar desistir de ser elaborador da mesma}}. 
+
+	\item Correção do erro dos \hyperlink{data230823mudanca2}{\textbf{usuários que poderão acessar o módulo de gerenciamento de solicitações da unidade}}. 
+	
+	\item Incluído subseção ``\hyperlink{data230823mudanca3}{\textbf{A Revisão ocorre dentro da Elaboração}}'' para explicar porque criar um estado separado ``Em Revisão'' no sistema não é interessante.
+	
+	\item Acrescentei seção ``\hyperlink{data230823mudanca4}{\textbf{Modalidades de Desatribuição}}'' para modelar esses casos.
+\end{itemize}
+
+
+\section*{25/08/2023}
+
+Alterações discutidas em grupo de mensagens eletrônicas:
+
+\begin{itemize}
+	\item Alterei regra e acrescentei item para descrever opção de \hyperlink{data250823mudanca1}{\textbf{remover a obrigação de haver pelo menos um revisor de modo a liberar o upload dos documentos finais}}.
+\end{itemize}
+
+\section*{27/09/2023}
+
+Revisei o texto para criar versão para disponibilizar para os Consultores Legislativos das Unidades da Assessoria Legislativa.
+
+
+\chapter{Módulos das Unidades}
+\label{detalhes:modulos-unid}
+
+\section{Introdução}
+
+Enquanto unidade administrativa, a Assessoria Legislativa é divida nas seguintes unidades:
+
+\begin{itemize}
+	\item \textbf{Assessoria Legislativa} : Unidade de apoio onde fica o chefe da Assessoria Legislativa e servidores que realizam o apoio administrativo. 
+	\item \textbf{UCJ} - Unidade de Constituição e Justiça;
+	\item \textbf{URP} - Unidade de Redação Parlamentar e Consolidação dos Textos Legislativos;
+	\item \textbf{UEF} - Unidade de Economia e Finanças;
+	\item \textbf{USE} - Unidade de Saúde, Educação, Cultura e Desenvolvimento Científico e Tecnológico; 
+	\item \textbf{UDA} - Unidade de Desenvolvimento Urbano e Rural e Meio Ambiente;	
+\end{itemize}
+
+Assim, a \ASSEL \xspace conta com  5 unidades administrativas internas separadas por temas de atuação para realizar o serviço de assessoria legislativa propriamente dita elaborando as minutas de parecer, estudos, consultas e demais tipos de solicitações.
+
+Em cada uma das 5 unidades administrativa trabalham os \CLs. Além disso, cada unidade possui um chefe titular e um chefe substituto. Dessa forma, será necessário que o sistema tenha cadastrado por padrão mais dois tipos de perfis:
+
+\begin{itemize}
+	\item \textbf{Perfil} ``Unidade - Consultor Legislativo'';
+	\item \textbf{Perfil} ``Unidade - Supervisor'';
+\end{itemize}
+
+%\begin{requisito}{Requisito: Criar os perfis padrões}
+%	Assim, um requisito importante é alterar a documentação para que %esses perfis sejam criados por padrão. 
+%\end{requisito}
+
+O perfil de \textbf{``Unidade - Consultor Legislativo''} será atribuído aos \CLs que trabalham em cada unidade. Já o perfil de \textbf{``Unidade - Supervisor''} deverá ser atribuído aos servidores que desempenham o papel de chefe titular e chefe substituto de uma mesma unidade. Ambos perfis podem ser atribuídos a uma mesma pessoa - hipótese na qual uma pessoa desempenha o papel de chefe da unidade, mas também trabalha com a produção dos documentos da assessoria.
+
+\section{Módulos}
+
+Os módulos das unidades são as telas do Sistema da Assessoria Legislativa que serão acessadas pelos usuários das unidades internas da \ASSEL. O objetivo desses módulos são:
+
+\begin{itemize}
+	\item Receber as solicitações distribuídas pela \ASSEL para a unidade;
+	\item Retornar solicitações distribuídas caso julgue-se que a solicitação não pode ou não deve ser elaborada na unidade;
+	\item Realizar o gerenciamento da distribuição interna das solicitações entre os \CLs que deverão atuar na qualidade de elaboradores e revisores;
+	\item Gerenciar o \textbf{estado na unidade} de cada solicitação verificando os atributos fixos da solicitação bem como o tempo em que a solicitação está na unidade aguardando encaminhamento.	
+	\item Monitorar o estado de cada solicitação \textbf{em elaboração} verificando quais \CLs estão atribuídos à solicitação na qualidade de elaboradores ou revisores.
+\end{itemize}
+
+Assim, para atingir esses objetivos, planeja-se o desenvolvimento de três módulos. Dois deles são módulos exclusivos para realizar o gerenciamento das solicitações numa determinada unidade e o controle de solicitações atribuídos a um determinado consultor legislativo:
+
+\begin{itemize}
+	\item \textbf{Módulo ``Gerenciar Solicitações da Unidade''}: Acessadas ao mesmo tempo pelos usuários com perfil de supervisor e consultor de uma mesma unidade interna.
+	\item \textbf{Módulo ``Área de Trabalho do Consultor''}: Acessada somente por quem tem perfil de consultor.
+\end{itemize}
+
+
+Além deste módulo, será necessário desenvolver um sistema à parte de ``Notificações'' com módulo próprio \textbf{``Minhas Notificações''} onde um determinado usuário poderá ver o histórico de notificações que recebeu.
+
+O sistema de notificações e o módulo ``Minhas Notificações'' será usado primordialmente nas interações entre os supervisores e consultores de uma mesma unidade para regular as interações de \emph{distribuição interna} das solicitações para os consultores.  Porém, poderemos aproveitar esse módulo para que os usuários solicitantes também sejam notificados de eventos do sistema, como por exemplo, quando uma solicitação volta com pendência ou quando sua solicitação está concluída.
+
+Assim, enquanto os módulos ``Gerenciar Solicitações da Unidade'' e ``Área de Trabalho do Consultor'' serão acessíveis somente por usuários com determinados perfis, o módulo ``Minhas Notificações'' deve ser acessado por todos os usuários do sistema. 

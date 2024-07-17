@@ -1,0 +1,321 @@
+\chapter{Codificação para as Solicitações}
+\label{ref:codigos}
+
+\section{Definição}
+
+As ``Ordens de Serviço'' ou ``Solicitações'' que transitam pelo Sistema ASSEL terão um código ``humano'' associado a ele. Esse código deve ser \textbf{único} de modo que só exista um único código associado a cada OS. Este campo é uma forma de dar nomes únicos a cada Solicitação de forma que seja fácil se referir e localizar uma Solicitação dentre todas as existentes.
+
+
+\begin{nota}[1]{Nota: Esse código não deve ser usado como Chave Primária}
+	Não é interessante, internamente no banco de dados, utilizar esse código como chave primária pois em alguns casos pode ser necessário modificar o código inicial atribuído a uma OS. 	
+	
+	O caso que isso aconteceria seria quando uma Solicitação fosse revisada e seus atributos de tipo e/ou subtipo tivessem de mudar. Nesse caso, o código deverá ser alterado junto, respeitando o critério de unicidade.
+\end{nota}
+
+
+Os códigos terão regra de formação de acordo com os Tipos e Subtipos das OSs.
+
+\section{Regra de Formação Grupo I}
+
+\subsection{Aplicação - Grupo I}
+
+\begin{env-aplica}{Regra de Formação Grupo I são aplicadas a Solicitações dos Tipos:}
+	\item Consulta (CONS)
+	\item Estudo (EST)
+	\item Minuta de Pronunciamento / Discurso (MPRON)
+	\item Nota Técnica (NT)
+	\item Relatório de Veto (RV)
+	\item Outros (OUT)	
+\end{env-aplica}
+
+\subsection{Regra - Grupo I}
+
+\begin{env-regra}{Regra de formação Grupo I}
+	``SIGLA-TIPO'' + ``NÚMERO'' + ``-'' + ``ANO''
+\end{env-regra}
+
+\textbf{Aonde}:
+\begin{itemize}
+	\item \textbf{SIGLA-TIPO}: Sigla referente ao tipo conforme tabela. Ex.: CONS, EST, MPRON, NT, RV, OUT.
+	\item \textbf{NÚMERO}: Contador relativo ao tipo e ano. Máscara de 3 dígitos preenchidos com 0. Ex.: 001, 010, 100. Se maior que 3 dígitos, usar o número todo.
+	\item \textbf{ANO}: Ano da Solicitação com 4 dígitos. Ex.: 2021.
+\end{itemize}
+
+\subsection{Siglas - Grupo I}
+
+\begin{table}[!h]
+	\begin{center}
+		\begin{tabular}{|p{0.4\textwidth}|c|c|}
+			\hline
+			\rowcolor{lightgray!50} \multicolumn{3}{|c|}{\Large Siglas e Exemplos - Grupo I \normalsize} \\ \hline \hline
+			% CABEÇALHO        
+			\rowcolor{lightgray}\textbf{Tipo} & \textbf{Sigla} & \textbf{Exemplo} \\ \hline
+			% CONTEÚDO
+			% Código escrito manualmente
+			\rowcolor{corCOULD!10} \textbf{Cons}ulta (oria) & \textbf{CONS} & CONS002-2021  \\ \hline
+			\rowcolor{corCOULD!20} \textbf{Est}udo & \textbf{EST} & EST080-2021 \\ \hline
+			\rowcolor{corCOULD!10} \textbf{M}inuta de \textbf{Pron}unciamento / Discurso & \textbf{MPRON} & MPRON120-2021 \\ \hline
+			\rowcolor{corCOULD!20} \textbf{N}ota \textbf{T}écnica  & \textbf{NT} & NT010-2021 \\ \hline
+			\rowcolor{corCOULD!10} \textbf{R}elatório de \textbf{V}eto  & \textbf{RV} & RV010-2021 \\ \hline
+			\rowcolor{corCOULD!20} \textbf{Out}ros & \textbf{OUT} & OUT100-2021 \\ \hline
+		\end{tabular}    
+		\caption{\label{tab:cod:grupoi} Codificação Grupo I.}
+	\end{center}
+\end{table}
+
+\subsection{Exemplos - Grupo I}
+
+\begin{itemize}
+	\item \textbf{Exemplo 1 - Estudo}:
+	
+	\begin{enumerate}
+		\item Suponha que o Solicitante peça uma nova OS do tipo ``Estudo'' e ano atual seja o ano de 2021.
+		
+		\item O sistema verifica que no ano de 2021 já existem 4 (quatro) ``Estudos'' cadastrados no sistema. Portanto, o número dessa nova OS será 4 + 1 = 5 com máscara NNN.
+		
+		\item Então o código desta nova solicitação será formado por ``EST'' + ``005'' + ``-'' + ``2021'' formando \textbf{EST005-2021}.			
+	\end{enumerate}
+
+	\item \textbf{Exemplo 2 - Consulta}:
+
+\begin{enumerate}
+	\item Suponha que o Solicitante peça uma nova OS do tipo ``Consulta'' e ano atual seja o ano de 2022.
+	
+	\item O sistema verifica que no ano de 2022 ainda não foram realizados Solicitações do tipo ``Consulta'' no sistema. Portanto, o número dessa nova OS será 0 + 1 = 1 com máscara NNN. 
+	
+	\item Então o código desta nova solicitação será formado por ``CONS'' + ``001'' + ``-'' + ``2022'' formando \textbf{CONS001-2022}.			
+\end{enumerate}
+
+	\item \textbf{Exemplo 3 - Outro}:
+
+\begin{enumerate}
+	\item Suponha que o Solicitante peça uma nova OS do tipo ``Outro'' e ano atual seja o ano de 2021.
+	
+	\item O sistema verifica que no ano de 2021 já existem 999 OSs do Tipo ``Outro'' cadastrados no sistema. Portanto, o número dessa nova OS será 999 + 1 = 1000.
+	
+	\item Então o código desta nova solicitação será formado por ``OUT'' + ``1000'' + ``-'' + ``2021'' formando \textbf{OUT1000-2021}.			
+\end{enumerate}
+
+\end{itemize}
+
+\section{Regra de Formação Grupo II - Minuta de Proposição (MP)}
+
+\subsection{Aplicação - Grupo II}
+
+\begin{env-aplica}{Aplica-se a Solicitações do Tipo ``Minuta de Proposição (MP)'' com os seguintes subtipos:}
+	\item Denúncia (DEN)
+	\item Indicação (IND)
+	\item Mensagem (MENS) 
+	\item Projeto de Decreto Legislativo (PDL)
+	\item Proposta de Emenda à Lei Orgânica (PELO)
+	\item Projeto de Lei (PL)
+	\item Projeto de Lei Complementar (PLC) 
+	\item Projeto de Resolução (PR)
+	\item Moção (MOC)
+	\item Recurso (REC)
+	\item Requerimento (RQ)		
+\end{env-aplica}
+
+\subsection{Regra - Grupo II}
+
+\begin{env-regra}{Regra de formação Grupo II - Minuta de Proposição (MP)}
+	``MP'' + ``NÚMERO'' + ``SIGLA-SUBTIPO'' + ``ANO''
+\end{env-regra}
+ 
+\textbf{Aonde}:
+
+\begin{itemize}
+	\item \textbf{MP}: Texto fixo MP. 
+	\item \textbf{NÚMERO}: Contador relativo ao tipo de Minuta de Proposição do subtipo escolhido e ano. Máscara de 3 dígitos preenchidos com 0. Ex.: 001, 010, 100. Caso o número ultrapasse 999 o número deve ser escrito com todos os dígitos necessários. 
+
+	\item \textbf{SIGLA-SUBTIPO}: Sigla referente ao subtipo conforme tabela. Exs.: PL, PELO, etc.
+
+	\item \textbf{ANO}: Ano da Solicitação com 4 dígitos. Ex.: 2021.
+\end{itemize}
+
+\subsection{Siglas - Grupo II}
+
+\begin{table}[!h]
+	\begin{center}
+		\begin{tabular}{|p{0.4\textwidth}|c|c|}
+			\hline
+			\rowcolor{lightgray!50} \multicolumn{3}{|c|}{\Large Siglas Grupo II - Minutas de Proposição (MP) \normalsize} \\ \hline \hline
+			% CABEÇALHO        
+			\rowcolor{lightgray}\textbf{Subtipo} & \textbf{Sigla} & \textbf{Exemplo} \\ \hline
+			% CONTEÚDO
+			% Código escrito manualmente
+			\rowcolor{corCOULD!10} \textbf{Den}úncia & \textbf{DEN} & MP001DEN-2021 \\ \hline
+			\rowcolor{corCOULD!20} \textbf{Ind}icação & \textbf{IND} & MP020IND-2020 \\ \hline
+			\rowcolor{corCOULD!10} \textbf{Mens}sagem & \textbf{MENS} & MP220MENS-2020 \\ \hline
+			\rowcolor{corCOULD!20} \textbf{P}rojeto de \textbf{D}ecreto \textbf{L}egislativo & \textbf{PDL} & MP010PDL-2021 \\ \hline
+			\rowcolor{corCOULD!10} \textbf{P}roposta de \textbf{E}menda à \textbf{L}ei \textbf{O}rgânica & \textbf{PELO} & MP002PELO-2021 \\ \hline
+			\rowcolor{corCOULD!20} \textbf{P}rojeto de \textbf{L}ei & \textbf{PL} & MP001PL-2022 \\ \hline
+			\rowcolor{corCOULD!10} \textbf{P}rojeto de \textbf{L}ei \textbf{C}omplementar & \textbf{PLC} & MP001PLC-2022 \\ \hline
+			\rowcolor{corCOULD!20} \textbf{P}rojeto de \textbf{R}esolução & \textbf{PR} & MP010PR-2022 \\ \hline
+			\rowcolor{corCOULD!10} \textbf{Moc}ão (Moção) & \textbf{MOC} & MP010MOC-2022 \\ \hline
+			\rowcolor{corCOULD!20} \textbf{R}e\textbf{c}urso & \textbf{RC} & MP001RC-2021 \\ \hline			
+			\rowcolor{corCOULD!10} \textbf{R}e\textbf{q}uerimento & \textbf{RQ} & MP001RQ-2021 \\ \hline
+		\end{tabular}    
+		\caption{\label{tab:cod:grupoii} Codificação Grupo II.}
+	\end{center}
+\end{table}
+
+\subsection{Exemplos - Grupo II}
+
+\begin{itemize}
+	\item \textbf{Exemplo - MP do tipo PDL}:
+	
+	\begin{enumerate}
+	\item Suponha que o Solicitante peça uma nova OS do tipo ``Minuta de Proposição'' do subtipo ``Projeto de Decreto Legislativo''  e ano atual seja o ano de 2021.
+	
+	\item O sistema verifica que no ano de 2021 já existem 19 minutas de proposição do subtipo ``Projeto de Decreto Legislativo'' cadastrados no sistema. Portanto, o número dessa nova OS será 19 + 1 = 20 com máscara NNN.
+	
+	\item Então o código desta nova solicitação será formado por ``MP'' + ``020'' + ``PDL'' + ``-'' + ``2021'' formando \textbf{MP020PDL-2021}.			
+	\end{enumerate}
+
+\end{itemize}
+
+
+\section{Regra de Formação Grupo III - Minutas de Parecer}
+
+As solicitações do tipo ``Minuta de Parecer'' correspondem ao maior percentual de solicitações. Além disso, toda minuta de parecer está associada a uma Proposição e a uma Comissão.
+
+Dessa forma, a regra de formação para solicitações do tipo ``Minuta de Parecer'' é especial.  
+
+Ela começa com a sigla do subtipo, informa o número e ano da proposição, uma letra para especificar a Comissão e um número sequencial.  
+
+\subsection{Aplicação - Grupo III}
+
+\begin{env-aplica}{Aplica-se a Solicitações do Tipo ``Minuta de Parecer'' com os seguintes subtipos:}
+	\item Denúncia (DEN)
+	\item Indicação (IND)
+	\item Mensagem (MENS) 
+	\item Projeto de Decreto Legislativo (PDL)
+	\item Proposta de Emenda à Lei Orgânica (PELO)
+	\item Projeto de Lei (PL)
+	\item Projeto de Lei Complementar (PLC) 
+	\item Projeto de Resolução (PR)
+	\item Moção (MOC)
+	\item Recurso (REC)
+	\item Requerimento (RQ)		
+\end{env-aplica}
+
+\subsection{Regra - Grupo III}
+
+\begin{env-regra}{Regra de formação Grupo III - Minuta de Parecer}
+	``SIGLA-SUBTIPO'' + ``NÚMERO DA PROPOSIÇÃO'' + ``LETRA DA COMISSÃO'' + ``NÚMERO SEQUENCIAL'' + ``-''  + ``ANO DA PROPOSIÇÃO''.
+\end{env-regra}
+
+\textbf{Aonde}:
+
+\begin{itemize}
+	\item \textbf{SIGLA-SUBTIPO}: Sigla referente ao subtipo conforme tabela. Exs.: PL, PELO, etc.
+
+
+	\item \textbf{NÚMERO DA PROPOSIÇÃO}: Número da proposição associada com máscara NNN. Caso o número de dígitos da proposição seja maior do que 3, usar o número com todos os dígitos.
+	
+	\item \textbf{LETRA DA COMISSÃO}: Cada Comissão tem uma letra associada conforme tabela. 
+	
+	\item \textbf{NÚMERO SEQUENCIAL}: Contador relativo ao tipo de Minuta de Parecer do subtipo escolhido, Comissão e Ano. Sem máscara. Caso o número ultrapasse 9 o número deve ser escrito com todos os dígitos necessários. 	
+	
+	\item \textbf{ANO DA PROPOSIÇÃO}: Ano da \emph{Proposição} com 4 dígitos. Ex.: 2021.
+\end{itemize}
+
+\subsection{Letras das Comissões - Grupo III}
+
+Ver tabela \ref{tab:cod:grupoiiil}.
+
+\begin{table}[b]
+	\begin{center}
+		\begin{tabular}{|p{0.8\textwidth}|c|}
+			\hline
+			\rowcolor{lightgray!50} \multicolumn{2}{|c|}{\Large Letras Comissões para Grupo III - Minutas de Parecer \normalsize} \\ \hline \hline
+			% CABEÇALHO        
+			\rowcolor{lightgray}\textbf{Comissão} & \textbf{Letra} \\ \hline
+			% CONTEÚDO
+			% Código escrito manualmente
+			\rowcolor{corCOULD!10} CCJ - Comissão de Constituição e Justiça & \textbf{J} \\ \hline			
+			\rowcolor{corCOULD!20} CEOF - Comissão de Economia Orçamento e Finanças & \textbf{F} \\ \hline			 
+			\rowcolor{corCOULD!10} CAS - Comissão de Assuntos Sociais & \textbf{S} \\ \hline			
+			\rowcolor{corCOULD!20} CDC - Comissão de Defesa do Consumidor & \textbf{C} \\ \hline			
+			\rowcolor{corCOULD!10} CDDHCEDP - Comissão de Defesa Direitos Humanos, Cidadania, Ética e Decoro Parlamentar & \textbf{H} \\ \hline			
+			\rowcolor{corCOULD!20} CAF - Comissão de Assuntos Fundiários & \textbf{A} \\ \hline			
+			\rowcolor{corCOULD!10} CESC - Comissão de Educação, Saúde e Cultura & \textbf{E} \\ \hline			
+			\rowcolor{corCOULD!20} CS - Comissão de Segurança & \textbf{G} \\ \hline			
+			\rowcolor{corCOULD!10} CDESCTMAT - Comissão de Desenvolvimento Econômico Sustentável, Ciência, Tecnologia, Meio Ambiente e Turismo & \textbf{D} \\ \hline			
+			\rowcolor{corCOULD!20} CFGTC - Comissão de Fiscalização Governança Transparência e Controle & \textbf{T} \\ \hline			
+			\rowcolor{corCOULD!10} CTMU - Comissão de Transporte e Mobilidade Urbana & \textbf{U} \\ \hline			
+			\rowcolor{corCOULD!10} CE - Comissão Especial & \textbf{P} \\ \hline			
+			\rowcolor{corCOULD!20} MD - Mesa Diretora & \textbf{M} \\ \hline						 
+		\end{tabular}    
+		\caption{\label{tab:cod:grupoiiil} Letras Comissões para Codificação Grupo III - Minutas de Parecer.}
+	\end{center}
+\end{table}
+
+
+
+\subsection{Siglas - Grupo III}
+
+Ver tabela \ref{tab:cod:grupoiii}.
+
+\begin{table}[b]
+	\begin{center}
+		\begin{tabular}{|p{0.4\textwidth}|c|c|}
+			\hline
+			\rowcolor{lightgray!50} \multicolumn{3}{|c|}{\Large Siglas Grupo III - Minutas de Parecer \normalsize} \\ \hline \hline
+			% CABEÇALHO        
+			\rowcolor{lightgray}\textbf{Subtipo} & \textbf{Sigla} & \textbf{Exemplo} \\ \hline
+			% CONTEÚDO
+			% Código escrito manualmente
+			\rowcolor{corCOULD!10} \textbf{Den}úncia & \textbf{DEN} & DEN0118J1-2021 \\ \hline
+			\rowcolor{corCOULD!10} \textbf{Ind}icação & \textbf{IND} & IND1012J2-2020 \\ \hline
+			\rowcolor{corCOULD!10} \textbf{Mens}sagem & \textbf{MENS} & MENS080H9-2021 \\ \hline
+			\rowcolor{corCOULD!10} \textbf{P}rojeto de \textbf{D}ecreto \textbf{L}egislativo & \textbf{PDL} & PDL095C5-2021 \\ \hline
+			\rowcolor{corCOULD!10} \textbf{P}roposta de \textbf{E}menda à \textbf{L}ei \textbf{O}rgânica & \textbf{PELO} & PELO050J1-2022 \\ \hline
+			\rowcolor{corCOULD!10} \textbf{P}rojeto de \textbf{L}ei & \textbf{PL} & PL140F4-2021 \\ \hline
+			\rowcolor{corCOULD!10} \textbf{P}rojeto de \textbf{L}ei \textbf{C}omplementar & \textbf{PLC} & PLC010H1-2022 \\ \hline
+			\rowcolor{corCOULD!10} \textbf{P}rojeto de \textbf{R}esolução & \textbf{PR} & PR008S1-2022 \\ \hline
+			\rowcolor{corCOULD!10} \textbf{Moc}ão (Moção) & \textbf{MOC} & MOC112J5-2021 \\ \hline
+			\rowcolor{corCOULD!10} \textbf{R}e\textbf{c}urso & \textbf{RC} & RC001J1-2021 \\ \hline			
+			\rowcolor{corCOULD!10} \textbf{R}e\textbf{q}uerimento & \textbf{RQ} & RQ001J2-2021 \\ \hline
+		\end{tabular}    
+		\caption{\label{tab:cod:grupoiii} Siglas e Exemplos Grupo III.}
+	\end{center}
+\end{table}
+
+\subsection{Exemplos - Grupo III}
+
+
+\begin{itemize}
+	\item \textbf{Exemplo 1}:
+	
+	\begin{enumerate}
+		\item Suponha que o Solicitante peça uma nova \textbf{``Minuta de Parecer''} do subtipo \textbf{``Projeto de Lei Complementar''} para a Proposição \textbf{85/2021} para a \textbf{Comissão de Assuntos Sociais (CAS)}.
+				
+		\item O sistema verifica que já existem \textbf{3 (três)} solicitações de ``Minuta de Parecer'' do subtipo ``Projeto de Lei Complementar'' para a Proposição 85/2021 para a Comissão de Assuntos Sociais (CAS). Então essa nova será a 3 + 1 = 4 (quarta) solicitação desse tipo, subtipo para essa proposição e comissão.
+				
+		\item Então o código desta nova solicitação será formado da seguinte forma: ``PLC'' + ``085'' + ``S'' + ``4'' + ``-'' + ``2021'' formando \textbf{PLC085S4-2021}.
+	\end{enumerate}
+
+
+	\item \textbf{Exemplo 2}:
+
+\begin{enumerate}
+	\item Suponha que o Solicitante peça uma nova \textbf{``Minuta de Parecer''} do subtipo \textbf{``Projeto de Resolução''} para a Proposição \textbf{67/2021} para a \textbf{Comissão de Desenvolvimento Econômico Sustentável, Ciência, Tecnologia, Meio Ambiente e Turismo (CDESCTMAT)}.
+	
+	\item O sistema verifica que não existem solicitações de ``Minuta de Parecer'' do subtipo ``Projeto de Resolução'' para a Proposição 67/2021 para a Comissão de Desenvolvimento Econômico Sustentável, Ciência, Tecnologia, Meio Ambiente e Turismo (CDESCTMAT). Então essa nova será a 0 + 1 = 1 (primeira) solicitação desse tipo, subtipo para essa proposição e comissão.
+	
+	\item Então o código desta nova solicitação será formado da seguinte forma: ``PR'' + ``067'' + ``D'' + ``1'' + ``-'' + ``2021'' formando \textbf{PR067D1-2021}.
+\end{enumerate}
+
+
+\end{itemize}
+
+
+
+
+
+
+
+
+

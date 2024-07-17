@@ -1,0 +1,114 @@
+\newcommand{\sosFu}{CLDF072020\_ASSEL\_EPE004\_01\_Listar.feature}
+\newcommand{\sosFuCu}{Cenário: Apresentar Unidades do Usuário (linha 27)}
+\newcommand{\sosFuCd}{Cenário: Listar Solicitações da Unidade (linha 37)}
+\newcommand{\sosFuCt}{Cenário: Listar Solicitações da Última Unidade Selecionada (linha 47)}
+\newcommand{\sosFuCq}{Cenário: Listar Todos (linha 54)}
+\newcommand{\sosFuCc}{Cenário: Ordenar (linha 58)}
+\newcommand{\sosFuCs}{Cenário: Pesquisar Parcialmente Por Tipo de Dado (linha 62)}
+\newcommand{\sosFuCe}{Cenário: Pesquisar Dado Inexistente (linha 71)}
+\newcommand{\sosFuCo}{Cenário: Filtrar Status (linha 83)}
+\newcommand{\sosFuCn}{Cenário: Apresentar Ações Desabilitadas (linha 90)}
+\newcommand{\sosFuCuz}{Esquema do Cenário: Apresentar Código de Grupo 1 (linha 97)}
+\newcommand{\sosFuCuu}{Esquema do Cenário: Apresentar Código de Grupo 2 - Minutas de Proposição (linha 110)}
+\newcommand{\sosFuCud}{Esquema do Cenário: Apresentar Código de Grupo 3 - Minutas de Parecer (linha 128)}
+\newcommand{\sosFuCut}{Cenário: Os Assinada (linha 161)}
+\newcommand{\sosFuCuq}{Cenário: OS Não Assinada em menos de 15 dias (linha 178)}
+\newcommand{\sosFuCuc}{Cenário: OS Não Assinada em mais que 15 dias (linha 190)}
+
+\newcommand{\sosFd}{CLDF072020\_ASSEL\_EPE004\_02\_Incluir.feature}
+\newcommand{\sosFdCu}{Cenário: Incluir Solicitação Sem Necessidade de Criar Bloco de Assinatura (linha 28)}
+\newcommand{\sosFdCd}{Cenário: Incluir Solicitação Criando Bloco de Assinatura no SEI em Unidade Escolhida pelo Usuário - Opção ``OK'' (linha 69)}
+\newcommand{\sosFdCt}{Cenário: Incluir Solicitação Criando Bloco de Assinatura no SEI em Unidade Escolhida pelo Usuário - Opção ``Cancelar'' (linha 129)}
+\newcommand{\sosFdCq}{Cenário: Solicitar Minuta de Parecer (linha 167)}
+\newcommand{\sosFdCc}{Cenário: Apresentar Ementa (linha 172)}
+\newcommand{\sosFdCs}{Cenário: Acesso Restrito (linha 181)}
+\newcommand{\sosFdCe}{Cenário: Acesso Restrito de Anexo (linha 196)}
+\newcommand{\sosFdCo}{Cenário: Anexar Arquivo (linha 185)}
+\newcommand{\sosFdCn}{Cenário: Anexar Arquivo Não Suportado (linha 216)}
+\newcommand{\sosFdCuz}{Cenário: Acesso Restrito de Anexo (linha 196)}
+\newcommand{\sosFdCuu}{Cenário: Editar Anexo (linha 200)}
+\newcommand{\sosFdCud}{Cenário: Remover Anexo (linha 211)}
+\newcommand{\sosFdCut}{Cenário: Anexar Arquivo Não Suportado (linha 216)}
+\newcommand{\sosFdCuq}{Esquema do Cenário: Apresentar Hint de Ação (linha 221)}
+\newcommand{\sosFdCuc}{Esquema do Cenário: Verificar Campos Obrigatórios (linha 231)}
+\newcommand{\sosFdCus}{Cenário: Solicitar Acesso Restrito (linha 249)}
+
+\newcommand{\sosFt}{CLDF072020\_ASSEL\_EPE004\_03\_Visualizar.feature}
+\newcommand{\sosFtCu}{Cenário: Visualizar Solicitação (linha 22)}
+\newcommand{\sosFtCd}{Cenário: Visualizar Minuta de Parecer (linha 46)}
+
+\newcommand{\sosFq}{CLDF072020\_ASSEL\_EPE004\_04\_Cancelar.feature}
+\newcommand{\sosFqCu}{Cenário: Cancelar OS ``Em Execução'' Sem Necessidade de Bloco de Assinatura (linha 22)}
+\newcommand{\sosFqCd}{Cenário: Cancelar OS ``Em Execução'' Com Necessidade de Criar Bloco de Assinatura - Opção ``OK'' (linha 44)}
+\newcommand{\sosFqCt}{Cenário: Cancelar OS ``Em Execução'' Com Necessidade de Criar Bloco de Assinatura - Opção ``Cancelar'' (linha 99)}
+\newcommand{\sosFqCq}{Cenário: Cancelar OS ``Em Execução'' - Termo de Cancelamento não assinado em menos de 15 dias (linha 130)}
+\newcommand{\sosFqCc}{Cenário: Cancelar OS ``Em Execução'' - Termo de Cancelamento não assinado em mais de 15 dias (linha 136)}
+\newcommand{\sosFqCs}{Cenário: Cancelar OS ``Em Execução'' - Termo de Cancelamento Assinado (linha 147)}
+\newcommand{\sosFqCe}{Cenário: Cancelar OS ``Enviado para Assinatura'' - Opção Sim (linha 156)}
+\newcommand{\sosFqCo}{Cenário: Cancelar OS ``Enviado para Assinatura'' - Opção Não (linha 174)}
+
+\newcommand{\sosFc}{CLDF072020\_ASSEL\_EPE004\_05\_Definir\_Campos.feature}
+
+
+\textbf{CLDF072020\_ASSEL\_EPE004\_01\_Listar.feature}
+\begin{itemize}
+     \item 1 - Cenário: Apresentar Unidades do Usuário (linha 27)
+     \item 2 - Cenário: Listar Solicitações da Unidade (linha 37)
+     \item 3 - Cenário: Listar Solicitações da Última Unidade Selecionada (linha 47)
+     \item 4 - Cenário: Listar Todos (linha 54)
+     \item 5 - Cenário: Ordenar (linha 58)
+     \item 6 - Cenário: Pesquisar Parcialmente Por Tipo de Dado (linha 62)
+     \item 7 - Cenário: Pesquisar Dado Inexistente (linha 71)
+     \item 8 - Cenário: Filtrar Status (linha 83)
+     \item 9 - Cenário: Apresentar Ações Desabilitadas (linha 90)
+     \item 10 - Esquema do Cenário: Apresentar Código de Grupo 1 (linha 97)
+     \item 11 - Esquema do Cenário: Apresentar Código de Grupo 2 - Minutas de Proposição (linha 110)
+     \item 12 - Esquema do Cenário: Apresentar Código de Grupo 3 - Minutas de Parecer (linha 128)
+     \item 13 - Cenário: Os Assinada (linha 161)
+     \item 14 - Cenário: OS Não Assinada em menos de 15 dias (linha 178)
+     \item 15 - Cenário: OS Não Assinada em mais que 15 dias (linha 190)
+\end{itemize}
+
+\textbf{CLDF072020\_ASSEL\_EPE004\_02\_Incluir.feature}
+\begin{itemize}
+     \item 1 - Cenário: Incluir Solicitação Sem Necessidade de Criar Bloco de Assinatura (linha 28)
+     \item 2 - Cenário: Incluir Solicitação Criando Bloco de Assinatura no SEI em Unidade Escolhida pelo Usuário - Opção ``OK'' (linha 69)
+     \item 3 - Cenário: Incluir Solicitação Criando Bloco de Assinatura no SEI em Unidade Escolhida pelo Usuário - Opção ``Cancelar'' (linha 129)
+     \item 4 - Cenário: Solicitar Minuta de Parecer (linha 167)
+     \item 5 - Cenário: Apresentar Ementa (linha 172)
+     \item 6 - Cenário: Acesso Restrito (linha 181)
+     \item 7 - Cenário: Acesso Restrito de Anexo (linha 196)
+     \item 8 - Cenário: Anexar Arquivo (linha 185)
+     \item 9 - Cenário: Anexar Arquivo Não Suportado (linha 216)
+     \item 10 - Cenário: Acesso Restrito de Anexo (linha 196)
+     \item 11 - Cenário: Editar Anexo (linha 200)
+     \item 12 - Cenário: Remover Anexo (linha 211)
+     \item 13 - Cenário: Anexar Arquivo Não Suportado (linha 216)
+     \item 14 - Esquema do Cenário: Apresentar Hint de Ação (linha 221)
+     \item 15 - Esquema do Cenário: Verificar Campos Obrigatórios (linha 231)
+     \item 16 - Cenário: Solicitar Acesso Restrito (linha 249)
+\end{itemize}
+
+\textbf{CLDF072020\_ASSEL\_EPE004\_03\_Visualizar.feature}
+\begin{itemize}
+     \item 1 - Cenário: Visualizar Solicitação (linha 22)
+     \item 2 - Cenário: Visualizar Minuta de Parecer (linha 46)
+\end{itemize}
+
+\textbf{CLDF072020\_ASSEL\_EPE004\_04\_Cancelar.feature}
+\begin{itemize}
+     \item 1 - Cenário: Cancelar OS ``Em Execução'' Sem Necessidade de Bloco de Assinatura (linha 22)
+     \item 2 - Cenário: Cancelar OS ``Em Execução'' Com Necessidade de Criar Bloco de Assinatura - Opção ``OK'' (linha 44)
+     \item 3 - Cenário: Cancelar OS ``Em Execução'' Com Necessidade de Criar Bloco de Assinatura - Opção ``Cancelar'' (linha 99)
+     \item 4 - Cenário: Cancelar OS ``Em Execução'' - Termo de Cancelamento não assinado em menos de 15 dias (linha 130)
+     \item 5 - Cenário: Cancelar OS ``Em Execução'' - Termo de Cancelamento não assinado em mais de 15 dias (linha 136)
+     \item 6 - Cenário: Cancelar OS ``Em Execução'' - Termo de Cancelamento Assinado (linha 147)
+     \item 7 - Cenário: Cancelar OS ``Enviado para Assinatura'' - Opção Sim (linha 156)
+     \item 8 - Cenário: Cancelar OS ``Enviado para Assinatura'' - Opção Não (linha 174)
+\end{itemize}
+
+\textbf{CLDF072020\_ASSEL\_EPE004\_05\_Definir\_Campos.feature}
+\begin{itemize}
+     \item Não há cenários!
+\end{itemize}
+

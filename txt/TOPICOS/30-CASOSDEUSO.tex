@@ -1,0 +1,152 @@
+\part{Casos de Uso}
+\label{parte-estudosdecaso}
+
+%\chapterimage{casosdeuso.pdf}
+%\chapter{Casos de Uso - Considerações}
+
+
+%\chapterimage{casosdeuso3.pdf}
+\chapter{Casos de Uso usando \emph{Gartner}}
+\label{cap-casos-gartner}
+
+As diversas organizações de pesquisa descritas na seção \ref{sec-relatorios} fornecem uma forma de avaliar os fornecedores através da criação de casos de uso. Muitas vezes a metodologia de criação dos casos de uso são apresentadas juntamente com as tabelas de pontuação contendo as notas (\emph{scores}) de cada fornecedor para cada item avaliado. Dessa forma, torna-se possível criar casos de uso personalizados. Neste capítulo e nos próximos, vamos explorar justamente alguns casos de uso personalizados criados com base nos relatórios disponíveis.
+
+
+% Aqui falo do critério de seleção. Isso tem que ficar em algum lugar.
+\section{Critério de Seleção}
+\label{sec-criteriog}
+
+Para selecionar os fornecedores precisamos definir um critério justo de seleção e, portanto, de eliminação. Dessa forma, foi definido os seguintes critérios:
+
+\begin{enumerate}
+    \item Os \emph{scores} são arredondados para apenas 1 casa decimal;  
+    \item O \emph{score} deve ser igual ou superior a $4,0$;
+    \item Os fornecedores selecionados são aqueles que obtiverem as 3 (três) maiores notas dentro do conjunto de notas daquele cenário específico; 
+\end{enumerate}
+
+Conforme foi descrito, o \relGCC \xspace fornece uma tabela contendo a pontuação de cada item avaliado para cada um dos 20 fornecedores considerados. Dessa forma, cada área crítica de capacidade apresentadas na tabela \ref{tab:moscow} da seção \ref{sec-avaliacao} são pontuadas numa escala de 1 a 5. Uma pontuação igual a 1 equivale a ``fraco'', ou seja, a maioria ou todos os requisitos definidos não são alcançados, enquanto 5 equivale a 
+``excelente'', ou seja, o item excede significativamente os requisitos \cite{gartner:criticalcapabilities}. A tabela contendo esses \emph{scores} é apresentada no Anexo \ref{anexo-tabelacc}.
+
+Já a tabela \ref{tab:moscowordered} apresenta as 15 áreas de capacidade agrupadas pelas classes sugeridas. Esse agrupamento será importante para determinar os pesos para gerar o estudo de caso personalizado a partir da pontuação aferida pelo \emph{Grupo Gartner}.
+
+\begin{table}[!h]
+    \begin{center}
+    \begin{tabular}{|p{0.4\textwidth}|c|}
+        \hline
+            \rowcolor{cldfB1} \multicolumn{2}{|c|}{\Large Classes MoSCoW \emph{Gartner} \normalsize} \\ \hline \hline
+            % CABEÇALHO        
+            \rowcolor{lightgray}\textbf{Áreas de Capacidade} & \textbf{Classe MoSCoW} \\ \hline
+            % CONTEÚDO
+            % Código gerado pela tabela do Google SpreadSheets
+            \rowcolor{corMUST!80}Segurança & MUST \\ \hline
+            \rowcolor{corMUST!80}Capacidade de Gerenciamento & MUST \\ \hline
+            \rowcolor{corMUST!80}Conectividade de Fontes de Dados & MUST \\ \hline
+            \rowcolor{corMUST!80}Preparação de Dados & MUST \\ \hline
+            \rowcolor{corMUST!80}Visualização de Dados & MUST \\ \hline
+            \rowcolor{corSHOULD!80}Nuvem & SHOULD \\ \hline
+            \rowcolor{corSHOULD!80}Complexidade de Modelos & SHOULD \\ \hline
+            \rowcolor{corSHOULD!80}Catálogos & SHOULD \\ \hline
+            \rowcolor{corSHOULD!80}Incorporação de Análises & SHOULD \\ \hline
+            \rowcolor{corCOULD!50}Geração de Relatórios & COULD \\ \hline
+            \rowcolor{corCOULD!50}Analytics Avançados & COULD \\ \hline
+            \rowcolor{corCOULD!50}Data Storytelling & COULD \\ \hline
+            \rowcolor{corWOULD!50}Insight Automatizados & WOULD \\ \hline
+            \rowcolor{corWOULD!50}Consulta em Linguagem Natural & WOULD \\ \hline
+            \rowcolor{corWOULD!50}Geração de Linguagem Natural & WOULD \\ \hline
+    \end{tabular}    
+    \caption{\label{tab:moscowordered} Classificações MoSCoW para as Áreas de Capacidade}
+    \end{center}
+\end{table}
+
+% Cenário Gartner A 
+\input{txt/TOPICOS/31-CENARIO-GA.tex}
+
+% Cenário Gartner A 
+\input{txt/TOPICOS/32-CENARIO-GB.tex}
+
+% Cenário Gartner A 
+\input{txt/TOPICOS/33-CENARIO-GC.tex}
+
+% Conclusão
+\input{txt/TOPICOS/34-CENARIOSG-CONCLUSAO.tex}
+
+% #####################################################
+
+\chapter{Casos de Uso usando \emph{Forrester}}
+\label{cap-casos-forrester}
+
+%Agora é a vez de criar alguns casos de uso usando os relatórios do \emh{Forrester Wave}.
+
+Uma particularidade dos relatórios \emph{Forrester} é que existem, na verdade, dois relatórios desenvolvidos a partir de duas perspectivas diferentes: \emph{Vendor-Managed} e \emph{Client-Managed}. Tenta-se, portanto, dividir o mercado em dois grupos. O \relFVM  \xspace \cite{forrester:vendormanaged} avalia fornecedores que oferecem soluções na nuvem com custo zero de manutenção. Já o \relFCM \xspace \cite{forrester:clientmanaged} avalia fornecedores que oferecem soluções \emph{on-prem} que podem ser totalmente gerenciadas pelos próprios clientes \cite{forrester:vendorclient}. Dessa forma, as necessidades descritas e avaliadas no Capítulo \ref{cap-necessidades}, em particular a seção \ref{sub-cloud}, onde analisa-se a capacidade de oferecer suporte à nuvem, aponta no sentido de focar em soluções \emph{client-managed}. E assim, neste trabalho, os casos de uso usando as avaliações \emph{Forrester} foram realizadas com base na tabela de pontuação (\emph{scorecard}) do \relatorioFCM. Essas pontuações podem ser encontradas na tabela apresentada no Anexo \ref{anexo-tabelafw}. 
+
+É importante evidenciar, também, algumas diferenças entre os relatórios do \emph{Forrester} e \emph{Gartner} e fazer algumas considerações sobre isso.
+
+Em primeiro lugar, os elementos avaliados no \emph{Forrester} recebem o nome de \emph{key criteria}, isto é,``critérios chave''. Esses critérios são divididos em três grupos:``\emph{Current offering}'', ``\emph{Strategy}'' e ``\emph{Market presence}''. O primeiro grupo (\emph{Current offering}) posiciona o fornecedor no eixo vertical do \emph{Forrester Wave Graphic} indicando a força de sua ``oferta atual'', em tradução livre. Aqui são avaliadas áreas de capacidades semelhantes àquelas do Grupo \emph{Gartner}.
+O segundo grupo (\emph{Strategy}) posiciona o fornecedor no eixo horizontal em relação à estratégia de vendas do fornecedor. E o terceiro grupo (\emph{Market presence}) representado pelo tamanho dos marcadores no gráfico, mede a receita de produtos e serviços de BI de cada um indicando, portanto, sua presença no mercado.  
+
+Nos casos de uso desenvolvidos neste estudo, estamos interessados em avaliar os critérios qualitativos relativos às capacidades de recursos oferecidos por cada fornecedor. Portanto optamos por utilizar as avaliações para capacidades do grupo \emph{Current offering} desprezando as avaliações de critérios de estratégia comercial e presença de mercado.  
+
+Em segundo lugar, cada instituição de pesquisa define seus próprios critérios de seleção de fornecedores que serão avaliados e comparados. Assim, enquanto o \emph{Gartner} avalia 20 fornecedores, o \emph{Forrester} compara apenas 13 deles.
+
+Finalmente, as áreas de capacidades avaliadas pelo \emph{Forrester}\footnote{O \emph{Forrester Wave} avalia os fornecedores de modo análogo ao \emph{Gartner}. Assim, as áreas de capacidade \emph{Forrester} também são pontuadas numa escala que varia de 1 a 5.} não são exatamente as mesmas escolhidas pelo Grupo \emph{Gartner}. Portanto, para utilizar a avaliação \emph{MoSCoW} elaborada no Capítulo \ref{cap-necessidades} foi preciso fazer um ajuste. Esse ajuste pode ser visto na tabela \ref{tab:moscowordered-fw}. 
+
+
+
+\begin{table}[!h]
+    \begin{center}
+    \begin{tabular}{|p{0.4\textwidth}|c|}
+        \hline
+            \rowcolor{cldfB1} \multicolumn{2}{|c|}{\Large Classes MoSCoW \emph{Forrester} \normalsize} \\ \hline \hline
+            % CABEÇALHO        
+            \rowcolor{lightgray}\textbf{Áreas de Capacidade} & \textbf{Classe MoSCoW} \\ \hline
+            % CONTEÚDO
+            % Código gerado pela tabela do Google SpreadSheets
+            \rowcolor{corMUST!80}Segurança & MUST \\ \hline
+            \rowcolor{corMUST!80}Big Data & MUST \\ \hline
+            \rowcolor{corMUST!80}Preparação de Dados & MUST \\ \hline
+            \rowcolor{corSHOULD!80}Arquitetura & SHOULD \\ \hline
+            \rowcolor{corSHOULD!80}Interfaces Gráficas & SHOULD \\ \hline
+            \rowcolor{corSHOULD!80}Mobile & SHOULD \\ \hline
+            \rowcolor{corSHOULD!80}Opções de Implantação & SHOULD \\ \hline
+            \rowcolor{corCOULD!50}Criação de Apps Personalizados & COULD \\ \hline
+            \rowcolor{corCOULD!50}BI Avançado & COULD \\ \hline
+            \rowcolor{corWOULD!50}Sistemas de Insight & WOULD \\ \hline
+    \end{tabular}    
+    \caption{\label{tab:moscowordered-fw} Classificações MoSCoW para as Áreas de Capacidade do \emph{Forrester}.}
+    \end{center}
+\end{table}
+
+
+\section{Critério de Seleção}
+\label{sec-criteriof}
+
+Os critérios de seleção escolhidos são os mesmos da seção \ref{sec-criteriog} utilizados no capítulo \nameref{cap-casos-gartner}. Vamos repeti-los abaixo:
+
+\begin{enumerate}
+    \item Os \emph{scores} são arredondados para apenas 1 casa decimal;  
+    \item O \emph{score} deve ser igual ou superior a $4,0$;
+    \item Os fornecedores selecionados são aqueles que obtiverem as 3 (três) maiores notas dentro do conjunto de notas daquele cenário específico; 
+\end{enumerate}
+
+
+
+
+
+
+
+% Cenário Forrester A 
+\input{txt/TOPICOS/35-CENARIO-FA.tex}
+
+% Cenário Forrester B
+\input{txt/TOPICOS/36-CENARIO-FB.tex}
+
+% Cenário Forrester C 
+\input{txt/TOPICOS/37-CENARIO-FC.tex}
+
+% Conclusão
+\input{txt/TOPICOS/38-CENARIOSF-CONCLUSAO.tex}
+
+
+
+
+

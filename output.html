@@ -1,0 +1,1422 @@
+<h1 id="planejamento">PLANEJAMENTO</h1>
+<h2 id="afazeres">Afazeres</h2>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Afazeres Gerais</span></p>
+<div class="center">
+<p><span style="background-color: blue!10"> <strong>TODO</strong> : <span id="TargetTodo\arabic{CounterTodo}">Refletir sobre a questão de ter Usuários sem Unidade</span> </span></p>
+</div>
+<p>Acho que pode ter sim. Vai facilitar para gerenciar usuários.</p>
+<div class="center">
+<p><span style="background-color: blue!10"> <strong>TODO</strong> : <span id="TargetTodo\arabic{CounterTodo}">Falar com Pedro sobre isso.</span> </span></p>
+</div>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Preocupações para o futuro</span></p>
+<ol>
+<li><p>Depois, temos que ver a questão de como inserir “o passado” no sistema. Isso está na lista de funcionalidade como Migração de Dados do Sistema Legado.</p></li>
+<li><p>Gilberto trouxe a possibilidade de ter que Criar Grupos de Trabalho para realizar Trabalhos mais complexos. Isso pode ficar de funcionalidade para o futuro.</p></li>
+</ol>
+<h2 id="dúvidas">Dúvidas</h2>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Dúvidas para Pedro</span></p>
+<ol>
+<li><p>Final.</p></li>
+</ol>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Dúvidas para Fábrica/João</span></p>
+<ol>
+<li><p>Nada</p></li>
+</ol>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Dúvidas Respondidas</span></p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Respostas para Wagner - Modelagem</span></p>
+<ol>
+<li><p>A seta entre Avaliar OS e Histórico parece estar no sentido contrário. É feito um registro a cada avaliação ou é consultado o histórico para verificar se o trabalho já foi demandado?</p>
+<p>Sim, é consultado o histórico para verificar se o trabalho já foi demandado. Troquei o sentido da seta.</p></li>
+<li><p>O que acontece se o chefe da unidade não aprovar os artefatos?</p>
+<p>Se o chefe da unidade não aprovar os artefatos, ele devolve o artefato para o consultor legislativo corrigir.</p></li>
+<li><p>O demandante tem a opção de rejeitar a entrega?</p>
+<p>Não sei. Ver com eles.</p></li>
+<li><p>Acho que não precisa da seta entre Entregar Artefatos ao Solicitante e Solicitante já que o próximo passo é o envio do e-mail que é, para mim, o registro formal da entrega.</p>
+<p>Concordo.</p></li>
+<li><p>Faltou o evento de início (círculo verde) e um evento de fim (círculo vermelho).</p>
+<p>O evento de início é o evento de início especial de recebimento de mensagem.</p>
+<p>O evento de final é o evento de final especial de envio de mensagem.</p></li>
+<li><p>Pegar opinião entre modelo com retornos ou sem.</p>
+<p>Vai ser com retornos.</p></li>
+</ol>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Controle de Perfis e Papéis</span></p>
+<div class="tcolorbox">
+<p>Dúvida sobre algo que devo precisar no Sistema da ASSEL:</p>
+<p>- Que informações sobre determinado usuário consigo pegar pelo Active Directory?</p>
+<p>- Tem como, pelo login, saber se o usuário é Consultor Legislativo ou Consultor Técnico Legislativo?</p>
+</div>
+<div class="tcolorbox">
+<p>não use o AD pra regra de negocio de sistema, pelo amor de deus!</p>
+</div>
+<div class="tcolorbox">
+<p>Usar o AD então só para autenticação e depois fazer um controle de papéis interno dentro do sistema. Provavelmente vou precisar de ajuda de vcs quando eu chegar nessa etapa.</p>
+<p>Lá na ASSEL, dependendo do Cargo da Pessoa, unidade, lotação, etc, cada um só terá acesso a uma determinada "tela" .</p>
+</div>
+<div class="tcolorbox">
+<p>Acho arriscado amarrar as atribuições em função do cargo. Com as mudanças nas chefias e no quadro de servidores, podem mudar do dia para a noite. No PLe, as funcionalidades são utilizadas para configurar os perfis de acesso e alterações podem ser feitas a qualquer tempo por um administrador do sistema.</p>
+</div>
+<div class="tcolorbox">
+<p>a falar isso: esquece a ideia de "cargo", pensa em "perfil". é atribuição do usuario gestor determinar qual pessoa tem qual perfil em qual unidade. Se ela qusier colcoar um faxineiro com perfil de CL, é problema dele, nao nosso.</p>
+<p>e uma mesma pessoa pode ter varios papeis. um chefe pode ser tambem um CL. E tambem assessor de um deputado.</p>
+</div>
+<h2 id="diário">Diário</h2>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>13 Ago 21 - Sexta</span></p>
+<p>Se tiver que diminuir escopo, prefiro remover o Gerenciar Perfil apenas.</p>
+<p>Login, Usuário e Solicitar OS são mais importantes.</p>
+<p>Se não, fazer Login, Perfil e Usuário e deixar Solicitar OS para depois.</p>
+<h1 id="estudos">ESTUDOS</h1>
+<h2 id="ambiente-de-desenvolvimento">Ambiente de Desenvolvimento</h2>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Tecnologias</span></p>
+<p><strong>ASSEL - Assessoria Legislativa</strong></p>
+<p>Setup do ambiente de desenvolvimento</p>
+<p>Este projeto utiliza:</p>
+<p><strong>Containers:</strong></p>
+<ul>
+<li><p>Elasticsearch</p></li>
+<li><p>Minio</p></li>
+<li><p>Sql Server (MSSQL) 2017</p></li>
+<li><p>Redis</p></li>
+</ul>
+<p><strong>Tecnologias:</strong></p>
+<ul>
+<li><p>Spring Boot 2.2.7.RELEASE</p></li>
+<li><p>Java 11</p></li>
+<li><p>Docker</p></li>
+<li><p>Maven</p></li>
+<li><p>Git</p></li>
+</ul>
+<p><strong>Ferramentas Necessárias:</strong></p>
+<ul>
+<li><p>JDK 11 - https://www.oracle.com/java/technologies/javase-jdk11-downloads.html</p></li>
+<li><p>Docker-Compose - https://docs.docker.com/compose/install/</p></li>
+</ul>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Elastic Search</span></p>
+<p>https://www.elastic.co/pt/what-is/elasticsearch</p>
+<h2 id="estudo-do-sistema">Estudo do Sistema</h2>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Visão</span></p>
+<p>A visão não foi desenvolvida como eu esperava que tivesse sido criada.</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Quem são os atores?</span></p>
+<p>Os atores no sistema são:</p>
+<ul>
+<li><p>Usuários Solicitantes - Fazem parte de uma mesma unidade Solicitante.</p></li>
+<li><p>Usuários da ASSEL - Chefe e Apoio da Unidade Assel.</p></li>
+<li><p>Usuários das Unidades - Chefe e Consultores de cada Unidade;</p></li>
+</ul>
+<p>Então vou enumerar atualmente as Telas Criadas e dizer quem pode acessá-las. Com isso vou descobrir telas que faltam.</p>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Telas Já Construídas</span></p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Gerenciar Usuário - Tela de Admin - ASSEL</span></p>
+<p>A tela de Gerenciamento de Usuário foi construída para ser usada por quem tem responsabilidade para isso. Ou seja, por alguem da ASSEL que tem permissão para fazer isso.</p>
+<p>É uma tela de Administração de Usuários por um Admin da ASSEL.</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Gerenciar Perfil - Tela de Admin - ASSEL</span></p>
+<p>A tela de Gerenciamento de Perfil foi construída para ser usada por quem tem responsabilidade para isso. Ou seja, por alguem da ASSEL que tem permissão para fazer isso.</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Login - Todos</span></p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Gerenciar Unidades - Tela de Admin ASSEL</span></p>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Mapeamento Perfis Versus Telas</span></p>
+<p>Estou fazendo no Google Drive, dentro de “Estudo Funcionalidades” um mapeamento de Perfis versus quais telas cada um teria acesso.</p>
+<p>E assim, algumas observações:</p>
+<ul>
+<li><p>Talvez será necessário, dentro do Gerenciamento de Perfil, separar os Perfis por Tipo de Unidade: Perfis da ASSEL, Perfis de Unidades, Perfis de Solicitantes.</p>
+<p>Assim, quando um Solicitante quiser ele mesmo incluir um novo usuário, ele já poderá escolher, dentre os Perfis do Tipo “Perfis de Solicitantes”, qual o novo usuário deverá ter.</p></li>
+</ul>
+<div class="tcolorbox">
+<p>Ver isso.</p>
+</div>
+<h1 id="modelagem">MODELAGEM</h1>
+<h2 id="entrevistas">Entrevistas</h2>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Gilberto - Apoio da ASSEL</span></p>
+<p>O sistema deve ser integrado ao SEI de forma a documentar no SEI o histórico na mudança dos estados.</p>
+<p>Então, as Ordens de Serviços para a Assel, que atualmente vem por intermédio de um Formulário do SEI, deveriam vir por intermédio de um Formulário Preenchido dentro do Portal, que alimenta o sistema e, por sua vez, o sistema registra isso no SEI.</p>
+<div class="tcolorbox">
+<p>Deve haver alguma forma de registrar quem foi o(s) solicitante(s) de uma Demanda. Inclusive, se combinado, quando o Solicitante entrar no sistema para fazer uma nova Solicitação, ele consiga ver o histórico dos pedidos que ele fez acompanhado do Status dos pedidos já realizados por ele: Em Execução, Concluído, Suspenso, etc… Isso seria possível através de uma “Tela de Acompanhamento” na qual o Solicitante loga-se e pode acompanhar o “Estado” de cada uma de suas demandas. Isso atende A1-3:19.</p>
+</div>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>A1 8:20 até 16:00 - Duas ou mais demandas de mesmo PL</span></p>
+<p><strong>Questão de ter duas ou mais Demandas relacionadas a um mesmo projeto, mas designado por Deputados diferentes, e portanto, de Comissões diferentes.</strong></p>
+<p>Nesses casos, os pareceres serão diferentes, então mesmo que as duas demandas estejam relacionadas com um mesmo Projeto de Lei, os pareceres terão de ser feitos com pontos de vista diferentes e, assim, serão pareces diferentes. No processo de “RECEBER OS E APOIAR” o pessoal do Apoio quer ser capaz de verificar no histórico, todos os processos relacionados a, por exemplo, uma mesma PL. Assim, mesmo que seja uma demanda nova “que necessite elaboração” , ela já pode encaminhar essa informação para o Consultor que fará o trabalho. Então o processo de “APOIO” gera artefatos novos que serão apensados à OS. Um desses artefatos são informações de, por exemplo, demandas já realizadas pela ASSEL que relacionam-se com aquela demanda. Esse “pacote” é que segue para frente.</p>
+<p>Em relação a isso, vislumbro uma tela onde o Apoio tem como se fosse uma “Caixa de Entrada” com as demandas recebidas, por quem, etc… Ali, o servidor da ASSEL será capaz de analisar cada demanda recebida e destiná-la. Quando o destino for “Necessita de Elaboração” ele já pode anexar no “Processo” informações de outras demandas já concluídas pela ASSEL que estão relacionadas àquela demanda. O sistema já poderia até sugerir isso para ele automaticamente.</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>A1 17:00 - Código de Nomenclatura</span></p>
+<p>Ele fala de uma metodologia que eles já usam atualmente para nomear o artefato que será produzido. É como se fosse uma Primary Key, isto é, um Código Chave, um identificador único que eles criam para cada documento que será elaborado de forma que isto facilite, depois, o controle deles. Acho importante mantermos essa forma de organizar as coisas, ou se não, podemos melhorar, mas com o cuidado de “melhorar mas manter compatibilidade”.</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>A1 18:30 - Diversos Tipos de Demandas</span></p>
+<p>Não podemos restringir o sistema a “Demandas relacionadas somente com PLs”. O sistema deve ser capaz de controlar atividades relacionadas a quaisquer tipo de “Demandas” dentre os tipos de Demandas Possíveis.</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>A1 20:55</span></p>
+<p>Está falando os diferentes tratamentos dados aos diferentes “tipos de demandas”. Cada “Demanda” tem um “Tipo” e “Demandas” de cada “Tipo” terão atributos diferentes. Alguns desses atributos já virão preenchidos.</p>
+<p>Aqui no *1 deve haver uma etapa na qual o Apoio consegue classificar e até “corrigir” a Demanda que chegou. Talvez na “Tela de Envio” o usuário poderá selecionar o tipo de demanda que ele “Acha” que é e já preencher os dados.</p>
+<p>E haverá uma “tela de classificação” na qual o Servidor do Apoio poderá ver os dados brutos preenchidos pelo Solicitante e classificar aquela demanda corrigindo se isso for necessário.</p>
+<div class="tcolorbox">
+<p>O Solicitante solicita uma Consulta e em um campo “Descrição” ele descreve o que quer. Chegando na ASSEL, o Servidor do Apoio analisa o pedido e verifica que o que o Solicitante deseja é, na verdade, ´um “Estudo” e não uma “Consulta”. Reclassifica essa demanda e segue.</p>
+</div>
+<div class="tcolorbox">
+<p>Pesquisa textual dentro de todos os Documentos já produzidos pela ASSEL.</p>
+</div>
+<div class="tcolorbox">
+<p>APOIO = RECEBER <span class="math inline">→</span> FILTRAR <span class="math inline">→</span> REGISTRAR NO SISTEMA <span class="math inline">→</span> ENVIA PARA CHEFE DISTRIBUIR</p>
+</div>
+<p>Aqui um dos Metadados possíveis seria a possibilidade do Apoio “Sugerir” para qual unidade isso deve ser distribuído. Depois, a Chefe, no momento de Distribuir para a Unidade, recebe essa sugestão e decide se “Acata e Aprova” ou se manda para outra Unidade.</p>
+<p>Haverá uma “Tela de Distribuição” na qual somente o Chefe pode assessar e lá o Chefe deve distribuir o processo ou mandar voltar.</p>
+<p>Acho que sempre deve existir o botão de “VOLTAR” ou “RETORNAR” com uma mensagem de forma que correções de fluxo possam ser realizados. Por exemplo, alguem erra e manda pra frente. Lá na frente, a pessoa pode mandar “VOLTAR” e claro, justifica. Ou seja, depois que vai, pra voltar, quem manda de volta é quem recebe.</p>
+<div class="tcolorbox">
+<p>Toda a ASSEL terá que ter acesso ao Sistema. O Sistema é quem distribui etc.</p>
+</div>
+<p>13/05/21 Gilberto me disse:</p>
+<div class="tcolorbox">
+<p>Verificando a Modelagem de processo, na questão de recebimento da Ordem de Serviço, ocorre que em primeiro momento quem recebe a demanda no Apoio é a própria Chefe da Assessoria que lê e defini qual a Unidade da Assessoria Legislativa é competente para analisar o pedido, depois distribui para nós alimentarmos os sistema atual, nessa etapa verificamos se já houve algum pedido do mesmo solicitante, ou de outro. A OS estando OK para seguir, liberamos o documento para seguir, geramos o Despacho para a Chefe da Assessoria Legislativa assinar e dar seguimento.</p>
+</div>
+<p>Assim, já entendi que a Chefe da Assel deve fazer as interfaces com os demais atores.</p>
+<p>O Apoio conversa unicamente com a Chefe da Assel.</p>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Ana - Consultora Legislativa da UDA</span></p>
+<p>A Ana é Consultora Legislativa da UDA.</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Papéis Desempenhados</span></p>
+<p>Ela me alertou que o CL pode trabalhar de duas formas:</p>
+<ol>
+<li><p>Titular da Demanda: Responsável pelo trabalho de elaboração dos Artefato(s) demandados.</p></li>
+<li><p>Revisor de Artefato(s): Responsável pelo trabalho de revisar o trabalho de outro colega.</p></li>
+</ol>
+<p>Inclusive ela me disse que esse papel de “Revisão” faz parte formal do trabalho do CL.</p>
+<div class="tcolorbox">
+<p>Portanto, é importante separar esse Estado onde o processo se encontra. Está sendo elaborado ou está sendo revisado?</p>
+</div>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Função do Chefe</span></p>
+<p>Quando os trabalhos de elaboração e revisão terminam, os artefato(s) são entregues para o Chefe, que faz uma revisão “menor” nos produtos.</p>
+<p>Basicamente eles apenas tomam conhecimentos e devolvem os artefatos para o Apoio.</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Controle de Estado de Elaboração</span></p>
+<div class="tcolorbox">
+<p>Haver forma de “medir” ou se fazer controle de estado da Elaboração / Revisão;</p>
+</div>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Distribuição dos Artefatos</span></p>
+<p>Os artefato(s) criados vão para a Pasta do CL. O apoio tem acesso a todas as pastas de todos os CLs.</p>
+<p>Os CLs só tem acesso às suas próprias pastas na rede.</p>
+<p>Por enquanto, a troca de arquivos ocorre dessa forma. Pastas na rede.</p>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Josué Alves - Chefe da USE</span></p>
+<p>Josué Alves é Chefe da USE</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>01m30 - Aspectos Internos</span></p>
+<p>Fala das minutas de parecer pela prejudicialidade.</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>02m30 - Elaboração e Distribuição</span></p>
+<p>“Atividade de Elaboração” pode ser realizada pelo Próprio Chefe de Unidade desde que ele seja Consultor Legislativo. Caso, ele seja CTL, então ele não pode.</p>
+<div class="tcolorbox">
+<p>Na atividade de “Distrubuição de OS” do Chefe da Unidade, em vez do “Chefe Empurrar” a demanda para o CL. Há opção do CL escolher a atividade para sí, ie, puxar.</p>
+</div>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>04m40 - Sigilo da Minuta de Parecer</span></p>
+<p>05m20 - Minuta de Pareces, Nota Técnica, Estudo (tudo eu acho) são atividades cujo conteúdo durante a elaboração são sigilosos.</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>07m25 - Questão do controle de estado da Demanda</span></p>
+<div class="tcolorbox">
+<p>Possibilidade de o Solicitante poder acompanhar aonde o “trabalho está”.</p>
+</div>
+<p>Exemplo: Está em elaboração, está em revisão, está no apoio, está esperando distribuição, etc...</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>09m12 - Funcionalidade: Vínculo entre Demanda e PL</span></p>
+<p>Acompanhar estado da Proposição que originou o Parecer.</p>
+<div class="tcolorbox">
+<p>Se houver vínculo entre a demanda do tipo “Minuta de Parecer” com o PL originário em tramitação, então seria importante que o sistema oferecesse uma forma de verificar o estado do PL.</p>
+<p>Aqui talvez seja necessário fazer integração com o Sistema do PLE.</p>
+</div>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>14m10 - Aula sobre Proposição</span></p>
+<p>PELO PLC PL PDC PR Emendas</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>16m30 - Nomenclatura da OS</span></p>
+<p>Nomenclatura: OS ou Solicitação</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>19m16 - Classificação das Demandas</span></p>
+<div class="tcolorbox">
+<p>Dentro do processo das Unidades, cada unidade deveria poder classificar suas demandas da forma que quisesse.</p>
+<p>É quase igual ao sei onde podemos criar marcadores e depois filtrar por marcadores com diferentes cores e etc.</p>
+</div>
+<p>Na unidade do Josué eles classificam as demandas.</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>22m30 - Distribuição interna das demandas</span></p>
+<p>Possibilidade de puxar as demandas para sí mais do que esperar o Chefe atribuir para vc uma demanda.</p>
+<p>Normalmente o Consultor(a) Legislativo ele próprio escolhe o trabalho que vai realizar.</p>
+<p>Claro, se sobra algo lá que ninguem quer, cabe ao Chefe designar alguém para desenvolver determinada demanda.</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>25m00 - Como as revisões são escolhidas e verificação</span></p>
+<p>Nome: Revisão e Verificação.</p>
+<p>Nome: Verificação;</p>
+<p>Nome: Revisão Final;</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>29m50 - Outros documentos</span></p>
+<p>Aqui eu aviso que o sistema não pode substituir o SEI. Então, vocês continuarão usando o SEI para coisas paralelas.</p>
+<p>Agora, as solicitações e o processo, embora será, de alguma forma documentada no SEI, vocês usaram o sistema pois aí o sistema trará mais recursos.</p>
+<p>Josué diz que podem ser necessários fazer consultas aos orgaos sobre os pareces. Seria bom que essas consultas fossem relacionadas com a demanda.</p>
+<p>Talvez seria interessante conversar mais sobre essa questão.</p>
+<div class="tcolorbox">
+<p>Automatizar o SEI para fazer consultas relacionadas a demandas em andamento?</p>
+</div>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Milena - Chefe da Assel</span></p>
+<p>A “Distribuição” é do tipo empurra. Ela e o apoio analisam a OS e mandam para o Unidade que eles acham que é.</p>
+<p>Ela atenta para a questão do Sigilo ao mesmo tempo que deve haver possibilidade do CL pesquisar o Banco de Dados.</p>
+<div class="tcolorbox">
+<p>Deverão haver mais conversar para entender como seriam feitas essas pesquisas sem comprometer o Sigilo.</p>
+<p>Quem pode pesquisar? Etc...</p>
+</div>
+<p>Milena também pontua que o Sistema deve eliminar a necessidade de realizar o Acesso Remoto nos computadores. O sistema deve funcionar on-line na Internet mediante autenticação do usuário (login).</p>
+<p>Seria bom que o sistema também fosse responsável para receber os artefato(s) e realizar a distribuição desses artefato(s) em cada fase até finalizar entregando isso para o Solicitante.</p>
+<p>Ela diz que um problema que eles tem é que as vezes eles não conseguem acessar a pasta deles na rede e isso impacta o trabalho.</p>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Jeison - Chefe da UCJ</span></p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Nota Técnica</span></p>
+<p>Ao “Elaborar Artefatos” pode surgir a necessidade de criar uma “Nota Técnica” com algo que deve ser informado ao Solicitante.</p>
+<div class="tcolorbox">
+<p>Questão da Nota Técnica: A demanda pode gerar a necessidade de que o Consultor(a) Legislativo crie uma Nota Técnica contendo conteúdo importante.</p>
+<p>O ideal é fazer novas conversas sobre isso.</p>
+</div>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Pesquisa Prévia no Apoio</span></p>
+<p>Incluir na atividade de apoio a capacidade de que, quando entende-se que necessita-se de elaboração, essa elaboração possa ser precedida de uma pesquisa prévia.</p>
+<p>Ou seja, ao processo já podem ser inseridos artefato(s) de auxílio aos Consultores Legislativos que receberão a demanda lá na frente no futuro.</p>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Cláudio UEF</span></p>
+<p>REVISAR pq escrevi ja cansado.</p>
+<div class="tcolorbox">
+<p>Não é obrigatório passar pela revisão;</p>
+</div>
+<p>Ele traz outras funcionalidades:</p>
+<p>- Acompanhamento Temporal</p>
+<div class="tcolorbox">
+<p>Mudança de relator de um OS.</p>
+</div>
+<div class="tcolorbox">
+<p>Possibilidade de abortar a OS a qualquer momento.</p>
+</div>
+<p>Mudar nome do losango de “Necessita de Elaboração” para “Cumpre Requisitos?”</p>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Ana Alice UDA</span></p>
+<div class="tcolorbox">
+<p>Quando for a época a gente vê isso. Ana disse que podia mostrar.</p>
+</div>
+<p>Seria bom pedir para ela me mostrar se possivel no SEI como é a atual organização via Bloco Interno das coisas no SEI.</p>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Pedro da Basis</span></p>
+<p>Para o Módulo II fazer Exportação de Dados para BI.</p>
+<h2 id="informações-coletadas">Informações Coletadas</h2>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Unidades Internas</span></p>
+<ul>
+<li><p>ASSEL - Assessoria Legislativa;</p></li>
+<li><p>UCJ - Unidade de Constituição e Justiça;</p></li>
+<li><p>URP - Unidade de Redação Parlamentar e Consolidação dos Textos Legislativos;</p></li>
+<li><p>UEF - Unidade de Economia e Finanças;</p></li>
+<li><p>USE - Unidade de Saúde, Educação, Cultura e Desenvolvimento Científico e Tecnológico;</p></li>
+<li><p>UDA - Unidade de Desenvolvimento Urbano e Rural e Meio Ambiente;</p></li>
+</ul>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Unidades Externas</span></p>
+<p>São quaisquer unidades do SEI que forem cadastradas no sistema e atuam somente como Solicitantes.</p>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Tipos de Solicitações</span></p>
+<p>As demandas recebidas pela ASSEL classificam-se no <strong>Tipos de Solicitação</strong> a seguir:</p>
+<ul>
+<li><p>Consulta (CONS)</p></li>
+<li><p>Estudo (EST)</p></li>
+<li><p>Minuta de Pronunciamento / Discurso (PRO)</p></li>
+<li><p>Minuta de Parecer</p>
+<ul>
+<li><p>Denúncia (DEN)</p></li>
+<li><p>Indicação (IND)</p></li>
+<li><p>Mensagem (MENS)</p></li>
+<li><p>Projeto de Decreto Legislativo (PDL)</p></li>
+<li><p>Proposta de Emenda à Lei Orgânica (PELO)</p></li>
+<li><p>Projeto de Lei (PL)</p></li>
+<li><p>Projeto de Lei Complementar (PLC)</p></li>
+<li><p>Projeto de Resolução (PR)</p></li>
+<li><p>Moção (MOC)</p></li>
+<li><p>Recurso (REC)</p></li>
+<li><p>Requerimento (RQ)</p></li>
+</ul></li>
+<li><p>Minuta de Proposição (MP)</p>
+<ul>
+<li><p>Denúncia (DEN)</p></li>
+<li><p>Indicação (IND)</p></li>
+<li><p>Mensagem (MENS)</p></li>
+<li><p>Projeto de Decreto Legislativo (PDL)</p></li>
+<li><p>Proposta de Emenda à Lei Orgânica (PELO)</p></li>
+<li><p>Projeto de Lei (PL)</p></li>
+<li><p>Projeto de Lei Complementar (PLC)</p></li>
+<li><p>Projeto de Resolução (PR)</p></li>
+<li><p>Moção (MOC)</p></li>
+<li><p>Recurso (REC)</p></li>
+<li><p>Requerimento (RQ)</p></li>
+</ul></li>
+<li><p>Nota Técnica (NT)</p></li>
+<li><p>Relatório de Veto (RV)</p></li>
+<li><p>Outros (OUT)</p></li>
+</ul>
+<div class="tcolorbox">
+<p>Mudar esses tipos tem que definir novos códigos em <a href="#ref:codigos" data-reference-type="ref" data-reference="ref:codigos">5</a>.</p>
+</div>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Módulos</span></p>
+<p>Verificamos dois principais necessidades da Assessoria Legislativa:</p>
+<ul>
+<li><p><strong>Sistema de Protocolo</strong> - A necessidade da Assessoria Legislativa é de um sistema de protocolo integrado ao SEI que controle as atividades da unidade.</p></li>
+<li><p><strong>Controle e Distribuição dos Artefato(s)</strong> - Necessidade de controlar a forma como os artefato(s) desenvolvidos são distribuidos para os seus solicitantes.</p></li>
+</ul>
+<p>Assim, acredita-se que para fins de desenvolvimento o sistema pode ser desenvolvidos em dois módulos.</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Módulo I - Sistema de Protocolo</span></p>
+<p>Num primeiro momento seria desenvolvido um <strong>sistema de protocolo integrado ao SEI</strong> para controlar o fluxo de atividades da Assessoria Legislativa.</p>
+<p>Neste primeiro momento, a <strong>forma de distribuição</strong> dos artefato(s) criados pela Assessoria Legislativanão seria objeto de desenvolvimento. Isto é, a Assessoria Legislativacontinuaria fazendo o controle e distribuição de Artefato(s) da maneira antiga, isto é, manualmente, utilizando a estrutura de rede da casa.</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Módulo II - Controle e Distribuição de Artefato(s) produzidos</span></p>
+<p>Em um segundo momento, após ter uma versão do Módulo I desenvolvida, em produção, funcionando com recursos mínimos, passaríamos a focar em fazer o <strong>Controle e Distribuição de Artefato(s) produzidos</strong>.</p>
+<p>Assim, neste momento, a distribuição dos artefato(s) produzidos deixariam de ser uma tarefa manual executada pela equipe de Apoio da Assessoria Legislativae passaria a ser executada pelo próprio sistema.</p>
+<p>Em um experimento de imaginação, quando o Consultor(a) Legislativo finalizasse uma demanda, ele faria <em>upload</em> do(s) arquivos produzidos para o sistema e na outra ponta, o Solicitante faria o <em>download</em> desses arquivos.</p>
+<p>Neste momento, as preocupações com os requisitos não funcionais de “Sigilo” passariam a ser considerados.</p>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Requisitos Funcionais</span></p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Requisito: Capacidades de Pesquisa</span></p>
+<p>Trata-se da capacidade de realizar pesquisas como:</p>
+<ul>
+<li><p>Pesquisa textual dentro de todos os documentos já produzidos pela Assessoria Legislativa.</p></li>
+<li><p>Pesquisar os metadados de processos já tramitados pela Assel e que originaram artefato(s).</p></li>
+</ul>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Requisito: Monitorar Estado das Solicitações</span></p>
+<p>Capacidade de permitir que o solicitante saiba onde o processo está e receba informações sobre o estado da solicitação.</p>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Requisitos Não Funcionais</span></p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>ReqNFunc: Integração com o SEI</span></p>
+<p>Uma das restrições do projeto previsto no TAP é que o Sistema não pode substituir o SEI. Então um requisito não funcional muito importante é que o Sistema funcione juntamente com o SEI.</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>ReqNFunc: Sigilo</span></p>
+<p>Da elaboração até a entrega dos artefato(s) aos Solicitantes, esses artefato(s) são sigilosos. Ou seja, só ganhará acesso ao artefato quem demandou.</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>ReqNFunc: Acesso via Internet</span></p>
+<p>O Sistema deve eliminar a necessidade de realizar o Acesso Remoto nos computadores. O sistema deve funcionar on-line na Internet mediante autenticação do usuário (login).</p>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Acessórios do Sistema</span></p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Acessório: Controlar Consultas Orais - Prioridade 5</span></p>
+<p>Um acessório do sistema seria um módulo separado para permitir realizar o controle de “consultas informais” ou consultas orais realizadas pelo consultor.</p>
+<div class="tcolorbox">
+<p>Este acessório estaria disponível à toda a Casa e permitiria que qualquer pessoa pudesse fazer uma pergunta para os CLs da Assessoria Legislativae assim essa pergunta seria direcionada às unidades, após alguma classificação temática, e alguem poderia responder, informalmente.</p>
+<p>É como se fosse um SAC. Como se a ASSEL tivesse um whatsapp da ASSEL onde dúvidas pontuais pudessem ser respondidas.</p>
+</div>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Acessório: Estado do PL que origina a demanda - Prioridade 4</span></p>
+<p>Toda solicitação de demanda do tipo “Minuta de Parecer” é originária e, portanto, está vinculada a uma Proposição em tramitação no Plenário.</p>
+<p>Assim, deseja-se que, toda solicitação de demanda do tipo “Minuta de Parecer” aponte para a Proposição que a originou, e assim, seja possível observar a qualquer momento o “Estado” da tramitação daquela Proposição no Plenário.</p>
+<p>Isto é importante pois solicitações de demandas do tipo “Minuta de Parecer” cuja Proposição já tenha sido finalizada “perdem objeto” e assim o Consultor(a) Legislativo não precisa mais trabalhar em algo que não é mais necessário.</p>
+<div class="tcolorbox">
+<ul>
+<li><p>Provável necessidade de integração com o PLE;</p></li>
+</ul>
+</div>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Acessório: Classificação de Demandas por Unidade</span></p>
+<p>Forma de cada unidade criar suas próprias classificações para das demandas que chegam para ela.</p>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Metadados da Solicitação</span></p>
+<p>A solicitação tem atributos que podem ser alterados no ciclo de vida do processo.</p>
+<p>Esses atributos podem variar com o tipo de solicitação e também há atributos fixos.</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Não sei</span></p>
+<ul>
+<li><p>Classe Definida Pelo Usuário: Seria a classe que cada unidade pode dar à demanda.</p>
+<p>O dicionário de classes muda em cada unidade.</p>
+<p>Ex.: Define-se que essa demanda seja classe 1.</p>
+<p>Na UDA, 1 é "ISSO". Na USE, 1 é "AQUILO".</p></li>
+</ul>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Fixos</span></p>
+<ul>
+<li><p>Unidade Demandante. Exemplo: Gabinete Tal;</p></li>
+<li><p>Tipo</p></li>
+<li><p>Subtipo (se houver)</p></li>
+<li><p>Solicitações passadas associadas: Forma de dizer que solicitações do passado estão associadas a esta demanda.</p></li>
+</ul>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Variáveis</span></p>
+<p>São atributos que alteram-se com o Tipo.</p>
+<p><span>-2ex -0.1ex -.2ex</span> <span>.2ex .2ex </span> <span><strong></strong></span><span>Minuta de Parecer</span></p>
+<ul>
+<li><p>Proposição Associada</p></li>
+</ul>
+<h2 id="modelagem-do-macroprocesso">Modelagem do Macroprocesso</h2>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Raia: Apoio da Assessoria Legislativa</span></p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Ativ: Receber Ordem de Serviço</span></p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Ativ: Avaliar OS</span></p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Ativ: Notificar Solicitante</span></p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Ativ: Entregar Artefatos ao Solicitante</span></p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Ativ: Catalogar e Arquivar Artefatos</span></p>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Raia:Chefe Assessoria Legislativa</span></p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Ativ: Distribuir OS para Unidade</span></p>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Raia:Chefe da Unidade</span></p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Ativ: Distribuir OS para Consultor Legislativo</span></p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Ativ: Aprovar Artefato(s)</span></p>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Raia: Consultor Legislativo</span></p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Ativ: Elaborar Artefato(s)</span></p>
+<h2 id="estudo">Estudo</h2>
+<p>Nesse capítulo pretendo começar a escrever o documento final que vai para o SEI contendo a modelagem do processo, explicações, requisitos, enfim, será um documento de partida para entregar para a Fábrica de Software.</p>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Introdução</span></p>
+<p>Introduzir o projeto do sistema.</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Assessoria Legislativa</span></p>
+<p>Falar da Assel</p>
+<p><span>-2ex -0.1ex -.2ex</span> <span>.2ex .2ex </span> <span><strong></strong></span><span>Estrutura</span></p>
+<p><span>-2ex -0.1ex -.2ex</span> <span>.2ex .2ex </span> <span><strong></strong></span><span>Atores</span></p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Necessidades e Módulos</span></p>
+<p>Falar das necessidades e Módulos</p>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Modelagem de Processos</span></p>
+<p>Aqui vai a modelagem em sí explicadinha.</p>
+<h2 id="ref:codigos">Codificação para as Solicitações</h2>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Definição</span></p>
+<p>As “Ordens de Serviço” ou “Solicitações” que transitam pelo Sistema ASSEL terão um código “humano” associado a ele. Esse código deve ser <strong>único</strong> de modo que só exista um único código associado a cada OS. Este campo é uma forma de dar nomes únicos a cada Solicitação de forma que seja fácil se referir e localizar uma Solicitação dentre todas as existentes.</p>
+<div class="tcolorbox">
+<p>Não é interessante, internamente no banco de dados, utilizar esse código como chave primária pois em alguns casos pode ser necessário modificar o código inicial atribuído a uma OS.</p>
+<p>O caso que isso aconteceria seria quando uma Solicitação fosse revisada e seus atributos de tipo e/ou subtipo tivessem de mudar. Nesse caso, o código deverá ser alterado junto, respeitando o critério de unicidade.</p>
+</div>
+<p>Os códigos terão regra de formação de acordo com os Tipos e Subtipos das OSs.</p>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Regra de Formação Grupo I</span></p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Aplicação - Grupo I</span></p>
+<div class="env-aplica">
+<p><span>Regra de Formação Grupo I são aplicadas a Solicitações dos Tipos:</span></p>
+<p>Consulta (CONS)</p>
+<p>Estudo (EST)</p>
+<p>Minuta de Pronunciamento / Discurso (MPRON)</p>
+<p>Nota Técnica (NT)</p>
+<p>Relatório de Veto (RV)</p>
+<p>Outros (OUT)</p>
+</div>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Regra - Grupo I</span></p>
+<div class="env-regra">
+<p><span>Regra de formação Grupo I</span> “SIGLA-TIPO” + “NÚMERO” + “-” + “ANO”</p>
+</div>
+<p><strong>Aonde</strong>:</p>
+<ul>
+<li><p><strong>SIGLA-TIPO</strong>: Sigla referente ao tipo conforme tabela. Ex.: CONS, EST, MPRON, NT, RV, OUT.</p></li>
+<li><p><strong>NÚMERO</strong>: Contador relativo ao tipo e ano. Máscara de 3 dígitos preenchidos com 0. Ex.: 001, 010, 100. Se maior que 3 dígitos, usar o número todo.</p></li>
+<li><p><strong>ANO</strong>: Ano da Solicitação com 4 dígitos. Ex.: 2021.</p></li>
+</ul>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Siglas - Grupo I</span></p>
+<div class="center">
+<div id="tab:cod:grupoi">
+<table>
+<caption><span id="tab:cod:grupoi" label="tab:cod:grupoi">[tab:cod:grupoi]</span> Codificação Grupo I.</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Tipo</strong></td>
+<td style="text-align: center;"><strong>Sigla</strong></td>
+<td style="text-align: center;"><strong>Exemplo</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Cons</strong>ulta (oria)</td>
+<td style="text-align: center;"><strong>CONS</strong></td>
+<td style="text-align: center;">CONS002-2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Est</strong>udo</td>
+<td style="text-align: center;"><strong>EST</strong></td>
+<td style="text-align: center;">EST080-2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>M</strong>inuta de <strong>Pron</strong>unciamento / Discurso</td>
+<td style="text-align: center;"><strong>MPRON</strong></td>
+<td style="text-align: center;">MPRON120-2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>N</strong>ota <strong>T</strong>écnica</td>
+<td style="text-align: center;"><strong>NT</strong></td>
+<td style="text-align: center;">NT010-2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>R</strong>elatório de <strong>V</strong>eto</td>
+<td style="text-align: center;"><strong>RV</strong></td>
+<td style="text-align: center;">RV010-2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Out</strong>ros</td>
+<td style="text-align: center;"><strong>OUT</strong></td>
+<td style="text-align: center;">OUT100-2021</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Exemplos - Grupo I</span></p>
+<ul>
+<li><p><strong>Exemplo 1 - Estudo</strong>:</p>
+<ol>
+<li><p>Suponha que o Solicitante peça uma nova OS do tipo “Estudo” e ano atual seja o ano de 2021.</p></li>
+<li><p>O sistema verifica que no ano de 2021 já existem 4 (quatro) “Estudos” cadastrados no sistema. Portanto, o número dessa nova OS será 4 + 1 = 5 com máscara NNN.</p></li>
+<li><p>Então o código desta nova solicitação será formado por “EST” + “005” + “-” + “2021” formando <strong>EST005-2021</strong>.</p></li>
+</ol></li>
+<li><p><strong>Exemplo 2 - Consulta</strong>:</p>
+<ol>
+<li><p>Suponha que o Solicitante peça uma nova OS do tipo “Consulta” e ano atual seja o ano de 2022.</p></li>
+<li><p>O sistema verifica que no ano de 2022 ainda não foram realizados Solicitações do tipo “Consulta” no sistema. Portanto, o número dessa nova OS será 0 + 1 = 1 com máscara NNN.</p></li>
+<li><p>Então o código desta nova solicitação será formado por “CONS” + “001” + “-” + “2022” formando <strong>CONS001-2022</strong>.</p></li>
+</ol></li>
+<li><p><strong>Exemplo 3 - Outro</strong>:</p>
+<ol>
+<li><p>Suponha que o Solicitante peça uma nova OS do tipo “Outro” e ano atual seja o ano de 2021.</p></li>
+<li><p>O sistema verifica que no ano de 2021 já existem 999 OSs do Tipo “Outro” cadastrados no sistema. Portanto, o número dessa nova OS será 999 + 1 = 1000.</p></li>
+<li><p>Então o código desta nova solicitação será formado por “OUT” + “1000” + “-” + “2021” formando <strong>OUT1000-2021</strong>.</p></li>
+</ol></li>
+</ul>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Regra de Formação Grupo II - Minuta de Proposição (MP)</span></p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Aplicação - Grupo II</span></p>
+<div class="env-aplica">
+<p><span>Aplica-se a Solicitações do Tipo “Minuta de Proposição (MP)” com os seguintes subtipos:</span></p>
+<p>Denúncia (DEN)</p>
+<p>Indicação (IND)</p>
+<p>Mensagem (MENS)</p>
+<p>Projeto de Decreto Legislativo (PDL)</p>
+<p>Proposta de Emenda à Lei Orgânica (PELO)</p>
+<p>Projeto de Lei (PL)</p>
+<p>Projeto de Lei Complementar (PLC)</p>
+<p>Projeto de Resolução (PR)</p>
+<p>Moção (MOC)</p>
+<p>Recurso (REC)</p>
+<p>Requerimento (RQ)</p>
+</div>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Regra - Grupo II</span></p>
+<div class="env-regra">
+<p><span>Regra de formação Grupo II - Minuta de Proposição (MP)</span> “MP” + “NÚMERO” + “SIGLA-SUBTIPO” + “ANO”</p>
+</div>
+<p><strong>Aonde</strong>:</p>
+<ul>
+<li><p><strong>MP</strong>: Texto fixo MP.</p></li>
+<li><p><strong>NÚMERO</strong>: Contador relativo ao tipo de Minuta de Proposição do subtipo escolhido e ano. Máscara de 3 dígitos preenchidos com 0. Ex.: 001, 010, 100. Caso o número ultrapasse 999 o número deve ser escrito com todos os dígitos necessários.</p></li>
+<li><p><strong>SIGLA-SUBTIPO</strong>: Sigla referente ao subtipo conforme tabela. Exs.: PL, PELO, etc.</p></li>
+<li><p><strong>ANO</strong>: Ano da Solicitação com 4 dígitos. Ex.: 2021.</p></li>
+</ul>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Siglas - Grupo II</span></p>
+<div class="center">
+<div id="tab:cod:grupoii">
+<table>
+<caption><span id="tab:cod:grupoii" label="tab:cod:grupoii">[tab:cod:grupoii]</span> Codificação Grupo II.</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Subtipo</strong></td>
+<td style="text-align: center;"><strong>Sigla</strong></td>
+<td style="text-align: center;"><strong>Exemplo</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Den</strong>úncia</td>
+<td style="text-align: center;"><strong>DEN</strong></td>
+<td style="text-align: center;">MP001DEN-2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Ind</strong>icação</td>
+<td style="text-align: center;"><strong>IND</strong></td>
+<td style="text-align: center;">MP020IND-2020</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Mens</strong>sagem</td>
+<td style="text-align: center;"><strong>MENS</strong></td>
+<td style="text-align: center;">MP220MENS-2020</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>P</strong>rojeto de <strong>D</strong>ecreto <strong>L</strong>egislativo</td>
+<td style="text-align: center;"><strong>PDL</strong></td>
+<td style="text-align: center;">MP010PDL-2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>P</strong>roposta de <strong>E</strong>menda à <strong>L</strong>ei <strong>O</strong>rgânica</td>
+<td style="text-align: center;"><strong>PELO</strong></td>
+<td style="text-align: center;">MP002PELO-2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>P</strong>rojeto de <strong>L</strong>ei</td>
+<td style="text-align: center;"><strong>PL</strong></td>
+<td style="text-align: center;">MP001PL-2022</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>P</strong>rojeto de <strong>L</strong>ei <strong>C</strong>omplementar</td>
+<td style="text-align: center;"><strong>PLC</strong></td>
+<td style="text-align: center;">MP001PLC-2022</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>P</strong>rojeto de <strong>R</strong>esolução</td>
+<td style="text-align: center;"><strong>PR</strong></td>
+<td style="text-align: center;">MP010PR-2022</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Moc</strong>ão (Moção)</td>
+<td style="text-align: center;"><strong>MOC</strong></td>
+<td style="text-align: center;">MP010MOC-2022</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>R</strong>e<strong>c</strong>urso</td>
+<td style="text-align: center;"><strong>RC</strong></td>
+<td style="text-align: center;">MP001RC-2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>R</strong>e<strong>q</strong>uerimento</td>
+<td style="text-align: center;"><strong>RQ</strong></td>
+<td style="text-align: center;">MP001RQ-2021</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Exemplos - Grupo II</span></p>
+<ul>
+<li><p><strong>Exemplo - MP do tipo PDL</strong>:</p>
+<ol>
+<li><p>Suponha que o Solicitante peça uma nova OS do tipo “Minuta de Proposição” do subtipo “Projeto de Decreto Legislativo” e ano atual seja o ano de 2021.</p></li>
+<li><p>O sistema verifica que no ano de 2021 já existem 19 minutas de proposição do subtipo “Projeto de Decreto Legislativo” cadastrados no sistema. Portanto, o número dessa nova OS será 19 + 1 = 20 com máscara NNN.</p></li>
+<li><p>Então o código desta nova solicitação será formado por “MP” + “020” + “PDL” + “-” + “2021” formando <strong>MP020PDL-2021</strong>.</p></li>
+</ol></li>
+</ul>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Regra de Formação Grupo III - Minutas de Parecer</span></p>
+<p>As solicitações do tipo “Minuta de Parecer” correspondem ao maior percentual de solicitações. Além disso, toda minuta de parecer está associada a uma Proposição e a uma Comissão.</p>
+<p>Dessa forma, a regra de formação para solicitações do tipo “Minuta de Parecer” é especial.</p>
+<p>Ela começa com a sigla do subtipo, informa o número e ano da proposição, uma letra para especificar a Comissão e um número sequencial.</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Aplicação - Grupo III</span></p>
+<div class="env-aplica">
+<p><span>Aplica-se a Solicitações do Tipo “Minuta de Parecer” com os seguintes subtipos:</span></p>
+<p>Denúncia (DEN)</p>
+<p>Indicação (IND)</p>
+<p>Mensagem (MENS)</p>
+<p>Projeto de Decreto Legislativo (PDL)</p>
+<p>Proposta de Emenda à Lei Orgânica (PELO)</p>
+<p>Projeto de Lei (PL)</p>
+<p>Projeto de Lei Complementar (PLC)</p>
+<p>Projeto de Resolução (PR)</p>
+<p>Moção (MOC)</p>
+<p>Recurso (REC)</p>
+<p>Requerimento (RQ)</p>
+</div>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Regra - Grupo III</span></p>
+<div class="env-regra">
+<p><span>Regra de formação Grupo III - Minuta de Parecer</span> “SIGLA-SUBTIPO” + “NÚMERO DA PROPOSIÇÃO” + “LETRA DA COMISSÃO” + “NÚMERO SEQUENCIAL” + “-” + “ANO DA PROPOSIÇÃO”.</p>
+</div>
+<p><strong>Aonde</strong>:</p>
+<ul>
+<li><p><strong>SIGLA-SUBTIPO</strong>: Sigla referente ao subtipo conforme tabela. Exs.: PL, PELO, etc.</p></li>
+<li><p><strong>NÚMERO DA PROPOSIÇÃO</strong>: Número da proposição associada com máscara NNN. Caso o número de dígitos da proposição seja maior do que 3, usar o número com todos os dígitos.</p></li>
+<li><p><strong>LETRA DA COMISSÃO</strong>: Cada Comissão tem uma letra associada conforme tabela.</p></li>
+<li><p><strong>NÚMERO SEQUENCIAL</strong>: Contador relativo ao tipo de Minuta de Parecer do subtipo escolhido, Comissão e Ano. Sem máscara. Caso o número ultrapasse 9 o número deve ser escrito com todos os dígitos necessários.</p></li>
+<li><p><strong>ANO DA PROPOSIÇÃO</strong>: Ano da <em>Proposição</em> com 4 dígitos. Ex.: 2021.</p></li>
+</ul>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Letras das Comissões - Grupo III</span></p>
+<p>Ver tabela <a href="#tab:cod:grupoiiil" data-reference-type="ref" data-reference="tab:cod:grupoiiil">5.3</a>.</p>
+<div class="center">
+<div id="tab:cod:grupoiiil">
+<table>
+<caption><span id="tab:cod:grupoiiil" label="tab:cod:grupoiiil">[tab:cod:grupoiiil]</span> Letras Comissões para Codificação Grupo III - Minutas de Parecer.</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Comissão</strong></td>
+<td style="text-align: center;"><strong>Letra</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CCJ - Comissão de Constituição e Justiça</td>
+<td style="text-align: center;"><strong>J</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CEOF - Comissão de Economia Orçamento e Finanças</td>
+<td style="text-align: center;"><strong>F</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CAS - Comissão de Assuntos Sociais</td>
+<td style="text-align: center;"><strong>S</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CDC - Comissão de Defesa do Consumidor</td>
+<td style="text-align: center;"><strong>C</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CDDHCEDP - Comissão de Defesa Direitos Humanos, Cidadania, Ética e Decoro Parlamentar</td>
+<td style="text-align: center;"><strong>H</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CAF - Comissão de Assuntos Fundiários</td>
+<td style="text-align: center;"><strong>A</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CESC - Comissão de Educação, Saúde e Cultura</td>
+<td style="text-align: center;"><strong>E</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CS - Comissão de Segurança</td>
+<td style="text-align: center;"><strong>G</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CDESCTMAT - Comissão de Desenvolvimento Econômico Sustentável, Ciência, Tecnologia, Meio Ambiente e Turismo</td>
+<td style="text-align: center;"><strong>D</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CFGTC - Comissão de Fiscalização Governança Transparência e Controle</td>
+<td style="text-align: center;"><strong>T</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CTMU - Comissão de Transporte e Mobilidade Urbana</td>
+<td style="text-align: center;"><strong>U</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CE - Comissão Especial</td>
+<td style="text-align: center;"><strong>P</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MD - Mesa Diretora</td>
+<td style="text-align: center;"><strong>M</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Siglas - Grupo III</span></p>
+<p>Ver tabela <a href="#tab:cod:grupoiii" data-reference-type="ref" data-reference="tab:cod:grupoiii">5.4</a>.</p>
+<div class="center">
+<div id="tab:cod:grupoiii">
+<table>
+<caption><span id="tab:cod:grupoiii" label="tab:cod:grupoiii">[tab:cod:grupoiii]</span> Siglas e Exemplos Grupo III.</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Subtipo</strong></td>
+<td style="text-align: center;"><strong>Sigla</strong></td>
+<td style="text-align: center;"><strong>Exemplo</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Den</strong>úncia</td>
+<td style="text-align: center;"><strong>DEN</strong></td>
+<td style="text-align: center;">DEN0118J1-2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Ind</strong>icação</td>
+<td style="text-align: center;"><strong>IND</strong></td>
+<td style="text-align: center;">IND1012J2-2020</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Mens</strong>sagem</td>
+<td style="text-align: center;"><strong>MENS</strong></td>
+<td style="text-align: center;">MENS080H9-2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>P</strong>rojeto de <strong>D</strong>ecreto <strong>L</strong>egislativo</td>
+<td style="text-align: center;"><strong>PDL</strong></td>
+<td style="text-align: center;">PDL095C5-2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>P</strong>roposta de <strong>E</strong>menda à <strong>L</strong>ei <strong>O</strong>rgânica</td>
+<td style="text-align: center;"><strong>PELO</strong></td>
+<td style="text-align: center;">PELO050J1-2022</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>P</strong>rojeto de <strong>L</strong>ei</td>
+<td style="text-align: center;"><strong>PL</strong></td>
+<td style="text-align: center;">PL140F4-2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>P</strong>rojeto de <strong>L</strong>ei <strong>C</strong>omplementar</td>
+<td style="text-align: center;"><strong>PLC</strong></td>
+<td style="text-align: center;">PLC010H1-2022</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>P</strong>rojeto de <strong>R</strong>esolução</td>
+<td style="text-align: center;"><strong>PR</strong></td>
+<td style="text-align: center;">PR008S1-2022</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Moc</strong>ão (Moção)</td>
+<td style="text-align: center;"><strong>MOC</strong></td>
+<td style="text-align: center;">MOC112J5-2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>R</strong>e<strong>c</strong>urso</td>
+<td style="text-align: center;"><strong>RC</strong></td>
+<td style="text-align: center;">RC001J1-2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>R</strong>e<strong>q</strong>uerimento</td>
+<td style="text-align: center;"><strong>RQ</strong></td>
+<td style="text-align: center;">RQ001J2-2021</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Exemplos - Grupo III</span></p>
+<ul>
+<li><p><strong>Exemplo 1</strong>:</p>
+<ol>
+<li><p>Suponha que o Solicitante peça uma nova <strong>“Minuta de Parecer”</strong> do subtipo <strong>“Projeto de Lei Complementar”</strong> para a Proposição <strong>85/2021</strong> para a <strong>Comissão de Assuntos Sociais (CAS)</strong>.</p></li>
+<li><p>O sistema verifica que já existem <strong>3 (três)</strong> solicitações de “Minuta de Parecer” do subtipo “Projeto de Lei Complementar” para a Proposição 85/2021 para a Comissão de Assuntos Sociais (CAS). Então essa nova será a 3 + 1 = 4 (quarta) solicitação desse tipo, subtipo para essa proposição e comissão.</p></li>
+<li><p>Então o código desta nova solicitação será formado da seguinte forma: “PLC” + “085” + “S” + “4” + “-” + “2021” formando <strong>PLC085S4-2021</strong>.</p></li>
+</ol></li>
+<li><p><strong>Exemplo 2</strong>:</p>
+<ol>
+<li><p>Suponha que o Solicitante peça uma nova <strong>“Minuta de Parecer”</strong> do subtipo <strong>“Projeto de Resolução”</strong> para a Proposição <strong>67/2021</strong> para a <strong>Comissão de Desenvolvimento Econômico Sustentável, Ciência, Tecnologia, Meio Ambiente e Turismo (CDESCTMAT)</strong>.</p></li>
+<li><p>O sistema verifica que não existem solicitações de “Minuta de Parecer” do subtipo “Projeto de Resolução” para a Proposição 67/2021 para a Comissão de Desenvolvimento Econômico Sustentável, Ciência, Tecnologia, Meio Ambiente e Turismo (CDESCTMAT). Então essa nova será a 0 + 1 = 1 (primeira) solicitação desse tipo, subtipo para essa proposição e comissão.</p></li>
+<li><p>Então o código desta nova solicitação será formado da seguinte forma: “PR” + “067” + “D” + “1” + “-” + “2021” formando <strong>PR067D1-2021</strong>.</p></li>
+</ol></li>
+</ul>
+<h1 id="sprints">SPRINTS</h1>
+<h2 id="sprint-0">Sprint 0</h2>
+<p>Lista do Escopo</p>
+<p>Login/Logout Gerenciar Usuário Gerenciar Perfil Solicitar Ordem de Serviço Gerenciar Unidades Gerenciar Ordens de Serviço Gerenciar Pacotes de Artefatos Gerenciar Artefatos Log e Auditoria</p>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Escopo</span></p>
+<p>Escopo inicial.</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Login/Logout</span></p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Gerenciar Usuário</span></p>
+<ul>
+<li><p>Listar</p></li>
+<li><p>Incluir</p></li>
+<li><p>Editar</p></li>
+<li><p>Visualizar</p></li>
+<li><p>Excluir</p></li>
+<li><p>Pesquisar</p></li>
+<li><p>Vincular Perfil</p></li>
+</ul>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Gerenciar Perfil</span></p>
+<ul>
+<li><p>Listar</p></li>
+<li><p>Incluir</p></li>
+<li><p>Editar</p></li>
+<li><p>Visualizar</p></li>
+<li><p>Excluir</p></li>
+<li><p>Pesquisar</p></li>
+</ul>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Solicitar Ordem de Serviço</span></p>
+<ul>
+<li><p>Listar</p></li>
+<li><p>Incluir</p></li>
+<li><p>Visualizar</p></li>
+<li><p>Cancelar</p></li>
+</ul>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Gerenciar Unidades</span></p>
+<ul>
+<li><p>Listar</p></li>
+<li><p>Incluir</p></li>
+<li><p>Editar</p></li>
+<li><p>Visualizar</p></li>
+<li><p>Excluir</p></li>
+<li><p>Pesquisar</p></li>
+</ul>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Gerenciar Ordens de Serviço</span></p>
+<ul>
+<li><p>Listar</p></li>
+<li><p>Editar</p></li>
+<li><p>Visualizar</p></li>
+<li><p>Pesquisar</p></li>
+<li><p>Filtrar</p></li>
+<li><p>Gerar Relatório</p></li>
+</ul>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Gerenciar Pacotes de Artefatos</span></p>
+<ul>
+<li><p>Listar</p></li>
+<li><p>Incluir</p></li>
+<li><p>Excluir</p></li>
+<li><p>Pesquisar</p></li>
+</ul>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Gerenciar Artefatos</span></p>
+<ul>
+<li><p>Listar</p></li>
+<li><p>Incluir</p></li>
+<li><p>Editar</p></li>
+<li><p>Excluir</p></li>
+<li><p>Pesquisar</p></li>
+</ul>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Log e Auditoria</span></p>
+<ul>
+<li><p>Pesquisar</p></li>
+</ul>
+<h2 id="sprint-1">Sprint 1</h2>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Levantamento de Requisitos</span></p>
+<p>Por se tratar da primeira Sprint, será dado o prazo de 30 dias, dos quais os 15 primeiros serão dedicados apenas ao levantamento de requisitos e os 15 finais serão dedicados a construção do software, e levantamento dos requisitos remanescentes. Ao final de 15 dias será feita repactuação do escopo da Ordem de serviço, e o escopo do que será efetivamente construído.</p>
+<p>Serão levantados requisitos para as seguintes funcionalidades:</p>
+<p>Login/Logout;</p>
+<p>Gerenciar Usuário;</p>
+<p>Gerenciar Perfil;</p>
+<p>Solicitar Ordem de Serviço;</p>
+<p>Estimativa de esforço: 111 PF</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Login/Logout</span></p>
+<p>Capacidade do próprio Gabinete escolher os servidores que poderão fazer solicitações em nome desse gabinete mesmo que eles não esteja lotado no Gabinete do Deputado.</p>
+<p>Solução: Tela de Login se mantém a mesma.</p>
+<p>Porém, se o usuário Solicitante não pertence àquela Unidade escolhida. A próxima coisa a checar é se o usuário tem permissão de acessar o ambiente do Solicitante.</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Gerenciar Usuário</span></p>
+<p>Incluir a Unidade (UCJ, UDA... ASSEL, EXTERNO)</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Gerenciar Perfil</span></p>
+<p>Perfil Padrão Para Externo da Assel = Cuja Unidade é EXTERNO Perfil Padrão Para Interno da Assel = Cuja Unidade Não é EXTERNO</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Solicitar Ordem de Serviço</span></p>
+<p>Um cancelar só mas com comportamentos diferentes de acordo com o Estado da OS.</p>
+<h2 id="sprint-2">Sprint 2</h2>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Pré-Planejamento</span></p>
+<h1 id="parte-reuniao">REUNIÕES</h1>
+<h2 id="sprint-1-1">Sprint 1</h2>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Reunião 06 08 21 - Ronie, Gilberto e Pedro</span></p>
+<ul>
+<li><p>Nomenclatura: Vamos chamar de OS ou de Solicitação? O tempo todo?</p></li>
+<li><p>Login/Logout</p>
+<p>Duvida para Pedro: Como ocorre o cadastro de usuários, é um por um?</p>
+<p>Duvida para Gilberto: Pode ocorrer de um Usuário dentro do Gabinete não poder ter acesso ao ambiente de Solicitação/Acompanhamento de OSs? Espero que não.</p>
+<p>Solução: Fica do jeito que está e haverá a possibilidade dentro do sistema de manualmente vincular usuários ao Cadastro de Unidades Solicitantes.</p>
+<p>O login não muda, porém, haverá uma etapa a mais de verificação caso o usuário que tenta acessar aquela unidade não esteja naquela unidade. Será verificar dentro dos usuários vinculados àquela unidade</p>
+<p>Sabe de uma coisa?</p>
+<p>A melhor solução é criar um procedimento via SEI para que Unidades Solicitantes e Usuários sejam cadastradas no sistema manualmente.</p>
+<p>Unidades Solicitantes podem permitir quem eles quiserem.</p>
+<p>Um Usuário pode estar cadastrado em mais de uma Unidade Solicitante.</p>
+<p>Uma Unidade Solicitante pode ter vários Usuários Cadastrados.</p>
+<p>O combobox da Unidade vai trazer apenas as Unidades Solicitantes Cadastradas no Sistema.</p>
+<p>O sistema verifica que aquele usuário está vinculado à Unidade que ele quer entrar e autoriza ou não o acesso.</p>
+<p>Teremos que fazer um formulário manual no SEI para que uma unidade que quer fazer pedidos à ASSEL cadastre-se e envie uma lista de usuários permitidos.</p>
+<p>Isso resolve todos os problemas.</p></li>
+<li><p>Estados das OSs</p></li>
+<li><p>Inclusão da funcionalidade &lt;&lt;Editar&gt;&gt; dentro de &lt;&lt;Solicitar Ordem de Serviço&gt;&gt;</p>
+<p>Dentro da funcionalidade &lt;&lt;Solicitar Ordem de Serviço&gt;&gt;</p>
+<p>Além de: Listar, Incluir, Visualizar, Cancelar</p>
+<p>Incluir: Editar</p>
+<p>A ação de Editar só será habilitada caso o Estado da OS retorne para o Solicitante com o Estado "Pendência". E aí ele teria de poder reabrir a OS e incluir novas informações para resolver a pendência. Após isso, ele devolve a OS para o Apoio.</p>
+<p>Nesse caso, como a OS já está autorizada, nada é preciso ocorrer.</p></li>
+<li><p>Dúvida para Pedro: Perguntar aos desenvolvedores se é possível incluir no Processo via SEI uma mensagem do sistema.</p></li>
+<li><p>Modelo de Documento Para Cancelar OS Válida</p></li>
+<li><p>Estados das OSs =&gt; Mostrar Tabela</p></li>
+<li><p>Dentro de Gerenciar OS temos que incluir funcionalidades:</p>
+<p>Baixar Artefatos</p>
+<p>Incluir Anexos</p>
+<p>Eu quero outra coisa também. Na hora de incluir os Anexos, quero que cada anexo tenha associado a ele os seguintes atributos: Quem incluiu? Data e Hora da Inclusao? É artefato final?</p></li>
+</ul>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Reunião 09 08 21 - Ronie e Pedro</span></p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Mudanças no Gerenciar Unidades Solicitantes</span></p>
+<p>Fica apenas Gerenciar Unidades.</p>
+<p>Ao cadastrar uma unidade, deve-se especificar se a Unidade é Interna ou Externa.</p>
+<p>Default é ser externa.</p>
+<p>Coloca um Boolean Interno? Não = Falso = 0 é o Padrão.</p>
+<p>Sim = True = 1 é porque é Interna.</p>
+<p>E aí deixa pré-cadastrada as 6 unidades internas: ASSEL, UDA, UCJ, UEF, URP, USE;</p>
+<div class="tcolorbox">
+<p>As unidades externas serão cadastradas ao longo do uso do sistema através de uma solicitação formal dessas unidades via SEI na qual deverá ser informado um (ou mais) usuários administradores.</p>
+</div>
+<p><strong>Campos do Gerenciar Unidades</strong></p>
+<ul>
+<li><p>SIGLA : String;</p></li>
+<li><p>Nome da Unidade: String;</p></li>
+<li><p>Interno: Booleano;</p></li>
+</ul>
+<p>A Cardinalidade do Usuário e das Unidades será de muitos para muitos. Ou seja, um usuário pode ser cadastrado em várias unidades. E uma unidade pode conter diversos usuários cadastrado nela.</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Mudanças na Tela de Login</span></p>
+<p>Remover Combobox de escolha da Unidade.</p>
+<div class="tcolorbox">
+<p><strong>Unidades Internas da ASSEL (ASSEL, UDA, UCJ, etc) tb fazem solicitações à ASSEL?</strong> Independente da resposta, isto pode ser possível no futuro. Por enquanto não será, mas se precisar ser, será fácil fazer essa alteração.</p>
+<p>SIM. Isso será tratado.</p>
+<p><strong>Existe a possibilidade de existir uma pessoa com trabalho em mais de uma unidade da ASSEL. Por exemplo? Trabalhar na ASSEL e na UDA ao mesmo tempo? Ou trabalhar na UDA e revisar na UCJ?</strong> O sistema será modelado para permitir que isso seja feito, mas isso não vai ocorrer nesse início.</p>
+<p>SIM. Esse caso será possível.</p>
+</div>
+<div class="tcolorbox">
+<p>A tela de login terá apenas o login e a senha.</p>
+<p>Ao fazer Login:</p>
+<ol>
+<li><p>O sistema verifica se o usuário está cadastrado. Se não, não faz login, se sim segue com a verificação. Ao verificar, a pesquisa já trás em quais unidades o Usuário foi cadastrado.</p></li>
+<li><p>Se existir um ou mais, adiciona essas unidades na lista.</p></li>
+<li><p>O sistema então verifica os resultados da lista:</p>
+<ul>
+<li><p>Tamanho da Lista = 0. Não entra pois não tem unidade associada. Mensagem de erro.</p></li>
+<li><p>Apenas 1 unidade. Loga na tela dessa unidade direto. Seja externo ou interno.</p></li>
+<li><p>Mais de uma unidades. Entra na tela de escolha da unidade que o usuário terá de escolher em qual unidade deseja logar-se. As possíveis unidades externas e internas aparecerão juntas na lista.</p></li>
+</ul></li>
+</ol>
+</div>
+<figure>
+<img src="fig/S1/fig-login.png" id="fig:login" style="width:80.0%" alt="Tela de Login Principal" /><figcaption aria-hidden="true">Tela de Login Principal</figcaption>
+</figure>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Mudanças no Gerenciar Usuário</span></p>
+<p>Um Usuário pode estar vinculado com diversas Unidades.</p>
+<p>Então não existe mais o tipo "Externo".</p>
+<p>Pedro precisa fazer algumas mudanças lá.</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Gerenciar Perfil</span></p>
+<p>Parece OK</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Gerenciar Ordem de Serviço</span></p>
+<ol>
+<li><p>Listar - Cancelar e Abortar saem e agora é só Cancelar. O sistema verifica qual é o caso e quais são as operações.</p></li>
+<li><p><strong>Incluir e Visualizar</strong></p>
+<ul>
+<li><p>Quero uma tela só para incluir os Anexos um de cada vez.</p>
+<p>A estrutura de um Artefato é:</p>
+<ul>
+<li><p>Anexo (Arquivo PDF, Imagem, Video, Etc...) - User Escolhe;</p></li>
+<li><p>Quem incluiu - Sistema registra;</p></li>
+<li><p>Data e Hora da Ultima Modificação - Sistema Registra;</p></li>
+<li><p>Nivel de Acesso (Publico ou Restrito) - User Escolhe;</p></li>
+<li><p>Justificativa Legal Se Restrito - User Escolhe;</p></li>
+<li><p>Tipo de Artefato (Inicial, Final, Pensar depois em mais casos) - Sistema Define;</p></li>
+<li><p>Descrição - User Escolhe;</p></li>
+</ul></li>
+<li><p>Os anexos deverão ser tratados já como Artefatos do Pacote de Artefatos vinculado a essa OS.</p></li>
+<li><p>A Especificação de Trabalho deve mostrar o <strong>Textofato</strong> do Tipo “Especificação de Trabalho” mais recente.</p>
+<p>A estrutura de um Textofato é:</p>
+<ul>
+<li><p>Texto - User Escolhe;</p></li>
+<li><p>Quem incluiu - Sistema Registra;</p></li>
+<li><p>Data e Hora da Inclusão - Sistema Registra;</p></li>
+<li><p>Tipo de Textofato - Sistema Define;</p></li>
+</ul></li>
+</ul></li>
+</ol>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Reunião 13 08 21 - Ronie e Gilberto</span></p>
+<p>Pauta: Segundo Gilberto, há uma situação que ocorreu essa semana, que temos que saber se é possível nós darmos entrada diretamente para um determinado setor. Exemplo ocorrido: Memo circular para a Assessoria Legislativa que gere algum documento.</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Outros itens</span></p>
+<p>Modelo de Termo de Cancelamento</p>
+<p><span>-2ex -0.1ex -.2ex</span> <span>.2ex .2ex </span> <span><strong></strong></span><span>Dar entrada a uma nova OS pelo Apoio</span></p>
+<div class="tcolorbox">
+<p>A funcionalidade “Solicitar OS” desenvolvida parte do pressuposto que o próprio Solicitante vai fazer a solicitação.</p>
+<p>Poderíamos resolver isso fazendo uma nova funcionalidade “Solicitar OS” exclusiva para o pessoal do Apoio.</p>
+<p>Ela terá elementos parecidos com o outro, só que haverá a possibilidade do Apoio mesmo incluir informações.</p>
+<p>Temos que pegar exemplos disso para modelar ou talvez aproveitar o que já está modelado.</p>
+</div>
+<h2 id="ajustes">Ajustes</h2>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Reunião 24 08 21 - Ronie e Gilberto</span></p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Codificação das OSs</span></p>
+<p>Gilberto me envia tabela contendo forma de nomear os arquivos.</p>
+<p>Estou pensando se adotamos o mesmo modelo para nomear as OSs.</p>
+<p>Esse nome pode mudar?</p>
+<p>Pode mudar. Por isso isso não pode ser usado como chave primária.</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Outros</span></p>
+<h2 id="ronie-e-gilberto">Ronie e Gilberto</h2>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Reunião 24 08 21 - Ronie e Gilberto</span></p>
+<p>O que é feito pelo Apoio?</p>
+<p>Quais são os requisitos para um pedido seguir em frente? Ie, ser distribuido?</p>
+<p>- Não pode estar em Duplicidade.</p>
+<p>&gt;&gt; Pedidos duplicados pelo mesmo Solicitante;</p>
+<p>&gt;&gt; Consulta para ver se não há algum pedido.</p>
+<p>Mensagem:</p>
+<div class="center">
+<p><span style="background-color: blue!10"> <strong>TODO</strong> : <span id="TargetTodo\arabic{CounterTodo}">Requisito de mensagens a cada despacho</span> </span></p>
+</div>
+<div class="center">
+<p><span style="background-color: blue!10"> <strong>TODO</strong> : <span id="TargetTodo\arabic{CounterTodo}">Requisito de vincular a OS com outras</span> </span></p>
+</div>
+<p>No caso de minuta de parecer:</p>
+<p>- Pedido vir com a documentação de relatoria correta.</p>
+<p>- Conforme o tema, o chefe analisa para qual Unidade distribuir.</p>
+<p>No caso de estudos:</p>
+<p>- Pode ser necessário algum anexo.</p>
+<h2 id="próximas-reuniões">Próximas Reuniões</h2>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Itens para discutir nas próximas reuniões</span></p>
+<div class="tcolorbox">
+<p>Como tratar a mudança de Deputados? Cadastrar novas unidades? Gabinetes novos terão acesso ao histórico dos Gabinetes Antigos?</p>
+<p>Conversar sobre isso com mais de uma pessoa.</p>
+</div>
+<div class="tcolorbox">
+<p>Ver o que existe para pensar no que fazer.</p>
+</div>
+<div class="center">
+<p><span style="background-color: blue!10"> <strong>TODO</strong> : <span id="TargetTodo\arabic{CounterTodo}">OS de Gabinetes estão ligadas ao nome do Deputado. Talvez incluir esse campo.</span> </span></p>
+</div>
+<h1 id="planejamento-futuro">PLANEJAMENTO FUTURO</h1>
+<h2 id="planejamento-futuro-1">Planejamento Futuro</h2>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Plano</span></p>
+<p>Esses 4 ficaram na 1 Sprint:</p>
+<p>Login/Logout Gerenciar Usuário Gerenciar Perfil Solicitar Ordem de Serviço</p>
+<p>Gerenciar Unidades tem que estar na Próxima</p>
+<p>Importante: Gerenciar Ordens de Serviço</p>
+<p>Fazer juntos: Gerenciar Pacotes de Artefatos Gerenciar Artefatos</p>
+<p>Log e Auditoria por último</p>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Telas que serão necessárias</span></p>
+<p>Ver modelagem-telas que estou criando.</p>
+<ul>
+<li><p>Duas telas para a ASSEL</p>
+<ul>
+<li><p>Tela para Analisar (e aprovar) OSs;</p></li>
+<li><p>Tela para Aprovar OSs Analisadas;</p></li>
+</ul>
+<p>Temos aqui dois Papéis: O Apoio e o Chefe.</p>
+<ul>
+<li><p>Chefe = Perfil de Supervisor</p></li>
+<li><p>Apoio = Perfil de Apoio</p></li>
+</ul></li>
+</ul>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Tela Principal da ASSEL</span></p>
+<p>Penso numa tela onde haverá um tabela contendo as OSs que <em>estão</em> na ASSEL aguardando providências.</p>
+<p>Então temos um “Estado Interno” da ASSEL ou “Classes” da OS que podem ser:</p>
+<p>Classes das OSs dentro da ASSEL:</p>
+<ul>
+<li><p><strong>Recebida</strong> ou <strong>Para Analisar</strong> - OSs recebidas na ASSEL e que aguardam uma providência.</p>
+<p>Dentro dessa Classe temos as Subclasses baseadas em <em>De onde a OS veio?</em> e para isso, as Subclasses fariam com que as Linhas da Tabela tivessem cores.</p>
+<ul>
+<li><p>Vermelho - OS chegou na ASSEL originando-se de um Solicitante;</p></li>
+<li><p>Amarelo - OS chegou na ASSEL pela via do “Retorno” de uma das Unidades Internas (UDA, Etc...);</p></li>
+<li><p>Verde - OS chegou na ASSEL pela via da “Conclusão” de uma das Unidades Internas (UDA, Etc...);</p></li>
+</ul></li>
+<li><p><strong>Para Cancelar</strong> - Trata de OS já analisada e assumiu o estado “Para Cancelar”. A linha da tabela ainda tem a cor da subclasse original, contudo, a fonte torna-se negrito. Essa OS precisa receber o consentimento do “Perfil de Chefe” da ASSEL para que, de fato, a OS seja cancelada e siga para frente.</p></li>
+<li><p><strong>Para Pendência</strong> - Trata de OS já analisada e assumiu o estado “Para Pendencia”. A linha da tabela ainda tem a cor da subclasse original, contudo, a fonte torna-se negrito. Essa OS precisa receber o consentimento do “Perfil de Chefe” da ASSEL para que, de fato, a OS siga seu caminho.</p></li>
+<li><p><strong>Para Distribuir</strong> - Idem.</p></li>
+<li><p><strong>Para Entregar</strong> - Idem.</p></li>
+</ul>
+<p>Outra forma de classificar as OSs dentro da ASSEL e, portanto separá-las, são em OSs não analisadas, e OSs analisadas e esperando aprovação do “Perfil de Chefe”.</p>
+<p>Podemos criar duas Telas separadas.</p>
+<p>Na primeira estarão as OSs não analisadas. Na outra, as OSs analisadas e aguardando aprovação para seguir seu caminho.</p>
+<p>Na primeira, cujo acesso será do Apoio, contem as OSs não analisadas. De forma que o apoio possa analisar e dar um destino a elas até que a tabela fique sem nada. O trabalho do Apoio é justamente analisar OSs dessa tabela.</p>
+<p>Na outra, acessa somente quem tem o “Perfil de Chefe” e o objetivo é verificar a análise que foi feita aprovando ou não a análise feita e dando seguimento às OSs.</p>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Backlog Futuro</span></p>
+<p>Aqui vou adicionando funcionalidades pedidas pelos usuários que deverão se tornar funcionalidades para o futuro.</p>
+<ul>
+<li><p><a href="#r1308-1">Capacidade do Apoio fazer OS em nome de outro Solicitante</a></p></li>
+</ul>
+<h2 id="planejamento-dos-perfis">Planejamento dos Perfis</h2>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Unidade ASSEL</span></p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Perfil ASSEL Supervisor</span></p>
+<p>Esse é o perfil do Chefe da Assel (e quem mais ele quiser).</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Perfil ASSEL Apoio</span></p>
+<p>Esse é o perfil de quem trabalha na Assel com o Apoio.</p>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Unidades Internas</span></p>
+<p>São os Perfis para Usuários membros das Unidades Internas da ASSEL: UDA, etc...</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Perfil Unidade Supervisor</span></p>
+<p>São os Chefes das Unidades (e quem mais eles indicarem).</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Perfil Unidade Consultor Legislativo Elaborador</span></p>
+<p>São os Consultores Legislativos que trabalham com a Elaboração de Artefatos.</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Perfil Unidade Consultor Legislativo Revisor</span></p>
+<p>São os Consultores Legislativos que trabalham com a Revisão de Artefatos.</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Perfil Unidade Consultor Legislativo</span></p>
+<p>Fazem o mesmo que os dois perfis anteriores, isto é, Perfil Unidade Consultor Legislativo Elaborador e Perfil Unidade Consultor Legislativo Revisor.</p>
+<div class="tcolorbox">
+<p>Normalmente, os Consultores Legislativos terão ambos os Perfis de Elaboradores e Revisores.</p>
+</div>
+<div class="tcolorbox">
+<p>Terá que ter Perfis capazes de puxar OSs ou não.</p>
+</div>
+<div class="tcolorbox">
+<p>Talvez seria bom classificar os Perfis Por Tipo com os seguintes tipos: ASSEL, INTERNO e SOLICITANTE.</p>
+<p>Não vamos fazer assim.</p>
+</div>
+<div class="tcolorbox">
+<p>Inserir uma caixa de ajuda embaixo da tela.</p>
+<p>Por enquanto vou descartar isso.</p>
+</div>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Unidades Externas = Solicitantes</span></p>
+<p>São os Perfis de Unidades Solicitantes.</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Perfil Solicitante Supervisor</span></p>
+<p>São usuários capazes de fazer solicitações e, principalmente, <strong>incluir e remover novos usuários da sua unidade</strong> e <strong>escolher para eles dentre os perfis possíveis</strong>: Supervisor, Normal e Restrito.</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Perfil Solicitante Normal</span></p>
+<p>São os demais Solicitantes do sistema capazes de fazer tudo exceto incluir novos usuários na unidade.</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Perfil Solicitante Restrito</span></p>
+<p>São usuários com o Perfil mais restrito capaz de ver os estados das OSs mas não conseguem fazer Solicitação de OSs nem tampouco cancelar OSs. Eles apenas veem.</p>
+<h1 id="anotações-funcionalidades">ANOTAÇÕES FUNCIONALIDADES</h1>
+<h2 id="funcionalidades-futuras">Funcionalidades Futuras</h2>
+<div class="center">
+<div id="tab:legenda:funcionalidades">
+<table>
+<caption><span id="tab:legenda:funcionalidades" label="tab:legenda:funcionalidades">[tab:legenda:funcionalidades]</span> Legendas de Funcionalidades.</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Estado</strong></td>
+<td style="text-align: center;"><strong>Sigla</strong></td>
+<td style="text-align: center;"><strong>Ícone</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Requisitos a Levantar</td>
+<td style="text-align: center;">RLN</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Requisitos Levantado</td>
+<td style="text-align: center;">RLS</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Requisito Novo a Aprovar</td>
+<td style="text-align: center;">RLV</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Funcionalidade Construída</td>
+<td style="text-align: center;">FCS</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Funcionalidade Não Construída</td>
+<td style="text-align: center;">FCN</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Login/Logout - TODOS</span></p>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Gerenciar Usuário - ADM/APOIO DA ASSEL</span></p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Listar</span></p>
+<p>Sigla</p>
+<p>Nome Completo</p>
+<p>Divisão: Interna ou Externa</p>
+<p>Quantidade de Usuários Participantes</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Incluir</span> <span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Editar</span> <span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Visualizar</span> <span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Excluir</span> <span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Pesquisar</span> <span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Vincular Perfil</span></p>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Gerenciar Perfil - ADM DA ASSEL</span></p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Listar</span> <span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Incluir</span> <span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Editar</span> <span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Visualizar</span> <span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Excluir</span> <span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Pesquisar</span></p>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Solicitar Ordem de Serviço - SOLICITANTE</span></p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Listar</span></p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span><span style="color: red">Incluir pelo Solicitante</span> </span></p>
+<p>Esse é o original.</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span><span style="color: red">Incluir pelo Apoio</span> </span></p>
+<p>Esse foi pedido.</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Visualizar</span> <span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Cancelar</span></p>
+<div class="center">
+<p><span style="background-color: blue!10"> <strong>toPedro</strong> : <span id="TargetTopedro\arabic{CounterTopedro}">Melhorar Solicitar OS - Parte de como funciona no SEI</span> </span></p>
+</div>
+<ol>
+<li><p>Processo é gerado na Unidade do Sei pertencente ao Solicitante.</p></li>
+<li><p>O Arquivo da OS é gerado junto com os anexos e espera-se que ele seja assinado.</p></li>
+<li><p>Depois que é assinado, nada mais é feito.</p></li>
+<li><p>O sistema manda o processo para a ASSEL.</p></li>
+<li><p>Recebe na ASSEL, coloca um Acompanhamento Especial (ou algo assim) e arquiva (ou nao). Esse comportamento tem que ser conversado com o Gilberto.</p>
+<div class="center">
+<p><span style="background-color: blue!10"> <strong>toGil</strong> : <span id="TargetTogil\arabic{CounterTogil}">Qual comportamento deve ocorrer?</span> </span></p>
+</div></li>
+</ol>
+<div class="center">
+<p><span style="background-color: blue!10"> <strong>TODO</strong> : <span id="TargetTodo\arabic{CounterTodo}">Vai precisar editar OS para incluir anexos caso ocorra pendencia</span> </span></p>
+</div>
+<p>.</p>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span><span style="color: red">Gerenciar Usuários do Solicitante</span> - SOLICITANTE</span></p>
+<div class="center">
+<p><span style="background-color: blue!10"> <strong>TODO</strong> : <span id="TargetTodo\arabic{CounterTodo}">Tela nova</span> </span></p>
+</div>
+<p>Essa tela deve estar disponível por cada Solicitante para que eles possam gerenciar seus próprios usuários.</p>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Gerenciar Unidades - ADM/APOIO ASSEL</span></p>
+<div class="tcolorbox">
+<p>Futuramente, essa Gerenciar Unidade pode ter de passar por algumas revisões para comportar a característica de coisas que podem ser necessárias quando ocorrem eleições.</p>
+<p>O vínculo dos Gabinetes é com os Deputados.</p>
+<p>Talvez seja necessário ATIVAR e DESATIVAR unidades inteiras. Ou seja, um Deputado que saiu terá sua unidade de seu Gabinete desativado e poderá ser reativado depois, caso reeleito no futuro, e assim terá de volta o histórico de Solicitações feitas por ele.</p>
+<p>Aqui é importante ressaltar que pode-se perder o vínculo com o SEI.</p>
+<p>O ideal é perguntar para o Jefferson como isso será feito no SEI e talvez espelhar o comportamento para o sistema.</p>
+</div>
+<div class="tcolorbox">
+<p>Ao conversar com o Gilberto, ele diz que o histórico do solicitante no caso de ser Gabinete é atrelado ao Deputado.</p>
+<p>Assim, o Deputado tem uma pasta.</p>
+<p>Seria bom ver com o Jefferson mesmo assim como isso se dará no SEI.</p>
+</div>
+<div class="center">
+<p><span style="background-color: blue!10"> <strong>TODO</strong> : <span id="TargetTodo\arabic{CounterTodo}">Perguntar isso ao Jefferson</span> </span></p>
+</div>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Listar</span></p>
+<p>SIGLA</p>
+<p>NOME</p>
+<p>Divisão</p>
+<p>Quantidade de Usuários Ativos Vinculados à Unidade</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Incluir</span></p>
+<p>Elas terão que vir do SEI.</p>
+<p>Inclusão Individual: Lista com campo de pesquisa.</p>
+<p>Seleciona apenas 1.</p>
+<p>Combobox <em>Origem</em> com 2 Opções: Externo Interno Externo é o Default</p>
+<p>Salvar</p>
+<p>Tem que ter vinculação com a Unidade do SEI.</p>
+<p>Não pode criar a Unidade Duas Vezes;</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Editar</span></p>
+<p>Permitindo Ações</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Visualizar</span></p>
+<p>Não permitiria Ação</p>
+<p>Nome</p>
+<p>Sigla</p>
+<p>Origem: Interno ou Externo</p>
+<p>Apresentar a Lista de Usuários Vinculados Áquela Unidade</p>
+<p>Filtro</p>
+<p>Ativar / Desativar aqui nessa Visualização</p>
+<p>Desvincular dessa Unidade () Não</p>
+<p>Imprimir um PDF (Usuários Ativos da Unidade)</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Excluir</span></p>
+<p>Não pode excluir se tiverem usuários vinculados à Unidade.</p>
+<p>Inicialmente tornar impossível excluir as Unidades Internas que já devem vir pré-cadastradas.</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Pesquisar</span></p>
+<p>Filtro da Lista</p>
+<div class="center">
+<p><span style="background-color: blue!10"> <strong>TODO</strong> : <span id="TargetTodo\arabic{CounterTodo}">Ver questão da eleição - O que acontece com os Gabinetes?</span> </span></p>
+</div>
+<div class="center">
+<p><span style="background-color: blue!10"> <strong>TODO</strong> : <span id="TargetTodo\arabic{CounterTodo}">Questão de ter usuários sem unidade.</span> </span></p>
+</div>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Gerenciar Ordens de Serviço da Assel - ASSEL</span></p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Listar</span> <span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Editar</span> <span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Visualizar</span> <span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Pesquisar</span> <span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Filtrar</span> <span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Gerar Relatório</span></p>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span><span style="color: red">Gerenciar Ordens de Serviço das Unidades</span> - UNIDADES</span></p>
+<div class="center">
+<p><span style="background-color: blue!10"> <strong>TODO</strong> : <span id="TargetTodo\arabic{CounterTodo}">Tela Nova</span> </span></p>
+</div>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Gerenciar Pacotes de Artefatos </span></p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Listar</span> <span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Incluir</span> <span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Excluir</span> <span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Pesquisar</span></p>
+<p>Essa funcionalidade é uma das mais importantes pois acho que aqui devemos fazer a pesquisa textual dentro dos artefatos.</p>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Gerenciar Artefatos </span></p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Listar</span> <span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Incluir</span> <span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Editar</span> <span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Excluir</span> <span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Pesquisar</span></p>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Log e Auditoria </span></p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Pesquisar</span></p>
+<h2 id="telas-adicionais">Telas Adicionais</h2>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Tela de Pesquisa de Artefatos </span></p>
+<h1 id="detalhamento-funcionalidades">DETALHAMENTO FUNCIONALIDADES</h1>
+<h2 id="integração-sei-solicitar-os">Integração SEI Solicitar OS</h2>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Detalhamento do Cenário Incluir Solicitação</span></p>
+<p>Na EPE: <strong>“Solicitar Ordem de Serviço”</strong></p>
+<p>Na funcionalidade: <strong>“02 - Incluir Solicitação”</strong></p>
+<div class="tcolorbox">
+<p>Quando o usuário solicita "Enviar para Assinatura"</p>
+<p>Então o sistema realiza solicitação em nome da unidade selecionada pelo o Usuário</p>
+<p><strong>E gera um processo no SEI</strong></p>
+<p>E gera um arquivo html padrão da solicitação para ser assinado no SEI</p>
+<p>E envia os anexos</p>
+<p>E gera bloco de assinatura no SEI</p>
+<p>E torna o status da solicitação como: "Enviado para assinatura"</p>
+<p>E apresenta a mensagem: "Enviado com sucesso!"</p>
+</div>
+<p>No momento de <strong>gerar um processo no SEI</strong> o que deve acontecer é o seguinte:</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Criar Novo Processo</span></p>
+<p>Um novo processo do tipo <strong>“Assessoria Legislativa: Consulta, estudo, parecer, discurso e proposições legislativas”</strong> deve ser automaticamente criado.</p>
+<ul>
+<li><p>Esse processo deve ser criado na Unidade do SEI do Solicitante.</p></li>
+<li><p>O processo deve possuir o Nível de Acesso especificado pelo Solicitante na Funcionalidade “Incluir”. Caso o Nível escolhido foi “Restrito”, deve-se utilizar a “Hipótese Legal” escolhida na mesma tela da funcionalidade.</p></li>
+<li><p>O número do processo do SEI recém criado deve ser armazenado como atributo da Solicitação no sistema ASSEL.</p></li>
+</ul>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Criar Documento da OS no Processo</span></p>
+<p>Deve ser criado um primeiro documento no Processo do tipo <strong>“SOLICITAÇÃO DE SERVIÇO DA ASSESSORIA LEGISLATIVA”</strong> em formato html padrão da solicitação para ser assinado contendo as informações preenchidas pelo Solicitante no sistema ASSEL.</p>
+<ul>
+<li><p>O número do documento do SEI relacionado à Ordem de Serviço que deverá ser assinada deve ser armazenado como atributo da Solicitação no sistema ASSEL.</p></li>
+</ul>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Inserir os Anexos na OS</span></p>
+<p>Abaixo desse documento deverão ser automaticamente inseridos no mesmo processo do SEI os anexos enviados pelo solicitante ao sistema ASSEL respeitando os Níveis de Acesso e Hipóteses Legais escolhidos pelo usuário para cada anexo no sistema ASSEL.</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Bloco de Assinatura?</span></p>
+<p><span>-2ex -0.1ex -.2ex</span> <span>.2ex .2ex </span> <span><strong></strong></span><span>Caso o Usuário Solicitante Pertença à Unidade Solicitante do SEI</span></p>
+<p>Se a Unidade Solicitante possui o Usuário que está fazendo a Solicitação como pertencente a ela, não precisa criar Bloco de Assinatura. E nem seria possível fazer isso. O sistema vai avisar ao Usuário para assinar o documento tal do processo tal da Unidade tal.</p>
+<p><span>-2ex -0.1ex -.2ex</span> <span>.2ex .2ex </span> <span><strong></strong></span><span>Caso o Usuário Solicitante NÃO Pertença à Unidade Solicitante do SEI</span></p>
+<p>Se a Unidade Solicitante não possui o Usuário que está fazendo a Solicitação, então será criado um <strong>Popup</strong> com todas as unidades de forma que o Usuário Escolha para qual Unidade do SEI deve ser disponibilizado o Bloco de Assinatura que será assinado.</p>
+<p>Nesse caso, o bloco de assinatura é criado na Unidade Solicitante, o documento com a OS que precisa ser assinado é colocado no Bloco de Assinatura e o Bloco de Assinatura é disponibilizado para a Unidade que o Usuário escolheu.</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Sistema Aguarda Assinatura</span></p>
+<p>A partir daí o sistema passa a monitorar o documento esperando que ele seja assinado por alguém.</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Sistema Envia Processo para a Unidade ASSEL</span></p>
+<p>No momento que o documento é assinado, ele é enviado para a ASSEL.</p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Sistema Recebe o Processo Pela ASSEL</span></p>
+<p>Do lado da ASSEL, o próprio sistema recebe o processo, marca com o Acompanhamento Especial TAL e arquiva.</p>
+<h1 id="resumo">RESUMO</h1>
+<h2 id="ambientes">Ambientes</h2>
+<div class="center">
+<p><span style="background-color: blue!10"> <strong>TODO</strong> : <span id="TargetTodo\arabic{CounterTodo}">Último</span> </span></p>
+</div>
+<div class="center">
+<p><span style="background-color: blue!10"> <strong>toGil</strong> : <span id="TargetTogil\arabic{CounterTogil}">Último</span> </span></p>
+</div>
+<div class="center">
+<p><span style="background-color: blue!10"> <strong>toPedro</strong> : <span id="TargetTopedro\arabic{CounterTopedro}">Último</span> </span></p>
+</div>
+<div class="tcolorbox">
+<p>Última</p>
+</div>
+<div class="tcolorbox">
+<p>Última</p>
+</div>
+<div class="tcolorbox">
+<p>Última</p>
+</div>
+<div class="tcolorbox">
+<p>Última</p>
+</div>
+<div class="tcolorbox">
+<p>Última</p>
+</div>
+<div class="tcolorbox">
+<p>Última</p>
+</div>
+<div class="tcolorbox">
+<p>Última</p>
+</div>
+<div class="tcolorbox">
+<p>Última</p>
+</div>
+<p>Resumo dos principais <span id="TargetResumoAmbientes">ambientes</span>:</p>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Afazeres</span></p>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Gerais</span></p>
+<div class="itemize">
+
+</div>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Para Gilberto</span></p>
+<div class="itemize">
+
+</div>
+<p><span>-3ex -0.1ex -.4ex</span> <span>0.5ex .2ex </span> <span><strong></strong></span><span>Para Pedro</span></p>
+<div class="itemize">
+
+</div>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Perguntas</span></p>
+<div class="itemize">
+
+</div>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Respostas</span></p>
+<div class="itemize">
+
+</div>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Importante</span></p>
+<div class="itemize">
+
+</div>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Requisitos</span></p>
+<div class="itemize">
+
+</div>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Funcionalidades</span></p>
+<div class="itemize">
+
+</div>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Exemplos</span></p>
+<div class="itemize">
+
+</div>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Nota</span></p>
+<div class="itemize">
+
+</div>
+<p><span>-4ex -1ex -.4ex</span> <span>1ex .2ex </span> <span><strong></strong></span><span>Imagine</span></p>
+<div class="itemize">
+
+</div>
+<h1 id="parte-indice">Índice</h1>
