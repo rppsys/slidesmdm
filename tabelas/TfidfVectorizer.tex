@@ -1,0 +1,13 @@
+\begin{tabular}{lcccccccccc}
+\toprule
+ & fit\_time & score\_time & test\_f1\_weighted & train\_f1\_weighted & test\_balanced\_accuracy & train\_balanced\_accuracy & test\_precision\_weighted & train\_precision\_weighted & test\_recall\_weighted & train\_recall\_weighted \\
+\midrule
+Model &  &  &  &  &  &  &  &  &  &  \\
+DummyClassifier & 0.005016 & 0.013737 & 0.025819 & 0.025819 & 0.031250 & 0.031250 & 0.014462 & 0.014462 & 0.120258 & 0.120258 \\
+KNeighborsClassifier & 0.004096 & 28.906825 & 0.323249 & 0.541327 & 0.181929 & 0.396655 & 0.446675 & 0.629905 & 0.299141 & 0.527901 \\
+\rowcolor{lightgray} LogisticRegression & 3.725738 & 0.018837 & 0.467718 & 0.584556 & \textbf{0.377732} & 0.727172 & 0.506144 & 0.629863 & 0.458011 & 0.585697 \\
+RandomForestClassifier & 267.923079 & 1.148535 & 0.435199 & \textbf{0.806360} & 0.272152 & \textbf{0.864809} & 0.445313 & \textbf{0.834005} & 0.449355 & \textbf{0.801044} \\
+SVM & 44.651407 & 12.235956 & \textbf{0.472803} & 0.676972 & 0.319393 & 0.803307 & \textbf{0.512542} & 0.712173 & 0.456292 & 0.673389 \\
+XGBClassifier & 102.740959 & 1.606697 & 0.449333 & 0.766095 & 0.277803 & 0.768935 & 0.449830 & 0.767603 & \textbf{0.458809} & 0.769460 \\
+\bottomrule
+\end{tabular}
