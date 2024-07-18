@@ -210,7 +210,7 @@
 	\frametitle{Objectives}
 	\framesubtitle{Disclaimer}
 		
-	\begin{alertblock}{Atention!} 
+	\begin{alertblock}{Attention!} 
 		\begin{itemize}
 			\item This study \textbf{does not aim to automate the classification process, replace human classification, or compare human classification with machine learning classification}. 
 			
@@ -429,9 +429,8 @@
 % =========================================================
 \section{Experimentos Realizados}
 \begin{frame}
-	\frametitle{Experimentos Realizados}
+\frametitle{Experimentos Realizados}
 	
-	Falar do Embed
 	
 	
 	
@@ -440,16 +439,27 @@
 \section{Resultados}
 \begin{frame}
 	\frametitle{Resultados}
-	
-	
-	
-	
-\end{frame}
-% =========================================================
-\section{Trabalhos Futuros}
-\begin{frame}
-	\frametitle{Resultados}
-	
+
+
+	\begin{table}
+		\centering
+		\scalebox{0.4}{
+			\begin{tabular}{llrrrrrr}
+				\toprule
+				{} & Model & \textbf{fit\_time} & \textbf{score\_time} & \textbf{test\_f1\_weighted} & \textbf{test\_balanced\_accuracy} & \textbf{test\_precision\_weighted} & \textbf{test\_recall\_weighted} \\
+				\midrule
+				0 & DummyClassifier & \textbf{0.006086} & 0.016813 & 0.025819 & 0.031250 & 0.014462 & 0.120258 \\
+				1 & KNeighborsClassifier & 0.005841 & 33.463293 & 0.323486 & 0.182068 & 0.447307 & 0.299509 \\
+				2 & LogisticRegression & 5.160993 & \textbf{0.024248} & 0.467718 & 0.377732 & 0.506144 & 0.458011 \\
+				3 & RandomForestClassifier & 373.229191 & 1.552665 & 0.435226 & 0.273611 & 0.444914 & 0.449233 \\
+				4 & SVM & 52.730176 & 14.002061 & \textbf{0.472803} & 0.319393 & \textbf{0.512542} & 0.456292 \\
+				5 & XGBClassifier & 128.124318 & 1.915238 & 0.449333 & 0.277803 & 0.449830 & \textbf{0.458809} \\
+				\bottomrule
+			\end{tabular}
+		}
+		\caption{Resultados}
+	\end{table}
+
 	
 	
 	
@@ -458,14 +468,12 @@
 \section{Conclusões}
 \begin{frame}
 	\frametitle{Conclusões}
-	
-	
-	
-	
 \end{frame}
 % =========================================================
-
-
+\section{Trabalhos Futuros}
+\begin{frame}
+	\frametitle{Trabalhos Futuros}
+\end{frame}
 
 
 
