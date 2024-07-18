@@ -1,0 +1,11 @@
+Huwail J. Alantari, Imran S. Currim, Yiting Deng, Sameer Singh,
+An empirical comparison of machine learning methods for text-based sentiment analysis of online consumer reviews,
+International Journal of Research in Marketing,
+Volume 39, Issue 1,
+2022,
+Pages 1-19,
+ISSN 0167-8116,
+https://doi.org/10.1016/j.ijresmar.2021.10.011.
+(https://www.sciencedirect.com/science/article/pii/S0167811621000926)
+Abstract: The amount of digital text-based consumer review data has increased dramatically and there exist many machine learning approaches for automated text-based sentiment analysis. Marketing researchers have employed various methods for analyzing text reviews but lack a comprehensive comparison of their performance to guide method selection in future applications. We focus on the fundamental relationship between a consumer’s overall empirical evaluation, and the text-based explanation of their evaluation. We study the empirical tradeoff between predictive and diagnostic abilities, in applying various methods to estimate this fundamental relationship. We incorporate methods previously employed in the marketing literature, and methods that are so far less common in the marketing literature. For generalizability, we analyze 25,241 products in nine product categories, and 260,489 reviews across five review platforms. We find that neural network-based machine learning methods, in particular pre-trained versions, offer the most accurate predictions, while topic models such as Latent Dirichlet Allocation offer deeper diagnostics. However, neural network models are not suited for diagnostic purposes and topic models are ill equipped for making predictions. Consequently, future selection of methods to process text reviews is likely to be based on analysts’ goals of prediction versus diagnostics.
+Keywords: Automated text analysis; Sentiment analysis; Online reviews; User generated content; Machine learning; Natural language processing

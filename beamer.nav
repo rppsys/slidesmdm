@@ -55,7 +55,7 @@
 \headcommand {\beamer@framepages {20}{20}}
 \headcommand {\beamer@sectionpages {12}{20}}
 \headcommand {\beamer@subsectionpages {12}{20}}
-\headcommand {\sectionentry {6}{Experiments Conducted}{21}{Experiments Conducted}{0}}
+\headcommand {\sectionentry {6}{Experiments conducted}{21}{Experiments conducted}{0}}
 \headcommand {\slideentry {6}{0}{1}{21/21}{}{0}}
 \headcommand {\beamer@framepages {21}{21}}
 \headcommand {\slideentry {6}{0}{2}{22/22}{}{0}}
@@ -71,11 +71,16 @@
 \headcommand {\beamer@framepages {25}{25}}
 \headcommand {\beamer@sectionpages {25}{25}}
 \headcommand {\beamer@subsectionpages {25}{25}}
-\headcommand {\sectionentry {8}{Trabalhos Futuros}{26}{Trabalhos Futuros}{0}}
+\headcommand {\sectionentry {8}{Future Work}{26}{Future Work}{0}}
 \headcommand {\slideentry {8}{0}{1}{26/26}{}{0}}
 \headcommand {\beamer@framepages {26}{26}}
-\headcommand {\beamer@partpages {1}{26}}
-\headcommand {\beamer@subsectionpages {26}{26}}
 \headcommand {\beamer@sectionpages {26}{26}}
-\headcommand {\beamer@documentpages {26}}
-\headcommand {\gdef \inserttotalframenumber {26}}
+\headcommand {\beamer@subsectionpages {26}{26}}
+\headcommand {\sectionentry {9}{Agradecimentos}{27}{Agradecimentos}{0}}
+\headcommand {\slideentry {9}{0}{1}{27/27}{}{0}}
+\headcommand {\beamer@framepages {27}{27}}
+\headcommand {\beamer@partpages {1}{27}}
+\headcommand {\beamer@subsectionpages {27}{27}}
+\headcommand {\beamer@sectionpages {27}{27}}
+\headcommand {\beamer@documentpages {27}}
+\headcommand {\gdef \inserttotalframenumber {27}}

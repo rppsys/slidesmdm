@@ -141,7 +141,7 @@
 			
 			% A escolha dos temas para classificar uma proposição é geralmente feita pelo autor da proposição.
 			
-			\item Unfortunately, due to various factors such as ambiguous topics, outdated categories, multidisciplinary nature, \textbf{many propositions end up being classified under the generic label of ``others''}.
+			\item Unfortunately, due to various factors such as ambiguous topics, outdated categories, multidisciplinary nature, \textbf{many propositions end up being classified under the generic theme of ``outro'' (others)}.
 			
 			% Contudo, infelizmente, devido a diversos fatores, como tópicos ambíguos, categorias desatualizadas e natureza multidisciplinar, muitas proposições acabam sendo classificadas sob o rótulo genérico de “outros”.
 			
@@ -160,7 +160,7 @@
 
 	\begin{block}{}
 		\scriptsize
-		The chart shows that the number of proposals classified under the theme “others” represents approximately 20\% of the total. 
+		The chart shows that the number of proposals classified under the theme ``outro'' (other) represents almost 20\% of the total. 
 	\end{block}	
 
 	% O gráfico mostra que o número de proposições classificadas com o tema "outros" já corresponde a quase 20% do total.
@@ -194,7 +194,7 @@
 		\begin{itemize}
 			\item The primary objective of this study is to \textbf{compare different machine learning models} to determine which model is \textbf{most effective in suggesting more appropriate theme categories for legislative proposals}.
 			
-			\item The goal is to find \textbf{more suitable themes that better match the content of these proposals}.  
+			\item The goal is to find \textbf{more suitable themes that better match these proposals}.  
 		\end{itemize}
 	\end{exampleblock}
 	
@@ -236,16 +236,51 @@
 	\footnotesize % Reduce the font size in the bibliography
 		\scriptsize
 	
-		\bibitem[Reimers, 2019]{p1}
-		Reimers, Nils and Gurevych, Iryna (2019)
-		\newblock \href{http://arxiv.org/abs/1908.10084}{Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks}
-		\newblock \emph{Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing} 
-		\newblock \emph{Association for Computational Linguistics} 
-		
-		\bibitem[Junior, 2021]{p2}
+
+		\bibitem[Junior, 2021]{p1}
 		J. Andrade Junior, J. Cardoso-Silva, and L. Bezerra (2021)
 		\newblock \href{https://core.ac.uk/download/491169432.pdf}{Comparing Contextual Embeddings for	Semantic Textual Similarity in Portuguese}
 		\newblock \scriptsize \emph{Anais da X Brazilian Conference on Intelligent Systems} 
+		% O primeiro nos levou a optar pela vetorização por embeddings como alternativa ao TF-IDF.
+		
+		%\bibitem[Reimers, 2019]{p2}
+		%Reimers, Nils and Gurevych, Iryna (2019)
+		%\newblock \href{http://arxiv.org/abs/1908.10084}{Sentence-BERT: Sentence %Embeddings using Siamese BERT-Networks}
+		%\newblock \emph{Proceedings of the 2019 Conference on Empirical Methods in %Natural Language Processing} 
+		%\newblock \emph{Association for Computational Linguistics} 
+				
+
+		% https://link.springer.com/article/10.1007/s41133-020-00032-0#citeas
+		\bibitem[Huwail, 2022]{p2}
+		Alantari, J., Currim, S., Sanghvi, Y. et al. (2022)
+		\newblock \href{https://doi.org/10.1016/j.ijresmar.2021.10.011}{An empirical comparison of machine learning methods for text-based sentiment analysis of online consumer reviews}
+		\newblock \scriptsize \emph{International Journal of Research in Marketing - Pages 1-19} 
+
+					
+		% https://link.springer.com/article/10.1007/s41133-020-00032-0#citeas
+		\bibitem[Shah, 2022]{p3}
+		Shah, K., Patel, H., Sanghvi, D. et al. (2022)
+		\newblock \href{https://doi.org/10.1007/s41133-020-00032-0}{A Comparative Analysis of Logistic Regression, Random Forest and KNN Models for the Text Classification}
+		\newblock \scriptsize \emph{Augment Hum Res 5, 12} 
+
+		% Os outros dois nos ajudaram a escolher os modelos de classificação de texto utilizados
+		
+
+		% https://www.sciencedirect.com/science/article/abs/pii/S0022169419310285
+		%\bibitem[Yu, 2020]{p4}
+		%Yu, Xiang, et al. (2020)
+		%\newblock \href{https://doi.org/10.1007/s41133-020-00032-0}{Comparison of support vector regression and extreme gradient boosting for decomposition-based data-driven 10-day streamflow forecasting.}
+		%\newblock \scriptsize \emph{Journal of Hydrology 582 (2020): 124293} 
+		
+		 
+		
+ 
+		
+		
+
+		
+		
+		
 		
 		\normalsize		 
 
@@ -305,7 +340,7 @@
 	\frametitle{Methodology}
 	\framesubtitle{2 - Data Understanding}	
 	\begin{block}{2 - Data Understanding} 
-		The dataset contains 22,267 summaries extracted from the Electronic Legislative Process (PLE) system, covering the period from 2021 to May 2024. Each summary is accompanied by its respective thematic classification.
+		The dataset contains 22,267 summaries extracted from the ``\textit{Processo Legislativo Eletrônico (PLE)}`` system, covering the period from 2021 to May 2024. Each summary is accompanied by its respective thematic classification.
 	\end{block}
 
 	\begin{figure}
@@ -321,7 +356,7 @@
 	\frametitle{Methodology}
 	\framesubtitle{3 - Data Preparation}	
 
-	\begin{block}{Data Preparation} 
+	\begin{block}{3 - Data Preparation} 
 		\begin{enumerate}
 
 			\item \textbf{Preprocessing}: We discard data classified under ``outro'' and ``não se aplica'' themes. Then, we perform tokenization, normalization, stopword removal, and lemmatization processes.
@@ -369,7 +404,7 @@
 \begin{frame}
 	\frametitle{Methodology}
 	\framesubtitle{4 - Modeling: Justification}	
-	\begin{alertblock}{Why Choose These Models?} 
+	\begin{alertblock}{Why choose these models?} 
 		\begin{enumerate}
 			\scriptsize
 			\item \textbf{Baseline Comparison}: DummyClassifier provides a benchmark to gauge the performance of more sophisticated models.
@@ -404,10 +439,10 @@
 
 	\begin{block}{} 
 		\begin{itemize}
-			\item Accuracy is \textbf{straightforward and easy to understand}.
-			\item Precision and recall are more informative when dealing with \textbf{imbalanced classes} because they provide insights into the performance of the minority class, which accuracy might overlook.
+			\item \textbf{Accuracy} is \textbf{straightforward and easy to understand}.
+			\item \textbf{Precision} and \textbf{recall} are more informative when dealing with \textbf{imbalanced classes} because they provide insights into the performance of the minority class, which accuracy might overlook.
 			
-			\item F1 score gives a \textbf{balance between precision and recall as a single metric} to summarize the model performance.
+			\item \textbf{F1 score} gives a \textbf{balance between precision and recall as a single metric} to \textbf{summarize} the model performance.
 		\end{itemize}
 	\end{block}
 \end{frame}
@@ -418,17 +453,21 @@
 	
 	\begin{block}{6 - Deployment} 
 		\begin{itemize}
-			\item The results might be used to create an interface in the PLE system to suggest themes that best fit new proposals.
+			\item The results might be used to create an interface in the ``\textit{Processo Legislativo Eletrônico (PLE)}`` system to suggest themes that best fit new proposals.
 		\end{itemize}
 	\end{block}
+
+	\begin{figure}
+		\includegraphics[width=0.5\linewidth]{plenario.jpg}
+		\caption{Plenário da Câmara Legislativa do Distrito Federal}
+	\end{figure}
+
+
 \end{frame}
 % =========================================================
-\section{Experiments Conducted}
-
-
-
+\section{Experiments conducted}
 \begin{frame}
-	\frametitle{Experiments Conducted}
+	\frametitle{Experiments conducted}
 	\framesubtitle{nao sei}
 
 	\begin{exampleblock}{Não sei} 
@@ -448,7 +487,7 @@
 \end{frame}
 % -----------------------------------------------------------
 \begin{frame}
-	\frametitle{Experiments Conducted}
+	\frametitle{Experiments conducted}
 	\framesubtitle{Embedding - Cross Validation}
 
 
@@ -471,7 +510,7 @@
 \end{frame}
 % -----------------------------------------------------------
 \begin{frame}
-	\frametitle{Experiments Conducted}
+	\frametitle{Experiments conducted}
 	\framesubtitle{TfidfVectorizer - Cross Validation}
 
 	\begin{exampleblock}{TfidfVectorizer} 
@@ -493,7 +532,7 @@
 \end{frame}
 % -----------------------------------------------------------
 \begin{frame}
-	\frametitle{Experiments Conducted}
+	\frametitle{Experiments conducted}
 	\framesubtitle{TfidfVectorizer and MultiOutputClassifier - Cross Validation}
 
 	\begin{exampleblock}{TfidfVectorizer and MultiOutputClassifier} 
@@ -526,7 +565,7 @@
 
 \end{frame}
 % =========================================================
-\section{Trabalhos Futuros}
+\section{Future Work}
 \begin{frame}
 	\frametitle{Future Work}
 	\begin{block}{Future Work} 
@@ -536,6 +575,16 @@
 	\end{block}
 \end{frame}
 
+
+
+% =========================================================
+\section*{Agradecimentos}
+\begin{frame}
+	\frametitle{Thank You}
+
+
+
+\end{frame}
 
 
 
