@@ -468,32 +468,43 @@
 \section{Experiments conducted}
 \begin{frame}
 	\frametitle{Experiments conducted}
-	\framesubtitle{nao sei}
-
-	\begin{exampleblock}{Não sei} 
-		\begin{itemize}
-			\item Explicar tabela
-		\end{itemize}
-	\end{exampleblock}
+	\framesubtitle{Understanding the experiments}
 	
-	\begin{table}
-		\centering
-		\resizebox{1\textwidth}{!}{
-			\input{tabelas/naosei.tex}
-		}
-		\caption{nao sei}
-	\end{table}
+	\begin{block}{The experiments} 
+		\scriptsize
+		
+		\begin{itemize}
+			\item In all experiments, a cross-validation with three stratified partitions is performed.
+			
+			\item The three partitions are randomly divided in a way that it allows training and testing each model for all four metrics, both for training and testing data.
+			
+			\item In addition to the four metrics, the training and inference times are also measured.
+			
+			\item For each metric, we get the average of the three validations.  
+			
+			
+		\end{itemize}
+	\end{block}
 
+	\begin{exampleblock}{Why? To check for overfitting or underfitting} 
+	\begin{itemize}
+		\item If there is \textbf{good performance in training but not in testing}, there is overfitting.
+		
+		\item If there is \textbf{poor performance in both training and testing}, there is underfitting.
+	\end{itemize}
+	\end{exampleblock}
 \end{frame}
-% -----------------------------------------------------------
+
+% ---------------------------------------------------------------
+
 \begin{frame}
 	\frametitle{Experiments conducted}
 	\framesubtitle{Embedding - Cross Validation}
 
 
-	\begin{exampleblock}{Embedding} 
+	\begin{exampleblock}{Embedding Vectorizer} 
 		\begin{itemize}
-			\item Explicar tabela
+			\item Logistic Regression excels overall. It may not be the best in everything, but across the set of metrics, it is the best.
 		\end{itemize}
 	\end{exampleblock}
 
@@ -513,9 +524,9 @@
 	\frametitle{Experiments conducted}
 	\framesubtitle{TfidfVectorizer - Cross Validation}
 
-	\begin{exampleblock}{TfidfVectorizer} 
+	\begin{exampleblock}{Tfidf Vectorizer} 
 		\begin{itemize}
-			\item Explicar tabela
+			\item Once again, Logistic Regression excels overall.
 		\end{itemize}
 	\end{exampleblock}
 
@@ -537,7 +548,7 @@
 
 	\begin{exampleblock}{TfidfVectorizer and MultiOutputClassifier} 
 		\begin{itemize}
-			\item Explicar tabela
+			\item Once again, Logistic Regression proves to be the top-performing model.
 		\end{itemize}
 	\end{exampleblock}
 	
@@ -551,18 +562,56 @@
 
 \end{frame}
 % =========================================================
+\section{Results}
+\begin{frame}
+	\frametitle{Results}
+	\begin{columns}
+	
+	\begin{column}{0.5\textwidth}
+
+		\begin{block}{Results} 
+			\begin{itemize}
+				\item Logistic Regression is trained and tested for all four metrics.
+			\end{itemize}
+		\end{block}
+	
+ 	\end{column}
+			
+	\begin{column}{0.5\textwidth}
+		\begin{table}
+		\centering
+			\resizebox{0.6\textwidth}{!}{
+				\input{tabelas/results.tex}
+			}
+			\caption{Resultados}
+		\end{table}
+	\end{column}
+
+\end{columns}
+\end{frame}
+% =========================================================
 \section{Conclusions}
 \begin{frame}
 	\frametitle{Conclusions}
 
-	\begin{block}{Conclusions} 
+	\begin{block}{Recomendation Model} 
 		\begin{itemize}
-			\item Quais?
+			\item Top 5 gives 70\% to 76\% accuracy.
 		\end{itemize}
 	\end{block}
 
+	\begin{alertblock}{Não temos uma boa acurácia} 
+	\begin{itemize}
+		\item  Classificações não são representativas;
+		\item  Não há dados suficiente para conseguir o objetivo proposto;
+	\end{itemize}
+	\end{alertblock}
 
-
+	\begin{exampleblock}{Contudo, isso mostra a possibilidade de melhora} 
+	\begin{itemize}
+		\item  A gente não fez hiperparametrização;
+	\end{itemize}
+	\end{exampleblock}
 \end{frame}
 % =========================================================
 \section{Future Work}
@@ -570,7 +619,8 @@
 	\frametitle{Future Work}
 	\begin{block}{Future Work} 
 		\begin{itemize}
-			\item Quais?
+			\item Repetir o trabalho usando os documentos;
+			\item Fazer hiperparametrizações;
 		\end{itemize}
 	\end{block}
 \end{frame}
