@@ -3,14 +3,18 @@
 \usepackage{sbc-template}
 \usepackage{graphicx,url}
 \usepackage[utf8]{inputenc}
-%\usepackage[brazil]{babel}
+\usepackage[brazil]{babel}
+\usepackage{color,soul}
 \usepackage{xcolor}
-%\usepackage[latin1]{inputenc}  
+\usepackage{inputenc}  
+\usepackage{indentfirst}
 
+\newcommand{\revisar}[1]{\hl{#1}}
+\newcommand{\todo}[1]{\hl{#1}}
 
 \sloppy
 
-\title{Intelligent Classification of Legislative Propositions}
+\title{Intelligent Classification of Legislative Propositions \\ \normalsize A comparative analysis of machine learning models for proposition classification}
 
 \author{Luca Peres Quinta da Guarda\inst{1}, Ronie Paulucio Porfirio\inst{1}}
 
@@ -25,18 +29,17 @@
 	\maketitle
 	
 \begin{abstract}
-	\textcolor{red}{Reescrever}
+	\revisar{Reescrever}
 \end{abstract}
 
 \section{Introduction}
 
 % https://www.cl.df.gov.br/proposicoes-projetos-atos-normativos
 
-
 A legislative proposition, as outlined in the internal regulations of \emph{Câmara Legislativa do Distrito Federal} \cite{CLDF2018}, is any matter that requires discussion and approval in the institution. There are ten types of propositions, presented below in hierarchical order, with their original names in portuguese and their english translations:
 
 \begin{itemize}
-	\item \emph{Proposta de Emenda à Lei Orgânica (PELO)} - Proposed Amendment to the Organic Law 
+	\item \emph{Proposta de Emenda à Lei Orgânica (PELO)} - Proposal of Amendment to the Organic Law 
 	\item \emph{Projeto de Lei Complementar (PLC)} - Complementary Law Project
 	\item \emph{Projeto de Lei (PL)} - Law Project
 	\item \emph{Projeto de Decreto Legislativo (PDL)} - Legislative Decree Project
@@ -48,16 +51,11 @@ A legislative proposition, as outlined in the internal regulations of \emph{Câm
 	\item \emph{Recurso (REC)} - Appeal
 \end{itemize}
 
-A proposition must fulfill specific requirements to be considered valid and admissible. It must pertain to matters within the jurisdiction of the Federal District (\emph{Distrito Federal}), in accordance with its Organic Law and the precepts of the Federal Constitution. 
+A proposition must fulfill specific requirements to be considered valid and admissible. It must pertain to matters within the jurisdiction of Brazilian Federal District (\emph{Distrito Federal}), in accordance with its Organic Law and the precepts of the Federal Constitution. Furthermore, the proposition must adhere to legislative techniques, contain the minimum number of subscribers (signatories), and be structured with the following elements: epigraph (a name that distinguishes one act from another, including number and date when applicable), indication of the author, summary (a synopsis of the content or purpose of the act, indication of the \emph{Câmara Legislativa} as the legislative body, the text to be deliberated, a justification, the date and the signatures \cite{Conceitos2024}.
 
-Furthermore, the proposition must adhere to legislative techniques, contain the minimum number of subscribers (signatories), and be structured with the following elements: epigraph (a name that distinguishes one act from another, including number and date when applicable), indication of the author, summary (a synopsis of the content or purpose of the act, indication of the \emph{Câmara Legislativa} as the legislative body, the text to be deliberated, a justification, the date and the signatures \cite{Conceitos2024}.
+In the \emph{Câmara Legislativa do Distrito Federal} (CLDF) context, propositions are categorized based on their subject matter or theme. Typically, the author of a proposition is responsible for assigning it to one or more relevant themes. This thematic classification is crucial for optimizing legislative proposal analysis and processing. An effective classification streamlines the legislative process, aids in resource allocation and supports lawmakers in making informed decisions. Additionally, it enhances transparency and organization within the legislative workflow, ensuring accurate information retrieval and effective legislative management.
 
-In the \emph{Câmara Legislativa do Distrito Federal} (CLDF) context, propositions are categorized based on their subject matter or theme. Typically, the author of a proposition is responsible for assigning it to one or more relevant themes. This thematic classification is crucial for optimizing legislative proposal analysis and processing. An effective classification system streamlines the legislative process, aids in resource allocation, and supports lawmakers in making informed decisions. Furthermore, it enhances transparency and organization within the legislative workflow, ensuring accurate information retrieval and effective legislative management.
-
-However, given the complexity and variety of legislative documents and due to ambiguous topics, outdated categories, and the multidisciplinary nature of many propositions, traditional manual classification methods often fall short, leading to inefficiencies and inaccuracies with a considerable proportion of propositions ending up classified under the non-specific category of "other". 
-
-
-To illustrate this issue, data indicates that nearly 20\% of all propositions are classified under the generic category of ``other'' as seen in figure \ref{fig:themes}: 
+However, given the complexity and variety of legislative documents and due to ambiguous topics and the multidisciplinary nature of many propositions, manual classification methods often fall short, leading to inefficiencies and inaccuracies with a considerable proportion of propositions ending up classified under the non-specific category of "other". To illustrate this issue, data indicates that nearly 20\% of all propositions are classified under the generic category of ``other'' as shown in the figure \ref{fig:themes} presenting the percentage of propositions in each category relative to the total:
 
 
 \begin{figure}[ht]
@@ -70,25 +68,43 @@ To illustrate this issue, data indicates that nearly 20\% of all propositions ar
 This excessive reliance on the ``other'' category underscores significant deficiencies in the current classification system. It hinders effective tracking, analysis, and transparency of legislative activities, making it difficult for both the public and lawmakers to understand and manage the legislative process.
 
 
-\section{Objectives}
+\section{Objective}
 
-This study aims to evaluate various machine learning models to determine which is most effective in suggesting more accurate thematic categories for legislative propositions. The goal is to identify themes that better align with the propositions, thus enhancing the relevance and accuracy of their categorization.
-
-It is important to clarify that this study does not seek to automate the entire classification process, replace human classifiers, or compare human classification with machine learning-based methods. Instead, the focus is on improving the existing categorization process by identifying the best machine learning model for suggesting themes for propositions currently labeled as "Others."
+This study aims to evaluate various machine learning models to determine which is most effective in suggesting more accurate thematic categories for legislative propositions. The goal is to identify themes that better align with the propositions, thus enhancing the relevance and accuracy of their categorization. It is important to clarify that this study does not seek to automate the entire classification process, replace human classifiers, or compare human classification with machine learning-based methods. Instead, the focus is on improving the existing categorization process by identifying the best machine learning model for suggesting themes for propositions in order to encourage legislators to use the "other" category only as a last resort.
 
 \section{Methodology}
 
-In the initial phase of the methodology, known as Business Understanding, we analyzed legislative documents to ensure our data mining objectives were aligned with the needs of legislative classification. This involved reviewing various legislative propositions and their metadata to align our goals with the requirements for effective classification.
+Our methodology adopts the Cross-Industry Standard Process for Data Mining (CRISP-DM) model as a reference \todo{citar alguma fonte}:
 
-The Data Understanding phase involved working with a dataset of 22,267 summaries extracted from the “Processo Legislativo Eletrônico (PLE)” system, covering the period from 2021 to May 2024. Each summary in this dataset is accompanied by its respective thematic classification, providing the foundation for further analysis.
+\subsection{Business Understanding}
 
-Data Preparation included several critical steps. First, we discarded data classified under the “others” and “not applicable” categories. Following this, we performed preprocessing tasks such as tokenization, normalization, stopword removal, and lemmatization. For vectorization, we employed two techniques: the Multilingual Sentence Embedding Model, based on the MiniLM architecture, which generates high-quality embeddings capturing the semantic meaning of the text, and the TF-IDF (Term Frequency-Inverse Document Frequency) Model, which converts text into numerical vectors by evaluating term frequency within documents and across the dataset, thereby highlighting term importance.
+In the initial phase of the methodology, known as ``Business Understanding'', we analyzed legislative documents to ensure our data mining objectives were aligned with the needs of legislative classification. This involved reviewing various legislative propositions and their metadata to align our goals with the requirements for effective classification.
 
-In the Modeling phase, we utilized several models to address the classification task. The DummyClassifier was used as a baseline model to provide a reference point for comparing the performance of more complex models. The Support Vector Machine (SVM) was employed to find the hyperplane that best separates the classes in the feature space, proving effective in high-dimensional spaces. Logistic Regression, a linear model, was used to estimate the probability of a binary outcome based on input features, valued for its simplicity and interpretability. Additionally, XGBoost (Extreme Gradient Boosting) was chosen for its ability to build an ensemble of weak learners, such as decision trees, improving model performance through optimization. Random Forest, another ensemble model, constructs multiple decision trees and aggregates their predictions, demonstrating robustness against overfitting and effectiveness with larger datasets. Finally, K-Nearest Neighbors (KNN), a non-parametric model, classifies data points based on the majority class of their nearest neighbors, offering simplicity and effectiveness for smaller datasets.
+\subsection{Data Understanding}
 
-The Evaluation phase focused on assessing model performance using various metrics. Accuracy was used as a straightforward measure of overall correctness. Precision and recall provided insights into performance, particularly with imbalanced classes, by focusing on the performance of minority classes. The F1 Score combined precision and recall into a single metric, summarizing model performance effectively.
+Then, the ``Data Understanding'' phase involved working with a dataset of 22,267 summaries extracted from the “Processo Legislativo Eletrônico (PLE)” system, covering the period from 2021 to May 2024. Each summary in this dataset is accompanied by its respective thematic classification, providing the foundation for further analysis.
 
-Finally, in the Deployment phase, the results of the study could be used to create an interface within the “Processo Legislativo Eletrônico (PLE)” system. This interface would suggest themes that best fit new legislative propositions, thereby enhancing the legislative classification process.
+\subsection{Data Preparation}
+
+``Data Preparation'' included several critical steps. First, we discarded data classified under the “other” and “not applicable” categories. Following this, we performed preprocessing tasks such as tokenization, normalization, stopword removal, and lemmatization. For vectorization, we employed \revisar{three} techniques: the Multilingual Sentence Embedding Model, based on the MiniLM architecture, which generates high-quality embeddings capturing the semantic meaning of the text; the TF-IDF (Term Frequency-Inverse Document Frequency) Model, which converts text into numerical vectors by evaluating term frequency within documents and across the dataset, thereby highlighting term importance; \revisar{and, finally, the BM25 Model, which is an extension of TF-IDF that incorporates term frequency saturation and document length normalization to improve retrieval performance by ranking documents based on their relevance to a given query.}
+
+\subsection{Modeling}
+
+\todo{Incluir uma citacao por modelo}
+
+
+In the ``Modeling'' phase, we utilized several models to address the classification task. The DummyClassifier was used as a baseline model to provide a reference point for comparing the performance of more complex models. The Support Vector Machine (SVM) was employed to find the hyperplane that best separates the classes in the feature space, proving effective in high-dimensional spaces. Logistic Regression, a linear model, was used to estimate the probability of a binary outcome based on input features, valued for its simplicity and interpretability. Additionally, XGBoost (Extreme Gradient Boosting) was chosen for its ability to build an ensemble of weak learners, such as decision trees, improving model performance through optimization. Random Forest, another ensemble model, constructs multiple decision trees and aggregates their predictions, demonstrating robustness against overfitting and effectiveness with larger datasets. Finally, K-Nearest Neighbors (KNN), a non-parametric model, classifies data points based on the majority class of their nearest neighbors, offering simplicity and effectiveness for smaller datasets.
+
+\subsection{Evaluation}
+
+The ``Evaluation phase'' focused on assessing model performance using various metrics. Accuracy was used as a straightforward measure of overall correctness. Precision and recall provided insights into performance, particularly with imbalanced classes, by focusing on the performance of minority classes. The F1 Score combined precision and recall into a single metric, summarizing model performance effectively.
+
+\subsection{Deployment}
+
+Finally, in the "Deployment" phase, the results of the study could be used to develop an interface within the ``\emph{Processo Legislativo Eletrônico (PLE)}'' system. This interface would suggest themes that best fit new legislative propositions, thereby enhancing the legislative classification process. However, this phase has not yet been executed, as it depends on the development of this interface within the system.
+
+
+\todo{Parei aqui}
 
 \section{Experiments conducted}
 
