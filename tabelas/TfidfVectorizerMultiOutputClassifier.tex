@@ -1,6 +1,6 @@
 \begin{tabular}{lrrrrrrrrrr}
 \toprule
- & fit\_time & score\_time & test\_f1\_weighted & train\_f1\_weighted & test\_balanced\_accuracy & train\_balanced\_accuracy & test\_precision\_weighted & train\_precision\_weighted & test\_recall\_weighted & train\_recall\_weighted \\
+& fit\_time & score\_time & test\_f1\_w & train\_f1\_w & test\_bal\_a & train\_bal\_a & test\_prc\_w & train\_prc\_w & test\_rec\_w & train\_rec\_w \\ 
  \midrule
 Model &  &  &  &  &  &  &  &  &  &  \\
 DummyClassifier & 0.004188 & 0.011938 & 0.025819 & 0.025819 & 0.031250 & 0.031250 & 0.014462 & 0.014462 & 0.120258 & 0.120258 \\
@@ -10,4 +10,10 @@ RandomForestClassifier & 268.849362 & 1.154890 & 0.434992 & \textbf{0.806396} & 
 SVM & 44.404848 & 12.142895 & \textbf{0.472803} & 0.676972 & 0.319393 & 0.803307 & \textbf{0.512542} & 0.712173 & 0.456292 & 0.673389 \\
 XGBClassifier & 102.840638 & 1.657798 & 0.449333 & 0.766095 & 0.277803 & 0.768935 & 0.449830 & 0.767603 & \textbf{0.458809} & 0.769460 \\
 \bottomrule
+{} \\
+\multicolumn{10}{l}{\textbf{Legends:}}   \\ \midrule
+\multicolumn{5}{l}{test\_f1\_w: test\_f1\_weighted} & \multicolumn{5}{l}{train\_f1\_w: train\_f1\_weighted} \\
+\multicolumn{5}{l}{test\_bal\_a : test\_balanced\_accuracy } & \multicolumn{5}{l}{train\_bal\_a : train\_balanced\_accuracy } \\
+\multicolumn{5}{l}{test\_prc\_w : test\_precision\_weighted } & \multicolumn{5}{l}{train\_prc\_w : train\_precision\_weighted } \\
+\multicolumn{5}{l}{test\_rec\_w : test\_recall\_weighted} & \multicolumn{5}{l}{train\_rec\_w : train\_recall\_weighted} \\
 \end{tabular}
